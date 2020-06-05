@@ -1,0 +1,301 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     11986,        293]
+NotebookOptionsPosition[     10860,        257]
+NotebookOutlinePosition[     11235,        273]
+CellTagsIndexPosition[     11192,        270]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "\n", 
+  RowBox[{
+   RowBox[{"PackageVariables", ".", 
+    RowBox[{"nb", ":", " ", 
+     RowBox[{
+     "Lists", " ", "global", " ", "variables", " ", "used", " ", "by", " ", 
+      "the", " ", "NLinks", " ", 
+      RowBox[{"package", ".", "\n", "Copyright"}], " ", 
+      RowBox[{"(", "C", ")"}], " ", "2014", " ", "Nelson", " ", "Rosa", " ", 
+      RowBox[{"Jr", ".", "\n", "\n", "This"}], " ", "program", " ", "is", " ",
+       "free", " ", "software"}], ":", " ", 
+     RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", " ", 
+      RowBox[{"and", "/", "or"}], " ", "modify", "\n", "it", " ", "under", 
+      " ", "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", 
+      "General", " ", "Public", " ", "License", " ", "as", " ", "published", 
+      " ", "by", "\n", 
+      RowBox[{"the", " ", "Free", " ", "Software", " ", "Foundation"}]}]}]}], 
+   ",", " ", 
+   RowBox[{
+   "either", " ", "version", " ", "3", " ", "of", " ", "the", " ", 
+    "License"}], ",", " ", 
+   RowBox[{"or", "\n", 
+    RowBox[{"(", 
+     RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+    "later", " ", 
+    RowBox[{"version", ".", " ", "This"}], " ", "program", " ", "is", " ", 
+    "distributed", " ", "in", " ", "the", " ", "\n", "hope", " ", "that", " ",
+     "it", " ", "will", " ", "be", " ", "useful"}], ",", " ", 
+   RowBox[{
+    RowBox[{"but", " ", "WITHOUT", " ", "ANY", " ", "WARRANTY"}], ";", " ", 
+    RowBox[{
+    "without", " ", "even", " ", "the", " ", "\n", "implied", " ", "warranty",
+      " ", "of", " ", "MERCHANTABILITY", " ", "or", " ", "FITNESS", " ", 
+     "FOR", " ", "A", " ", "PARTICULAR", " ", 
+     RowBox[{"PURPOSE", ".", "\n", "See"}], " ", "the", " ", "GNU", " ", 
+     "General", " ", "Public", " ", "License", " ", "for", " ", "more", " ", 
+     RowBox[{"details", ".", " ", "You"}], " ", "should", " ", "have", " ", 
+     "\n", "received", " ", "a", " ", "copy", " ", "of", " ", "the", " ", 
+     "GNU", " ", "General", " ", "Public", " ", "License", " ", "along", " ", 
+     "with", " ", "this", " ", 
+     RowBox[{"program", ".", "\n", "If"}], " ", "not"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"see", " ", "<", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
+      "."}]}]}], "\n", "*)"}]], "Code",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6103707836964283`*^9, 3.610370783709448*^9}, {
+  3.610370828952024*^9, 3.610370962648698*^9}, {3.6103710877518406`*^9, 
+  3.610371111376195*^9}, {3.6103711469392376`*^9, 3.6103712828520317`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Begin Package", "Section",
+ CellChangeTimes->{{3.5914870039053636`*^9, 
+  3.591487004222381*^9}},ExpressionUUID->"09f8a0d7-89c9-43a0-8b39-\
+721e60c15083"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginPackage", "[", "\"\<GlobalVariables`\>\"", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"nq", "::", "usage"}], " ", "=", " ", 
+   "\"\<# of configuration variables\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"nx", "::", "usage"}], " ", "=", " ", 
+   "\"\<# of state variables; nx = 2nq\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"nc", "::", "usage"}], " ", "=", " ", 
+    "\"\<# of control/design parameters\>\""}], ";"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "configurations", ",", " ", "velocities", ",", " ", "accelerations", ",", 
+    " ", "state", ",", " ", 
+    RowBox[{"parameters", " ", "=", " ", "\[Lambda]"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[DoubleStruckQ]", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[DoubleStruckV]", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[DoubleStruckA]", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[DoubleStruckX]", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"state", "-", "time", "-", 
+    RowBox[{"control", " ", "parameters"}]}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[DoubleStruckC]", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"spatial", " ", "position"}], " ", "=", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "rx", ",", " ", "ry", ",", " ", "rz", ",", " ", "px", ",", " ", "py", 
+      ",", " ", "pz"}], "}"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[DoubleStruckB]", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Begin", "[", "\"\<Private`\>\"", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Unprotect", "[", "\[DoubleStruckB]", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Options", "[", "\[DoubleStruckB]", "]"}], " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"\"\<o\>\"", " ", "\[Rule]", " ", "Root"}], ",", " ", 
+     RowBox[{"\"\<a\>\"", " ", "\[Rule]", " ", "Root"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetAttributes", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\[DoubleStruckQ]", ",", " ", "\[DoubleStruckV]", ",", " ", 
+      "\[DoubleStruckA]", ",", " ", "\[DoubleStruckX]", ",", " ", 
+      "\[DoubleStruckC]", ",", " ", "\[DoubleStruckB]"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"Protected", ",", " ", "NHoldAll"}], "}"}]}], "]"}], 
+  ";"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.592290865938843*^9, 3.592290866173859*^9}, {
+   3.5923240589825273`*^9, 3.592324059334548*^9}, {3.7173717115807986`*^9, 
+   3.7173717524874687`*^9}, {3.717371813519357*^9, 3.7173718485197163`*^9}, {
+   3.7173718820200496`*^9, 3.7173719810054393`*^9}, {3.7173720131151433`*^9, 
+   3.717372014130781*^9}, {3.717372051443678*^9, 3.717372076553296*^9}, {
+   3.7173721748511963`*^9, 3.717372175273059*^9}, {3.717372217367241*^9, 
+   3.7173722335861588`*^9}, {3.717372263852104*^9, 3.7173722969930687`*^9}, {
+   3.7174059848678765`*^9, 3.7174059945554767`*^9}, {3.7175513687082057`*^9, 
+   3.717551414135401*^9}, {3.7175522003248*^9, 3.7175522009810457`*^9}, {
+   3.717552413748855*^9, 3.7175524143426113`*^9}, {3.7181972190257387`*^9, 
+   3.7181972232757797`*^9}, {3.7181993807541666`*^9, 3.718199403707507*^9}, {
+   3.7186369698726277`*^9, 3.718637012419924*^9}, 3.7186370669829617`*^9, {
+   3.718890477538039*^9, 3.718890477975545*^9}, {3.718890738384367*^9, 
+   3.718890757228305*^9}, {3.718890810806959*^9, 3.718890811119474*^9}, {
+   3.7188908541198864`*^9, 3.7188909168236437`*^9}, {3.718890977589856*^9, 
+   3.7188909911524906`*^9}, {3.7188910406842422`*^9, 3.718891056543764*^9}, {
+   3.71889108673156*^9, 3.7188910870596886`*^9}, 3.718895363168597*^9, 
+   3.7188954358893566`*^9, {3.718895476592901*^9, 3.7188954859679775`*^9}, {
+   3.718895551234247*^9, 3.7188955588124466`*^9}, {3.7188956818605394`*^9, 
+   3.718895682673046*^9}, 
+   3.71889641059486*^9},ExpressionUUID->"751af5ad-8043-4517-b9ef-\
+40132f72aa50"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Notes", "Section",
+ CellChangeTimes->{{3.5914870039053636`*^9, 3.591487004222381*^9}, {
+  3.717469605992861*^9, 
+  3.717469606430381*^9}},ExpressionUUID->"324c30f6-3207-4de7-84c0-\
+16bd3a57c981"],
+
+Cell["\<\
+\[DoubleStruckQ], \[DoubleStruckV], \[DoubleStruckA], \[DoubleStruckX], \
+\[DoubleStruckP], \[DoubleStruckB] are configurations, velocities, \
+accelerations, state, parameters = \[Lambda], and body locations in 6D space, \
+respectively.
+
+They are exported variables used as place holders to insert variables into a \
+function f[q, v, x, p, b].  The format is 
+
+* \[DoubleStruckQ][i, j], \[DoubleStruckV][i, j] where i is body i and j is \
+the jth dof of body i (pre-joint expansion), 
+
+* \[DoubleStruckX][k], where k is the kth degree-of-freedom of the system \
+post expansion, 
+
+* \[DoubleStruckC][k], where k is the kth parameter defined for the system, or 
+
+* \[DoubleStruckB][b, r, Xcb, \
+\[OpenCurlyDoubleQuote]o\[CloseCurlyDoubleQuote] -> o, \
+\[OpenCurlyDoubleQuote]a\[CloseCurlyDoubleQuote] -> a], where b is body b \
+(pre-joint expansion), r is a spatial row vector defining a constraint where \
+the (i, j) entry of the constraint Jacobian J is of the form J[i, j] = \
+r[i].X[i, j].s[j], Xcb is the transform from the origin of the body b to a \
+point c on the body b in the local frame b, and o is the frame the point c is \
+ultimately represented in (by default Root).  This variable is a wrapper \
+function for RBDSpatialPosition[...]; it accepts the same optional arguments, \
+including \[OpenCurlyDoubleQuote]o\[CloseCurlyDoubleQuote].
+
+Arg \[OpenCurlyDoubleQuote]a\[CloseCurlyDoubleQuote] is termination ancestor \
+node for body b.  e.g, only compute constraint up to ancestor a on path from \
+b to Root.\
+\>", "Text",
+ CellChangeTimes->{{3.7174696141491923`*^9, 3.717469632508758*^9}, {
+   3.7174696683685007`*^9, 3.7174697573850393`*^9}, {3.717548652736905*^9, 
+   3.7175487313627014`*^9}, {3.717548763909911*^9, 3.71754901473556*^9}, {
+   3.7175490476734*^9, 3.7175491968155565`*^9}, {3.7175492292690287`*^9, 
+   3.717549247144198*^9}, {3.7176450675377617`*^9, 3.717645159101119*^9}, {
+   3.7188332845661883`*^9, 3.7188333296135087`*^9}, 
+   3.7188910963410425`*^9},ExpressionUUID->"5642c603-3e0f-411e-8d27-\
+cee13adac8d9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["End Package", "Section",ExpressionUUID->"bd416742-0fca-4abf-9e40-9469cd9c9781"],
+
+Cell[BoxData[{
+ RowBox[{"End", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"EndPackage", "[", "]"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.59227983916838*^9, 3.592279842929595*^9}, {
+  3.5922799781203375`*^9, 3.5922799926971717`*^9}, {3.7175522116374226`*^9, 
+  3.71755221204366*^9}, {3.7176463353954782`*^9, 
+  3.717646336786103*^9}},ExpressionUUID->"7428c663-54a3-4c9a-9c81-\
+d2aa40d23b12"]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+WindowSize->{718, 718},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.1 for Microsoft Windows (64-bit) (April 18, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 2643, 53, 285, "Code", "ExpressionUUID" -> \
+"96f1530e-e5b4-45ee-9451-2118fe68c73c",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[3225, 77, 160, 3, 70, "Section", "ExpressionUUID" -> \
+"09f8a0d7-89c9-43a0-8b39-721e60c15083"],
+Cell[3388, 82, 4624, 107, 446, "Input", "ExpressionUUID" -> \
+"751af5ad-8043-4517-b9ef-40132f72aa50",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8049, 194, 201, 4, 70, "Section", "ExpressionUUID" -> \
+"324c30f6-3207-4de7-84c0-16bd3a57c981"],
+Cell[8253, 200, 2051, 39, 410, "Text", "ExpressionUUID" -> \
+"5642c603-3e0f-411e-8d27-cee13adac8d9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10341, 244, 85, 0, 70, "Section", "ExpressionUUID" -> \
+"bd416742-0fca-4abf-9e40-9469cd9c9781"],
+Cell[10429, 246, 415, 8, 66, "Input", "ExpressionUUID" -> \
+"7428c663-54a3-4c9a-9c81-d2aa40d23b12",
+ InitializationCell->True]
+}, Open  ]]
+}
+]
+*)
+

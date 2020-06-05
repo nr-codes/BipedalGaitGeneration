@@ -1,0 +1,23 @@
+<ul id="footer">
+  <li id="info">Loading Gaits...</li>
+
+  <li>
+    <ul>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="video-image-checkbox" checked>
+          <span class="toggle" slow="images" fast="video"></span>
+        </label>
+      </li>
+      <li id="images">
+        <input type="text" maxlength="3"
+          id="images-input" placeholder="# of frames">
+        <span class="tooltip" id="tooltip-text">use @n for n fps</span>
+      </li>
+      <li>
+        <button type="button" class="menu" id="save-button"
+          onclick="saveImages()">Save</button>
+      </li>
+    </ul>
+  </li>
+</ul>

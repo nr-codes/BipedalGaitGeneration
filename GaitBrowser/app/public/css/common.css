@@ -1,0 +1,110 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: Monospace;
+  margin: 0px;
+}
+
+:root {
+    --width: calc(320px / 3); /* width fits 3 buttons in 320 px phone */
+    --height: 50px; /* fits tallest text/looks nice */
+    --hover-color: #111;
+    --border-color: #222;
+    --background-color: #333;
+    --ui-background-color: #4caf50;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--background-color);
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+li {
+    background-color: inherit;
+}
+
+li button {
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+li button:hover {
+    border-color: var(--hover-color);
+    background-color: var(--hover-color);
+}
+
+li button.menu {
+    width: var(--width);
+}
+
+li.playback {
+    opacity: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+ul:hover li.playback {
+    opacity: 1;
+}
+
+li#info {
+    width: calc(3 * var(--width));
+
+    color: white;
+    font-size: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+li#images {
+    width: var(--width);
+    display: flex;
+    justify-content: center;
+}
+
+li input[type="text"] {
+    /* FYI: box height = line-height + 2 * padding + 2 * border */
+    width: 100%;
+    border: none;
+
+    font-size: 16px;
+    text-align: center;
+}
+
+div#container {
+    margin: 0;
+    padding: 1px;
+    min-width: var(--width);
+    min-height: var(--height);
+    height: calc(100vh - 2 * var(--height));
+}
+
+li button, label.switch, #slider-container, li#info, li#images {
+    height: var(--height);
+    padding: 3px;
+    border: 1px solid var(--border-color);
+}
+
+li button#play {
+    background-image: url('./playicon.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}

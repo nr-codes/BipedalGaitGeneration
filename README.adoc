@@ -70,7 +70,7 @@ implementation details of the biped models in Mathematica.
 * C compiler
   **  gcc 7.4.0 on Ubuntu 18.04
   **  Visual Studio 2017 on Windows 10
-* _[optional]_ link:https://github.com/szhorvat/MaTeX/releases/tag/v1.7.5[MaTeX v1.7.5]
+* link:https://github.com/szhorvat/MaTeX/releases/tag/v1.7.5[MaTeX v1.7.5]
 
 |===
 
@@ -178,7 +178,7 @@ implementation details of the biped models in Mathematica and a gait animation
 library in Node.js for animating and creating video clips of generated gaits in
 a web browser.
 
-| SIZE: | 158.2 MB
+| SIZE: | 162.9 MB
 
 | PLATFORM: a| 
 .All platforms supporting

@@ -32,7 +32,7 @@ written in Node.js that supplement the results in our paper:
 - [[[inprep, 1]]] N. Rosa and K. Lynch, "A Topological Approach to Gait Generation for Biped
 Robots", Manuscript in Preparation.
 
-*TOTAL SIZE*: 332.6 MB
+*TOTAL SIZE*: 202.3 MB
 
 == Playable Media
 
@@ -178,7 +178,7 @@ implementation details of the biped models in Mathematica and a gait animation
 library in Node.js for animating and creating video clips of generated gaits in
 a web browser.
 
-| SIZE: | 162.9 MB
+| SIZE: | 161 MB
 
 | PLATFORM: a| 
 .All platforms supporting

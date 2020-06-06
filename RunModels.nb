@@ -1,0 +1,337 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13495,        329]
+NotebookOptionsPosition[     11785,        289]
+NotebookOutlinePosition[     12147,        305]
+CellTagsIndexPosition[     12104,        302]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["README",
+  FontWeight->"Bold"],
+ ": \n\nThis notebook will open and evaluate the Main.nb or Outputs.nb \
+notebook of a biped model in Models/.  The interface is straightforward: \
+click a button to run the corresponding notebook.  Once a notebook is \
+running, we recommend waiting until all evaluations are done before running \
+another notebook.\n\nIn order to successfully run an Outputs.nb notebook, you \
+will need an additional Mathematica package, MaTeX:\n\n\t\
+http://szhorvat.net/pelican/latex-typesetting-in-mathematica.html\n\nThis \
+package is used to produce the labels and tick marks of various plots used in \
+the paper.  You can install the package yourself or use this notebook to \
+download and install MaTeX v1.7.5 for you (this is the default behaviour).  \
+While most version of MaTeX should work, here is our test configuration: \
+Mathematica v11.3.0 and MaTeX v1.7.5."
+}], "Text",
+ CellChangeTimes->{{3.8004129933628683`*^9, 3.800413107203877*^9}, {
+  3.800413155747007*^9, 3.800413162056156*^9}, {3.8004145088334312`*^9, 
+  3.800414515924715*^9}, {3.800440995127928*^9, 3.8004409954274273`*^9}, {
+  3.800442918429088*^9, 3.8004429916159687`*^9}, {3.8004463694337378`*^9, 
+  3.800446491359387*^9}, {3.800446674578692*^9, 3.800446887691472*^9}, {
+  3.8004469935194187`*^9, 3.800447013146346*^9}, {3.800448027064847*^9, 
+  3.800448132623275*^9}, {3.800448236954485*^9, 3.8004482824429913`*^9}, {
+  3.8004483838991613`*^9, 3.8004484178947573`*^9}, {3.8004487975673103`*^9, 
+  3.80044879952089*^9}, {3.800455638197657*^9, 
+  3.800455661680331*^9}},ExpressionUUID->"208881fe-a15e-425e-8067-\
+8047a2e18324"],
+
+Cell[CellGroupData[{
+
+Cell["Helpers", "Chapter",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 
+  3.800448720465178*^9}},ExpressionUUID->"9543112e-3900-4b14-9b9d-\
+0a1b5a67ff59"],
+
+Cell[CellGroupData[{
+
+Cell["Automatically Download and Install MaTeX", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800440878538793*^9, 3.800440886233654*^9}, {3.80044281235909*^9, 
+  3.800442813490698*^9}, {3.8004469327272*^9, 
+  3.80044693440282*^9}},ExpressionUUID->"94ac889d-6daf-418b-8293-\
+bff35bbb5faa"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"InstallMaTeXAutomatically", " ", "=", " ", "True"}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"set", " ", "to", " ", "False"}], ",", " ", 
+    RowBox[{"if", " ", 
+     RowBox[{"you", "'"}], "d", " ", "rather", " ", "install"}]}], " ", 
+   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{"InstallMaTeXAutomatically", " ", "&&", " ", 
+     RowBox[{
+      RowBox[{"PacletFind", "[", 
+       RowBox[{"{", 
+        RowBox[{"\"\<MaTeX\>\"", ",", " ", "\"\<1.7.5\>\""}], "}"}], "]"}], 
+      " ", "===", " ", 
+      RowBox[{"{", "}"}]}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+    "PacletInstall", "[", 
+     "\"\<https://github.com/szhorvat/MaTeX/releases/download/v1.7.5/MaTeX-1.\
+7.5.paclet\>\"", "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]",
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"To", " ", "uninstall", " ", "MaTeX"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"PacletUninstall", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<MaTeX\>\"", ",", " ", "\"\<1.7.5\>\""}], "}"}], "]"}], " ", 
+   "*)"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.800439905795755*^9, 3.800439928362805*^9}, {
+  3.800439977827285*^9, 3.80044000886115*^9}, {3.800441947895706*^9, 
+  3.800441955759933*^9}, {3.800447081924754*^9, 3.800447120079845*^9}, {
+  3.800448495400956*^9, 3.800448517428022*^9}, {3.80044857157444*^9, 
+  3.800448591357822*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"59c9816d-ab97-4115-9c3f-e20c4367ec34"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Open and Run a Notebook", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800440878538793*^9, 3.800440886233654*^9}, {3.80044281235909*^9, 
+  3.800442813490698*^9}, {3.8004469327272*^9, 3.80044693440282*^9}, {
+  3.800448538321558*^9, 
+  3.800448556905437*^9}},ExpressionUUID->"248c43ea-4f43-4e23-8dcc-\
+f8ab40d52b20"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"RunNotebook", "[", "main_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "nb", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"nb", "=", 
+       RowBox[{"NotebookOpen", "[", "main", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"SelectionMove", "[", 
+       RowBox[{"nb", ",", " ", "All", ",", " ", "Notebook", ",", " ", 
+        RowBox[{"AutoScroll", " ", "\[Rule]", " ", "False"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"SelectionEvaluate", "[", "nb", "]"}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.800439905795755*^9, 3.800439928362805*^9}, {
+   3.800439977827285*^9, 3.80044000886115*^9}, {3.800441947895706*^9, 
+   3.800441955759933*^9}, {3.800447081924754*^9, 3.800447120079845*^9}, {
+   3.800448495400956*^9, 3.800448517428022*^9}, 
+   3.8004692615415277`*^9},ExpressionUUID->"50cb5442-32d8-452d-a08f-\
+c3ef43a322ea"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generate Gaits from Equilibria", "Chapter",
+ CellChangeTimes->{{3.800439748176668*^9, 
+  3.800439771627075*^9}},ExpressionUUID->"b23baaaa-81b9-4add-8dd0-\
+76bd6df67011"],
+
+Cell["\<\
+Click on a button (after cell evaluation) to open and evaluate a biped model \
+in the Models/ directory.   If you want to learn more about a model, open the \
+model\[CloseCurlyQuote]s directory and explore its content.\
+\>", "Text",
+ CellChangeTimes->{{3.8004129933628683`*^9, 3.800413107203877*^9}, {
+   3.800413155747007*^9, 3.800413162056156*^9}, {3.8004145088334312`*^9, 
+   3.800414515924715*^9}, 3.80044085226438*^9, {3.800448740067665*^9, 
+   3.800448766464707*^9}},ExpressionUUID->"8bbcb5f2-57fb-40c5-86a7-\
+b91cf1f94fa9"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"path", " ", "to", " ", 
+    RowBox[{"Main", ".", "nb"}], " ", "files", " ", "in", " ", 
+    RowBox[{"Models", "/"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"mains", " ", "=", " ", 
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<*/*/Main.nb\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Grid", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Button", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"FileNameTake", "[", 
+                RowBox[{"#", ",", " ", 
+                 RowBox[{"-", "3"}]}], "]"}], ",", " ", "Large"}], "]"}], ",",
+              " ", 
+             RowBox[{"RunNotebook", "[", "#", "]"}]}], "]"}], "&"}], " ", "/@",
+           " ", "mains"}], "}"}], "\[Transpose]"}], ",", " ", 
+       RowBox[{"Dividers", "\[Rule]", "All"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Alignment", "\[Rule]", "Center"}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.8004126277430353`*^9, {3.800412667327854*^9, 3.8004127472991753`*^9}, 
+   3.800412941938079*^9, {3.8004131101927023`*^9, 3.8004131103029537`*^9}, {
+   3.8004131724089003`*^9, 3.800413214924547*^9}, {3.800413258691574*^9, 
+   3.8004132616796227`*^9}, {3.800439782075222*^9, 3.8004397825470877`*^9}, {
+   3.8004399315651817`*^9, 3.800439937341341*^9}, {3.800441950425953*^9, 
+   3.8004419519730797`*^9}, 
+   3.800469257722364*^9},ExpressionUUID->"8fca7c51-65b5-4d6e-b676-\
+4c04bb82a084"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Generate Outputs (plots, JSON, images)", "Chapter",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+   3.800440878538793*^9, 3.800440886233654*^9}, {3.800440932535342*^9, 
+   3.800440933409541*^9}, 
+   3.800442784858654*^9},ExpressionUUID->"2920cc63-4bcf-4401-aac9-\
+9b0184160e6e"],
+
+Cell[CellGroupData[{
+
+Cell["Generate Outputs (plots, JSON, images)", "Section",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.8004398158975687`*^9, 3.800439816762885*^9}, {3.800440955145647*^9, 
+  3.8004409689550867`*^9}},ExpressionUUID->"d04404b6-945a-4ae7-ab95-\
+8371a3652caf"],
+
+Cell["\<\
+Click on a button (after cell evaluation) to open and evaluate a biped model \
+in the Models/ directory.   If you want to learn more about a model, open the \
+model\[CloseCurlyQuote]s directory and explore its content.\
+\>", "Text",
+ CellChangeTimes->{{3.8004129933628683`*^9, 3.800413107203877*^9}, {
+   3.800413155747007*^9, 3.800413162056156*^9}, {3.8004145088334312`*^9, 
+   3.800414515924715*^9}, 3.80044085226438*^9, {3.80044874916644*^9, 
+   3.8004487723564367`*^9}},ExpressionUUID->"6dbc21b8-91eb-45b5-95ed-\
+88fdc7b7875c"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"path", " ", "to", " ", 
+    RowBox[{"Outputs", ".", "nb"}], " ", "files", " ", "in", " ", 
+    RowBox[{"Models", "/"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"outs", " ", "=", " ", 
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<*/*/Outputs.nb\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Grid", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"Button", "[", 
+            RowBox[{
+             RowBox[{"Style", "[", 
+              RowBox[{
+               RowBox[{"FileNameTake", "[", 
+                RowBox[{"#", ",", " ", 
+                 RowBox[{"-", "3"}]}], "]"}], ",", " ", "Large"}], "]"}], ",",
+              " ", 
+             RowBox[{"RunNotebook", "[", "#", "]"}]}], "]"}], "&"}], " ", "/@",
+           " ", "outs"}], "}"}], "\[Transpose]"}], ",", " ", 
+       RowBox[{"Dividers", "\[Rule]", "All"}]}], "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Alignment", "\[Rule]", "Center"}]}], "\[IndentingNewLine]", 
+    "]"}]}]}]], "Input",
+ CellChangeTimes->{
+  3.8004126277430353`*^9, {3.800412667327854*^9, 3.8004127472991753`*^9}, 
+   3.800412941938079*^9, {3.8004131101927023`*^9, 3.8004131103029537`*^9}, {
+   3.8004131724089003`*^9, 3.800413214924547*^9}, {3.800413258691574*^9, 
+   3.8004132616796227`*^9}, {3.800439782075222*^9, 3.8004397825470877`*^9}, {
+   3.8004398728866158`*^9, 3.80043987369163*^9}, {3.8004399403936567`*^9, 
+   3.8004399437258167`*^9}, {3.8004419632822313`*^9, 3.8004419643243227`*^9}, 
+   3.800469257728053*^9},ExpressionUUID->"d0663111-109d-4f32-9ed1-\
+af1f8d960166"]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{1373, 1505},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1651, 26, 652, "Text",ExpressionUUID->"208881fe-a15e-425e-8067-8047a2e18324"],
+Cell[CellGroupData[{
+Cell[2234, 50, 297, 5, 102, "Chapter",ExpressionUUID->"9543112e-3900-4b14-9b9d-0a1b5a67ff59"],
+Cell[CellGroupData[{
+Cell[2556, 59, 328, 5, 74, "Subsection",ExpressionUUID->"94ac889d-6daf-418b-8293-bff35bbb5faa"],
+Cell[2887, 66, 1633, 40, 382, "Input",ExpressionUUID->"59c9816d-ab97-4115-9c3f-e20c4367ec34",
+ InitializationCell->True]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4557, 111, 360, 6, 74, "Subsection",ExpressionUUID->"248c43ea-4f43-4e23-8dcc-f8ab40d52b20"],
+Cell[4920, 119, 1031, 23, 222, "Input",ExpressionUUID->"50cb5442-32d8-452d-a08f-c3ef43a322ea",
+ InitializationCell->True]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6000, 148, 175, 3, 102, "Chapter",ExpressionUUID->"b23baaaa-81b9-4add-8dd0-76bd6df67011"],
+Cell[6178, 153, 540, 9, 92, "Text",ExpressionUUID->"8bbcb5f2-57fb-40c5-86a7-b91cf1f94fa9"],
+Cell[6721, 164, 1892, 45, 366, "Input",ExpressionUUID->"8fca7c51-65b5-4d6e-b676-4c04bb82a084"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8650, 214, 306, 5, 102, "Chapter",ExpressionUUID->"2920cc63-4bcf-4401-aac9-9b0184160e6e"],
+Cell[CellGroupData[{
+Cell[8981, 223, 282, 4, 95, "Section",ExpressionUUID->"d04404b6-945a-4ae7-ab95-8371a3652caf"],
+Cell[9266, 229, 541, 9, 92, "Text",ExpressionUUID->"6dbc21b8-91eb-45b5-95ed-88fdc7b7875c"],
+Cell[9810, 240, 1947, 45, 366, "Input",ExpressionUUID->"d0663111-109d-4f32-9ed1-af1f8d960166"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

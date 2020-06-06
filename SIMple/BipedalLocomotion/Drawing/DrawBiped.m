@@ -879,6 +879,7 @@ BLSingularPointQ[C_, OptionsPattern[]] := Module[{N, m0, c0, h},
 m0 = BLbiped["m[0]"];
 c0 = C[[1]];
 h = C[[3]];
+(* requires Jacobian to exist *)
 N = NullSpace[OptionValue["P"][c0][[2]], Tolerance->OptionValue["nstol"]];
 Length@N > Length@h
 ];

@@ -67,7 +67,7 @@ implementation details of the biped models in Mathematica.
 
 | ENVIRONMENT: a|
 .Test configuration
-* Mathematica v11.0.3
+* Mathematica v11.3.0
 * C compiler
   **  gcc 7.4.0 on Ubuntu 18.04
   **  Visual Studio 2017 on Windows 10
@@ -78,7 +78,7 @@ implementation details of the biped models in Mathematica.
 === Detailed Set-up Instructions
 
 . Install Mathematica
-. In Mathematica, configure a C compiler (e.g., Visual Studio 2017, gcc 7.4.0, etc.)
+. In Mathematica, configure a C compiler (e.g., Visual Studio, gcc, etc.)
 . _[optional]_ To compute the plots in the paper, install {matex}
 
 IMPORTANT: You must make sure you can compile code from Mathematica to C otherwise
@@ -105,7 +105,7 @@ code for the compass gait)
 
 === Output Description
 
-While running a Main.nb file in a particular biped model's folder in {models},
+While running a Main.nb file in a particular model folder in {models},
 the expected output is to see animations of an example walking gait in certain
 output cells of the notebook.  For example, after executing all cells
 sequentially in {cgw_main}, six (6) of the output cells will show animations of

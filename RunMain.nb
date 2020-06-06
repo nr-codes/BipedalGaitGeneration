@@ -1,0 +1,242 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7761,        234]
+NotebookOptionsPosition[      7197,        215]
+NotebookOutlinePosition[      7559,        231]
+CellTagsIndexPosition[      7516,        228]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["README",
+  FontWeight->"Bold"],
+ ": Click on a button to open and evaluate a biped model in the Models/ \
+directory.   If you want to learn more about a model, open the model\
+\[CloseCurlyQuote]s directory and explore its content."
+}], "Text",
+ CellChangeTimes->{{3.8004129933628683`*^9, 3.800413107203877*^9}, {
+  3.800413155747007*^9, 
+  3.800413162056156*^9}},ExpressionUUID->"208881fe-a15e-425e-8067-\
+8047a2e18324"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"RunMain", "[", "main_", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "nb", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"nb", "=", 
+        RowBox[{"NotebookOpen", "[", "main", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"SelectionMove", "[", 
+        RowBox[{"nb", ",", " ", "All", ",", " ", "Notebook", ",", " ", 
+         RowBox[{"AutoScroll", " ", "\[Rule]", " ", "False"}]}], "]"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"SelectionEvaluate", "[", "nb", "]"}], ";"}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"nbs", " ", "=", " ", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"\"\<*/*/Main.nb\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Panel", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Grid", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Button", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"FileNameTake", "[", 
+              RowBox[{"#", ",", " ", 
+               RowBox[{"-", "3"}]}], "]"}], ",", " ", "Large"}], "]"}], ",", 
+           " ", 
+           RowBox[{"RunMain", "[", "#", "]"}]}], "]"}], "&"}], " ", "/@", " ",
+         "nbs"}], "}"}], "\[Transpose]"}], ",", " ", 
+     RowBox[{"Dividers", "\[Rule]", "All"}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ImageSize", "\[Rule]", "Full"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Alignment", "\[Rule]", "Center"}]}], "\[IndentingNewLine]", 
+  "]"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{
+  3.8004126277430353`*^9, {3.800412667327854*^9, 3.8004127472991753`*^9}, 
+   3.800412941938079*^9, {3.8004131101927023`*^9, 3.8004131103029537`*^9}, {
+   3.8004131724089003`*^9, 3.800413214924547*^9}, {3.800413258691574*^9, 
+   3.8004132616796227`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"8fca7c51-65b5-4d6e-b676-4c04bb82a084"],
+
+Cell[BoxData[
+ PanelBox[
+  TagBox[GridBox[{
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/Atlas/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/Atlas/Main.\
+nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/CompassGait/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/CompassGait/\
+Main.nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/CompassGaitWithTorso/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/\
+CompassGaitWithTorso/Main.nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/CurvedFeet/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/CurvedFeet/\
+Main.nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/FiveLink3D/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/FiveLink3D/\
+Main.nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/Gibbot/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/Gibbot/Main.\
+nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/HumanWalker/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/HumanWalker/\
+Main.nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/KneedWalker/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/KneedWalker/\
+Main.nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/Marlo/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/Marlo/Main.\
+nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]},
+     {
+      ButtonBox[
+       StyleBox["\<\"Models/Rabbit/Main.nb\"\>",
+        StripOnInput->False,
+        FontSize->Large],
+       Appearance->Automatic,
+       ButtonFunction:>$CellContext`RunMain[
+        "/home/nr/Documents/Tex/BipedalGaitGeneration/Repo/Models/Rabbit/Main.\
+nb"],
+       Evaluator->Automatic,
+       Method->"Preemptive"]}
+    },
+    AutoDelete->False,
+    GridBoxDividers->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Grid"],
+  Alignment->Center,
+  ImageSize->Full]], "Output",
+ CellChangeTimes->{3.800413353480466*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"cafe5a8d-c346-4d16-a94f-0415c3573508"]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{2746, 1509},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 447, 10, 92, "Text",ExpressionUUID->"208881fe-a15e-425e-8067-8047a2e18324"],
+Cell[CellGroupData[{
+Cell[1030, 34, 2189, 55, 582, "Input",ExpressionUUID->"8fca7c51-65b5-4d6e-b676-4c04bb82a084",
+ InitializationCell->True],
+Cell[3222, 91, 3959, 121, 702, "Output",ExpressionUUID->"cafe5a8d-c346-4d16-a94f-0415c3573508"]
+}, Open  ]]
+}
+]
+*)
+

@@ -8,6 +8,7 @@ v0.0 June 04, 2020
 
 :src: link:./
 :code: {src}/[./]
+:launcher: {src}/RunMain.nb[./RunMain.nb]
 :models: {src}/Models[Models/]
 :simple: {src}/SIMple[SIMple/]
 :bipeds: {src}/GaitBrowser[GaitBrowser/]
@@ -90,12 +91,15 @@ information, see <<#nodejs-dataset>>.
 
 === Detailed Run Instructions
 
-.To generate gaits from equilibria:
+.To generate gaits from equilibria for various biped models:
+. Open {launcher} and click a model as represented by the button in the
+notebook
+
+.To learn more about a particular model:
 . Go to {models} and select a model/folder (e.g., {cgw})
 
 . Open Main.nb (e.g., {cgw_main}) and evaluate cells in order of appearance
 
-.To learn more about a particular model:
 . Browse other files in the subfolder (e.g., {cgw_model} contains the modeling
 code for the compass gait)
 
@@ -156,12 +160,18 @@ future sessions.
 NOTE: When compiling a model in Mathematica, the PreprocessConstraints warnings
 can be ignored.
 
-Finally, the {simple} folder contains an implementation of our framework.  The
+The {simple} folder contains an implementation of our framework.  The
 code in this folder is part of a larger effort to create a fast and expressive
 rigid body dynamics' library.  We do not cover the files in depth except to
 point out that {continuation} is where our numerical continuation library is
 stored and {locomotion} is where many of the helper functions are defined for
 the bipeds in the {models} folder.
+
+
+Finally, {bipeds_imgs} and {figures} are directories for the various
+images the notebooks read and write, respectively.  {bipeds_json} is where
+JSON files are placed.
+
 
 [#nodejs-dataset]
 == Node.js Dataset

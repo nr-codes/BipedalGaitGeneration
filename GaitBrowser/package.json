@@ -6,7 +6,8 @@
   "scripts": {
     "app": "node app/index.js",
     "build": "webpack",
-    "pkg": "npx pkg package.json",
+    "pkg": "npx pkg -t host --out-path exe package.json",
+    "pkg-all": "npx pkg --out-path exe package.json",
     "watch": "webpack --watch",
     "start": "./GaitBrowser"
   },
@@ -15,7 +16,9 @@
   "bin": "app/index.js",
   "pkg": {
     "targets": [
-      "node12"
+      "node12-linux-x64",
+      "node12-win-x64",
+      "node12-macos-x64"
     ],
     "assets": [
       "app/views/*",

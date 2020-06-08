@@ -1,0 +1,889 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     38669,        881]
+NotebookOptionsPosition[     33898,        791]
+NotebookOutlinePosition[     34260,        807]
+CellTagsIndexPosition[     34217,        804]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["README",
+  FontWeight->"Bold"],
+ ": This notebook contains instructions on required and optional installs for \
+the Mathematica gait generation library to work.  The only requirement is to \
+setup a backend C compiler for Mathematica.  If you want to recreate the \
+plots in the paper, then install MaTeX in the Optional Installations section. \
+ If you want to run animations of the gaits in your browser, view fancier 3D \
+rendered models, or save images and video clips, then install the GaitBrowser \
+web app following the instructions in the Optional Installations section.\n\n\
+An active Internet connection is required for certain sections."
+}], "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQPW+Odsa2gDeOmm1pZSC6+nl5DYjmOONYC6IrVs9S
+3Q6kXabXqoHoP+IpIkeAdM3aXDAtvvssy1EgzbLtMy+I1nuou+UYkJZsyD4M
+ope2BN0C0V0K376AaJH5BkzHgfS9dUtYQLSVcFIzmP9x8gQQrdI9by6I/qPj
+txhEvzv6Zz2IvrXQZguIzlDf9BhEK63+AKZNg49ZnQbSbke32oJopcvLf5wD
+0kWHdoNppZi+fyD6l0w683kg/SzzCx+ILjAR4gfR53ReJTMGvnHcNvdjOohe
+o22WC6J9Vtnmg+gpNzyKQbSjZRaYFph6QZUZSDfxthuA6GvXPKJB9IO0l5Ug
+GgDftKul
+  "],ExpressionUUID->"208881fe-a15e-425e-8067-8047a2e18324"],
+
+Cell[CellGroupData[{
+
+Cell["Required Installation", "Chapter",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 3.80046341677206*^9}, {3.8005643189555807`*^9, 
+  3.80056432164357*^9}, {3.800566689113338*^9, 3.800566689356538*^9}, {
+  3.80056792050982*^9, 3.800567924836855*^9}, {3.80057009721497*^9, 
+  3.800570104673183*^9}, {3.8005706534785757`*^9, 
+  3.800570654987544*^9}},ExpressionUUID->"17289f75-6575-4812-9174-\
+4a5dbf2f8143"],
+
+Cell[CellGroupData[{
+
+Cell["Install C Compiler", "Section",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 3.80046341677206*^9}, {3.8005643189555807`*^9, 
+  3.80056432164357*^9}, {3.800566689113338*^9, 3.800566689356538*^9}, {
+  3.800570258734392*^9, 
+  3.80057025944952*^9}},ExpressionUUID->"55c6279d-9c24-46b1-bfed-\
+e59f51825574"],
+
+Cell["\<\
+If you have a C compiler installed, go to the next step!  Otherwise, \
+installing a C compiler is platform specific, so we recommend an online \
+search for Mathematica-approved compilers and instructions on how to install \
+one on your particular machine.  A good place to start is with Mathematica\
+\[CloseCurlyQuote]s Specific Compilers tutorial.\
+\>", "Text",
+ CellChangeTimes->{{3.800565559306644*^9, 3.8005655707080307`*^9}, {
+   3.8005658123978567`*^9, 3.800565870531788*^9}, {3.800566078409905*^9, 
+   3.800566100073045*^9}, {3.8005666991201077`*^9, 3.800566703555567*^9}, 
+   3.80056700585708*^9, {3.800570266459281*^9, 3.800570331654237*^9}, {
+   3.800570368831443*^9, 
+   3.800570459997541*^9}},ExpressionUUID->"8f70f329-a092-4b50-b4f0-\
+26491da5bed0"],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", 
+  "\"\<paclet:CCompilerDriver/tutorial/SpecificCompilers\>\"", "]"}]], "Input",\
+
+ CellChangeTimes->{{3.8005697224265738`*^9, 3.8005697557240458`*^9}},
+ CellLabel->
+  "In[150]:=",ExpressionUUID->"aab44116-8f66-4a79-8d6f-2f5c0579ae27"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setup a C Compiler", "Section",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 3.80046341677206*^9}, {3.8005643189555807`*^9, 
+  3.80056432164357*^9}, {3.800566689113338*^9, 
+  3.800566689356538*^9}},ExpressionUUID->"5b35cfbd-d96b-442f-a5b0-\
+8d4fe02eca22"],
+
+Cell["\<\
+Mathematica make it relatively easy to setup a C compiler as a backend.  \
+Evaluate the next cell to see if Mathematica has detected an existing \
+compiler on your system that it supports.\
+\>", "Text",
+ CellChangeTimes->{{3.800565559306644*^9, 3.8005655707080307`*^9}, {
+   3.8005658123978567`*^9, 3.800565870531788*^9}, {3.800566078409905*^9, 
+   3.800566100073045*^9}, {3.8005666991201077`*^9, 3.800566703555567*^9}, 
+   3.80056700585708*^9},ExpressionUUID->"09b715c8-724e-4de4-9167-\
+ea41213d3653"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Needs", "[", "\"\<CCompilerDriver`\>\"", "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "list", " ", "of", " ", "all", " ", "detected", " ", "compilers", " ", 
+    "on", " ", "your", " ", "system"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+
+ RowBox[{
+  RowBox[{"Labeled", "[", 
+   RowBox[{
+    RowBox[{"TableForm", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Name\>\"", ",", " ", "\"\<Compiler\>\"", ",", " ", 
+         "\"\<CompilerInstallation\>\""}], "}"}], " ", "/.", " ", 
+       RowBox[{"CCompilers", "[", "]"}]}], ",", " ", 
+      RowBox[{"TableHeadings", "\[Rule]", " ", 
+       RowBox[{"{", 
+        RowBox[{"None", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<Name\>\"", ",", " ", "\"\<Driver\>\"", ",", " ", 
+           "\"\<Location\>\""}], "}"}]}], "}"}]}], ",", " ", 
+      RowBox[{"TableAlignments", "\[Rule]", " ", "Center"}]}], "]"}], ",", 
+    " ", "\"\<All Detected Compilers\>\"", ",", " ", "Top"}], "]"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"compiler", " ", "in", " ", "use"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+    RowBox[{"Style", "[", 
+     RowBox[{"\"\<The active compiler in use is: \>\"", ",", " ", "Blue"}], 
+     "]"}], ",", " ", 
+    RowBox[{"DefaultCCompiler", "[", "]"}]}], "]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"compile", " ", "a", " ", "snippet", " ", "of", " ", "code"}], " ",
+    "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{"cf", "=", " ", 
+  RowBox[{"Compile", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", " ", "_Real"}], "}"}], "}"}], ",", " ", 
+    RowBox[{
+     RowBox[{"Sin", "[", "x", "]"}], " ", "+", " ", 
+     RowBox[{"x", "^", "2"}], " ", "-", " ", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", "x"}], ")"}]}]}], ",", " ", 
+    RowBox[{"CompilationTarget", "\[Rule]", "\"\<C\>\""}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{
+   RowBox[{"Style", "[", 
+    RowBox[{
+    "\"\<The result of the compiled code is: \>\"", ",", " ", "Blue"}], "]"}],
+    ",", " ", 
+   RowBox[{"cf", "[", "0", "]"}]}], "]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.800565448654735*^9, 3.8005654750747833`*^9}, {
+  3.80056588050961*^9, 3.800565899079137*^9}, {3.800565951727804*^9, 
+  3.8005659825301456`*^9}, {3.800566039033853*^9, 3.8005660449473877`*^9}, {
+  3.800566710413937*^9, 3.8005667339026823`*^9}, {3.800567039643371*^9, 
+  3.800567090767461*^9}, {3.8005672730555277`*^9, 3.800567393422748*^9}, {
+  3.800567436864325*^9, 3.800567571426097*^9}, {3.800567627877377*^9, 
+  3.800567697402079*^9}, {3.800567737344109*^9, 3.80056781432835*^9}},
+ CellLabel->
+  "In[151]:=",ExpressionUUID->"e067aba0-e9f9-4378-8933-60f954376544"],
+
+Cell[CellGroupData[{
+
+Cell["Success?", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 3.80046341677206*^9}, {3.8005643189555807`*^9, 
+  3.80056432164357*^9}, {3.800566689113338*^9, 3.800566689356538*^9}, {
+  3.8005680381512136`*^9, 3.8005680402644997`*^9}, {3.8005680883657303`*^9, 
+  3.800568089375716*^9}},ExpressionUUID->"868ecf43-2863-4b7d-b89e-\
+443107e827d2"],
+
+Cell["\<\
+You should see no error messages with the result of the compiled function \
+being -1.  You can now explore the different models with ./RunModels.nb or \
+running Main.nb for a particular model in Models/[Model Name]/Main.nb.\
+\>", "Text",
+ CellChangeTimes->{{3.800565559306644*^9, 3.8005655707080307`*^9}, {
+   3.8005658123978567`*^9, 3.800565870531788*^9}, {3.800566078409905*^9, 
+   3.800566210419345*^9}, {3.8005664641014547`*^9, 3.800566544773093*^9}, 
+   3.800567859202372*^9, {3.8005679837156763`*^9, 3.800568012818102*^9}, {
+   3.800568043890435*^9, 3.800568053261794*^9}, {3.8005680963038187`*^9, 
+   3.800568231610922*^9}, {3.8005683025918217`*^9, 3.800568383019525*^9}, {
+   3.8005705199520617`*^9, 
+   3.800570520251081*^9}},ExpressionUUID->"786dbe92-1693-49d3-9620-\
+03c7f2823332"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"NotebookOpen", "[", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<RunModels.nb\>\""}], "}"}], "]"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.800568242028431*^9, 3.800568289087556*^9}},
+ CellLabel->
+  "In[139]:=",ExpressionUUID->"867c93ae-79af-4ba5-9161-1ed0b0b5ce48"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["No luck?", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 3.80046341677206*^9}, {3.8005643189555807`*^9, 
+  3.80056432164357*^9}, {3.800566689113338*^9, 3.800566689356538*^9}, {
+  3.8005680381512136`*^9, 
+  3.8005680402644997`*^9}},ExpressionUUID->"8ce7acf6-f055-4df7-bd97-\
+ea5ffa24d439"],
+
+Cell[TextData[{
+ "A good place to start is with Mathematica\[CloseCurlyQuote]s documentation \
+on compatible compilers:  ",
+ Cell[BoxData[
+  TemplateBox[{
+   "\"paclet:CCompilerDriver/tutorial/SpecificCompilers\"",
+    "paclet:CCompilerDriver/tutorial/SpecificCompilers"},
+   "HyperlinkPaclet"]], "Output",
+  CellChangeTimes->{3.800566128761879*^9},ExpressionUUID->
+  "928f7c94-53f3-4748-a1db-54c7c611c097"],
+ ".  Otherwise check online for help.  The Mathematica StackExchange is a \
+good resource: ",
+ Cell[BoxData[
+  TemplateBox[{
+   "\"https://mathematica.stackexchange.com/\"",
+    "https://mathematica.stackexchange.com/"},
+   "HyperlinkURL"]], "Output",
+  CellChangeTimes->{3.800566492716957*^9},ExpressionUUID->
+  "44fd9e52-4af5-4977-9929-cd3144a4e222"],
+ ".  After installing a compiler, make sure to restart Mathematica, so it can \
+detect the recent changes."
+}], "Text",
+ CellChangeTimes->{{3.800565559306644*^9, 3.8005655707080307`*^9}, {
+   3.8005658123978567`*^9, 3.800565870531788*^9}, {3.800566078409905*^9, 
+   3.800566210419345*^9}, {3.8005664641014547`*^9, 3.800566544773093*^9}, 
+   3.800567859202372*^9, {3.8005679837156763`*^9, 3.800568012818102*^9}, {
+   3.800568043890435*^9, 3.800568053261794*^9}, {3.8005697848688297`*^9, 
+   3.8005698002346573`*^9}},ExpressionUUID->"be5bf419-4541-40ce-a764-\
+3d732d450101"],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", 
+  "\"\<paclet:CCompilerDriver/tutorial/SpecificCompilers\>\"", "]"}]], "Input",\
+
+ CellChangeTimes->{{3.8005697224265738`*^9, 3.8005697557240458`*^9}},
+ CellLabel->
+  "In[150]:=",ExpressionUUID->"6fc2c1fe-8500-485c-ad40-03133c7b7f64"],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", "\"\<https://mathematica.stackexchange.com/\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.800569763476355*^9, 
+  3.800569774728079*^9}},ExpressionUUID->"36892cdb-f10b-4475-a2b8-\
+5fb683c47f66"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Optional Installations", "Chapter",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 3.80046341677206*^9}, {3.8005643189555807`*^9, 
+  3.80056432164357*^9}, {3.800566689113338*^9, 3.800566689356538*^9}, {
+  3.80056792050982*^9, 3.8005679570036383`*^9}, {3.8005701089857407`*^9, 
+  3.800570110893804*^9}, {3.800570658940824*^9, 
+  3.800570660107689*^9}},ExpressionUUID->"8454c41d-fd74-4e45-b517-\
+9d08d1e69ec5"],
+
+Cell[CellGroupData[{
+
+Cell["Install MaTeX", "Section",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.80044871706297*^9, 3.800448720465178*^9}, {
+  3.800463413011026*^9, 
+  3.80046341677206*^9}},ExpressionUUID->"9543112e-3900-4b14-9b9d-\
+0a1b5a67ff59"],
+
+Cell["\<\
+In order to successfully run an Outputs.nb notebook (./Models/*/Outputs.nb), \
+you will need an additional Mathematica package, MaTeX:
+
+\thttp://szhorvat.net/pelican/latex-typesetting-in-mathematica.html
+
+This package is used to produce the labels and tick marks of various plots \
+used in the paper.  You can install the package yourself or use this notebook \
+to download and install MaTeX v1.7.5 for you (this is the default behaviour). \
+ While most version of MaTeX should work, here is our test configuration: \
+Mathematica v11.3.0 and MaTeX v1.7.5.\
+\>", "Text",
+ CellChangeTimes->{{3.8004129933628683`*^9, 3.800413107203877*^9}, {
+  3.800413155747007*^9, 3.800413162056156*^9}, {3.8004145088334312`*^9, 
+  3.800414515924715*^9}, {3.800440995127928*^9, 3.8004409954274273`*^9}, {
+  3.800442918429088*^9, 3.8004429916159687`*^9}, {3.8004463694337378`*^9, 
+  3.800446491359387*^9}, {3.800446674578692*^9, 3.800446887691472*^9}, {
+  3.8004469935194187`*^9, 3.800447013146346*^9}, {3.800448027064847*^9, 
+  3.800448132623275*^9}, {3.800448236954485*^9, 3.8004482824429913`*^9}, {
+  3.8004483838991613`*^9, 3.8004484178947573`*^9}, {3.8004487975673103`*^9, 
+  3.80044879952089*^9}, {3.800455638197657*^9, 3.800455661680331*^9}, {
+  3.800463301244523*^9, 3.800463301867486*^9}, {3.8004633484487467`*^9, 
+  3.800463387222287*^9}, {3.800463432814752*^9, 
+  3.800463432981785*^9}},ExpressionUUID->"29d53b58-bca6-41b5-bdd5-\
+a3a40ef6df11"],
+
+Cell[CellGroupData[{
+
+Cell["Automatically Download and Install MaTeX", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800440878538793*^9, 3.800440886233654*^9}, {3.80044281235909*^9, 
+  3.800442813490698*^9}, {3.8004469327272*^9, 
+  3.80044693440282*^9}},ExpressionUUID->"94ac889d-6daf-418b-8293-\
+bff35bbb5faa"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"PacletFind", "[", 
+      RowBox[{"{", 
+       RowBox[{"\"\<MaTeX\>\"", ",", " ", "\"\<1.7.5\>\""}], "}"}], "]"}], 
+     " ", "===", " ", 
+     RowBox[{"{", "}"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+    "PacletInstall", "[", 
+     "\"\<https://github.com/szhorvat/MaTeX/releases/download/v1.7.5/MaTeX-1.\
+7.5.paclet\>\"", "]"}]}], "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]",
+   "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"To", " ", "uninstall", " ", 
+    RowBox[{"MaTeX", ":"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"PacletUninstall", "[", 
+    RowBox[{"{", 
+     RowBox[{"\"\<MaTeX\>\"", ",", " ", "\"\<1.7.5\>\""}], "}"}], "]"}], 
+   "*)"}]}]}], "Input",
+ CellChangeTimes->{{3.800439905795755*^9, 3.800439928362805*^9}, {
+   3.800439977827285*^9, 3.80044000886115*^9}, {3.800441947895706*^9, 
+   3.800441955759933*^9}, {3.800447081924754*^9, 3.800447120079845*^9}, {
+   3.800448495400956*^9, 3.800448517428022*^9}, {3.80044857157444*^9, 
+   3.800448591357822*^9}, 3.800463493392696*^9, {3.800568534808281*^9, 
+   3.800568586525551*^9}},ExpressionUUID->"59c9816d-ab97-4115-9c3f-\
+e20c4367ec34"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Install GaitBrowser Web App", "Section",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.8004764449858294`*^9, 3.800476460832198*^9}, {
+  3.8005693451246233`*^9, 3.800569346252233*^9}, {3.800574367649981*^9, 
+  3.800574368464818*^9}},ExpressionUUID->"211a3366-087f-4c8e-8504-\
+46245e8a9c73"],
+
+Cell["\<\
+While the Mathematica library has some basic gait animation features, we \
+provide a separate gait animation library that runs in a web browser for \
+advanced CAD rendering of the 3D models using Node.js.
+
+Mathematica cannot run the executable, so we\[CloseCurlyQuote]ll launch the \
+file explorer.  When the folder is open, double click GaitBrowser or \
+GaitBrowser.exe to  launch the app.\
+\>", "Text",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQPW+Odsa2gDeOmm1pZSC6+nl5DYjmOONYC6IrVs9S
+3Q6kXabXqoHoP+IpIkeAdM3aXDAtvvssy1EgzbLtMy+I1nuou+UYkJZsyD4M
+ope2BN0C0V0K376AaJH5BkzHgfS9dUtYQLSVcFIzmP9x8gQQrdI9by6I/qPj
+txhEvzv6Zz2IvrXQZguIzlDf9BhEK63+AKZNg49ZnQbSbke32oJopcvLf5wD
+0kWHdoNppZi+fyD6l0w683kgXSwkxQmiT2TJg2mmq+dqmQKB7ui4XA+ifW0k
+WkG0y6NAMP0sO/owiL77OugYiJ7E2HMfRHO+WQ+mv0lvsmUF0sE+J8E0AKDQ
+rAM=
+  "],ExpressionUUID->"d9e5a1f6-adaf-4973-ae3b-f23bcba2a386"],
+
+Cell[CellGroupData[{
+
+Cell["Get Latest Release Value", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.8004764449858294`*^9, 3.800476460832198*^9}, {
+  3.8005693451246233`*^9, 3.800569346252233*^9}, {3.800574381726136*^9, 
+  3.80057438510397*^9}, {3.8005753765721893`*^9, 
+  3.8005753846525307`*^9}},ExpressionUUID->"f6147fbc-0a56-49d2-a982-\
+b12025579b04"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"latest", " ", "=", " ", 
+   RowBox[{"StringTake", "[", 
+    RowBox[{
+     RowBox[{"\"\<tag_name\>\"", " ", "/.", " ", 
+      RowBox[{
+      "URLExecute", "[", 
+       "\"\<https://api.github.com/repos/nr-codes/BipedalGaitGeneration/\
+releases/latest\>\"", "]"}]}], ",", " ", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", " ", 
+       RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.800575322359568*^9, 3.8005753544436502`*^9}, {
+  3.8005753903146687`*^9, 3.800575404504394*^9}, {3.800575440001809*^9, 
+  3.800575446929308*^9}, {3.80057563467839*^9, 3.800575634806941*^9}, {
+  3.800575704619688*^9, 
+  3.800575738730706*^9}},ExpressionUUID->"7e00ea64-4c59-4026-85c2-\
+9e7e3832f0ed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Download executable", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.8004764449858294`*^9, 3.800476460832198*^9}, {
+  3.8005693451246233`*^9, 3.800569346252233*^9}, {3.800574381726136*^9, 
+  3.80057438510397*^9}},ExpressionUUID->"dbd02f57-260c-47cd-bf7f-\
+ecdd814d67b2"],
+
+Cell[TextData[{
+ "In this section, we download a platform-specific executable only.  We \
+currently only have builds for 64-bit Windows, MacOS, and Linux operating \
+systems.\n\nBefore evaluating the cell, make sure to ",
+ StyleBox["get the latest release value above first",
+  FontWeight->"Bold"],
+ "!"
+}], "Text",
+ CellChangeTimes->{{3.800574472320628*^9, 3.800574498642932*^9}, {
+  3.800575521468586*^9, 3.800575537352418*^9}, {3.80057696746635*^9, 
+  3.8005770214166317`*^9}},ExpressionUUID->"600a5e77-ae50-4bbd-8cc2-\
+918a76cedf88"],
+
+Cell[CellGroupData[{
+
+Cell["Download the app", "Subsubsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.800478535243085*^9, 3.800478559381596*^9}, {
+  3.80056418009669*^9, 3.8005641833729057`*^9}, {3.800568743551968*^9, 
+  3.8005687440250683`*^9}, {3.800570043263583*^9, 
+  3.800570051952319*^9}},ExpressionUUID->"1b372ecc-a0b1-4351-b5e2-\
+5a4432dc81f4"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"url", " ", "=", " ", 
+    RowBox[{
+    "StringTemplate", "[", 
+     "\"\<https://github.com/nr-codes/BipedalGaitGeneration/releases/download/\
+v<* latest *>/GaitBrowser-`1`-x<* arch *>-<* latest *>`2`\>\"", "]"}]}], 
+   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cwd", " ", "=", " ", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+       "\"\<GaitBrowser/exe\>\""}], "}"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"platform", ",", " ", "arch"}], "}"}], " ", "=", " ", 
+    RowBox[{"ToLowerCase", "@", 
+     RowBox[{
+      RowBox[{"StringSplit", "[", 
+       RowBox[{"$SystemID", ",", " ", "\"\<-\>\""}], "]"}], 
+      "\[LeftDoubleBracket]", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "3"}], "}"}], "\[RightDoubleBracket]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"arch", " ", "===", " ", "\"\<64\>\""}], " ", "&&", " ", 
+     RowBox[{"StringMatchQ", "[", 
+      RowBox[{"platform", ",", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<linux\>\"", ",", " ", "\"\<macosx\>\"", ",", " ", 
+         "\"\<win\>\""}], "}"}]}], "]"}]}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"url", " ", "=", " ", 
+      RowBox[{"Switch", "[", 
+       RowBox[{
+       "platform", ",", " ", "\[IndentingNewLine]", "\"\<linux\>\"", ",", " ", 
+        RowBox[{"url", "[", 
+         RowBox[{"\"\<linux\>\"", ",", " ", "\"\<\>\""}], "]"}], ",", " ", 
+        "\[IndentingNewLine]", "\"\<macosx\>\"", ",", " ", 
+        RowBox[{"url", "[", 
+         RowBox[{"\"\<macos\>\"", ",", " ", "\"\<\>\""}], "]"}], ",", " ", 
+        "\[IndentingNewLine]", "\"\<windows\>\"", ",", " ", 
+        RowBox[{"url", "[", 
+         RowBox[{"\"\<win\>\"", ",", " ", "\"\<.exe\>\""}], "]"}]}], 
+       "\[IndentingNewLine]", "]"}]}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"URLDownload", "[", 
+      RowBox[{"url", ",", "  ", "cwd"}], "]"}]}], ",", "\[IndentingNewLine]", 
+    
+    RowBox[{"(*", " ", "else", " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"Style", "[", 
+     RowBox[{
+     "\"\<We only provide 64-bit pre-compiled binaries for Windows, MacOSX, \
+and Linux online.  Try downloading the source code for other platforms.\>\"", 
+      ",", " ", "Red"}], "]"}]}], "\[IndentingNewLine]", "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.8005694051190453`*^9, 3.8005694225907784`*^9}, {
+   3.800569530242894*^9, 3.800569531366891*^9}, {3.8005747423147793`*^9, 
+   3.800575097537279*^9}, {3.8005757636443863`*^9, 3.80057582412584*^9}, {
+   3.8005758566087017`*^9, 3.8005758605447483`*^9}, {3.800575905092301*^9, 
+   3.8005759155332212`*^9}, 3.80057603780767*^9, {3.800576134606969*^9, 
+   3.800576243144944*^9}, {3.800576303329114*^9, 3.8005763123228273`*^9}, {
+   3.8005770479040623`*^9, 3.800577086890829*^9}, {3.8005771275460052`*^9, 
+   3.8005773107096148`*^9}, {3.8005773423454943`*^9, 3.8005773620836287`*^9}, 
+   3.800577417264275*^9, {3.80057745171393*^9, 3.800577477316594*^9}, {
+   3.800577567273518*^9, 
+   3.80057756989688*^9}},ExpressionUUID->"f9d8f8ef-f29e-43f8-ae77-\
+192f7919914a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Run the app", "Subsubsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.800478535243085*^9, 3.800478559381596*^9}, {
+  3.80056418009669*^9, 3.8005641833729057`*^9}, {3.800568743551968*^9, 
+  3.8005687440250683`*^9}},ExpressionUUID->"68269e1d-56d3-4844-a075-\
+491acff65ee4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cwd", " ", "=", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<GaitBrowser/exe\>\""}], "}"}], "]"}]}], ";", 
+  RowBox[{"SystemOpen", "[", "cwd", "]"}]}]], "Input",
+ CellChangeTimes->{{3.800564015278936*^9, 3.800564025472232*^9}, {
+   3.8005686551765833`*^9, 3.800568655951508*^9}, {3.800574333644455*^9, 
+   3.800574334179667*^9}, 3.800577490972042*^9, {3.800577574104044*^9, 
+   3.800577576336979*^9}},ExpressionUUID->"89988819-df87-47e3-a48a-\
+64d6595d2c11"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Download GaitBrowser Web App Source Code", "Subsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.8004764449858294`*^9, 3.800476460832198*^9}, {
+  3.800569320031662*^9, 3.80056933356966*^9}, {3.800570913348728*^9, 
+  3.80057091465385*^9}},ExpressionUUID->"044d1f72-9d52-4fbc-ae6c-\
+4abb4f402857"],
+
+Cell["\<\
+In this section, we download the source and compile it.  We tested our code \
+using Node.js v12.17.0, but we expect the code to work in later versions as \
+well.\
+\>", "Text",
+ CellChangeTimes->{{3.8004129933628683`*^9, 3.800413107203877*^9}, {
+   3.800413155747007*^9, 3.800413162056156*^9}, {3.8004145088334312`*^9, 
+   3.800414515924715*^9}, {3.800440995127928*^9, 3.8004409954274273`*^9}, {
+   3.800442918429088*^9, 3.8004429916159687`*^9}, {3.8004463694337378`*^9, 
+   3.800446491359387*^9}, {3.800446674578692*^9, 3.800446887691472*^9}, {
+   3.8004469935194187`*^9, 3.800447013146346*^9}, {3.800448027064847*^9, 
+   3.800448132623275*^9}, {3.800448236954485*^9, 3.8004482824429913`*^9}, {
+   3.8004483838991613`*^9, 3.8004484178947573`*^9}, {3.8004487975673103`*^9, 
+   3.80044879952089*^9}, {3.800455638197657*^9, 3.800455661680331*^9}, {
+   3.800463301244523*^9, 3.800463301867486*^9}, {3.8004633484487467`*^9, 
+   3.800463387222287*^9}, {3.800463432814752*^9, 3.800463432981785*^9}, {
+   3.800568814463502*^9, 3.800568830610379*^9}, {3.800568872757361*^9, 
+   3.8005688745588703`*^9}, {3.800569611662899*^9, 3.800569619061726*^9}, {
+   3.800569882637002*^9, 3.8005698911240883`*^9}, {3.8005699326021338`*^9, 
+   3.800569957124093*^9}, 
+   3.800574461146123*^9},ExpressionUUID->"6a632fcd-7653-4566-b2b2-\
+6e8bd7c2d55e"],
+
+Cell[CellGroupData[{
+
+Cell["Install Node.js", "Subsubsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.8005696557510242`*^9, 3.8005696573554373`*^9}, {
+  3.800570056765037*^9, 
+  3.8005700593827*^9}},ExpressionUUID->"db3cbc2d-a8a5-48fa-949d-4ece97ee71d4"],
+
+Cell[BoxData[
+ RowBox[{"SystemOpen", "[", "\"\<https://nodejs.org/\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.8005692687859783`*^9, 3.800569277761031*^9}, {
+  3.80056963430057*^9, 3.800569636479765*^9}},
+ CellLabel->
+  "In[149]:=",ExpressionUUID->"f7dd8dd9-3aac-4012-a7e8-db457c257e3a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Download GaitBrowser from the GitHub Repository", "Subsubsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.800570067285944*^9, 
+  3.8005700676827173`*^9}},ExpressionUUID->"9a62182f-c614-487e-b7cc-\
+d18d29381446"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"node", " ", "=", " ", 
+    RowBox[{"URLDownload", "[", 
+     RowBox[{
+     "\"\<https://github.com/nr-codes/BipedalGaitGeneration/releases/download/\
+v0.1.0/BipedalGaitGeneration-Node.js-0.1.0.zip\>\"", ",", "  ", 
+      RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"can", " ", "ignore", " ", "CreateDirectory", " ", "msgs"}], ";", 
+    " ", 
+    RowBox[{
+    "content", " ", "should", " ", "be", " ", "merged", " ", "as", " ", 
+     RowBox[{"desired", "."}]}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ExtractArchive", "[", 
+    RowBox[{"node", ",", " ", 
+     RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], ";"}], 
+  " "}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"DeleteFile", "[", "node", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8004636193375463`*^9, 3.8004636222496843`*^9}, {
+  3.800463708923333*^9, 3.8004638004012833`*^9}, {3.8004638431960506`*^9, 
+  3.800463871245949*^9}, {3.800463949203731*^9, 3.800463960521186*^9}, {
+  3.800463993571981*^9, 3.800463993897344*^9}, {3.800475828474203*^9, 
+  3.800475841781308*^9}, {3.800475971091495*^9, 3.800476007431841*^9}, {
+  3.80047611855398*^9, 3.8004761365534153`*^9}, {3.800476361945715*^9, 
+  3.800476370244452*^9}, {3.800574688955805*^9, 
+  3.800574695117168*^9}},ExpressionUUID->"da29b791-b414-40ff-a3e2-\
+4bffe7dbba64"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Install npm modules and build app", "Subsubsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.800478535243085*^9, 
+  3.800478548911941*^9}},ExpressionUUID->"3df7717b-4cb1-4703-9b04-\
+813b58c8eeea"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cwd", " ", "=", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<GaitBrowser\>\""}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RunProcess", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"\"\<npm\>\"", ",", " ", "\"\<install\>\""}], "}"}], ",", " ", 
+    RowBox[{"ProcessDirectory", " ", "\[Rule]", " ", "cwd"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RunProcess", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<npm\>\"", ",", " ", "\"\<run\>\"", ",", " ", "\"\<build\>\""}], 
+     "}"}], ",", " ", 
+    RowBox[{"ProcessDirectory", " ", "\[Rule]", " ", "cwd"}]}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"RunProcess", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<npm\>\"", ",", " ", "\"\<run\>\"", ",", " ", "\"\<pkg\>\""}], "}"}],
+     ",", " ", 
+    RowBox[{"ProcessDirectory", " ", "\[Rule]", " ", "cwd"}]}], "]"}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.800476559984527*^9, 3.8004765637416162`*^9}, {
+  3.800476797856987*^9, 3.8004769897021027`*^9}, {3.8004770395934772`*^9, 
+  3.8004770399756308`*^9}, {3.800477071389817*^9, 3.800477090986319*^9}, {
+  3.800563250157117*^9, 3.800563256928794*^9}, {3.800568662493073*^9, 
+  3.800568687632236*^9}, {3.8005775264062977`*^9, 3.800577536932672*^9}, {
+  3.80057758435117*^9, 
+  3.8005775919550047`*^9}},ExpressionUUID->"dd4142e4-a02f-4b07-94bc-\
+a92fd4eacf3a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Run the app", "Subsubsection",
+ CellChangeTimes->{{3.800439748176668*^9, 3.800439771627075*^9}, {
+  3.800441009465674*^9, 3.800441081868392*^9}, {3.800441923664857*^9, 
+  3.8004419589129553`*^9}, {3.800446569758696*^9, 3.800446576163142*^9}, {
+  3.80046345329137*^9, 3.800463470232153*^9}, {3.8004757596143084`*^9, 
+  3.800475772729368*^9}, {3.800478535243085*^9, 3.800478559381596*^9}, {
+  3.80056418009669*^9, 3.8005641833729057`*^9}, {3.800568743551968*^9, 
+  3.8005687440250683`*^9}},ExpressionUUID->"619a85c4-0635-4069-919f-\
+b68a07c13970"],
+
+Cell["\<\
+Mathematica cannot run the executable, so we\[CloseCurlyQuote]ll launch the \
+file explorer.  When the folder is open, double click GaitBrowser or \
+GaitBrowser.exe to  launch the app.\
+\>", "Text",
+ CellChangeTimes->{{3.800564047102078*^9, 3.800564137984894*^9}, {
+  3.8005687162470207`*^9, 
+  3.8005687182304907`*^9}},ExpressionUUID->"c331cd5e-74c9-4853-809c-\
+edbbc353e52e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cwd", " ", "=", " ", 
+   RowBox[{"FileNameJoin", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+      "\"\<GaitBrowser/exe\>\""}], "}"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"SystemOpen", "[", "cwd", "]"}]}], "Input",
+ CellChangeTimes->{{3.800564015278936*^9, 3.800564025472232*^9}, {
+  3.8005686551765833`*^9, 3.800568655951508*^9}, {3.800574346931939*^9, 
+  3.800574347433919*^9}, {3.80057752185364*^9, 3.800577524039295*^9}, {
+  3.800577595251161*^9, 
+  3.800577597651054*^9}},ExpressionUUID->"68a92c44-5fad-4c55-a284-\
+f46b06fb25ae"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+AutoGeneratedPackage->None,
+WindowSize->{1373, 1509},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1160, 20, 332, "Text",ExpressionUUID->"208881fe-a15e-425e-8067-8047a2e18324"],
+Cell[CellGroupData[{
+Cell[1743, 44, 599, 9, 102, "Chapter",ExpressionUUID->"17289f75-6575-4812-9174-4a5dbf2f8143"],
+Cell[CellGroupData[{
+Cell[2367, 57, 500, 8, 95, "Section",ExpressionUUID->"55c6279d-9c24-46b1-bfed-e59f51825574"],
+Cell[2870, 67, 772, 13, 172, "Text",ExpressionUUID->"8f70f329-a092-4b50-b4f0-26491da5bed0"],
+Cell[3645, 82, 277, 6, 45, "Input",ExpressionUUID->"aab44116-8f66-4a79-8d6f-2f5c0579ae27"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3959, 93, 452, 7, 95, "Section",ExpressionUUID->"5b35cfbd-d96b-442f-a5b0-8d4fe02eca22"],
+Cell[4414, 102, 512, 9, 92, "Text",ExpressionUUID->"09b715c8-724e-4de4-9167-ea41213d3653"],
+Cell[4929, 113, 2961, 73, 566, "Input",ExpressionUUID->"e067aba0-e9f9-4378-8933-60f954376544"],
+Cell[CellGroupData[{
+Cell[7915, 190, 546, 8, 74, "Subsection",ExpressionUUID->"868ecf43-2863-4b7d-b89e-443107e827d2"],
+Cell[8464, 200, 802, 13, 132, "Text",ExpressionUUID->"786dbe92-1693-49d3-9620-03c7f2823332"],
+Cell[9269, 215, 397, 10, 71, "Input",ExpressionUUID->"867c93ae-79af-4ba5-9161-1ed0b0b5ce48"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[9703, 230, 498, 8, 58, "Subsection",ExpressionUUID->"8ce7acf6-f055-4df7-bd97-ea5ffa24d439"],
+Cell[10204, 240, 1335, 28, 172, "Text",ExpressionUUID->"be5bf419-4541-40ce-a764-3d732d450101"],
+Cell[11542, 270, 277, 6, 71, "Input",ExpressionUUID->"6fc2c1fe-8500-485c-ad40-03133c7b7f64"],
+Cell[11822, 278, 237, 5, 45, "Input",ExpressionUUID->"36892cdb-f10b-4475-a2b8-5fb683c47f66"]
+}, Closed]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12120, 290, 603, 9, 102, "Chapter",ExpressionUUID->"8454c41d-fd74-4e45-b517-9d08d1e69ec5"],
+Cell[CellGroupData[{
+Cell[12748, 303, 351, 6, 95, "Section",ExpressionUUID->"9543112e-3900-4b14-9b9d-0a1b5a67ff59"],
+Cell[13102, 311, 1446, 24, 372, "Text",ExpressionUUID->"29d53b58-bca6-41b5-bdd5-a3a40ef6df11"],
+Cell[CellGroupData[{
+Cell[14573, 339, 328, 5, 74, "Subsection",ExpressionUUID->"94ac889d-6daf-418b-8293-bff35bbb5faa"],
+Cell[14904, 346, 1254, 30, 286, "Input",ExpressionUUID->"59c9816d-ab97-4115-9c3f-e20c4367ec34"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16207, 382, 562, 8, 95, "Section",ExpressionUUID->"211a3366-087f-4c8e-8504-46245e8a9c73"],
+Cell[16772, 392, 883, 17, 252, "Text",ExpressionUUID->"d9e5a1f6-adaf-4973-ae3b-f23bcba2a386"],
+Cell[CellGroupData[{
+Cell[17680, 413, 614, 9, 74, "Subsection",ExpressionUUID->"f6147fbc-0a56-49d2-a982-b12025579b04"],
+Cell[18297, 424, 745, 18, 246, "Input",ExpressionUUID->"7e00ea64-4c59-4026-85c2-9e7e3832f0ed"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19079, 447, 556, 8, 74, "Subsection",ExpressionUUID->"dbd02f57-260c-47cd-bf7f-ecdd814d67b2"],
+Cell[19638, 457, 537, 11, 172, "Text",ExpressionUUID->"600a5e77-ae50-4bbd-8cc2-918a76cedf88"],
+Cell[CellGroupData[{
+Cell[20200, 472, 605, 9, 64, "Subsubsection",ExpressionUUID->"1b372ecc-a0b1-4351-b5e2-5a4432dc81f4"],
+Cell[20808, 483, 3385, 78, 926, "Input",ExpressionUUID->"f9d8f8ef-f29e-43f8-ae77-192f7919914a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24230, 566, 551, 8, 64, "Subsubsection",ExpressionUUID->"68269e1d-56d3-4844-a075-491acff65ee4"],
+Cell[24784, 576, 588, 13, 86, "Input",ExpressionUUID->"89988819-df87-47e3-a48a-64d6595d2c11"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25421, 595, 574, 8, 74, "Subsection",ExpressionUUID->"044d1f72-9d52-4fbc-ae6c-4abb4f402857"],
+Cell[25998, 605, 1337, 21, 92, "Text",ExpressionUUID->"6a632fcd-7653-4566-b2b2-6e8bd7c2d55e"],
+Cell[CellGroupData[{
+Cell[27360, 630, 506, 7, 64, "Subsubsection",ExpressionUUID->"db3cbc2d-a8a5-48fa-949d-4ece97ee71d4"],
+Cell[27869, 639, 288, 5, 45, "Input",ExpressionUUID->"f7dd8dd9-3aac-4012-a7e8-db457c257e3a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28194, 649, 491, 7, 64, "Subsubsection",ExpressionUUID->"9a62182f-c614-487e-b7cc-d18d29381446"],
+Cell[28688, 658, 1482, 33, 366, "Input",ExpressionUUID->"da29b791-b414-40ff-a3e2-4bffe7dbba64"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30207, 696, 475, 7, 64, "Subsubsection",ExpressionUUID->"3df7717b-4cb1-4703-9b04-813b58c8eeea"],
+Cell[30685, 705, 1542, 40, 166, "Input",ExpressionUUID->"dd4142e4-a02f-4b07-94bc-a92fd4eacf3a"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32264, 750, 551, 8, 64, "Subsubsection",ExpressionUUID->"619a85c4-0635-4069-919f-b68a07c13970"],
+Cell[32818, 760, 387, 8, 92, "Text",ExpressionUUID->"c331cd5e-74c9-4853-809c-edbbc353e52e"],
+Cell[33208, 770, 638, 15, 86, "Input",ExpressionUUID->"68a92c44-5fad-4c55-a284-f46b06fb25ae"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

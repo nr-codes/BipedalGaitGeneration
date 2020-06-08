@@ -6,14 +6,27 @@
   "scripts": {
     "app": "node app/index.js",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "pkg": "npx pkg package.json",
+    "watch": "webpack --watch",
+    "start": "./GaitBrowser"
   },
   "author": "Nelson Rosa Jr.",
   "license": "GPL-3.0",
+  "bin": "app/index.js",
+  "pkg": {
+    "targets": [
+      "node12"
+    ],
+    "assets": [
+      "app/views/*",
+      "app/bipeds/**/*",
+      "app/public/**/*"
+    ]
+  },
   "dependencies": {
-    "@ffmpeg-installer/ffmpeg": "^1.0.19",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "ffbinaries": "^1.1.4",
     "glob": "^7.1.4",
     "opener": "^1.5.1",
     "three": "^0.114.0",
@@ -22,6 +35,7 @@
   "devDependencies": {
     "compression-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.0.4",
+    "pkg": "^4.4.8",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
   }

@@ -4,14 +4,16 @@ const fs = require('fs').promises;
 const zlib = require('zlib');
 const path = require("path");
 const WebSocket = require('ws').Server;
-const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
 const { spawn } = require('child_process');
 const { pipeline, Readable } = require('stream');
 const opener = require('opener');
+const ffbinaries = require('ffbinaries');
 
 /************* GLOBAL VARIABLES *****************/
 
 const p = f => path.join( __dirname, f );
+const pkg = f => path.join( process.cwd(), 'GaitBrowserOutput', f); 
+const output = f => process.pkg ? pkg( f ) : p( f );
 
 const globOpts = { cwd: p( './public/bipeds' ) };
 const bipedFiles = glob.sync('*.json', globOpts)
@@ -20,6 +22,8 @@ const bipedFiles = glob.sync('*.json', globOpts)
 console.log(bipedFiles);
 
 const bipedImages = {};
+
+const { ffmpeg } = ffbinaries.locateBinariesSync("ffmpeg", { paths: [ output( '' ) ] } );
 
 const ffmpegArgs = [
     // ffmpeg doc: https://ffmpeg.org/documentation.html
@@ -84,6 +88,21 @@ socket.on('connection', ws => {
   ws.on('message', msg => message( msg, ws ));
 });
 
+function downloadFfmpeg(dest) {
+  console.log( 'You do not have an (executable) version of ffmpeg installed.',
+    'Attempting to download from ffbinaries.com.');
+
+  return new Promise( (resolve, reject) => ffbinaries.downloadFiles( 
+    'ffmpeg',
+    { destination: dest }, 
+    (e, d) => {
+      if(e) reject( new Error( `Error downloading ffmpeg: ${e}` ) );
+      dest = path.join( d[0].path, d[0].filename );
+      console.log(`Downloaded ffmpeg to: ${dest}.`);
+      resolve( dest );
+  } ) );
+}
+
 function message(msg, ws) {
   const arg = JSON.parse( msg );
   const name = arg.name;
@@ -133,7 +152,7 @@ async function saveImgs(biped) {
 
   name = biped.name;
   imgs = biped.imgs;
-  dir = p( 'imgs/' + name + '/' );
+  dir = output( 'imgs/' + name + '/' );
 
   await fs.mkdir( dir, { recursive: true } );
 
@@ -152,14 +171,25 @@ async function saveImgs(biped) {
   console.log( imgs.length + ' images saved to: ' + dir );
 }
 
-function saveVid(biped) {
+async function saveVid(biped) {
   let i, n;
+
+  // download ffmpeg or use locally installed version?
+  if(!ffmpeg.isExecutable) {
+    const bin = output( 'bin' );
+    await fs.mkdir( bin, { recursive: true } );
+    ffmpeg.path = await downloadFfmpeg( bin );
+    ffmpeg.isExecutable = true;
+  }
 
   const name = biped.name;
   const imgs = biped.imgs;
+  const dir = output( 'vids/' );
+
+  await fs.mkdir( dir, { recursive: true } );
 
   ffmpegArgs[iFps] = biped.fps.toString();
-  ffmpegArgs[iOut] = p( 'imgs/' + name + '.mp4' );
+  ffmpegArgs[iOut] = dir + name + '.mp4';
 
   console.log( '*********************************' );
   console.log( 'ffmpeg', ffmpegArgs.join(' ') );
@@ -174,22 +204,22 @@ function saveVid(biped) {
     }
   } );
 
-  const ffmpeg = spawn( ffmpegPath, ffmpegArgs );
+  const proc = spawn( ffmpeg.path, ffmpegArgs );
 
-  ffmpeg.stdout.on( 'data', (data) => {
+  proc.stdout.on( 'data', (data) => {
     console.log(`stdout: ${data}`);
   } );
 
-  ffmpeg.stderr.on( 'data', (data) => {
+  proc.stderr.on( 'data', (data) => {
     console.log(`stderr: ${data}`);
   } );
 
-  ffmpeg.on( 'close', (code) => {
+  proc.on( 'close', (code) => {
     console.log(`ffmpeg process exited with code ${code}`);
     console.log( n + ' images saved to: ' + ffmpegArgs[iOut] );
   } );
 
-  pipeline( reader, ffmpeg.stdin, err => { if(err) console.error(err); } );
+  pipeline( reader, proc.stdin, err => { if(err) console.error(err); } );
 }
 
 if (process.platform === 'win32') {

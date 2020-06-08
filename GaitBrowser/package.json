@@ -8,8 +8,7 @@
     "build": "webpack",
     "pkg": "npx pkg -t host --out-path exe package.json",
     "pkg-all": "npx pkg --out-path exe package.json",
-    "watch": "webpack --watch",
-    "start": "./GaitBrowser"
+    "watch": "webpack --watch"
   },
   "author": "Nelson Rosa Jr.",
   "license": "GPL-3.0",

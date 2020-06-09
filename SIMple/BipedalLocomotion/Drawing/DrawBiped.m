@@ -578,7 +578,7 @@ t = Flatten@Table[t + i T, {i, 0, n-1}];
 t = Prepend[t, 0];
 
 (* MMA bug, <||> below should get rid of duplicates too *)
-t = DeleteDuplicates[t, Norm[#1-#2] <= 10^-12(*6*)(*100$MachineEpsilon*)&];
+t = DeleteDuplicates[t, Norm[#1-#2] <= 10^-(*12*)6(*100$MachineEpsilon*)&];
 X = at[k][#, M]& /@ t;
 
 (* If crazy interpolation values appear, like with *)(* Marlo rootman\[LeftDoubleBracket]12, 1\[RightDoubleBracket], try increasing multiplier *)

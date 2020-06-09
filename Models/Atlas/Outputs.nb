@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     28508,        575]
-NotebookOptionsPosition[     26271,        526]
-NotebookOutlinePosition[     26605,        541]
-CellTagsIndexPosition[     26562,        538]
+NotebookDataLength[     28597,        577]
+NotebookOptionsPosition[     26359,        528]
+NotebookOutlinePosition[     26693,        543]
+CellTagsIndexPosition[     26650,        540]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -406,11 +406,13 @@ Cell["Node.js (ThreeJS)", "Section",
 
 Cell["\<\
 Create a JSON file with trajectory and kinematic information for use in \
-GaitBrowser web app\
+GaitBrowser web app
+
+Any LinearSolve errors can be ignored.\
 \>", "Text",
  CellChangeTimes->{{3.7997797930544453`*^9, 3.799779823894622*^9}, {
-  3.7997813535012903`*^9, 
-  3.799781393561204*^9}},ExpressionUUID->"6d069415-db8d-4070-bbbf-\
+  3.7997813535012903`*^9, 3.799781393561204*^9}, {3.8006758862007723`*^9, 
+  3.800675904658589*^9}},ExpressionUUID->"6d069415-db8d-4070-bbbf-\
 d6cbe6fc634f"],
 
 Cell[BoxData[{
@@ -524,8 +526,8 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1373, 1505},
-WindowMargins->{{0, Automatic}, {0, Automatic}},
+WindowSize->{1373, 1509},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
@@ -572,9 +574,9 @@ Cell[16742, 348, 2288, 40, 126, "Input",ExpressionUUID->"efbef3c2-e2d2-4b04-8521
 Cell[CellGroupData[{
 Cell[19079, 394, 642, 10, 95, "Section",ExpressionUUID->"da86856d-79b4-416a-aed1-6051f1421bd7",
  InitializationCell->True],
-Cell[19724, 406, 296, 7, 52, "Text",ExpressionUUID->"6d069415-db8d-4070-bbbf-d6cbe6fc634f"],
-Cell[20023, 415, 5496, 94, 686, "Input",ExpressionUUID->"83ada1ff-8d6d-4e22-86b0-cb13eab297eb"],
-Cell[25522, 511, 721, 11, 45, "Input",ExpressionUUID->"fdf64910-fa30-4a5d-8b32-97f33bd9090a"]
+Cell[19724, 406, 384, 9, 132, "Text",ExpressionUUID->"6d069415-db8d-4070-bbbf-d6cbe6fc634f"],
+Cell[20111, 417, 5496, 94, 686, "Input",ExpressionUUID->"83ada1ff-8d6d-4e22-86b0-cb13eab297eb"],
+Cell[25610, 513, 721, 11, 45, "Input",ExpressionUUID->"fdf64910-fa30-4a5d-8b32-97f33bd9090a"]
 }, Open  ]]
 }, Open  ]]
 }

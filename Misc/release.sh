@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cd ../
+# get script directory, https://stackoverflow.com/questions/59895
+dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+cd "$dir/../"
 
 # create documentation
 echo "The content in this directory contains a video showing animations of all gaits presented in the figures of the paper as well as the source code for computing walking gaits from equilibria using numerical continuation methods.  Further information can be found in the README.txt file." > SUMMARY.txt 
@@ -19,7 +22,7 @@ zip -9 $math \
     README.txt \
     SUMMARY.txt \
     COPYING.txt \
-    RunMeFirst.nb \
+    Installer.nb \
     RunModels.nb \
     BipedalGaitGeneration.mp4 \
     Figures \
@@ -34,9 +37,6 @@ zip -r9 $math \
     Models \
     SIMple \
 
-zip -9 $node \
-    GaitBrowser/app/imgs
-
 zip -r9 $node \
     GaitBrowser \
     -x \
@@ -44,7 +44,7 @@ zip -r9 $node \
 
 cp $math ../TRO
 
-mv $math $node Release
+mv $math $node $dir
 
 rm README.html README.txt SUMMARY.txt
 
@@ -65,10 +65,10 @@ do
         ext=".${f##*.}"
     fi
 
-    mv "$f" "../Release/$base$ext"
+    mv "$f" "$dir/$base$ext"
 done
 
 
-rm -rf exe/ node_modules/ package-lock.json
+rm -rf exe/ node_modules/ package-lock.json app/bipeds app/bundle.js
 
 cd ../

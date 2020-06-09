@@ -23,7 +23,8 @@ console.log(bipedFiles);
 
 const bipedImages = {};
 
-const { ffmpeg } = ffbinaries.locateBinariesSync("ffmpeg", { paths: [ output( '' ) ] } );
+// const { ffmpeg } = ffbinaries.locateBinariesSync("ffmpeg", { paths: [ output( '' ) ] } );
+const ffmpeg = {};
 
 const ffmpegArgs = [
     // ffmpeg doc: https://ffmpeg.org/documentation.html

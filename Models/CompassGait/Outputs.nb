@@ -10,44 +10,59 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     54843,       1200]
-NotebookOptionsPosition[     51920,       1140]
-NotebookOutlinePosition[     52254,       1155]
-CellTagsIndexPosition[     52211,       1152]
+NotebookDataLength[     55637,       1218]
+NotebookOptionsPosition[     52584,       1155]
+NotebookOutlinePosition[     52918,       1170]
+CellTagsIndexPosition[     52875,       1167]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
+Cell["README", "Chapter",
+ CellChangeTimes->{{3.7997650301634903`*^9, 3.7997650458841677`*^9}, {
+  3.799765087681326*^9, 3.799765091782607*^9}, {3.8006671339956837`*^9, 
+  3.800667134951046*^9}},ExpressionUUID->"197aa06d-f460-4b7f-a2ed-\
+edb15a453abc"],
+
 Cell[TextData[{
- StyleBox["README",
-  FontWeight->"Bold"],
- ":\n\nThe following code generates or modifies the images found in the paper \
-as well as creates the JSON file needed in the web app.  Keep in mind that\n\n\
-* code for this section will only work if either pre-computed gaits have been \
+ "The following code generates or modifies the images found in the paper as \
+well as creates the JSON file needed in the web app.  Keep in mind that\n\n* \
+code for this section will only work if either pre-computed gaits have been \
 loaded or gaits have been generated in corresponding Main.nb file.\n\n* \
 outputs generated in this section will be placed in \n\t** \
 GaitBrowser/src/biped/ for BLExportBipedToThreeJS[...], or \n\t** Figures/ \
 for BLExportTo[\[OpenCurlyDoubleQuote]Figures\[CloseCurlyDoubleQuote], ...].\n\
-\n* calls to BLBipedTimeGrid assume that a images exist in GaitBrowser/imgs.\n\
-\t** the files already exist, but if you want to regenerate these images, you \
-will need to run the web  app.  You must save the same number of images as \
-BLBipedTimeGrid expects in the \[OpenCurlyDoubleQuote]n\
-\[CloseCurlyDoubleQuote] argument.  Typically n = 4.\n\n* the code requires \
-installation of an external package: MaTeX.  See ./RunMain.nb in the root \
-directory for more information."
+\n* calls to BLBipedTimeGrid assume that a images exist in \
+GaitBrowser/app/imgs.\n\t** the files already exist, but if you want to \
+regenerate these images, you will need to run the web  app.  You must save \
+the same number of images as BLBipedTimeGrid expects in the \
+\[OpenCurlyDoubleQuote]n\[CloseCurlyDoubleQuote] argument.  Typically n = 4.\n\
+\n* the code requires installation of an external package: MaTeX.  See ",
+ Cell[BoxData[
+  TemplateBox[{
+   "\"./Installer.nb\"",{"../../Installer.nb", None},"../../Installer.nb"},
+   "HyperlinkDefault"]], "Output",
+  CellChangeTimes->{{3.800667263193927*^9, 3.800667323524109*^9}},
+  ExpressionUUID->"1b35ad2f-74b6-45af-803d-f649479a1814"],
+ " in the root directory for more information."
 }], "Text",
  CellChangeTimes->{{3.7997820557894783`*^9, 3.7997821037591753`*^9}, {
-  3.799782143146861*^9, 3.799782162711768*^9}, {3.799782518166781*^9, 
-  3.799782610477874*^9}, {3.799782671027733*^9, 3.799782672595718*^9}, {
-  3.7997836267460938`*^9, 3.7997836269046383`*^9}, {3.799783693739151*^9, 
-  3.7997837404579153`*^9}, {3.799784250717511*^9, 3.799784603686801*^9}, {
-  3.7997846367255096`*^9, 3.7997847005503883`*^9}, {3.799784779721643*^9, 
-  3.799784787489852*^9}, {3.799790371382299*^9, 3.7997904223366747`*^9}, {
-  3.7997904594688053`*^9, 3.7997905134581547`*^9}, {3.800443979302402*^9, 
-  3.800444495542841*^9}, {3.800444525714138*^9, 3.8004445587035923`*^9}, {
-  3.800446641706366*^9, 3.800446671275538*^9}, {3.80044717593827*^9, 
-  3.8004472320791388`*^9}},ExpressionUUID->"765fc385-70e1-4a0a-b835-\
-506710e9af58"],
+   3.799782143146861*^9, 3.799782162711768*^9}, {3.799782518166781*^9, 
+   3.799782610477874*^9}, {3.799782671027733*^9, 3.799782672595718*^9}, {
+   3.7997836267460938`*^9, 3.7997836269046383`*^9}, {3.799783693739151*^9, 
+   3.7997837404579153`*^9}, {3.799784250717511*^9, 3.799784603686801*^9}, {
+   3.7997846367255096`*^9, 3.7997847005503883`*^9}, {3.799784779721643*^9, 
+   3.799784787489852*^9}, {3.799790371382299*^9, 3.7997904223366747`*^9}, {
+   3.7997904594688053`*^9, 3.7997905134581547`*^9}, {3.800443979302402*^9, 
+   3.800444495542841*^9}, {3.800444525714138*^9, 3.8004445587035923`*^9}, {
+   3.800446641706366*^9, 3.800446671275538*^9}, {3.80044717593827*^9, 
+   3.8004472320791388`*^9}, 3.800667137465068*^9, {3.8006672149542513`*^9, 
+   3.800667216001985*^9}, 3.8006673297894087`*^9, {3.800668641714271*^9, 
+   3.8006686428265142`*^9}},ExpressionUUID->"765fc385-70e1-4a0a-b835-\
+506710e9af58"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -1154,52 +1169,55 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 1903, 29, 772, "Text",ExpressionUUID->"765fc385-70e1-4a0a-b835-506710e9af58"],
 Cell[CellGroupData[{
-Cell[2486, 53, 233, 4, 102, "Chapter",ExpressionUUID->"59f07fd9-5b94-4319-a411-8913bf28b6c1"],
-Cell[CellGroupData[{
-Cell[2744, 61, 264, 4, 95, "Section",ExpressionUUID->"3274af0f-8931-4f77-9b74-ec0f0f738217"],
-Cell[3011, 67, 1172, 27, 206, "Input",ExpressionUUID->"3b702a19-cc86-4795-b32d-15aa7007e345"]
+Cell[580, 22, 252, 4, 102, "Chapter",ExpressionUUID->"197aa06d-f460-4b7f-a2ed-edb15a453abc"],
+Cell[835, 28, 2278, 35, 692, "Text",ExpressionUUID->"765fc385-70e1-4a0a-b835-506710e9af58"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4220, 99, 160, 3, 95, "Section",ExpressionUUID->"e9c9c16e-1bd4-4748-9b32-c20ddd246cd2"],
-Cell[4383, 104, 3869, 55, 86, "Input",ExpressionUUID->"74aa04ae-ff39-4a71-ae27-83a4c1401e33"]
+Cell[3150, 68, 233, 4, 102, "Chapter",ExpressionUUID->"59f07fd9-5b94-4319-a411-8913bf28b6c1"],
+Cell[CellGroupData[{
+Cell[3408, 76, 264, 4, 95, "Section",ExpressionUUID->"3274af0f-8931-4f77-9b74-ec0f0f738217"],
+Cell[3675, 82, 1172, 27, 206, "Input",ExpressionUUID->"3b702a19-cc86-4795-b32d-15aa7007e345"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8289, 164, 306, 5, 95, "Section",ExpressionUUID->"bbbf4bdb-7da3-4f95-8611-4ba435bde863"],
-Cell[8598, 171, 333, 7, 45, "Input",ExpressionUUID->"faed5e04-c9ac-4e74-893b-20ea907e4dfb"]
+Cell[4884, 114, 160, 3, 95, "Section",ExpressionUUID->"e9c9c16e-1bd4-4748-9b32-c20ddd246cd2"],
+Cell[5047, 119, 3869, 55, 86, "Input",ExpressionUUID->"74aa04ae-ff39-4a71-ae27-83a4c1401e33"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8953, 179, 306, 5, 95, "Section",ExpressionUUID->"bbbf4bdb-7da3-4f95-8611-4ba435bde863"],
+Cell[9262, 186, 333, 7, 45, "Input",ExpressionUUID->"faed5e04-c9ac-4e74-893b-20ea907e4dfb"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8980, 184, 346, 5, 102, "Chapter",ExpressionUUID->"53e9d7aa-931f-4d4d-b810-d139e99cb1e8"],
+Cell[9644, 199, 346, 5, 102, "Chapter",ExpressionUUID->"53e9d7aa-931f-4d4d-b810-d139e99cb1e8"],
 Cell[CellGroupData[{
-Cell[9351, 193, 597, 10, 95, "Section",ExpressionUUID->"647540bc-f366-45dd-89ac-bdb451efd46a",
+Cell[10015, 208, 597, 10, 95, "Section",ExpressionUUID->"647540bc-f366-45dd-89ac-bdb451efd46a",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[9973, 207, 443, 7, 74, "Subsection",ExpressionUUID->"c7d6cddc-cdff-4477-baf7-bde7e01d809f"],
-Cell[10419, 216, 3692, 88, 726, "Input",ExpressionUUID->"5bdde497-26ed-4101-87b5-c4ab9cac10fa"],
-Cell[14114, 306, 3934, 86, 1126, "Input",ExpressionUUID->"cb63b484-2463-4b7e-b68e-93f16f7112eb"]
+Cell[10637, 222, 443, 7, 74, "Subsection",ExpressionUUID->"c7d6cddc-cdff-4477-baf7-bde7e01d809f"],
+Cell[11083, 231, 3692, 88, 726, "Input",ExpressionUUID->"5bdde497-26ed-4101-87b5-c4ab9cac10fa"],
+Cell[14778, 321, 3934, 86, 1126, "Input",ExpressionUUID->"cb63b484-2463-4b7e-b68e-93f16f7112eb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[18085, 397, 483, 7, 74, "Subsection",ExpressionUUID->"ba94d44f-9d85-4455-8b99-470230889000"],
-Cell[18571, 406, 3818, 82, 446, "Input",ExpressionUUID->"0e7ef1db-0ebb-4808-9687-462a57f094b7"]
+Cell[18749, 412, 483, 7, 74, "Subsection",ExpressionUUID->"ba94d44f-9d85-4455-8b99-470230889000"],
+Cell[19235, 421, 3818, 82, 446, "Input",ExpressionUUID->"0e7ef1db-0ebb-4808-9687-462a57f094b7"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[22426, 493, 533, 8, 74, "Subsection",ExpressionUUID->"6896eb9f-db37-45f1-bae7-57a830dc1570"],
-Cell[22962, 503, 14487, 334, 1766, "Input",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
+Cell[23090, 508, 533, 8, 74, "Subsection",ExpressionUUID->"6896eb9f-db37-45f1-bae7-57a830dc1570"],
+Cell[23626, 518, 14487, 334, 1766, "Input",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[37486, 842, 491, 7, 74, "Subsection",ExpressionUUID->"d65d61bd-0212-4593-9aa1-fa5aac0f0324"],
-Cell[37980, 851, 3007, 73, 446, "Input",ExpressionUUID->"92356adb-46b0-44a3-b55c-f1cd512ad57c"],
-Cell[40990, 926, 3752, 79, 646, "Input",ExpressionUUID->"9f64f2ac-4d75-4304-96e9-4357cebad95a"]
+Cell[38150, 857, 491, 7, 74, "Subsection",ExpressionUUID->"d65d61bd-0212-4593-9aa1-fa5aac0f0324"],
+Cell[38644, 866, 3007, 73, 446, "Input",ExpressionUUID->"92356adb-46b0-44a3-b55c-f1cd512ad57c"],
+Cell[41654, 941, 3752, 79, 646, "Input",ExpressionUUID->"9f64f2ac-4d75-4304-96e9-4357cebad95a"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[44791, 1011, 642, 10, 95, "Section",ExpressionUUID->"205c0f3c-b81c-4c18-8d71-a11dc4b5b44a",
+Cell[45455, 1026, 642, 10, 95, "Section",ExpressionUUID->"205c0f3c-b81c-4c18-8d71-a11dc4b5b44a",
  InitializationCell->True],
-Cell[45436, 1023, 296, 7, 52, "Text",ExpressionUUID->"e13d8fac-af7c-4495-8a53-c4ca824a2f2d"],
-Cell[45735, 1032, 5467, 92, 606, "Input",ExpressionUUID->"f28b06de-c679-45aa-9664-6d207b539bba"],
-Cell[51205, 1126, 687, 10, 45, "Input",ExpressionUUID->"2ac14ed6-b10c-4a41-943a-ce39667a2ca1"]
+Cell[46100, 1038, 296, 7, 52, "Text",ExpressionUUID->"e13d8fac-af7c-4495-8a53-c4ca824a2f2d"],
+Cell[46399, 1047, 5467, 92, 606, "Input",ExpressionUUID->"f28b06de-c679-45aa-9664-6d207b539bba"],
+Cell[51869, 1141, 687, 10, 45, "Input",ExpressionUUID->"2ac14ed6-b10c-4a41-943a-ce39667a2ca1"]
 }, Open  ]]
 }, Open  ]]
 }

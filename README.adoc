@@ -25,7 +25,7 @@ ifndef::html_compact[:total_size: 202.3]
 :cgw_model: {src}/Models/CompassGait[Models/CompassGait/CompassGait.nb]
 :locomotion: {src}/SIMple/BipedalLocomotion[SIMple/BipedalLocomotion/]
 :continuation: {src}/SIMple/ContinuationMethods[SIMple/ContinuationMethods/]
-:bipeds_app: {src}/GaitBrowser/app/imgs[GaitBrowser/app/]
+:bipeds_app: {src}/GaitBrowser/app/[GaitBrowser/app/]
 :bipeds_imgs: {src}/GaitBrowser/app/imgs[GaitBrowser/app/imgs/]
 :bipeds_vids: {src}/GaitBrowser/app/vids[GaitBrowser/app/vids/]
 :bipeds_json: {src}/GaitBrowser/src/bipeds[GaitBrowser/src/bipeds/]
@@ -253,11 +253,11 @@ have the option to save and reload the generated gaits.  Saving the compiled
 functions and generated gaits will significantly reduce the start-up cost of
 future sessions.
 
-.Input and output destination of Mathematica save/get and import/export functions
+.Folder locations of Mathematica save/get and import/export functions
 [options="header"]
 |===
 | Folder        | File Description       | File Saved/Loaded | File Type
-| {figures}     | images used in figures | saved             | .png, .svg
+| {figures}     | images used in figures | saved             | .pdf, .png, .svg
 | {bipeds_json} | JSON used in web app   | saved             | .json
 | {bipeds_imgs} | images used in figures | loaded            | .png
 | {models_name} | generated gaits        | both              | .mx

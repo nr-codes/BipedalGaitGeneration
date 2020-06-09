@@ -1,7 +1,12 @@
 =  A Topological Approach to Gait Generation for Biped Robots: Supplemental Material
-Nelson Rosa <https://github.com/nr-codes[@nr-codes]>
+Nelson Rosa Jr. <https://github.com/nr-codes[@nr-codes]>
 v0.0 June 04, 2020
 :toc:
+
+ifdef::html_compact[:total_size: 41.2]
+ifndef::html_compact[:total_size: 202.3]
+
+:git: https://github.com/nr-codes/BipedalGaitGeneration
 
 :video_link: link:./BipedalGaitGeneration.mp4
 :video: {video_link}[BipedalGaitGeneration.mp4]
@@ -9,7 +14,9 @@ v0.0 June 04, 2020
 :src: link:./
 :code: {src}/[./]
 :launcher: {src}/RunMain.nb[./RunMain.nb]
+:installer: {src}/RunMeFirst.nb[./RunMeFirst.nb]
 :models: {src}/Models[Models/]
+:models_name: {src}/Models[Models/<Model>/]
 :simple: {src}/SIMple[SIMple/]
 :bipeds: {src}/GaitBrowser[GaitBrowser/]
 :figures: {src}/Figures[Figures/]
@@ -20,20 +27,32 @@ v0.0 June 04, 2020
 :continuation: {src}/SIMple/ContinuationMethods[SIMple/ContinuationMethods/]
 :bipeds_app: {src}/GaitBrowser/app/imgs[GaitBrowser/app/]
 :bipeds_imgs: {src}/GaitBrowser/app/imgs[GaitBrowser/app/imgs/]
+:bipeds_vids: {src}/GaitBrowser/app/vids[GaitBrowser/app/vids/]
 :bipeds_json: {src}/GaitBrowser/src/bipeds[GaitBrowser/src/bipeds/]
 
 :matex: link:http://szhorvat.net/pelican/latex-typesetting-in-mathematica.html[MaTeX]
  
-This directory contains a {video_link}[video] of a representative set of bipeds
-walking using gaits from our framework, the source code of the framework
-written as a Mathematica library, and a browser-based gait animation viewer
-written in Node.js that supplement the results in our paper:
+This
+ifndef::html_compact[repository]
+ifdef::html_compact[directory]
+contains supplementary material for 
+ifndef::html_compact[_A Topological Approach to Gait Generation for Biped Robots_ <<inprep>>.]
+ifdef::html_compact["A Topological Approach to Gait Generation for Biped Robots" <<inprep>>.]
+This includes
 
-[bibliography]
-- [[[inprep, 1]]] N. Rosa and K. Lynch, "A Topological Approach to Gait Generation for Biped
-Robots", Manuscript in Preparation.
+* a {video_link}[video] of a representative set of bipeds walking using gaits from our framework,
+ifdef::html_compact[and]
+* the source code of our framework as a Mathematica
+ifdef::html_compact[library.]
+ifndef::html_compact[]
+library, and 
+* a browser-based gait animation viewer written in Node.js.
+endif::html_compact[]
 
-*TOTAL SIZE*: 202.3 MB
+*TOTAL SIZE*: {total_size} MB
+
+ifdef::html_compact[NOTE: The supplementary material is also available online, see <<repo>>.]
+
 
 == Playable Media
 
@@ -44,7 +63,7 @@ Robots", Manuscript in Preparation.
 | SIZE : | 21.1 MB
 
 | PLAYER INFORMATION: | The video has been tested with VLC v3.0.10; it should
-also play in any modern web browser of the day.
+also play in any modern web browser.
 
 | PACKING LIST: | {video}
 
@@ -81,19 +100,16 @@ implementation details of the biped models in Mathematica.
 . In Mathematica, configure a C compiler (e.g., Visual Studio, gcc, etc.)
 . _[optional]_ To compute the plots in the paper, install {matex}
 
-IMPORTANT: You must make sure you can compile code from Mathematica to C otherwise
-the library will not work.
-
-NOTE: While the Mathematica library has some basic gait animation features, we
-provide a separate gait animation library that runs in a web browser for
-advanced CAD rendering of the 3D models as seen in <<inprep>>.  For more
-information, see <<#nodejs-dataset>>.
+NOTE: These steps are further expanded upon in {installer}.
 
 === Detailed Run Instructions
 
-.To generate gaits from equilibria for various biped models:
-. Open {launcher} and click a model as represented by the button in the
-notebook
+.To generate gaits from equilibria for various biped models from a single notebook:
+. Open {launcher}
+. Evaluate all cells
+. Click on buttons in output cells
+
+Clicking on a button will open and evaluate all cells of the model's corresponding Main.nb notebook. 
 
 .To learn more about a particular model:
 . Go to {models} and select a model/folder (e.g., {cgw})
@@ -103,13 +119,118 @@ notebook
 . Browse other files in the subfolder (e.g., {cgw_model} contains the modeling
 code for the compass gait)
 
+NOTE: Most warnings generated in a Main.nb notebook can be ignored, e.g.,
+warnings that appear while compiling a model down to C code.
+
 === Output Description
 
-While running a Main.nb file in a particular model folder in {models},
-the expected output is to see animations of an example walking gait in certain
-output cells of the notebook.  For example, after executing all cells
-sequentially in {cgw_main}, six (6) of the output cells will show animations of
-different walking and brachiating gaits.
+While running Main.nb in {models_name}, the expected output is to see
+animations of an example walking gait in certain output cells of the notebook.
+For example, {cgw_main} has six (6) output cells with gait animations.
+
+=== Major Component Description
+
+The folders {models} and {simple} contain software for generating gaits using
+equilibria of a biped model as outlined in <<inprep>>.
+
+The {models} folder contains a set of representative biped models found in the
+literature.  The models are stored in their own subfolders.  Each folder has a
+similar layout (e.g., each folder has a Main.nb, which generates gaits for that
+particular model).  For making your own models, the folder {cgw} is a good
+place to start.  Other models demonstrate our approach for generating, for
+example, gaits subject to virtual holonomic constraints, multiple switching
+times, or higher-dimensional manifolds.  See <<#tables>> for run times of a
+particular model's Main.nb notebook.
+
+The {simple} folder contains an implementation of our framework.  The code in
+this folder is part of a larger effort to create a fast and expressive rigid
+body dynamics' library.  We do not cover the files in depth except to point out
+that {continuation} is where our numerical continuation library is stored and
+{locomotion} is where many of the helper functions are defined for the bipeds
+in the {models} folder.
+
+ifdef::html_compact[See <<repo>> for more information on the {bipeds} folder.]
+
+[#nodejs-dataset]
+== Node.js Dataset
+
+ifdef::html_compact[] 
+While the Mathematica library has some basic gait animation features, we
+provide a separate gait animation library that runs in a web browser for
+advanced CAD rendering of the 3D models as seen in <<inprep>>.  For more
+information, visit the online repository <<repo>>.
+
+.To install the Node.js library
+. Open {installer}
+. Execute the cells related to downloading pre-compiled libraries of the web
+app or for installing the source code.
+
+Alternatively, clone or download the repository <<repo>>.
+endif::html_compact[] 
+
+ifndef::html_compact[]
+
+|===
+
+| DESCRIPTION: | A gait animation library in Node.js for animating and creating
+video clips of generated gaits in a web browser.
+
+| SIZE: | 161 MB
+
+| PLATFORM: a| 
+.All platforms supporting
+* Node.js v12+
+* A modern web browser (e.g., Firefox, Safari, Edge, etc.) capable of running
+** ECMAScript 2015 (specifically JavaScript)
+** link:https://threejs.org/docs/index.html#manual/en/introduction/Browser-support[WebGL and Three.js]
+
+| ENVIRONMENT: a|
+.Test configuration
+* Node.js v12.17.0
+* Firefox 76.0.1
+
+|===
+
+=== Detailed Set-up Instructions
+
+. Install link:https://nodejs.org[Node.js]
+
+. In a command line terminal 
+    .. Change into {bipeds}
+    .. Run `npm install` from the terminal
+    .. Run `npm run build`
+
+. _[optional]_ Install a modern web browser; make sure it is your default browser
+
+NOTE: Alternatively, you can download pre-compiled binaries from <<repo>>
+without installing Node.js or the source code.  These steps are further
+expanded upon in {installer}.
+
+=== Detailed Run Instructions
+
+.To run the Node.js visualization library:
+. In a command line terminal 
+    .. Change into {bipeds}
+    .. Run `npm run app`
+
+=== Output Description
+After successfully executing `npm run app`, your default web browser will
+launch and show an animation of a biped robot walking.  The gaits of other
+models can be selected from the drop-down menu.  When saving images or a video
+`@nn`, where `n` is an integer, can be used to specify a frame rate in the # of
+images textbox.  Images and videos are saved to {bipeds_imgs} and
+{bipeds_vids}, respectively.  These folders are created as necessary.
+
+=== Major Component Description
+
+The {bipeds} folder contains code to animate advanced rendering models of the 3D
+bipeds.  The library is capable of animating 2D and 3D gaits in a web browser
+and producing video clips of a particular gait.  A secondary use of the {bipeds}
+folder is to reproduce the video clips in {video}.
+endif::html_compact[]
+
+[#tables]
+== Tables
 
 .Run times in seconds of running all cells in Main.nb of each model
 |===
@@ -127,136 +248,34 @@ different walking and brachiating gaits.
 All code executed in Mathematica v11.3.0 with a gcc 7.4.0 compiler backend on a
 2.7 GHz Intel Core i7-4800MQ CPU laptop running 64-bit Ubuntu 18.04 LTS.
 
-
-NOTE: Most warnings generated in the notebooks can be ignored.  For example,
-the warning `RigidBodyDynamics`Private`SetConstraintData::u`, which appears
-while compiling a model down to C code, can be safely ignored.
-
-NOTE: Certain cells generate various files.  Exported images are placed in
-{figures}, JSON files are placed in {bipeds_json}, and `.mx` files are placed in
-the biped's respective model folder.
-
-=== Major Component Description
-
-The folders {models} and {simple} contain software for generating gaits using
-equilibria of a biped model as outlined in <<inprep>>.
-
-The {models} folder contains a set of representative biped models found in the
-literature&mdash;a secondary use of the Models folder is to reproduce the
-figures in <<inprep>>.  The models are stored in their own subfolders in this
-directory.  Each folder has a similar layout (e.g., each folder has a Main.nb,
-which generates gaits for that particular model).  For making your own models,
-the folder {cgw} is a good place to start.  Other models demonstrate our
-approach for generating, for example, gaits subject to virtual holonomic
-constraints, multiple switching times, or higher-dimensional manifolds.
-
-NOTE: Depending on your computer specs, some of these models may take a while to
-compile down to C code and/or generate gaits the first time you run a Main.nb
-file.  The compiled models are automatically saved after the first run and you
+NOTE: The compiled models are automatically saved after the first run and you
 have the option to save and reload the generated gaits.  Saving the compiled
 functions and generated gaits will significantly reduce the start-up cost of
 future sessions.
 
-NOTE: When compiling a model in Mathematica, the PreprocessConstraints warnings
-can be ignored.
-
-The {simple} folder contains an implementation of our framework.  The
-code in this folder is part of a larger effort to create a fast and expressive
-rigid body dynamics' library.  We do not cover the files in depth except to
-point out that {continuation} is where our numerical continuation library is
-stored and {locomotion} is where many of the helper functions are defined for
-the bipeds in the {models} folder.
-
-
-Finally, {bipeds_imgs} and {figures} are directories for the various
-images the notebooks read and write, respectively.  {bipeds_json} is where
-JSON files are placed.
-
-
-[#nodejs-dataset]
-== Node.js Dataset
-
-This dataset is a visualization library written in Node.js.  This library is
-optional, but provides advanced rendering of the 3D biped models as seen in
-<<inprep>>.
-
-IMPORTANT: The rest of this section details the Node.js library only.
+.Input and output destination of Mathematica save/get and import/export functions
+[options="header"]
+|===
+| Folder        | File Description       | File Saved/Loaded | File Type
+| {figures}     | images used in figures | saved             | .png, .svg
+| {bipeds_json} | JSON used in web app   | saved             | .json
+| {bipeds_imgs} | images used in figures | loaded            | .png
+| {models_name} | generated gaits        | both              | .mx
 |===
 
-| DESCRIPTION: | The source code consists of a library of our framework and
-implementation details of the biped models in Mathematica and a gait animation
-library in Node.js for animating and creating video clips of generated gaits in
-a web browser.
-
-| SIZE: | 161 MB
-
-| PLATFORM: a| 
-.All platforms supporting
-* Node.js v12+
-* A modern web browser (e.g., Firefox, Safari, Edge, etc.) capable of running
-** ECMAScript 2015 (e.g. JavaScript)
-** link:https://threejs.org/docs/index.html#manual/en/introduction/Browser-support[WebGL and Three.js]
-
-| ENVIRONMENT: a|
-.Test configuration
-* Node.js v12.17.0
-* Firefox 76.0.1
-
-|===
-
-=== Detailed Set-up Instructions
-
-. Install Node.js
-
-  .. from a command line terminal, make sure that the `npm` command works.
-
-  .. if necessary, install a modern web browser; make sure it is your default
-  browser
-
-. Change into {bipeds} from a command line terminal 
-
-. Run
-
-  npm install
-  
-from the terminal.  This will install all relevant packages into the {bipeds} directory
-
-
-NOTE: Warnings from the ffmpeg library can be safely ignored.
-
-. Run
-
-  npm run build
-  
-from the terminal.  This will bundle the source code and move assets into the {biped_app} directory
-
-=== Detailed Run Instructions
-
-.To run the Node.js visualization library:
-. Change into {bipeds} from a command line terminal 
-. Run 
-
-  npm run app
-
-which will launch a local web server and your default web browser.
-
-=== Output Description
-
-Your default web browser should launch and you should see an animation of a
-biped robot walking.  The gaits of other models can be selected from the
-drop-down menu.  When saving images or a video `@nn`, where `n` is an integer, can be
-used to specify a frame rate in the # of images textbox.  Images and videos are
-saved to {bipeds_imgs}.
-
-=== Major Component Description
-
-The {bipeds} folder contains code to animate advanced rendering models of the 3D
-bipeds.  The library is capable of animating 2D and 3D gaits in a web browser
-and producing video clips of a particular gait.  A secondary use of the {bipeds}
-folder is to reproduce the video clips in {video}.
+== References
+[bibliography]
+- [[[inprep, 1]]] N. Rosa and K. Lynch, "A Topological Approach to Gait Generation for Biped
+Robots", Manuscript submitted for publication.
+- [[[repo, 2]]] N. Rosa, "Bipedal Gait Generation Library," {git}, 2020, last accessed June 8, 2020.
 
 == Contact Information
+
+Nelson Rosa Jr.
+
 link:https://github.com/nr-codes[@nr-codes] on GitHub
+
+ifdef::html_compact[nr -at- u.northwestern.edu]
 
 // to compile into README.txt:
 // w3m -dump -o display_charset=latin1 README.html > README.txt

@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     43714,        977]
-NotebookOptionsPosition[     39189,        892]
-NotebookOutlinePosition[     39551,        908]
-CellTagsIndexPosition[     39508,        905]
+NotebookDataLength[     47524,       1044]
+NotebookOptionsPosition[     42997,        959]
+NotebookOutlinePosition[     43359,        975]
+CellTagsIndexPosition[     43316,        972]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -391,111 +391,178 @@ Cell["Update the Library", "Section",
 4a4921648313"],
 
 Cell[TextData[{
- "If there is a new version available, the cell below creates a local \
-directory named after the current release version and then moves all files, \
-including this one, into the new directory.  If Mathematica warns you that \
-this file has been deleted or modified, ",
- StyleBox["do NOT save when prompted",
+ "If there is a new version available, the cell below will ",
+ StyleBox["close this notebook",
   FontWeight->"Bold"],
- ".  As part of the update, this file will be archived and replaced with a \
-newer version.\n\nIf the update is successful, you can manually delete the \
-archive folder.  If it isn\[CloseCurlyQuote]t, you can restore the previous \
-version manually.  Mathematica crashing is not necessarily a sign of \
-failure."
+ " and also create ",
+ StyleBox["and evaluate a temporary notebook",
+  FontWeight->"Bold"],
+ " that will\n\n1) creates a local directory named after the current release \
+version and then moves all files, including this one, into the new directory,\
+\n\n2) download the latest version of the library into this notebook\
+\[CloseCurlyQuote]s current directory and unzip the content, and\n\n3) close \
+itself (and no longer exist).\n\nIf the update is successful, you can \
+manually delete the archive folder.  If it isn\[CloseCurlyQuote]t, you may be \
+able to restore the previous version manually."
 }], "Text",
  CellChangeTimes->CompressedData["
-1:eJxTTMoPSmViYGCQAGIQPW+Odsa2gDeOmm1pZSC6+nl5DYjmOONYC6IrVs9S
-3Q6kXabXqoHoP+IpIkeAdM3aXDAtvvssy1EgzbLtMy+I1nuou+UYkJZsyD4M
-ope2BN0C0V0K376AaJH5BkzHgfS9dUtYQLSVcFIzmP9x8gQQrdI9by6I/qPj
-txhEvzv6Zz2IvrXQZguIzlDf9BhEK63+AKZNg49ZnQbSbke32oJopcvLf5wD
-0kWHdoNppZi+fyD6l0w683kgXSwkxQmiT2TJg+ntFwWt+ALfOF5LVgoH0S8q
-FySB6JYnV8pAtNDJjVUgOq0tpxpErzi8bRmILluetwpEq3Cu3weic+VyDoDo
-JHHNj/xA2kgh7xOIzjD1KTYE0kvqdpeD6Ml8H7mNgLQsoxUviAYA972/Og==
-
+1:eJwdx00og3EAx/FhB9Ims1o0zDLy2iiXJw6TXEgbB8pOD7bFRlEbZlLWDlMo
+oZiNjMli0cxhkrAh7y85OChZ2UEyJGnJ//ccvn36ZtFd9W2xLBZLSIJ2W4HG
+J3+V5VlUemh8MQzA+DOZCfa6ZyTbxKppUw6MClr5h8SBNR2jwH/ODhDZvk8O
+LH4q8gaJqUMdB3DJXP8AraLvL8h3SGOPiI/rTjakUuhh5iMT4zB7xD4Ho4V1
+i/AtEPXAh4VyL9Tkbj5DsfudsawhSJ0SqwNbFVB86/q5IHbv+xnFytE/+CtU
+x10Se3hpCfC4PZNx+zqZ4ipeZfct4kYY7punoTl0p4e8k41+qLJojXDlwLcM
+9a7OVZid4NmFugztHqQFeZEkYqmo8wNqymp7SojOQb8BTnAjiaXE9BiKA7U7
+XLqZaM0Pt0C5JKSGTQqDGUoddiusMSvH4NXN7CS0VdZMwX+JCN1D
+  
   "],ExpressionUUID->"26e27df4-a9ef-4925-9b5f-253f280715ad"],
 
-Cell[BoxData[
- RowBox[{"If", "[", 
+Cell[BoxData[{
+ RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"AlphabeticOrder", "[", 
-     RowBox[{"current", ",", " ", "latest"}], "]"}], " ", "\[Equal]", " ", 
-    "1"}], ",", "\[IndentingNewLine]", 
-   RowBox[{"(*", " ", 
-    RowBox[{
-     RowBox[{"new", " ", "update", " ", "available"}], ",", " ", 
-     RowBox[{"archive", " ", "old", " ", "release"}]}], " ", "*)"}], 
-   "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{"dir", " ", "=", " ", 
-     RowBox[{"FileNameJoin", "[", 
+   RowBox[{"nb", " ", "=", " ", 
+    RowBox[{"With", "[", 
+     RowBox[{
       RowBox[{"{", 
        RowBox[{
-        RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
-        RowBox[{"\"\<v\>\"", " ", "<>", " ", "current"}]}], "}"}], "]"}]}], 
-    ";", "\[IndentingNewLine]", 
-    RowBox[{"CreateDirectory", "[", "dir", "]"}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{"files", " ", "=", " ", 
-     RowBox[{"FileNames", "[", 
-      RowBox[{"All", ",", " ", 
-       RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"files", " ", "=", " ", 
-     RowBox[{"Select", "[", 
-      RowBox[{"files", ",", " ", 
+        RowBox[{"current", " ", "=", " ", "current"}], ",", " ", 
+        RowBox[{"latest", " ", "=", " ", "latest"}], ",", " ", 
+        RowBox[{"nbdir", " ", "=", " ", 
+         RowBox[{"NotebookDirectory", "[", "]"}]}], ",", " ", 
+        RowBox[{"repo", " ", "=", " ", 
+         RowBox[{"url", "[", 
+          RowBox[{
+          "\"\<BipedalGaitGeneration-Mathematica\>\"", ",", " ", 
+           "\"\<.zip\>\""}], "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
        RowBox[{
-        RowBox[{"#", " ", "=!=", " ", "dir"}], "&"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"RenameFile", "[", 
-       RowBox[{"#", ",", " ", 
-        RowBox[{"FileNameJoin", "[", 
-         RowBox[{"{", 
-          RowBox[{"dir", ",", " ", 
-           RowBox[{"FileNameTake", "[", 
-            RowBox[{"#", ",", " ", 
-             RowBox[{"-", "1"}]}], "]"}]}], "}"}], "]"}], ",", " ", 
-        RowBox[{"OverwriteTarget", "\[Rule]", "True"}]}], "]"}], "&"}], " ", "/@",
-      " ", "files"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"(*", " ", 
-     RowBox[{"install", " ", "new", " ", "release"}], " ", "*)"}], 
-    "\[IndentingNewLine]", 
-    RowBox[{
-    "mma", " ", "=", " ", "\"\<BipedalGaitGeneration-Mathematica\>\""}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"mma", " ", "=", " ", 
-     RowBox[{"URLDownload", "[", 
-      RowBox[{
-       RowBox[{"url", "[", 
-        RowBox[{"mma", ",", " ", "\"\<.zip\>\""}], "]"}], ",", "  ", 
-       RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", 
-    RowBox[{"ExtractArchive", "[", 
-     RowBox[{"mma", ",", " ", 
-      RowBox[{"NotebookDirectory", "[", "]"}]}], "]"}], ";", " ", 
-    "\[IndentingNewLine]", 
-    RowBox[{"DeleteFile", "[", "mma", "]"}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{"(*", " ", 
-     RowBox[{
-      RowBox[{
-      "close", " ", "this", " ", "notebook", " ", "without", " ", "saving"}], 
-      ",", " ", 
-      RowBox[{"which", " ", "is", " ", "what", " ", "we", " ", "want"}]}], 
-     " ", "*)"}], "\[IndentingNewLine]", 
-    RowBox[{"NotebookClose", "[", "]"}], ";", "\[IndentingNewLine]", 
-    RowBox[{"Quit", "[", "]"}], ";"}]}], "\[IndentingNewLine]", 
-  "]"}]], "Input",
- CellChangeTimes->{
-  3.80059162066425*^9, {3.8005917763017397`*^9, 3.800591925320118*^9}, {
-   3.800591958299615*^9, 3.800592002464418*^9}, {3.800592546540399*^9, 
-   3.800592623993305*^9}, {3.800593437423295*^9, 3.800593515191831*^9}, {
-   3.800593963790752*^9, 3.800593964265736*^9}, {3.80059589501895*^9, 
-   3.800595926563671*^9}, 3.8005959722653503`*^9, {3.800665032531762*^9, 
-   3.8006650371096487`*^9}},ExpressionUUID->"9eb2698e-8929-4649-a83f-\
-0ad6f87d634c"]
+       "create", " ", "temporary", " ", "notebook", " ", "to", " ", "update", 
+        " ", "package"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"CreateDocument", "[", 
+       RowBox[{"{", "\[IndentingNewLine]", 
+        RowBox[{"Cell", "[", 
+         RowBox[{
+          RowBox[{"BoxData", "[", 
+           RowBox[{"{", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"MakeBoxes", "[", "\[IndentingNewLine]", 
+              RowBox[{
+               RowBox[{"If", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"AlphabeticOrder", "[", 
+                   RowBox[{"current", ",", " ", "latest"}], "]"}], " ", 
+                  "\[Equal]", " ", "1"}], ",", "\[IndentingNewLine]", 
+                 RowBox[{"(*", " ", 
+                  RowBox[{"new", " ", "update", " ", 
+                   RowBox[{"available", "!"}]}], " ", "*)"}], 
+                 "\[IndentingNewLine]", 
+                 RowBox[{
+                  RowBox[{"root", " ", "=", " ", "nbdir"}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"url", " ", "=", " ", "repo"}], ";", 
+                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{"(*", " ", 
+                   RowBox[{"archive", " ", "old", " ", "release"}], " ", 
+                   "*)"}], "\[IndentingNewLine]", 
+                  RowBox[{"dir", " ", "=", " ", 
+                   RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"root", ",", " ", 
+                    RowBox[{"\"\<v\>\"", " ", "<>", " ", "current"}]}], "}"}],
+                     "]"}]}], ";", "\[IndentingNewLine]", 
+                  RowBox[{"CreateDirectory", "[", "dir", "]"}], ";", 
+                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{"files", " ", "=", " ", 
+                   RowBox[{"FileNames", "[", 
+                    RowBox[{"All", ",", " ", "root"}], "]"}]}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"files", " ", "=", " ", 
+                   RowBox[{"Select", "[", 
+                    RowBox[{"files", ",", " ", 
+                    RowBox[{
+                    RowBox[{"#", " ", "=!=", " ", "dir"}], "&"}]}], "]"}]}], 
+                  ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{
+                   RowBox[{
+                    RowBox[{"RenameFile", "[", 
+                    RowBox[{"#", ",", " ", 
+                    RowBox[{"FileNameJoin", "[", 
+                    RowBox[{"{", 
+                    RowBox[{"dir", ",", " ", 
+                    RowBox[{"FileNameTake", "[", 
+                    RowBox[{"#", ",", " ", 
+                    RowBox[{"-", "1"}]}], "]"}]}], "}"}], "]"}], ",", " ", 
+                    RowBox[{"OverwriteTarget", "\[Rule]", "True"}]}], "]"}], 
+                    "&"}], " ", "/@", " ", "files"}], ";", 
+                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{"(*", " ", 
+                   RowBox[{"install", " ", "new", " ", "release"}], " ", 
+                   "*)"}], "\[IndentingNewLine]", 
+                  RowBox[{"mma", " ", "=", " ", 
+                   RowBox[{"URLDownload", "[", 
+                    RowBox[{"url", ",", "  ", "root"}], "]"}]}], ";", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"ExtractArchive", "[", 
+                   RowBox[{"mma", ",", " ", "root"}], "]"}], ";", " ", 
+                  "\[IndentingNewLine]", 
+                  RowBox[{"DeleteFile", "[", "mma", "]"}], ";", 
+                  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                  RowBox[{"MessageDialog", "[", 
+                   RowBox[{
+                   "\"\<Update complete to v\>\"", "<>", " ", "latest", " ", "<>",
+                     " ", "\"\<!  Previous version placed in \>\"", " ", "<>",
+                     " ", "dir"}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+                "]"}], ";"}], "\[IndentingNewLine]", "]"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{"MakeBoxes", "[", 
+              RowBox[{
+               RowBox[{"NotebookClose", "[", "]"}], ";"}], "]"}]}], 
+            "\[IndentingNewLine]", "}"}], "]"}], ",", "\[IndentingNewLine]", 
+          "\"\<Input\>\""}], "\[IndentingNewLine]", "]"}], 
+        "\[IndentingNewLine]", "}"}], "]"}]}], "\[IndentingNewLine]", "]"}]}],
+    ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "give", " ", "variables", " ", "in", " ", "temporary", " ", "notebook", 
+    " ", "private", " ", "scope"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"nb", ",", " ", 
+     RowBox[{"CellContext", " ", "\[Rule]", " ", "Notebook"}]}], "]"}], ";"}],
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"evaluate", " ", "temporary", " ", "notebook"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SelectionMove", "[", 
+   RowBox[{"nb", ",", " ", "All", ",", " ", "Notebook"}], "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"SelectionEvaluate", "[", "nb", "]"}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "close", " ", "this", " ", "notebook", " ", "as", " ", "it", " ", "will", 
+    " ", "be", " ", "moved", " ", "shortly"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"NotebookClose", "[", "]"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8007489996464233`*^9, 3.800749001886568*^9}, {
+   3.8007490435660143`*^9, 3.800749065891225*^9}, {3.800749188478189*^9, 
+   3.8007491891551857`*^9}, {3.800749231950427*^9, 3.8007492739479427`*^9}, {
+   3.8007494585140047`*^9, 3.800749458718526*^9}, {3.8007495419199333`*^9, 
+   3.800749556564344*^9}, {3.800749591208228*^9, 3.800749760737352*^9}, {
+   3.800750027527109*^9, 3.800750055132381*^9}, {3.800750151363662*^9, 
+   3.8007501966036453`*^9}, {3.8007502749179907`*^9, 
+   3.8007502966210623`*^9}, {3.8007504475028563`*^9, 
+   3.8007505018769503`*^9}, {3.800750736657189*^9, 3.8007507375885572`*^9}, 
+   3.800750844263722*^9, {3.8007513888617992`*^9, 3.8007513923632393`*^9}, {
+   3.800751438262616*^9, 3.800751488090238*^9}, {3.800751535389635*^9, 
+   3.800751571810413*^9}},ExpressionUUID->"a7d6a7b1-58bd-4bba-ab94-\
+9c86107fc5dc"]
 }, Closed]],
 
 Cell[CellGroupData[{
@@ -945,36 +1012,36 @@ Cell[15324, 341, 1467, 38, 622, "Input",ExpressionUUID->"4d8ba808-6819-48c7-9122
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[16828, 384, 404, 6, 95, "Section",ExpressionUUID->"c707f536-d696-463f-ac11-4a4921648313"],
-Cell[17235, 392, 1198, 22, 292, "Text",ExpressionUUID->"26e27df4-a9ef-4925-9b5f-253f280715ad"],
-Cell[18436, 416, 3375, 81, 806, "Input",ExpressionUUID->"9eb2698e-8929-4649-a83f-0ad6f87d634c"]
+Cell[17235, 392, 1325, 25, 532, "Text",ExpressionUUID->"26e27df4-a9ef-4925-9b5f-253f280715ad"],
+Cell[18563, 419, 7056, 145, 1846, "Input",ExpressionUUID->"a7d6a7b1-58bd-4bba-ab94-9c86107fc5dc"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[21848, 502, 351, 6, 81, "Section",ExpressionUUID->"9543112e-3900-4b14-9b9d-0a1b5a67ff59"],
-Cell[22202, 510, 1502, 26, 372, "Text",ExpressionUUID->"29d53b58-bca6-41b5-bdd5-a3a40ef6df11"],
-Cell[23707, 538, 1275, 30, 286, "Input",ExpressionUUID->"59c9816d-ab97-4115-9c3f-e20c4367ec34"]
+Cell[25656, 569, 351, 6, 81, "Section",ExpressionUUID->"9543112e-3900-4b14-9b9d-0a1b5a67ff59"],
+Cell[26010, 577, 1502, 26, 372, "Text",ExpressionUUID->"29d53b58-bca6-41b5-bdd5-a3a40ef6df11"],
+Cell[27515, 605, 1275, 30, 286, "Input",ExpressionUUID->"59c9816d-ab97-4115-9c3f-e20c4367ec34"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[25019, 573, 562, 8, 81, "Section",ExpressionUUID->"211a3366-087f-4c8e-8504-46245e8a9c73"],
-Cell[25584, 583, 883, 17, 252, "Text",ExpressionUUID->"d9e5a1f6-adaf-4973-ae3b-f23bcba2a386"],
+Cell[28827, 640, 562, 8, 81, "Section",ExpressionUUID->"211a3366-087f-4c8e-8504-46245e8a9c73"],
+Cell[29392, 650, 883, 17, 252, "Text",ExpressionUUID->"d9e5a1f6-adaf-4973-ae3b-f23bcba2a386"],
 Cell[CellGroupData[{
-Cell[26492, 604, 608, 9, 74, "Subsection",ExpressionUUID->"dbd02f57-260c-47cd-bf7f-ecdd814d67b2"],
-Cell[27103, 615, 443, 8, 92, "Text",ExpressionUUID->"600a5e77-ae50-4bbd-8cc2-918a76cedf88"],
-Cell[27549, 625, 4075, 89, 1046, "Input",ExpressionUUID->"f9d8f8ef-f29e-43f8-ae77-192f7919914a"]
+Cell[30300, 671, 608, 9, 74, "Subsection",ExpressionUUID->"dbd02f57-260c-47cd-bf7f-ecdd814d67b2"],
+Cell[30911, 682, 443, 8, 92, "Text",ExpressionUUID->"600a5e77-ae50-4bbd-8cc2-918a76cedf88"],
+Cell[31357, 692, 4075, 89, 1046, "Input",ExpressionUUID->"f9d8f8ef-f29e-43f8-ae77-192f7919914a"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[31661, 719, 609, 9, 58, "Subsection",ExpressionUUID->"044d1f72-9d52-4fbc-ae6c-4abb4f402857"],
-Cell[32273, 730, 1337, 21, 92, "Text",ExpressionUUID->"6a632fcd-7653-4566-b2b2-6e8bd7c2d55e"],
+Cell[35469, 786, 609, 9, 58, "Subsection",ExpressionUUID->"044d1f72-9d52-4fbc-ae6c-4abb4f402857"],
+Cell[36081, 797, 1337, 21, 92, "Text",ExpressionUUID->"6a632fcd-7653-4566-b2b2-6e8bd7c2d55e"],
 Cell[CellGroupData[{
-Cell[33635, 755, 506, 7, 64, "Subsubsection",ExpressionUUID->"db3cbc2d-a8a5-48fa-949d-4ece97ee71d4"],
-Cell[34144, 764, 288, 5, 45, "Input",ExpressionUUID->"f7dd8dd9-3aac-4012-a7e8-db457c257e3a"]
+Cell[37443, 822, 506, 7, 64, "Subsubsection",ExpressionUUID->"db3cbc2d-a8a5-48fa-949d-4ece97ee71d4"],
+Cell[37952, 831, 288, 5, 45, "Input",ExpressionUUID->"f7dd8dd9-3aac-4012-a7e8-db457c257e3a"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[34469, 774, 491, 7, 64, "Subsubsection",ExpressionUUID->"9a62182f-c614-487e-b7cc-d18d29381446"],
-Cell[34963, 783, 1532, 36, 246, "Input",ExpressionUUID->"da29b791-b414-40ff-a3e2-4bffe7dbba64"]
+Cell[38277, 841, 491, 7, 64, "Subsubsection",ExpressionUUID->"9a62182f-c614-487e-b7cc-d18d29381446"],
+Cell[38771, 850, 1532, 36, 246, "Input",ExpressionUUID->"da29b791-b414-40ff-a3e2-4bffe7dbba64"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[36532, 824, 475, 7, 64, "Subsubsection",ExpressionUUID->"3df7717b-4cb1-4703-9b04-813b58c8eeea"],
-Cell[37010, 833, 2127, 53, 326, "Input",ExpressionUUID->"dd4142e4-a02f-4b07-94bc-a92fd4eacf3a"]
+Cell[40340, 891, 475, 7, 64, "Subsubsection",ExpressionUUID->"3df7717b-4cb1-4703-9b04-813b58c8eeea"],
+Cell[40818, 900, 2127, 53, 326, "Input",ExpressionUUID->"dd4142e4-a02f-4b07-94bc-a92fd4eacf3a"]
 }, Open  ]]
 }, Closed]]
 }, Closed]]

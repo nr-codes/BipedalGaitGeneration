@@ -10,6 +10,9 @@ rm BipedalGaitGeneration*.zip GaitBrowser-*
 
 cd ../
 
+# add version to Installer.nb
+#sed -i'' 's/RowBox\[{"current", " ", "=", " ", "\\"\\<0\.1\.0\\>\\""}\], ";"}\]/RowBox[{"current", " ", "=", " ", "\\"\\<5.5.5\\>\\""}], ";"}]/' ./Installer.nb
+
 # create documentation
 echo "The content in this directory contains a video showing animations of all gaits presented in the figures of the paper as well as the source code for computing walking gaits from equilibria using numerical continuation methods.  Further information can be found in the README.txt file." > SUMMARY.txt 
 

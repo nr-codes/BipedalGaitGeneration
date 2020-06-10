@@ -40,7 +40,7 @@ ifndef::html_compact[_A Topological Approach to Gait Generation for Biped Robots
 ifdef::html_compact["A Topological Approach to Gait Generation for Biped Robots" <<inprep>>.]
 This includes
 
-* a {video_link}[video] of a representative set of bipeds walking using gaits from our framework,
+* a link:https://www.youtube.com/watch?v=PgjGfK0G0ts[video] of a representative set of bipeds walking using gaits from our framework,
 ifdef::html_compact[and]
 * the source code of our framework as a Mathematica
 ifdef::html_compact[library.]

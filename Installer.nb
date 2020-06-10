@@ -532,7 +532,7 @@ and Linux online.  Try downloading the source code for other platforms.\>\"",
  RowBox[{"SystemOpen", "[", 
   RowBox[{"DirectoryName", "@", "app"}], 
   "]"}]}], "Input",ExpressionUUID->"f9d8f8ef-f29e-43f8-ae77-192f7919914a"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
@@ -645,7 +645,7 @@ Cell[BoxData[{
   "In[70]:=",ExpressionUUID->"dd4142e4-a02f-4b07-94bc-a92fd4eacf3a"]
 }, Open  ]]
 }, Closed]]
-}, Open  ]]
+}, Closed]]
 }, Open  ]],
 
 Cell[CellGroupData[{

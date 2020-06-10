@@ -108,7 +108,7 @@ export default class DefaultMeshLoader {
     // draw point
     const v = new Float32Array( 3 ); // 1 point * 1 vertex * 3 coords
     const g = new BufferGeometry();
-    g.addAttribute( 'position', new BufferAttribute( v, 3 ) );
+    g.setAttribute( 'position', new BufferAttribute( v, 3 ) );
     planarize( root.name, g, this.planarize );
 
     const m = new PointsMaterial( { color: joint.color } );
@@ -393,7 +393,7 @@ class Link {
     // create mesh
     geo.setIndex( ind );
     geo.setFromPoints( vert );
-    geo.addAttribute( 'uv', uv );
+    geo.setAttribute( 'uv', uv );
     geo.computeVertexNormals();
 
     k = [ s.getCap(), geo, e.getCap() ];
@@ -664,7 +664,7 @@ class LinkCap {
     const geo = new PlaneBufferGeometry( w, w );
     geo.rotateY( -Math.PI / 2 );
     geo.scale( s.x, s.y, s.z );
-    geo.applyMatrix( this.fmat );
+    geo.applyMatrix4( this.fmat );
 
     return geo;
   }
@@ -676,7 +676,7 @@ class LinkCap {
     // cube
     const geo = new BoxBufferGeometry( w, w, w );
     geo.scale( s.x, s.y, s.z );
-    geo.applyMatrix( this.fmat );
+    geo.applyMatrix4( this.fmat );
 
     return geo;
   }
@@ -692,7 +692,7 @@ class LinkCap {
     geo.rotateZ( Math.PI / 2 );
     geo.translate( -h / 2, 0, 0 );
     geo.scale( s.x, s.y, s.z );
-    geo.applyMatrix( this.fmat );
+    geo.applyMatrix4( this.fmat );
 
     return geo;
   }
@@ -748,7 +748,7 @@ class LinkCap {
     }
 
     geo.scale( s.x, s.y, s.z );
-    geo.applyMatrix( this.fmat );
+    geo.applyMatrix4( this.fmat );
 
     return geo;
   }
@@ -846,7 +846,7 @@ function mergeBufferGeometries(geometries) {
       return acc + a[k].count;
     }, 0 );
 
-    geometry.addAttribute( k, new BufferAttribute( array, itemSize ) );
+    geometry.setAttribute( k, new BufferAttribute( array, itemSize ) );
   }
 
   template = geometries[0].getIndex();

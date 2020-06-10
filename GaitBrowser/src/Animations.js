@@ -505,10 +505,11 @@ function updateSurface() {
   line.start[ h ] -= size[ h ];
   line.end[ h ] += 2 * size[ h ];
 
-  // start drawing plane
+  // point 1: start drawing plane at bottom-most corner
   plane.intersectLine( line, target );
   positions.push( ...target.toArray() );
 
+  // point 2: end point of back line in step direction
   line.start[ w ] += size[ w ];
   line.end[ w ] += size[ w ];
   plane.intersectLine( line, target );
@@ -528,9 +529,17 @@ function updateSurface() {
 
     ground.geometry.setPositions( p );
     ground.visible = true;
+
+    // need to have same length as 3D plane for 3D plane to render correctly
+    positions.push( ...target.toArray() );
+    positions.push( ...target.toArray() );
+    positions.push( ...target.toArray() );
+
   }
   else{
     ground.visible = false;
+
+    // point 3: end point of right-most corner of front line
     line.start[ a.n ] += size[ a.n ];
     line.end[ a.n ] += size[ a.n ];
     plane.intersectLine( line, target );
@@ -541,6 +550,7 @@ function updateSurface() {
     plane.intersectLine( line, target );
     positions.push( ...target.toArray() );
 
+    // point 5: finish loop back to start
     line.start[ a.n ] -= size[ a.n ];
     line.end[ a.n ] -= size[ a.n ];
     plane.intersectLine( line, target );

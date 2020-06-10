@@ -36,7 +36,6 @@ export function initGUI(clips) {
     d.appendChild( button );
   };
 
-  c( 'All Gaits in Paper' );
   keys.forEach( c );
 
   // add clips to shared object

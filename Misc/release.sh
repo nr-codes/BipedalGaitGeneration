@@ -1,28 +1,38 @@
 #!/usr/bin/env bash
 
+# get latest version number
+ver=$(git tag | tail -1)
+ver="${ver:1}"
+
 # get script directory, https://stackoverflow.com/questions/59895
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 cd "$dir"
 
 # remove previous packages
-rm BipedalGaitGeneration*.zip GaitBrowser-*
+rm -f BipedalGaitGeneration*.zip GaitBrowser-*
 
 cd ../
 
-# add version to Installer.nb
-#sed -i'' 's/RowBox\[{"current", " ", "=", " ", "\\"\\<0\.1\.0\\>\\""}\], ";"}\]/RowBox[{"current", " ", "=", " ", "\\"\\<5.5.5\\>\\""}], ";"}]/' ./Installer.nb
-
 # create documentation
-echo "The content in this directory contains a video showing animations of all gaits presented in the figures of the paper as well as the source code for computing walking gaits from equilibria using numerical continuation methods.  Further information can be found in the README.txt file." > SUMMARY.txt 
+echo "The content in this directory contains a video showing animations of" \
+     "all gaits presented in the figures of the paper as well as the source" \
+     "code for computing walking gaits from equilibria using numerical" \
+     "continuation methods.  Further information can be found in the" \
+     "README.txt file." > SUMMARY.txt 
 
-asciidoctor -a html_compact README.adoc
+asciidoctor -a html_compact -a revnumber=v$ver README.adoc
 
 w3m -dump -o display_charset=latin1 README.html > README.txt
 
+# set version in notebooks
+row='RowBox[{"VERSION", " ", "=", " ", "\\"\\<'
+box='\\>\\""}]'
+reg="$row[0-9]\+\.[0-9]\+\.[0-9]\+$box"
+rep="$row$ver$box"
+sed -i "s/$reg/$rep/" Installer.nb
+
 # create downloadable archives
-ver=$(git tag | tail -1)
-ver="${ver:1}"
 math="BipedalGaitGeneration-Mathematica-$ver.zip"
 node="BipedalGaitGeneration-Node.js-$ver.zip"
 

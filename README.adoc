@@ -1,6 +1,6 @@
 =  A Topological Approach to Gait Generation for Biped Robots: Supplemental Material
 Nelson Rosa Jr. <https://github.com/nr-codes[@nr-codes]>
-v0.0 June 04, 2020
+v0.1.0 June 04, 2020
 :toc:
 
 ifdef::html_compact[:total_size: 41.2]
@@ -13,8 +13,8 @@ ifndef::html_compact[:total_size: 202.3]
 
 :src: link:./
 :code: {src}/[./]
-:launcher: {src}/RunMain.nb[./RunMain.nb]
-:installer: {src}/RunMeFirst.nb[./RunMeFirst.nb]
+:launcher: {src}/RunModels.nb[./RunModels.nb]
+:installer: {src}/Installer.nb[./Installer.nb]
 :models: {src}/Models[Models/]
 :models_name: {src}/Models[Models/<Model>/]
 :simple: {src}/SIMple[SIMple/]
@@ -100,7 +100,7 @@ implementation details of the biped models in Mathematica.
 . In Mathematica, configure a C compiler (e.g., Visual Studio, gcc, etc.)
 . _[optional]_ To compute the plots in the paper, install {matex}
 
-NOTE: These steps are further expanded upon in {installer}.
+NOTE: {installer} provides a detailed installation checklist and can automate many of these steps.
 
 === Detailed Run Instructions
 
@@ -112,14 +112,14 @@ NOTE: These steps are further expanded upon in {installer}.
 Clicking on a button will open and evaluate all cells of the model's corresponding Main.nb notebook. 
 
 .To learn more about a particular model:
-. Go to {models} and select a model/folder (e.g., {cgw})
+. Go to {models} and select a {models_name} folder (e.g., {cgw})
 
 . Open Main.nb (e.g., {cgw_main}) and evaluate cells in order of appearance
 
 . Browse other files in the subfolder (e.g., {cgw_model} contains the modeling
 code for the compass gait)
 
-NOTE: Most warnings generated in a Main.nb notebook can be ignored, e.g.,
+NOTE: Most warnings generated in a Main.nb notebook can be ignored.  For example,
 warnings that appear while compiling a model down to C code.
 
 === Output Description
@@ -129,6 +129,10 @@ animations of an example walking gait in certain output cells of the notebook.
 For example, {cgw_main} has six (6) output cells with gait animations.
 
 === Major Component Description
+
+The files {installer} and {launcher} automate the process of installing
+packages and running models, respectively.  These are good places to start
+before doing a deep dive into the code.
 
 The folders {models} and {simple} contain software for generating gaits using
 equilibria of a biped model as outlined in <<inprep>>.
@@ -202,9 +206,9 @@ video clips of generated gaits in a web browser.
 
 . _[optional]_ Install a modern web browser; make sure it is your default browser
 
-NOTE: Alternatively, you can download pre-compiled binaries from <<repo>>
-without installing Node.js or the source code.  These steps are further
-expanded upon in {installer}.
+NOTE: Many of these steps are automated in {installer}.  Alternatively, you can
+download pre-compiled binaries from <<repo>> without installing Node.js or the
+source code.
 
 === Detailed Run Instructions
 

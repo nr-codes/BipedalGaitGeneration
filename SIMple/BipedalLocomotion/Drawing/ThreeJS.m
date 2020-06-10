@@ -68,7 +68,7 @@ RBDExpandExpression[CreateTba /@ X],
 
 CreateTransforms[\[Mu]_:1] := Module[{c},
 c = addMu[\[Mu]];
-First@CreateTransforms[{0}, c[[1;;nx]]&, c&]
+First@CreateTransforms[{0}, c[[1;;nx]]&, c[[1;;nc]]&]
 ];
 
 
@@ -225,7 +225,7 @@ T = RigidBodyDynamics`Private`GetExpandedTree[];
 (* functions for a model entry, model defined by \[Mu] vector in \[DoubleStruckC] *)
 K = KeyDrop[Key@Options];
 (* mu assumes no derivatives, i.e., Length[mu] === nc *)
-mu = #[[1, "c", 1, BLbiped["c", #[[1, "m", 1]], "\[Mu]"]]]&;
+mu = #[[1, "c", 1, (If[# <0, nc+#+1, #]&) /@ BLbiped["c", #[[1, "m", 1]], "\[Mu]"]]]&;
 j = Join[CreateJoints[T, #1, #2], CreatePOI[#1, #2]]&;
 mopts = Lookup[#, Options, <||>]&;
 

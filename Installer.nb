@@ -192,7 +192,7 @@ Cell[TextData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"VERSION", " ", "=", " ", "\"\<0.0.0\>\""}], ";"}], 
+   RowBox[{"VERSION", " ", "=", " ", "\"\<0.1.0\>\""}], ";"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{
@@ -491,6 +491,17 @@ Cell[BoxData[{
         RowBox[{"app", " ", "=", 
          RowBox[{"app", "<>", " ", "\"\<.exe\>\""}]}], ";"}]}], "]"}], ";", 
      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"DirectoryQ", "[", 
+         RowBox[{"DirectoryName", "@", "app"}], "]"}]}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"CreateDirectory", "[", 
+         RowBox[{"DirectoryName", "@", "app"}], "]"}], ";"}]}], 
+      "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
      RowBox[{"URLDownload", "[", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"url", "@@", 
@@ -521,7 +532,7 @@ and Linux online.  Try downloading the source code for other platforms.\>\"",
  RowBox[{"SystemOpen", "[", 
   RowBox[{"DirectoryName", "@", "app"}], 
   "]"}]}], "Input",ExpressionUUID->"f9d8f8ef-f29e-43f8-ae77-192f7919914a"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -634,7 +645,7 @@ Cell[BoxData[{
   "In[70]:=",ExpressionUUID->"dd4142e4-a02f-4b07-94bc-a92fd4eacf3a"]
 }, Open  ]]
 }, Closed]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{

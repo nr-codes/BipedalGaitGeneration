@@ -43,7 +43,8 @@ Cell[BoxData[
        "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"<<", " ", "\"\<CompassGait`\>\""}], ";"}]}]}]], "Input",
- CellLabel->"In[124]:=",ExpressionUUID->"c872a008-fd1c-4d60-83c1-89c173718e29"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"c872a008-fd1c-4d60-83c1-89c173718e29"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -71,7 +72,81 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"CompassGait", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->"In[128]:=",ExpressionUUID->"f83a39c1-e01f-4a65-b4ea-77320657ea2d"]
+ CellLabel->"In[23]:=",ExpressionUUID->"f83a39c1-e01f-4a65-b4ea-77320657ea2d"],
+
+Cell[CellGroupData[{
+
+Cell["Print a summary of biped variables", \
+"Subsection",ExpressionUUID->"c7dba87e-8cac-4b2c-aeb9-4969c062a9bc"],
+
+Cell[TextData[{
+ "Given that bipeds are hybrid dynamical systems, BLSummary provides a \
+summary of how pre-impact state variables and post-impact virtual holonomic \
+constraints affect the dynamics of the current hybrid regime.   The hybrid \
+regimes for this biped are named \[OpenCurlyDoubleQuote]left\
+\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]right\
+\[CloseCurlyDoubleQuote] after the active stance foot which is in contact \
+with the surface during the step.  The pre-impact state defines the \
+post-impact state and the virtual holonomic constraints define the \
+transmission matrix B.\n\n",
+ StyleBox["DESCRIPTION OF HEADERS",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["q regime_name",
+  FontWeight->"Bold"],
+ ": configuration variables of hybrid regime \
+\[OpenCurlyDoubleQuote]regime_name\[CloseCurlyDoubleQuote]\n",
+ StyleBox["q-/i",
+  FontWeight->"Bold"],
+ ": (i)ndependent and (d)ependent pre-impact configurations\n",
+ StyleBox["v-/i",
+  FontWeight->"Bold"],
+ ": (i)ndependent and (d)ependent pre-impact velocities\n",
+ StyleBox["q-",
+  FontWeight->"Bold"],
+ ": values of pre-impact configurations\n",
+ StyleBox["v-",
+  FontWeight->"Bold"],
+ ": values of pre-impact velocities\n",
+ StyleBox["B+",
+  FontWeight->"Bold"],
+ ": degree of Bezier polynomial actuator is meant to track (-1 => zero \
+function, u => unactuated)\n",
+ StyleBox["B",
+  FontWeight->"Bold"],
+ ": corresponding # of virtual holonomic constraint in RBDListConstraints[] \
+(must call Atlas[n] first to set constraints)\n\n",
+ StyleBox["DESCRIPTION OF SYMBOLS IN TABLE",
+  FontSlant->"Italic",
+  FontVariations->{"Underline"->True}],
+ "\n",
+ StyleBox["\[DoubleStruckQ]",
+  FontWeight->"Bold"],
+ "[joint name, dof]: name of joint position and name of degree of freedom\n",
+ StyleBox["\[DoubleStruckV]",
+  FontWeight->"Bold"],
+ "[joint name, dof]: name of joint velocity and name of degree of freedom\n",
+ StyleBox["\[DoubleStruckC]",
+  FontWeight->"Bold"],
+ "[#]: reduced parameter vector (the actual free parameters of the \
+continuation method)\n",
+ StyleBox["d",
+  FontWeight->"Bold"],
+ ": dependent variable\n",
+ StyleBox["i",
+  FontWeight->"Bold"],
+ ": independent variable\n",
+ StyleBox["u",
+  FontWeight->"Bold"],
+ ": unactuated joint"
+}], "Text",ExpressionUUID->"4e3f7010-493f-44ed-80bf-51393076a394"],
+
+Cell[BoxData[
+ RowBox[{"BLSummary", "[", "]"}]], "Input",
+ CellLabel->
+  "In[25]:=",ExpressionUUID->"87ed6752-aad0-4d45-a896-2078ef94e49a"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -91,8 +166,6 @@ man1\t\t\t|  branches of passive gaits (u = 0) emanating from 1st bifurcation \
 point
 man2\t\t\t|  branches of passive gaits (u = 0) emanating from 2nd bifurcation \
 point
-root\t\t\t\t|  branches of gaits  with final gait walking on flat ground
-aman\t\t\t|  branches of powered gaits (u != 0)
 
 NOTE: You can skip the next code block, Genera Gaits, if you load these gaits.\
 \>", "Text",ExpressionUUID->"0ff18347-6f45-42e9-8e84-4968f1754187"],
@@ -102,7 +175,8 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cgw.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[130]:=",ExpressionUUID->"343cc8a3-f9c2-463c-9f1c-dd6409fe549e"]
+ CellLabel->
+  "In[26]:=",ExpressionUUID->"343cc8a3-f9c2-463c-9f1c-dd6409fe549e"]
 }, Open  ]]
 }, Open  ]],
 
@@ -159,7 +233,8 @@ Cell[BoxData[{
  RowBox[{"TR", "\[IndentingNewLine]", 
   RowBox[{
   "(*", " ", "plot", " ", "*)"}]}], "\[IndentingNewLine]", "PL"}], "Input",
- CellLabel->"In[131]:=",ExpressionUUID->"56a321b9-1a81-440e-a9f7-20036fdcd883"]
+ CellLabel->
+  "In[27]:=",ExpressionUUID->"56a321b9-1a81-440e-a9f7-20036fdcd883"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -192,7 +267,8 @@ Cell[BoxData[
      "generate"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"m", " ", "=", " ", "250"}], ";"}]}]}]], "Input",
- CellLabel->"In[135]:=",ExpressionUUID->"95a3c3ca-7a7e-4915-8cf2-57826b231d03"]
+ CellLabel->
+  "In[31]:=",ExpressionUUID->"95a3c3ca-7a7e-4915-8cf2-57826b231d03"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -242,7 +318,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[138]:=",ExpressionUUID->"62b8f12a-b2af-496d-b420-47bfd7dad250"]
+ CellLabel->
+  "In[34]:=",ExpressionUUID->"62b8f12a-b2af-496d-b420-47bfd7dad250"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -260,7 +337,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[141]:=",ExpressionUUID->"0c4f8123-6506-4b3b-b2c0-5c91de22cc07"]
+ CellLabel->
+  "In[37]:=",ExpressionUUID->"0c4f8123-6506-4b3b-b2c0-5c91de22cc07"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -310,7 +388,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[142]:=",ExpressionUUID->"0cd9ce28-ae57-433a-b76e-8c14598e7edb"]
+ CellLabel->
+  "In[38]:=",ExpressionUUID->"0cd9ce28-ae57-433a-b76e-8c14598e7edb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -322,584 +401,8 @@ Cell[BoxData[
  RowBox[{"BLWalk", "[", 
   RowBox[{"man2", ",", " ", 
    RowBox[{"{", "25", "}"}], ",", " ", "3"}], "]"}]], "Input",
- CellLabel->"In[145]:=",ExpressionUUID->"6deb9c17-21c1-41c3-8520-05b56e8ff742"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Generate Actuated Gaits", \
-"Section",ExpressionUUID->"50579436-9786-4c14-ac2f-3ee5795e0f4b"],
-
-Cell[CellGroupData[{
-
-Cell["Functions for computing actuated gaits", \
-"Subsection",ExpressionUUID->"3b6646e0-3fb2-4e63-bfa4-ddbddf96ef4f"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"CompPN", "[", 
-    RowBox[{"M_", ",", " ", 
-     RowBox[{"m_:", "25"}]}], "]"}], " ", ":=", " ", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"CompNeg", "[", 
-      RowBox[{"M", ",", " ", "m"}], "]"}], ",", " ", 
-     RowBox[{"CompPos", "[", 
-      RowBox[{"M", ",", " ", "m"}], "]"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"CompPos", "[", 
-    RowBox[{"M_", ",", " ", 
-     RowBox[{"m_:", "25"}]}], "]"}], " ", ":=", " ", 
-   RowBox[{"CompA", "[", 
-    RowBox[{
-     RowBox[{"KeySelect", "[", 
-      RowBox[{"M", ",", " ", 
-       RowBox[{
-        RowBox[{"Positive", "@", 
-         RowBox[{"First", "[", "#", "]"}]}], "&"}]}], "]"}], ",", " ", "m"}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"CompNeg", "[", 
-     RowBox[{"M_", ",", " ", 
-      RowBox[{"m_:", "25"}]}], "]"}], " ", ":=", " ", 
-    RowBox[{"CompA", "[", 
-     RowBox[{
-      RowBox[{"KeySelect", "[", 
-       RowBox[{"M", ",", " ", 
-        RowBox[{
-         RowBox[{"Negative", "@", 
-          RowBox[{"First", "[", "#", "]"}]}], "&"}]}], "]"}], ",", " ", "m"}],
-      "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"CompA", "[", 
-    RowBox[{"M_", ",", " ", 
-     RowBox[{"m_:", "25"}]}], "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"c", ",", " ", "T", ",", " ", "man"}], "}"}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{"Table", "[", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{
-        RowBox[{"c", " ", "=", " ", 
-         RowBox[{"M", "\[LeftDoubleBracket]", 
-          RowBox[{"k", ",", " ", "1"}], "\[RightDoubleBracket]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"T", " ", "=", " ", 
-         RowBox[{"c", "\[LeftDoubleBracket]", 
-          RowBox[{"-", "1"}], "\[RightDoubleBracket]"}]}], ";", 
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        RowBox[{"(*", " ", 
-         RowBox[{
-         "redefine", " ", "map", " ", "with", " ", "fixed", " ", "switching", 
-          " ", "time", " ", "to", " ", "be", " ", "fixed", " ", "at", " ", 
-          "switch", " ", "time", " ", "T"}], " ", "*)"}], 
-        "\[IndentingNewLine]", 
-        RowBox[{"CompassGaitA", "[", "T", "]"}], ";", "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", 
-        RowBox[{"man", " ", "=", " ", 
-         RowBox[{"BLGenerateGaits", "[", 
-          RowBox[{
-          "CompassGaitA", ",", " ", "c", ",", " ", "h", ",", " ", "m", ",", 
-           " ", 
-           RowBox[{"Man", "\[Rule]", " ", 
-            RowBox[{"{", 
-             RowBox[{
-              RowBox[{"Method", " ", "\[Rule]", " ", "cmc"}], ",", " ", 
-              RowBox[{"Monitor", " ", "\[Rule]", " ", "tmon"}], ",", " ", 
-              RowBox[{"\"\<nstol\>\"", " ", "\[Rule]", " ", "tol"}], ",", 
-              RowBox[{"\"\<cm\>\"", " ", "\[Rule]", " ", 
-               RowBox[{"{", 
-                RowBox[{"\"\<newton\>\"", " ", "\[Rule]", " ", 
-                 RowBox[{"{", 
-                  RowBox[{"Print", " ", "\[Rule]", " ", "25"}], "}"}]}], 
-                "}"}]}]}], "}"}]}]}], "]"}]}], ";", "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", 
-        RowBox[{"Select", "[", 
-         RowBox[{"man", ",", " ", 
-          RowBox[{
-           RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], ",", 
-       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"{", 
-        RowBox[{"k", ",", " ", 
-         RowBox[{"Length", "@", "M"}]}], "}"}]}], "\[IndentingNewLine]", 
-      "]"}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
- CellLabel->"In[146]:=",ExpressionUUID->"86edb771-5fbe-461e-b720-3c13a2fe0dae"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Compute actuated gaits using  man1 as seed values", \
-"Subsection",ExpressionUUID->"26b3f306-6873-4aac-b161-985bfdcf2d2c"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"a1", " ", "=", " ", 
-   RowBox[{
-    RowBox[{"2", 
-     RowBox[{"Range", "[", 
-      RowBox[{"2", ",", " ", "250", ",", " ", "4"}], "]"}]}], "+", "1"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"a1", " ", "=", " ", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"a1", "-", "1"}], ",", " ", "a1"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"aman1", " ", "=", " ", 
-   RowBox[{"CompPN", "[", 
-    RowBox[{
-     RowBox[{"man1", "\[LeftDoubleBracket]", "a1", "\[RightDoubleBracket]"}], 
-     ",", " ", "50"}], "]"}]}], ";"}]}], "Input",
- CellLabel->"In[150]:=",ExpressionUUID->"32ef0f38-20b3-4af4-9e39-66abc5a90686"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Animate a gait from aman1", \
-"Subsection",ExpressionUUID->"af16801e-bc4d-4061-a3f4-315a778f0655"],
-
-Cell[BoxData[
- RowBox[{"BLWalk", "[", 
-  RowBox[{
-   RowBox[{"aman1", "\[LeftDoubleBracket]", "5", "\[RightDoubleBracket]"}], 
-   ",", " ", 
-   RowBox[{"{", "25", "}"}], ",", " ", "3"}], "]"}]], "Input",
- CellLabel->"In[30]:=",ExpressionUUID->"2ab87b0e-c247-43cf-941c-185d0bdf97af"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Compute actuated gaits using  man2 as seed values", \
-"Subsection",ExpressionUUID->"b1b094fb-9767-458f-ac7c-26c18bd57ebc"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"a2", " ", "=", " ", 
-   RowBox[{
-    RowBox[{"2", 
-     RowBox[{"Range", "[", 
-      RowBox[{"2", ",", " ", "114", ",", " ", "4"}], "]"}]}], "+", "1"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"a2", " ", "=", " ", 
-   RowBox[{"Join", "[", 
-    RowBox[{
-     RowBox[{"a2", "-", "1"}], ",", " ", "a2"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"aman2", " ", "=", " ", 
-   RowBox[{"CompPN", "[", 
-    RowBox[{
-     RowBox[{"man2", "\[LeftDoubleBracket]", "a2", "\[RightDoubleBracket]"}], 
-     ",", " ", "50"}], "]"}]}], ";"}]}], "Input",
- CellLabel->"In[31]:=",ExpressionUUID->"973185e4-ae0b-4114-9f57-52222787f5cc"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Animate a gait from aman2", \
-"Subsection",ExpressionUUID->"498ff7fa-823a-4783-b494-e3d5d6ab2dff"],
-
-Cell[BoxData[
- RowBox[{"BLWalk", "[", 
-  RowBox[{
-   RowBox[{"aman2", "\[LeftDoubleBracket]", "5", "\[RightDoubleBracket]"}], 
-   ",", " ", 
-   RowBox[{"{", "25", "}"}], ",", " ", "3"}], "]"}]], "Input",
- CellLabel->"In[34]:=",ExpressionUUID->"0768c9ea-980e-4b16-9c0b-80d71ab7d897"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Global Homotopy Map", "Section",
- InitializationCell->
-  True,ExpressionUUID->"80dc0df6-a0bd-4da2-a1f3-a81a4b2068c9"],
-
-Cell[CellGroupData[{
-
-Cell["Helper functions", "Subsection",
- InitializationCell->
-  True,ExpressionUUID->"fbddc1ef-a479-44d2-b047-60db7aab70c5"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"step", "[", "A_Association", "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"X0", ",", " ", "XT"}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"X0", " ", "=", " ", 
-       RowBox[{
-        RowBox[{"A", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", "1", 
-        "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"XT", " ", "=", " ", 
-       RowBox[{
-        RowBox[{"A", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", 
-        RowBox[{"-", "1"}], "\[RightDoubleBracket]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"XT", "\[LeftDoubleBracket]", 
-        RowBox[{"All", ",", " ", 
-         RowBox[{"2", ";;", "2"}]}], "\[RightDoubleBracket]"}], " ", "-", " ", 
-       RowBox[{"X0", "\[LeftDoubleBracket]", 
-        RowBox[{"All", ",", " ", 
-         RowBox[{"2", ";;", "2"}]}], "\[RightDoubleBracket]"}]}]}]}], 
-    "\[IndentingNewLine]", "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"step", "[", 
-    RowBox[{"c_", ",", " ", 
-     RowBox[{"m_:", "Automatic"}]}], "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"mp", ",", " ", "C0", ",", " ", "CT"}], "}"}], ",", 
-     "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"mp", " ", "=", " ", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"m", " ", "===", " ", "Automatic"}], ",", " ", 
-         RowBox[{"BLbiped", "[", "\"\<m[0]\>\"", "]"}], ",", " ", "m"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"C0", " ", "=", " ", 
-       RowBox[{"devec", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"BLmxcp", "[", 
-           RowBox[{"mp", ",", " ", "c"}], "]"}], "\[LeftDoubleBracket]", "3", 
-          "\[RightDoubleBracket]"}], ",", " ", "nc"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"CT", " ", "=", " ", 
-       RowBox[{"devec", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"BLmxc0", "[", 
-           RowBox[{"mp", ",", " ", "c"}], "]"}], "\[LeftDoubleBracket]", "3", 
-          "\[RightDoubleBracket]"}], ",", " ", "nc"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"CT", "\[LeftDoubleBracket]", 
-        RowBox[{"All", ",", " ", 
-         RowBox[{"2", ";;", "2"}]}], "\[RightDoubleBracket]"}], " ", "-", " ", 
-       RowBox[{"C0", "\[LeftDoubleBracket]", 
-        RowBox[{"All", ",", " ", 
-         RowBox[{"2", ";;", "2"}]}], "\[RightDoubleBracket]"}]}]}]}], 
-    "\[IndentingNewLine]", "]"}]}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"slope", "[", "A_Association", "]"}], " ", ":=", " ", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", 
-       RowBox[{"m", ",", " ", "X", ",", " ", "C", ",", " ", "S"}], "}"}], ",",
-       "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"m", " ", "=", " ", 
-        RowBox[{
-         RowBox[{"A", "[", "\"\<m\>\"", "]"}], "\[LeftDoubleBracket]", "1", 
-         "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"X", " ", "=", " ", 
-        RowBox[{
-         RowBox[{"A", "[", "\"\<x-\>\"", "]"}], "\[LeftDoubleBracket]", "1", 
-         "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"C", " ", "=", " ", 
-        RowBox[{
-         RowBox[{"A", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", "1", 
-         "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
-       RowBox[{"S", " ", "=", " ", 
-        RowBox[{"devec", "[", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"BLbiped", "[", 
-            RowBox[{"\"\<\[Sigma]\>\"", ",", " ", "m"}], "]"}], "[", 
-           RowBox[{"X", ",", " ", "C"}], "]"}], ",", " ", "mm"}], "]"}]}], 
-       ";", "\[IndentingNewLine]", 
-       RowBox[{"S", "\[LeftDoubleBracket]", 
-        RowBox[{"All", ",", " ", 
-         RowBox[{"mm", ";;", "mm"}]}], "\[RightDoubleBracket]"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"slope", "[", 
-    RowBox[{"c_", ",", " ", 
-     RowBox[{"m_:", "Automatic"}]}], "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"mp", ",", " ", "X", ",", " ", "C", ",", " ", "S"}], "}"}], ",",
-      "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"mp", " ", "=", " ", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"m", " ", "===", " ", "Automatic"}], ",", " ", 
-         RowBox[{"BLbiped", "[", "\"\<m[0]\>\"", "]"}], ",", " ", "m"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"C", " ", "=", " ", 
-       RowBox[{"devec", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"BLmxcp", "[", 
-           RowBox[{"mp", ",", " ", "c"}], "]"}], "\[LeftDoubleBracket]", "3", 
-          "\[RightDoubleBracket]"}], ",", " ", "nc"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"S", " ", "=", " ", 
-       RowBox[{"devec", "[", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"BLbiped", "[", 
-           RowBox[{"\"\<\[Sigma]\>\"", ",", " ", "mp"}], "]"}], "[", 
-          RowBox[{
-           RowBox[{"C", "\[LeftDoubleBracket]", 
-            RowBox[{"All", ",", " ", 
-             RowBox[{"1", ";;", "nx"}]}], "\[RightDoubleBracket]"}], ",", " ",
-            "C"}], "]"}], ",", " ", "mm"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"S", "\[LeftDoubleBracket]", 
-       RowBox[{"All", ",", " ", 
-        RowBox[{"mm", ";;", "mm"}]}], "\[RightDoubleBracket]"}]}]}], 
-    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
- CellLabel->"In[35]:=",ExpressionUUID->"98e215a4-fcd2-4750-8673-339e973a4e34"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Map of desired gait properties", "Subsection",
- InitializationCell->
-  True,ExpressionUUID->"78236c80-8581-46d0-b5fd-f8ead715ba9a"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"(*", " ", 
-   RowBox[{"homotopy", " ", "map"}], " ", "*)"}], "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{
-     RowBox[{"Options", "[", "H", "]"}], " ", "=", " ", 
-     RowBox[{"{", 
-      RowBox[{"Map", " ", "\[Rule]", " ", 
-       RowBox[{"{", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"H", "[", 
-      RowBox[{"mp_String", ",", " ", "cp_", ",", " ", 
-       RowBox[{"opts", ":", 
-        RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], " ", ":=", " ", 
-     RowBox[{"Module", "[", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"M", ",", " ", "X", ",", " ", "C", ",", " ", "S"}], "}"}], 
-       ",", "\[IndentingNewLine]", 
-       RowBox[{
-        RowBox[{"M", " ", "=", " ", 
-         RowBox[{"OptionValue", "[", "Map", "]"}]}], ";", 
-        "\[IndentingNewLine]", 
-        RowBox[{"If", "[", 
-         RowBox[{
-          RowBox[{"M", " ", "===", " ", 
-           RowBox[{"{", "}"}]}], ",", " ", 
-          RowBox[{
-           RowBox[{"M", " ", "=", " ", 
-            RowBox[{"BLP", "[", 
-             RowBox[{"mp", ",", " ", "cp", ",", " ", "opts"}], "]"}]}], 
-           ";"}]}], "]"}], ";", "\[IndentingNewLine]", 
-        RowBox[{"S", " ", "=", " ", 
-         RowBox[{"slope", "[", "M", "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"S", " ", "=", " ", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"Sin", "[", 
-            RowBox[{
-             RowBox[{
-             "S", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ",
-              "-", " ", "\[Sigma]des"}], "]"}], ",", " ", 
-           RowBox[{
-            RowBox[{"Cos", "[", 
-             RowBox[{"S", "\[LeftDoubleBracket]", 
-              RowBox[{"1", ",", " ", "1"}], "\[RightDoubleBracket]"}], "]"}], 
-            RowBox[{
-            "S", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], 
-          "}"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"X", " ", "=", " ", 
-         RowBox[{"step", "[", "M", "]"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"X", " ", "=", " ", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{
-            RowBox[{
-            "X", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], "-", 
-            "xdes"}], ",", " ", 
-           RowBox[{
-           "X", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
-          "}"}]}], ";", "\[IndentingNewLine]", 
-        RowBox[{"MapThread", "[", 
-         RowBox[{"Join", ",", " ", 
-          RowBox[{"{", 
-           RowBox[{"S", ",", " ", "X"}], "}"}]}], "]"}]}]}], 
-      "\[IndentingNewLine]", "]"}]}], ";"}]}]}]], "Input",
- CellLabel->"In[39]:=",ExpressionUUID->"27edb5c2-40c9-4bce-9b81-cfcfda3189ac"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["GHM using man1", "Subsection",
- InitializationCell->
-  True,ExpressionUUID->"371a1004-24d2-4faf-9ce2-fc2bea06606b"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"k", " ", "=", " ", "46"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"c", " ", "=", " ", 
-    RowBox[{"man1", "\[LeftDoubleBracket]", 
-     RowBox[{"k", ",", " ", "1"}], "\[RightDoubleBracket]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{"desired", " ", "gait", " ", "properties"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"\[Sigma]des", " ", "=", " ", "0"}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"walk", " ", "on", " ", "flat", " ", "ground"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"xdes", " ", "=", " ", 
-    RowBox[{"0.65", 
-     RowBox[{
-      RowBox[{"step", "[", "c", "]"}], "\[LeftDoubleBracket]", 
-      RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"65", "%", " ", "of", " ", 
-    RowBox[{"c", "'"}], "s", " ", "step", " ", "size"}], " ", "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"rootopts", " ", "=", " ", 
-    RowBox[{"{", 
-     RowBox[{"\"\<cm\>\"", " ", "\[Rule]", " ", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"Print", " ", "\[Rule]", " ", "1"}], ",", " ", 
-        RowBox[{"\"\<max\>\"", " ", "\[Rule]", " ", "10"}], ",", " ", 
-        RowBox[{"Root", " ", "\[Rule]", " ", "True"}]}], "}"}]}], "}"}]}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"root1", " ", "=", " ", 
-   RowBox[{"BLGlobalHomotopy", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"BLP", ",", " ", "H"}], "}"}], ",", " ", "c", ",", " ", 
-     RowBox[{"{", "0", "}"}], ",", " ", "1000", ",", " ", 
-     RowBox[{"Man", " ", "\[Rule]", " ", "rootopts"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"root1", " ", "=", " ", 
-   RowBox[{"Select", "[", 
-    RowBox[{"root1", ",", " ", 
-     RowBox[{
-      RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
-  ";"}]}], "Input",
- CellLabel->"In[41]:=",ExpressionUUID->"c44adbdf-fc29-49b5-b9f7-abd1f71dc813"],
-
-Cell[BoxData[
- RowBox[{"BLWalk", "[", 
-  RowBox[{"root1", ",", " ", 
-   RowBox[{"-", "1"}], ",", " ", "2"}], "]"}]], "Input",
- CellLabel->"In[48]:=",ExpressionUUID->"537548bf-b3df-48b8-9048-e0836dd373f6"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["GHM using man2", "Subsection",
- InitializationCell->
-  True,ExpressionUUID->"f45f75e6-6ff3-4b7d-9a2d-c8c46598ceea"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"k", " ", "=", " ", "46"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"c", " ", "=", " ", 
-    RowBox[{"man2", "\[LeftDoubleBracket]", 
-     RowBox[{"k", ",", " ", "1"}], "\[RightDoubleBracket]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{"desired", " ", "gait", " ", "properties"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"\[Sigma]des", " ", "=", " ", "0"}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"walk", " ", "on", " ", "flat", " ", "ground"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"xdes", " ", "=", " ", 
-    RowBox[{"0.5", 
-     RowBox[{
-      RowBox[{"step", "[", "c", "]"}], "\[LeftDoubleBracket]", 
-      RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{"50", "%", " ", "of", " ", 
-    RowBox[{"c", "'"}], "s", " ", "step", " ", "size"}], " ", "*)"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"rootopts", " ", "=", " ", 
-    RowBox[{"{", 
-     RowBox[{"\"\<cm\>\"", " ", "\[Rule]", " ", 
-      RowBox[{"{", 
-       RowBox[{
-        RowBox[{"\"\<\[Beta]\>\"", " ", "\[Rule]", " ", "0.5"}], ",", " ", 
-        RowBox[{"\"\<min\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
-        RowBox[{"Print", " ", "\[Rule]", " ", "1"}], ",", " ", 
-        RowBox[{"\"\<max\>\"", " ", "\[Rule]", " ", "10"}], ",", " ", 
-        RowBox[{"Root", " ", "\[Rule]", " ", "True"}]}], "}"}]}], "}"}]}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"root2", " ", "=", " ", 
-   RowBox[{"BLGlobalHomotopy", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"BLP", ",", " ", "H"}], "}"}], ",", " ", "c", ",", " ", 
-     RowBox[{"{", "0", "}"}], ",", " ", "1000", ",", " ", 
-     RowBox[{"Man", " ", "\[Rule]", " ", "rootopts"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"root2", " ", "=", " ", 
-   RowBox[{"Select", "[", 
-    RowBox[{"root2", ",", " ", 
-     RowBox[{
-      RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
-  ";"}]}], "Input",
- CellLabel->"In[49]:=",ExpressionUUID->"14af296e-2494-45eb-9d6c-dc2dddf46341"],
-
-Cell[BoxData[
- RowBox[{"BLWalk", "[", 
-  RowBox[{"root2", ",", " ", 
-   RowBox[{"-", "1"}], ",", " ", "2"}], "]"}]], "Input",
- CellLabel->"In[56]:=",ExpressionUUID->"bcf2c70f-fb33-4958-afef-97fbce99f5b1"]
+ CellLabel->
+  "In[41]:=",ExpressionUUID->"6deb9c17-21c1-41c3-8520-05b56e8ff742"]
 }, Open  ]]
 }, Open  ]],
 
@@ -918,8 +421,6 @@ man1\t\t\t|  branches of passive gaits (u = 0) emanating from 1st bifurcation \
 point
 man2\t\t\t|  branches of passive gaits (u = 0) emanating from 2nd bifurcation \
 point
-root\t\t\t\t|  branches of gaits  with final gait walking on flat ground
-aman\t\t\t|  branches of powered gaits (u != 0)
 
 NOTE: The call to Save[...] will overwrite previous file.  Uncomment to use.  \
 Recomment to avoid overwriting data.\
@@ -930,15 +431,15 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{"BLSaveTo", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cgw.mx\>\"", ",", " ", 
     RowBox[{"{", 
-     RowBox[{
-     "man1", ",", " ", "man2", ",", " ", "root1", ",", " ", "root2", ",", " ",
-       "aman1", ",", " ", "aman2"}], "}"}]}], "]"}]}]], "Input",
- CellLabel->"In[57]:=",ExpressionUUID->"2054a86c-266e-4b27-ac1b-2a75322dfc43"]
+     RowBox[{"man1", ",", " ", "man2"}], "}"}]}], "]"}]}]], "Input",
+ CellLabel->
+  "In[42]:=",ExpressionUUID->"2054a86c-266e-4b27-ac1b-2a75322dfc43"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -953,3 +454,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

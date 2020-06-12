@@ -512,12 +512,8 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"CompassGaitP", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
    RowBox[{
-    RowBox[{"CompassGaitA", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
+    RowBox[{"CompassGaitP", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], 
    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -578,32 +574,11 @@ Cell[BoxData[
      RowBox[{"control", "/", "design"}], " ", "parameters"}], " ", "*)"}], 
    "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"n\[Mu]", " ", "=", " ", "1"}], ";"}]}]}]], "Input",
+    RowBox[{"n\[Mu]", " ", "=", " ", "0"}], ";"}]}]}]], "Input",
  InitializationCell->
   True,ExpressionUUID->"14b6e8d3-1354-4432-a119-34fe48abd917"],
 
 Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"cT", "[", "c_", "]"}], " ", ":=", " ", 
-    RowBox[{"Module", "[", 
-     RowBox[{
-      RowBox[{"{", "cT", "}"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"cT", " ", "=", " ", "c"}], ";", "\[IndentingNewLine]", 
-       RowBox[{"If", "[", 
-        RowBox[{
-         RowBox[{"n\[Mu]", " ", ">", " ", "0"}], ",", " ", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"cT", "\[LeftDoubleBracket]", 
-            RowBox[{"-", "2"}], "\[RightDoubleBracket]"}], " ", "=", " ", 
-           RowBox[{"-", 
-            RowBox[{"cT", "\[LeftDoubleBracket]", 
-             RowBox[{"-", "2"}], "\[RightDoubleBracket]"}]}]}], ";"}]}], 
-        "]"}], ";", "\[IndentingNewLine]", "cT"}]}], "\[IndentingNewLine]", 
-     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -614,7 +589,8 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{
        "q", ",", " ", "v", ",", " ", "a", ",", " ", "n", ",", " ", 
-        "\[Theta]0T", ",", " ", "C"}], "}"}], ",", "\[IndentingNewLine]", 
+        "\[Theta]0T", ",", " ", "C", ",", " ", "f"}], "}"}], ",", 
+      "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{"BLc", " ", "indices"}], " ", "*)"}], "\[IndentingNewLine]", 
       RowBox[{
@@ -663,6 +639,20 @@ Cell[BoxData[{
          RowBox[{"\"\<\[Theta]\>\"", ",", " ", "s"}], "]"}]}], ";", 
        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"(*", " ", 
+        RowBox[{"post", "-", 
+         RowBox[{"impact", " ", "stance", " ", "foot"}]}], " ", "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"f", " ", "=", " ", 
+        RowBox[{
+         RowBox[{"BLFeet", "[", 
+          RowBox[{
+           RowBox[{"BLSide", "[", 
+            RowBox[{"s", ",", " ", 
+             RowBox[{"{", 
+              RowBox[{"left", ",", " ", "right"}], "}"}]}], "]"}], ",", " ", 
+           "Automatic"}], "]"}], "[", "2", "]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", 
         RowBox[{"function", " ", "specific", " ", "parameters"}], " ", "*)"}],
         "\[IndentingNewLine]", 
        RowBox[{"a", " ", "=", " ", 
@@ -674,6 +664,13 @@ Cell[BoxData[{
           RowBox[{"\"\<BLc0T\>\"", " ", "\[Rule]", " ", 
            RowBox[{"<|", 
             RowBox[{"\"\<\[Theta]\>\"", " ", "\[Rule]", " ", "\[Theta]0T"}], 
+            "|>"}]}], ",", " ", 
+          RowBox[{"\"\<BLSummary\>\"", " ", "\[Rule]", " ", 
+           RowBox[{"<|", 
+            RowBox[{"\"\<P\>\"", " ", "\[Rule]", " ", 
+             RowBox[{"<|", 
+              RowBox[{
+               RowBox[{"-", "1"}], " ", "\[Rule]", " ", "f"}], "|>"}]}], 
             "|>"}]}]}], "|>"}]}], ";", "\[IndentingNewLine]", 
        "\[IndentingNewLine]", 
        RowBox[{"(*", " ", 
@@ -683,10 +680,8 @@ Cell[BoxData[{
         RowBox[{"BLContinuationParameters", "[", 
          RowBox[{
           RowBox[{"Association", " ", "\[Rule]", " ", "a"}], ",", " ", 
-          RowBox[{"\"\<\[Mu]\>\"", " ", "\[Rule]", " ", "n\[Mu]"}], ",", " ", 
-          
-          RowBox[{"\"\<c[T]\>\"", " ", "\[Rule]", " ", "cT"}]}], "]"}]}], ";",
-        "\[IndentingNewLine]", "\[IndentingNewLine]", 
+          RowBox[{"\"\<\[Mu]\>\"", " ", "\[Rule]", " ", "n\[Mu]"}]}], "]"}]}],
+        ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"<|", 
         RowBox[{"s", " ", "\[Rule]", " ", "C"}], "|>"}]}]}], 
      "\[IndentingNewLine]", "]"}]}], ";"}], 
@@ -871,106 +866,14 @@ Cell[BoxData[{
         RowBox[{"m", ",", " ", "cp", ",", " ", "opts"}], "]"}]}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
-       RowBox[{"set", " ", "control", " ", "parameters", " ", 
-        RowBox[{"(", 
-         RowBox[{
-          RowBox[{"i", ".", "e", "."}], ",", " ", 
-          RowBox[{"output", " ", "torque"}]}], ")"}], " ", "to", " ", 
-        "zero"}], " ", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"n", " ", "=", " ", 
-       RowBox[{"n\[Mu]", "+", "1"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"C", " ", "=", " ", 
        RowBox[{
-        RowBox[{"M", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", 
-        RowBox[{"1", ",", " ", "All", ",", " ", 
-         RowBox[{
-          RowBox[{"-", "n"}], ";;", 
-          RowBox[{"-", "2"}]}]}], "\[RightDoubleBracket]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"R", " ", "=", " ", 
-       RowBox[{"M", "[", "\"\<R\>\"", "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"M", "[", "\"\<R\>\"", "]"}], " ", "=", " ", 
-       RowBox[{"MapThread", "[", 
-        RowBox[{"Join", ",", " ", 
-         RowBox[{"{", 
-          RowBox[{"R", ",", " ", "C"}], "}"}]}], "]"}]}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", "M"}]}], 
+        RowBox[{"add", " ", "additional", " ", "constraints"}], ";", " ", 
+        RowBox[{
+        "see", " ", "other", " ", "models", " ", "for", " ", "examples"}]}], 
+       " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", "M"}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->
   True,ExpressionUUID->"31490e4c-a909-4634-9d40-b049f7d3240f"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Map for Generating Gaits with Fixed Switching Time", \
-"Section",ExpressionUUID->"828517dd-b6e9-4efb-94da-e65bf34bb5b7"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"CompassGaitA", "[", 
-     RowBox[{"cp_", ",", " ", 
-      RowBox[{"opts", ":", 
-       RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], " ", ":=", " ", 
-    RowBox[{
-     RowBox[{"CompassGaitA", "[", 
-      RowBox[{
-       RowBox[{"BLbiped", "[", "\"\<m[0]\>\"", "]"}], ",", " ", "cp", ",", 
-       " ", "opts"}], "]"}], "[", "\"\<R\>\"", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"CompassGaitA", "[", 
-    RowBox[{"T_", "?", "NumericQ"}], "]"}], " ", ":=", " ", 
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{
-      RowBox[{"CompassGaitA", "[", 
-       RowBox[{"m_String", ",", " ", "cp_", ",", " ", 
-        RowBox[{"opts", ":", 
-         RowBox[{"OptionsPattern", "[", "]"}]}]}], "]"}], " ", ":=", " ", 
-      RowBox[{"Module", "[", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"n", ",", " ", "M", ",", " ", "R", ",", " ", "C"}], "}"}], 
-        ",", "\[IndentingNewLine]", 
-        RowBox[{
-         RowBox[{"M", " ", "=", " ", 
-          RowBox[{"BLP", "[", 
-           RowBox[{"m", ",", " ", "cp", ",", " ", "opts"}], "]"}]}], ";", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{"C", " ", "=", " ", 
-          RowBox[{
-           RowBox[{"M", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", 
-           RowBox[{"1", ",", " ", "All", ",", " ", 
-            RowBox[{
-             RowBox[{"-", "1"}], ";;", 
-             RowBox[{"-", "1"}]}]}], "\[RightDoubleBracket]"}]}], ";", 
-         "\[IndentingNewLine]", 
-         RowBox[{"R", " ", "=", " ", 
-          RowBox[{"M", "[", "\"\<R\>\"", "]"}]}], ";", "\[IndentingNewLine]", 
-         
-         RowBox[{
-          RowBox[{"C", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
-           " ", "=", " ", 
-          RowBox[{
-           RowBox[{
-           "C", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
-           "-", " ", "T"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"M", "[", "\"\<R\>\"", "]"}], " ", "=", " ", 
-          RowBox[{"MapThread", "[", 
-           RowBox[{"Join", ",", " ", 
-            RowBox[{"{", 
-             RowBox[{"R", ",", " ", "C"}], "}"}]}], "]"}]}], ";", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", "M"}]}], 
-       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
-  ";"}]}], "Input",
- InitializationCell->
-  True,ExpressionUUID->"87b021b4-575d-4b51-9e1a-b2ac82e803a2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -993,21 +896,6 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"CreateModel", "[", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", "actuation", " ", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"ufun", " ", "=", " ", 
-       RowBox[{
-        RowBox[{"PadLeft", "[", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{
-            RowBox[{"#2", "\[LeftDoubleBracket]", 
-             RowBox[{"-", "2"}], "\[RightDoubleBracket]"}], 
-            RowBox[{"Sin", "[", 
-             RowBox[{"2", "\[Pi]", " ", 
-              RowBox[{
-              "#1", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], 
-             "]"}]}], "}"}], ",", " ", "nq"}], "]"}], "&"}]}], ";", 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{"coordinate", " ", "flip"}], " ", "*)"}], 
       "\[IndentingNewLine]", 
@@ -1145,9 +1033,11 @@ Cell[BoxData[{
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
+Evaluator->"Local",
 WindowSize->{1373, 1505},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
+CellContext->"Global`",
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"

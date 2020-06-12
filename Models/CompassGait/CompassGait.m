@@ -24,7 +24,6 @@ BeginPackage["BipedalLocomotion`CompassGait`", {"GlobalVariables`", "RigidBodyDy
 
 CompassGait::usage = "";
 CompassGaitP::usage = "";
-CompassGaitA::usage = "";
 
 CompassGaitMeshOptions::usage = "";
 
@@ -45,17 +44,11 @@ left = {"left leg", foot};
 right = {"right leg", foot};
 
 (* # of control/design parameters *)
-n\[Mu] = 1;
+n\[Mu] = 0;
 
 
 (* ::Input::Initialization:: *)
-cT[c_] := Module[{cT},
-cT = c;
-If[n\[Mu] > 0, cT[[-2]] = -cT[[-2]];];
-cT
-];
-
-cm[s_, A_] := Module[{q, v, a, n, \[Theta]0T, C},
+cm[s_, A_] := Module[{q, v, a, n, \[Theta]0T, C, f},
 (* BLc indices *)
 n = mm -1; (* 2D *)
 {q, v} = Partition[BLIndices[BLGetBipedBase[], "p", "n" -> {\[DoubleStruckQ], \[DoubleStruckV]}], n];
@@ -65,11 +58,14 @@ v = "v" -> {v, Range@Length@v, A["np", s]};
 (* polynomial scaling factors *)
 \[Theta]0T = A["\[Theta]", s];
 
+(* post-impact stance foot *)
+f = BLFeet[BLSide[s, {left, right}], Automatic][2];
+
 (* function specific parameters *)
-a = <|"BLc" -> <|q, v|>, "BLc0T" -> <|"\[Theta]" -> \[Theta]0T|>|>;
+a = <|"BLc" -> <|q, v|>, "BLc0T" -> <|"\[Theta]" -> \[Theta]0T|>, "BLSummary" -> <|"P" -> <|-1 -> f|>|>|>;
 
 (* create parameters *)
-C = BLContinuationParameters[Association -> a, "\[Mu]" -> n\[Mu], "c[T]" -> cT];
+C = BLContinuationParameters[Association -> a, "\[Mu]" -> n\[Mu]];
 
 <|s -> C|>
 ];
@@ -124,39 +120,15 @@ CompassGaitP[m_String, cp_, opts:OptionsPattern[]] := Module[{n, M, R, C},
 (* call periodicity map *)
 M = BLP[m, cp, opts];
 
-(* set control parameters (i.e., output torque) to zero *)
-n = n\[Mu]+1;
-C = M["c"][[1, All, -n;;-2]];
-R = M["R"];
-M["R"] = MapThread[Join, {R, C}];
+(* add additional constraints; see other models for examples *)
 
 M
-];
-
-
-(* ::Input::Initialization:: *)
-CompassGaitA[cp_, opts:OptionsPattern[]] := CompassGaitA[BLbiped["m[0]"], cp, opts]["R"];
-
-CompassGaitA[T_?NumericQ] := Module[{},
-CompassGaitA[m_String, cp_, opts:OptionsPattern[]] := Module[{n, M, R, C},
-M = BLP[m, cp, opts];
-
-C = M["c"][[1, All, -1;;-1]];
-R = M["R"];
-C[[1]] = C[[1]] - T;
-M["R"] = MapThread[Join, {R, C}];
-
-M
-]
 ];
 
 
 (* ::Input::Initialization:: *)
 CompassGait[n_:0] := Module[{A, C, X, J, l, r, draw, F, L, R},
 CreateModel[];
-
-(* actuation *)
-ufun = PadLeft[{#2[[-2]]Sin[2\[Pi] #1[[1]]]}, nq]&;
 
 (* coordinate flip *)
 BLA[];

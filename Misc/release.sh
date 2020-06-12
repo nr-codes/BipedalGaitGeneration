@@ -48,26 +48,23 @@ zip -9 $math \
     SIMple \
     GaitBrowser/src/bipeds \
     GaitBrowser/app/imgs/*/*.png \
-    -x \
-    \*.gitignore
+    -x \*.gitignore
 
 zip -r9 $math \
     Models \
     SIMple \
-    -x \
-    Models/\*/\*CompiledFunctions 
+    -x Models/\*/\*CompiledFunctions 
 
 zip -r9 $node \
     GaitBrowser \
-    -x \
-    GaitBrowser/exe \
-    GaitBrowser/node_modules \
-    GaitBrowser/app/imgs \
-    GaitBrowser/app/vids \
-    GaitBrowser/app/bin \
-    GaitBrowser/app/bipeds \
-    GaitBrowser/app/bundle.js \
-    GaitBrowser/package-lock.json
+    -x GaitBrowser/exe\* \
+    -x GaitBrowser/node_modules\* \
+    -x GaitBrowser/app/imgs\* \
+    -x GaitBrowser/app/vids\* \
+    -x GaitBrowser/app/bin\* \
+    -x GaitBrowser/app/public/bipeds\* \
+    -x GaitBrowser/app/public/bundle.js \
+    -x GaitBrowser/package-lock.json
 
 cp $math ../TRO
 

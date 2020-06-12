@@ -63,7 +63,7 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"\"\<Evaluating\>\"", "/.", "#"}], "&"}], ",", 
           RowBox[{"Developer`CellInformation", "[", "nb", "]"}]}], 
-         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"evals", " ", "=", " ", 
@@ -80,18 +80,18 @@ Cell[BoxData[{
         RowBox[{"\"\<BipedalGaitGenerationKernel\>\"", "\[Rule]", 
          RowBox[{"{", 
           RowBox[{"\"\<AutoStartOnLaunch\>\"", "\[Rule]", "False"}], "}"}]}], 
-        "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], "\n", 
-  "\[IndentingNewLine]", 
+        "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], "\n", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{
    "compute", " ", "longest", " ", "run", " ", "time", " ", "by", " ", 
-    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}], "\n", 
+    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{"DeleteDirectory", "[", 
      RowBox[{
       RowBox[{"FileNames", "[", 
-       RowBox[{"\"\<*/*CompiledFunctions\>\"", ",", 
+       RowBox[{"\"\<../Models/*/*CompiledFunctions\>\"", ",", 
         RowBox[{"{", 
          RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
       RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], "*)"}], 
@@ -99,15 +99,15 @@ Cell[BoxData[{
   RowBox[{"(*", " ", 
    RowBox[{
    "make", " ", "sure", " ", "computed", " ", "gaits", " ", "are", " ", 
-    "being", " ", "created"}], " ", "*)"}], "\n", 
+    "being", " ", "created"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{"DeleteFile", "[", 
      RowBox[{"FileNames", "[", 
-      RowBox[{"\"\<*/*.mx\>\"", ",", 
+      RowBox[{"\"\<../Models/*/*.mx\>\"", ",", 
        RowBox[{"{", 
         RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], "]"}], ";"}],
-    "*)"}], "\[IndentingNewLine]", "\n", 
+    "*)"}], "\n", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{"add", " ", "new", " ", "kernel"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
@@ -116,8 +116,8 @@ Cell[BoxData[{
    RowBox[{"$FrontEndSession", ",", 
     RowBox[{"EvaluatorNames", "\[Rule]", 
      RowBox[{"Join", "@@", 
-      RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], ";"}]}], "Input",
- CellLabel->"In[1]:=",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
+      RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], 
+  ";"}]}], "Input",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -135,7 +135,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Main.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"mdata", " ", "=", " ", 
@@ -250,7 +250,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Outputs.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"odata", " ", "=", " ", 

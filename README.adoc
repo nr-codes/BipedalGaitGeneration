@@ -269,8 +269,8 @@ future sessions.
 
 == References
 [bibliography]
-- [[[inprep, 1]]] N. Rosa and K. Lynch, "A Topological Approach to Gait Generation for Biped
-Robots", Manuscript submitted for publication.
+- [[[inprep, 1]]] N. Rosa and K. M. Lynch. "A Topological Approach to Gait Generation for Biped Robots", arXiv: link:https://arxiv.org/abs/2006.03785v1[2006.03785v1 [cs.RO\]], June 6, 2020.
+
 - [[[repo, 2]]] N. Rosa, "Bipedal Gait Generation Library," {git}, 2020, last accessed June 8, 2020.
 
 == Contact Information

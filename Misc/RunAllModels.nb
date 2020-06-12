@@ -63,7 +63,7 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"\"\<Evaluating\>\"", "/.", "#"}], "&"}], ",", 
           RowBox[{"Developer`CellInformation", "[", "nb", "]"}]}], 
-         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"evals", " ", "=", " ", 
@@ -80,26 +80,27 @@ Cell[BoxData[{
         RowBox[{"\"\<BipedalGaitGenerationKernel\>\"", "\[Rule]", 
          RowBox[{"{", 
           RowBox[{"\"\<AutoStartOnLaunch\>\"", "\[Rule]", "False"}], "}"}]}], 
-        "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], "\n", "\n", 
+        "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], 
+  "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{
    "compute", " ", "longest", " ", "run", " ", "time", " ", "by", " ", 
-    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", 
-   RowBox[{
-    RowBox[{"DeleteDirectory", "[", 
-     RowBox[{
-      RowBox[{"FileNames", "[", 
-       RowBox[{"\"\<../Models/*/*CompiledFunctions\>\"", ",", 
-        RowBox[{"{", 
-         RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
-      RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], "*)"}], 
-  "\n", "\n", 
+    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}]}], "\n", 
+
+ RowBox[{
+  RowBox[{
+   RowBox[{"DeleteDirectory", "[", 
+    RowBox[{
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<../Models/*/*CompiledFunctions\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
+     RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], 
+  "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{
    "make", " ", "sure", " ", "computed", " ", "gaits", " ", "are", " ", 
-    "being", " ", "created"}], " ", "*)"}], "\[IndentingNewLine]", 
+    "being", " ", "created"}], " ", "*)"}], "\n", 
   RowBox[{"(*", 
    RowBox[{
     RowBox[{"DeleteFile", "[", 
@@ -107,10 +108,9 @@ Cell[BoxData[{
       RowBox[{"\"\<../Models/*/*.mx\>\"", ",", 
        RowBox[{"{", 
         RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], "]"}], ";"}],
-    "*)"}], "\n", "\n", 
+    "*)"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
-   RowBox[{"add", " ", "new", " ", "kernel"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
+   RowBox[{"add", " ", "new", " ", "kernel"}], " ", "*)"}]}], "\n", 
  RowBox[{
   RowBox[{"SetOptions", "[", 
    RowBox[{"$FrontEndSession", ",", 
@@ -135,7 +135,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Main.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"mdata", " ", "=", " ", 
@@ -250,7 +250,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Outputs.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"odata", " ", "=", " ", 
@@ -596,29 +596,30 @@ Cell[CellGroupData[{
 Cell["Format Run Times", \
 "Chapter",ExpressionUUID->"f54fcab6-e59f-4aeb-be3a-d39e90eea582"],
 
-Cell[BoxData[{
- RowBox[{
-  RowBox[{"Get", "[", 
-   RowBox[{"FileNameJoin", "[", 
-    RowBox[{"{", 
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"Get", "[", 
+    RowBox[{"FileNameJoin", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
+       "\"\<run_times.mx\>\""}], "}"}], "]"}], "]"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"for", " ", 
+     RowBox[{"README", ".", "adoc"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{"\"\<|---\\n\>\"", " ", "<>", " ", 
+    RowBox[{"StringJoin", "[", 
      RowBox[{
-      RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
-      "\"\<run_times.mx\>\""}], "}"}], "]"}], "]"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{"for", " ", 
-    RowBox[{"README", ".", "adoc"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{"\"\<|---\\n\>\"", " ", "<>", " ", 
-  RowBox[{"StringJoin", "[", 
-   RowBox[{
-    RowBox[{
-     RowBox[{"StringRiffle", "[", 
-      RowBox[{"#", ",", " ", 
-       RowBox[{"{", 
-        RowBox[{
-        "\"\<| \>\"", ",", " ", "\"\< | \>\"", ",", " ", "\"\<\\n\>\""}], 
-        "}"}]}], "]"}], "&"}], " ", "/@", " ", "mdata"}], "]"}], " ", "<>", 
-  " ", "\"\<|---\\n\>\""}]}], \
-"Input",ExpressionUUID->"b9a45d8a-a262-4105-9022-9f3f989ead5d"]
+      RowBox[{
+       RowBox[{"StringRiffle", "[", 
+        RowBox[{"#", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<| \>\"", ",", " ", "\"\< | \>\"", ",", " ", "\"\<\\n\>\""}], 
+          "}"}]}], "]"}], "&"}], " ", "/@", " ", "mdata"}], "]"}], " ", "<>", 
+    " ", "\"\<|---\\n\>\""}]}], 
+  "*)"}]], "Input",ExpressionUUID->"b9a45d8a-a262-4105-9022-9f3f989ead5d"]
 }, Open  ]]
 },
 Evaluator->"Local",

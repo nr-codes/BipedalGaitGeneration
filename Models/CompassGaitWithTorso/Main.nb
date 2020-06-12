@@ -175,7 +175,8 @@ Cell[BoxData[
      "generate"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"m", " ", "=", " ", "250"}], ";"}]}]}]], "Input",
- CellLabel->"In[12]:=",ExpressionUUID->"95a3c3ca-7a7e-4915-8cf2-57826b231d03"]
+ CellLabel->
+  "In[12]:=",ExpressionUUID->"95a3c3ca-7a7e-4915-8cf2-57826b231d03"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -226,7 +227,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[15]:=",ExpressionUUID->"62b8f12a-b2af-496d-b420-47bfd7dad250"]
+ CellLabel->
+  "In[15]:=",ExpressionUUID->"62b8f12a-b2af-496d-b420-47bfd7dad250"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -244,7 +246,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[18]:=",ExpressionUUID->"0c4f8123-6506-4b3b-b2c0-5c91de22cc07"]
+ CellLabel->
+  "In[18]:=",ExpressionUUID->"0c4f8123-6506-4b3b-b2c0-5c91de22cc07"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -295,7 +298,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"0cd9ce28-ae57-433a-b76e-8c14598e7edb"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"0cd9ce28-ae57-433a-b76e-8c14598e7edb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -307,7 +311,8 @@ Cell[BoxData[
  RowBox[{"BLWalk", "[", 
   RowBox[{"man2", ",", " ", 
    RowBox[{"{", "25", "}"}], ",", " ", "3"}], "]"}]], "Input",
- CellLabel->"In[22]:=",ExpressionUUID->"6deb9c17-21c1-41c3-8520-05b56e8ff742"]
+ CellLabel->
+  "In[22]:=",ExpressionUUID->"6deb9c17-21c1-41c3-8520-05b56e8ff742"]
 }, Open  ]]
 }, Open  ]],
 
@@ -336,6 +341,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -343,7 +349,8 @@ Cell[BoxData[
     RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cgwt.mx\>\"", ",", " ", 
      RowBox[{"{", 
       RowBox[{"man1", ",", " ", "man2"}], "}"}]}], "]"}], ";"}]}]], "Input",
- CellLabel->"In[23]:=",ExpressionUUID->"44701adc-3e87-4eef-a40b-dd85364285b8"]
+ CellLabel->
+  "In[23]:=",ExpressionUUID->"44701adc-3e87-4eef-a40b-dd85364285b8"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -359,3 +366,4 @@ FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb",
 "Notebook's Default Context" -> "Unique to This Notebook"
 ]
+

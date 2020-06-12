@@ -104,7 +104,8 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", "\"\<hw-traj-150.pdf\>\"", ",", " ", "imgs"}], 
    "]"}], ";"}]}], "Input",
- CellLabel->"In[21]:=",ExpressionUUID->"d62f4509-4fd1-42c1-bd3d-a735a339aff8"]
+ CellLabel->
+  "In[21]:=",ExpressionUUID->"d62f4509-4fd1-42c1-bd3d-a735a339aff8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -150,7 +151,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
- CellLabel->"In[26]:=",ExpressionUUID->"fb450c66-2a51-4f5d-a09a-d1ddce176d4a"]
+ CellLabel->
+  "In[26]:=",ExpressionUUID->"fb450c66-2a51-4f5d-a09a-d1ddce176d4a"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -164,3 +166,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

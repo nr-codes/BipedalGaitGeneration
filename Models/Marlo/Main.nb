@@ -909,7 +909,8 @@ Cell[BoxData[{
          RowBox[{
          "S", ",", " ", "SL", ",", " ", "ST", ",", " ", "SF", ",", " ", "C"}],
           "}"}]}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
- CellLabel->"In[21]:=",ExpressionUUID->"757a503b-a626-4825-ac48-4e6c6b04b98d"]
+ CellLabel->
+  "In[21]:=",ExpressionUUID->"757a503b-a626-4825-ac48-4e6c6b04b98d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1021,13 +1022,15 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"BLbiped", "[", 
     RowBox[{"\"\<draw\>\"", ",", " ", "\"\<axes\>\""}], "]"}], " ", "=", " ", 
+   
    RowBox[{"{", 
     RowBox[{"2", ",", " ", "1", ",", " ", "3"}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"BLWalk", "[", 
   RowBox[{"rootman", ",", " ", 
    RowBox[{"-", "1"}], ",", " ", "2"}], "]"}]}], "Input",
- CellLabel->"In[38]:=",ExpressionUUID->"c119fb92-354a-4465-b3de-2d6ccdaab92e"]
+ CellLabel->
+  "In[38]:=",ExpressionUUID->"c119fb92-354a-4465-b3de-2d6ccdaab92e"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1120,7 +1123,8 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"1", ",", " ", "0"}], "}"}]}], "}"}], "]"}]}], "}"}]}]}], 
   "]"}]], "Input",
- CellLabel->"In[47]:=",ExpressionUUID->"cd142ec8-4196-4c98-886c-570a2734425f"]
+ CellLabel->
+  "In[47]:=",ExpressionUUID->"cd142ec8-4196-4c98-886c-570a2734425f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1145,6 +1149,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -1152,7 +1157,8 @@ Cell[BoxData[
     RowBox[{
     "\"\<Here\>\"", ",", " ", "\"\<marlo-ghm.mx\>\"", ",", " ", "rootman"}], 
     "]"}], ";"}]}]], "Input",
- CellLabel->"In[48]:=",ExpressionUUID->"6191c77d-4975-49ad-9e70-e5cee2fb18c6"]
+ CellLabel->
+  "In[48]:=",ExpressionUUID->"6191c77d-4975-49ad-9e70-e5cee2fb18c6"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -1167,3 +1173,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

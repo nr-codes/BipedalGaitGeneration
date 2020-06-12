@@ -223,7 +223,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[16]:=",ExpressionUUID->"09aba6a1-5540-4dcf-8a00-f598655c94e1"]
+ CellLabel->
+  "In[16]:=",ExpressionUUID->"09aba6a1-5540-4dcf-8a00-f598655c94e1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -241,7 +242,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"fbbd0b0a-9097-423e-8388-78fde9721d37"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"fbbd0b0a-9097-423e-8388-78fde9721d37"]
 }, Open  ]]
 }, Open  ]],
 
@@ -447,6 +449,7 @@ Cell[BoxData[
             RowBox[{"Cos", "[", 
              RowBox[{"S", "\[LeftDoubleBracket]", 
               RowBox[{"1", ",", " ", "1"}], "\[RightDoubleBracket]"}], "]"}], 
+            
             RowBox[{
             "S", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], 
           "}"}]}], ";", "\[IndentingNewLine]", 
@@ -526,7 +529,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[32]:=",ExpressionUUID->"b7020173-8e22-4d2f-9bc4-2dac01612558"]
+ CellLabel->
+  "In[32]:=",ExpressionUUID->"b7020173-8e22-4d2f-9bc4-2dac01612558"]
 }, Open  ]]
 }, Open  ]],
 
@@ -553,6 +557,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -561,7 +566,8 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"man1", ",", " ", "rootman1"}], "}"}]}], "]"}], 
    ";"}]}]], "Input",
- CellLabel->"In[33]:=",ExpressionUUID->"3dd90fee-4740-4641-944c-e6763dae8b20"]
+ CellLabel->
+  "In[33]:=",ExpressionUUID->"3dd90fee-4740-4641-944c-e6763dae8b20"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -576,3 +582,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

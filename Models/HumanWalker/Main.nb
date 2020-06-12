@@ -179,7 +179,8 @@ Cell[BoxData[
      "generate"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"m", " ", "=", " ", "250"}], ";"}]}]}]], "Input",
- CellLabel->"In[13]:=",ExpressionUUID->"60b3cff2-755e-45ae-843d-913b3c055b9e"]
+ CellLabel->
+  "In[13]:=",ExpressionUUID->"60b3cff2-755e-45ae-843d-913b3c055b9e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -228,7 +229,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[16]:=",ExpressionUUID->"9a5d6e5b-a660-4b9f-9354-4d8be484e87f"]
+ CellLabel->
+  "In[16]:=",ExpressionUUID->"9a5d6e5b-a660-4b9f-9354-4d8be484e87f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -245,7 +247,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"741a49a0-3b2c-4b2f-98fd-86f022220630"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"741a49a0-3b2c-4b2f-98fd-86f022220630"]
 }, Open  ]]
 }, Open  ]],
 
@@ -271,13 +274,15 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{"BLSaveTo", "[", 
     RowBox[{"\"\<Here\>\"", ",", " ", "\"\<hw.mx\>\"", ",", " ", 
      RowBox[{"{", "man1", "}"}]}], "]"}], ";"}]}]], "Input",
- CellLabel->"In[20]:=",ExpressionUUID->"35e90164-c01f-45db-9626-1cf3b459c733"]
+ CellLabel->
+  "In[20]:=",ExpressionUUID->"35e90164-c01f-45db-9626-1cf3b459c733"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -291,3 +296,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

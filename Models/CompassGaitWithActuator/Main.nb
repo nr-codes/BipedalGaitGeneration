@@ -87,12 +87,7 @@ Cell[BoxData[
   "MessageTemplate2"]], "Message", "MSG",
  CellLabel->
   "During evaluation of \
-In[5]:=",ExpressionUUID->"b14957fd-3cbf-47f9-ba80-cbcbeedacde3"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"80.909682`", ",", "Null"}], "}"}]], "Output",
- CellLabel->"Out[6]=",ExpressionUUID->"f2d83bf3-26c3-4016-91ab-25a529336c53"]
+In[5]:=",ExpressionUUID->"b14957fd-3cbf-47f9-ba80-cbcbeedacde3"]
 }, Open  ]]
 }, Open  ]],
 
@@ -149,8 +144,6 @@ value.  After the SEGs are found, you can narrow the window to speed up \
 future searches.\
 \>", "Text",ExpressionUUID->"8827ae04-3b17-4228-a30b-1fc20a144063"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{
   RowBox[{
@@ -183,91 +176,7 @@ Cell[BoxData[{
  RowBox[{"TR", "\[IndentingNewLine]", 
   RowBox[{
   "(*", " ", "plot", " ", "*)"}]}], "\[IndentingNewLine]", "PL"}], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"56a321b9-1a81-440e-a9f7-20036fdcd883"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"0.6241589530658458`", ",", "0.6846498889851589`"}], 
-  "}"}]], "Output",
- CellLabel->"Out[10]=",ExpressionUUID->"6c2459d8-11c4-42b5-9fa0-223c8d8a5c0c"],
-
-Cell[BoxData[
- GraphicsBox[{{}, {{}, {}, 
-    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.009166666666666668], 
-     AbsoluteThickness[1.6], LineBox[CompressedData["
-1:eJwlVHswlmkctZJYql1ZpZVJo6KoraYtpJORtZTtE4rCSmpYdl1Goq0kLCpt
-liKyyLWS+/ctksdtbIPKtbQl9L7PV61aGbfKZfd9n/3NvPP+88yZc37nnJ+e
-p//eI4oKCgpHhE/8b2LD4Z1i+5mYvEaiUqhzwMuMwxs718Gt5Q2kT1854rIl
-h/JjBVVnGupJWfpwfvMuDi4T090/dteRGK0nDyYdOBRlbVyv20mI668N4wau
-HGbSj83IFWrJBgbIIfa8lYXj5hoiop334yDVNHWJ8q8mTz+c/qEmmENWttqj
-y8WVpCTIO+HtSQ7kn4wT+eMyEj1kX6kbzWE6QHNbr4WUCOT698RzeB7WYmGd
-VE7WM4IcfPYH0kVvS4nSvgXGZekcArXcWt12lxDGLpdD6wf1NXFet0mR9eAJ
-zSIO3qbHg9vNb5LIupYsKxmHAt/xmg79fOJsUnEvpJbDk7mxxfe1c4gxEyy8
-t7F0m7ssiyiuFRVzGKqvDw12u0YeZweYf/qYQ35KhsT19yuEra+fw7rWqMZv
-Zi4RJvclB9uXk6ZB478QRm+Yw9LBrT3UNZQwuEkOJhd7E3t8bIkCGx4PVacw
-axGIntDXqzao8DAy7Euwzz+LmyOddp6f8Wj8cizE2vcCwoXtJS7hURVf5SIf
-/w2OXG5a03IeU9tiWmhiMgyZITzMjXx8tBZew2y3CCjgmVhxxzZloktAczbh
-EZ7p4OBndx0Fzbu2xFnwmPWLjFjtlINT2OxebcOjPapSycM2D3sFN4bseaxs
-1VjwwKgAq5nBPF6M/u1tOH0D0zdEgjy+SO04YVh5Cx0rRId5XNgTbxntcRt5
-AruSIB6pbdpuo2NF+FlTdITH/EPdM0mmJZDEJ/+kEcmDS+oI8X9XgpUsMDxa
-i3ruc2ml+CjGJZHHYktJVNu2MjwU7U3j0SvpeDWnqww5oh3ZPBYtV1vs5V6O
-MHF9hTw+XumZbH5eju9EuRU89KIWuio7VoDRq+Gh6HPw3NTdCrwX4Zp43BsJ
-HQ3XkaKNDY91E70Vfv5SXLeSjc508zD4Sr8qVSZFSG3G0vV9PFSqd1S+GJFi
-t7A9D8oj9pTzlmV6MixngeYRptcfu2KnDEI5BEN4bJh3ta3lgAxi+kZneBjf
-vT781ksGEU1fmSIwO7TwsKcMgrlCpCk6D/17bo6DDDbqYgIpes5eGMj5WgZd
-VhCKkvrhh7rzZRDICQZTjKSdtPn2kRT3GEGKwRRNtfcJUrD6bqEY1tmYqbRD
-ClY3UEhiRg/tHKgAq4c1hVPAquPxQRVgcd5DYWjm2C2dKAeLnzNFZfsDs0S/
-crC4eFAkF9w1nxL2z+z1plCeWLO10agMzI4ACpqrsb8upBRsfaEUzXL/pD9L
-S8DkRlB8Xp4WcPBOMRi9OIq4wlulF8dug8ElUDgsqqvoWFCIq2wo7PJU+9tU
-b0IIi9BgCk0rl40GNB9i26ZuULS+tLI7n5mLJewgUMw2SXzTzbIhiBUCTfFu
-u8qRubJMNDBDKEafeXl06V5DMgMU+GnzZODiFYhoI52Cvswg1fA7lyBobV/x
-lOL70HrDYeto/H/+KNq1ny110A0EO1dDFMeD53kodnkSdl5GKZoOpGRvjz5L
-2DmYorgV4V4zEHiJsPoqyfE8Zkdd36tkwuqmLod1qK+jpCCDsHpoyjHkOpYS
-1ptNWJx15Og8XPa67pMCwuKnL8eMlrepq6SQsLgYy3G0qkbJybOEMHs3yxFT
-WZsaVVxGmB3mckSvjT79ZqGUsPVZyWGraR5eE/kHYXLt5Khe81eavlo1YfT2
-yWHjO6nolFdDGJy7HBKDOxqnnQg5ykYO+7UHjbzV68l/Al5D+A==
-      
-      "]]}}, {}, {}, {}, {}},
-  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
-  Axes->{True, True},
-  AxesLabel->{None, None},
-  AxesOrigin->{0.5984375, 0},
-  DisplayFunction->Identity,
-  Epilog->{
-    RGBColor[1, 0, 0], 
-    Thickness[Large], 
-    TagBox[
-     ConicHullRegionBox[{{0, 0}, {1, 0}}], "InfiniteLine"], 
-    GrayLevel[0], 
-    PointSize[Large], 
-    PointBox[{{0.6241589530658458, 0}, {0.6846498889851589, 0}}]},
-  Frame->{{False, False}, {False, False}},
-  FrameLabel->{{None, None}, {None, None}},
-  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
-  GridLines->{None, None},
-  GridLinesStyle->Directive[
-    GrayLevel[0.5, 0.4]],
-  ImagePadding->All,
-  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
-        (Identity[#]& )[
-         Part[#, 1]], 
-        (Identity[#]& )[
-         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
-        (Identity[#]& )[
-         Part[#, 1]], 
-        (Identity[#]& )[
-         Part[#, 2]]}& )}},
-  PlotRange->{{0.6, 0.7}, {-0.1535195712058548, 0.08747756100159583}},
-  PlotRangeClipping->True,
-  PlotRangePadding->{{
-     Scaled[0.02], 
-     Scaled[0.02]}, {
-     Scaled[0.05], 
-     Scaled[0.05]}},
-  Ticks->{Automatic, Automatic}]], "Output",
- CellLabel->
-  "Out[11]=",ExpressionUUID->"763dcd3a-4f6c-4bf0-8964-f0b536c1baf1"]
-}, Open  ]]
+ CellLabel->"In[8]:=",ExpressionUUID->"56a321b9-1a81-440e-a9f7-20036fdcd883"]
 }, Open  ]],
 
 Cell[CellGroupData[{

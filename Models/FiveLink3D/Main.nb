@@ -174,7 +174,8 @@ Cell[BoxData[
      "generate"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"m", " ", "=", " ", "250"}], ";"}]}]}]], "Input",
- CellLabel->"In[13]:=",ExpressionUUID->"b22be36d-4948-429c-8162-f78989bc8045"]
+ CellLabel->
+  "In[13]:=",ExpressionUUID->"b22be36d-4948-429c-8162-f78989bc8045"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -224,7 +225,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[16]:=",ExpressionUUID->"50a87b82-9180-4635-a8ca-87367b706322"]
+ CellLabel->
+  "In[16]:=",ExpressionUUID->"50a87b82-9180-4635-a8ca-87367b706322"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -241,7 +243,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"18b63000-f5e2-4bc6-b856-3bd794640f5f"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"18b63000-f5e2-4bc6-b856-3bd794640f5f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -291,7 +294,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[20]:=",ExpressionUUID->"55e307b0-6840-4ef6-b420-2b1e10aaf1cf"]
+ CellLabel->
+  "In[20]:=",ExpressionUUID->"55e307b0-6840-4ef6-b420-2b1e10aaf1cf"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -307,7 +311,8 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{"gait", " ", "used", " ", "for", " ", "GHM"}], " ", 
    "*)"}]}]], "Input",
- CellLabel->"In[23]:=",ExpressionUUID->"95f5d862-5890-4ae3-8b0b-737fc075c783"]
+ CellLabel->
+  "In[23]:=",ExpressionUUID->"95f5d862-5890-4ae3-8b0b-737fc075c783"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -520,6 +525,7 @@ Cell[BoxData[
             RowBox[{"Cos", "[", 
              RowBox[{"S", "\[LeftDoubleBracket]", 
               RowBox[{"1", ",", " ", "1"}], "\[RightDoubleBracket]"}], "]"}], 
+            
             RowBox[{
             "S", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}]}], 
           "}"}]}], ";", "\[IndentingNewLine]", 
@@ -675,7 +681,8 @@ Cell[BoxData[
  RowBox[{"BLWalk", "[", 
   RowBox[{"rootman", ",", " ", 
    RowBox[{"-", "1"}], ",", " ", "2"}], "]"}]], "Input",
- CellLabel->"In[41]:=",ExpressionUUID->"35e374c7-0b57-4c45-b919-a1fe1cdfa37a"]
+ CellLabel->
+  "In[41]:=",ExpressionUUID->"35e374c7-0b57-4c45-b919-a1fe1cdfa37a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -703,6 +710,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -711,7 +719,8 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"man1", ",", " ", "man2", ",", " ", "rootman"}], "}"}]}], "]"}],
     ";"}]}]], "Input",
- CellLabel->"In[42]:=",ExpressionUUID->"e452512d-e9d1-49e1-b61f-647ff45ffcfe"]
+ CellLabel->
+  "In[42]:=",ExpressionUUID->"e452512d-e9d1-49e1-b61f-647ff45ffcfe"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -725,3 +734,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

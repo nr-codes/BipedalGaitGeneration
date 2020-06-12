@@ -184,7 +184,8 @@ Cell[BoxData[{
  RowBox[{"TR", "\[IndentingNewLine]", 
   RowBox[{
   "(*", " ", "plot", " ", "*)"}]}], "\[IndentingNewLine]", "PL"}], "Input",
- CellLabel->"In[12]:=",ExpressionUUID->"734c543f-b295-4df7-8313-e2ae1428332a"]
+ CellLabel->
+  "In[12]:=",ExpressionUUID->"734c543f-b295-4df7-8313-e2ae1428332a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -225,7 +226,8 @@ Cell[BoxData[
      "generate"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"m", " ", "=", " ", "250"}], ";"}]}]}]], "Input",
- CellLabel->"In[16]:=",ExpressionUUID->"05c25a91-f279-4abc-a7f1-83f4405e7e1f"]
+ CellLabel->
+  "In[16]:=",ExpressionUUID->"05c25a91-f279-4abc-a7f1-83f4405e7e1f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -275,7 +277,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"3bc898ec-f8ee-4ec8-8bfa-99d420cb5888"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"3bc898ec-f8ee-4ec8-8bfa-99d420cb5888"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -292,7 +295,8 @@ Cell[BoxData[
    RowBox[{
    "can", " ", "use", " ", "keys", " ", "or", " ", "indices", " ", "to", " ", 
     "view", " ", "a", " ", "gait"}], " ", "*)"}]}]], "Input",
- CellLabel->"In[22]:=",ExpressionUUID->"c3e6649b-5f6c-4df0-bd72-99531a082789"]
+ CellLabel->
+  "In[22]:=",ExpressionUUID->"c3e6649b-5f6c-4df0-bd72-99531a082789"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -342,7 +346,8 @@ Cell[BoxData[
        RowBox[{
         RowBox[{"#", " ", "=!=", " ", "$Failed"}], "&"}]}], "]"}]}], 
     ";"}]}]}]], "Input",
- CellLabel->"In[23]:=",ExpressionUUID->"79aca664-b3b7-464f-a1fb-3ef5771d84be"]
+ CellLabel->
+  "In[23]:=",ExpressionUUID->"79aca664-b3b7-464f-a1fb-3ef5771d84be"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -354,7 +359,8 @@ Cell[BoxData[
  RowBox[{"BLWalk", "[", 
   RowBox[{"man2", ",", " ", 
    RowBox[{"{", "25", "}"}], ",", " ", "3"}], "]"}]], "Input",
- CellLabel->"In[26]:=",ExpressionUUID->"5025aae7-96eb-4027-8b1f-bc0abe245a8c"]
+ CellLabel->
+  "In[26]:=",ExpressionUUID->"5025aae7-96eb-4027-8b1f-bc0abe245a8c"]
 }, Open  ]]
 }, Open  ]],
 
@@ -408,7 +414,8 @@ Cell[BoxData[{
             RowBox[{"-", "2"}]}], "}"}]}], "]"}], "&"}], " ", "/@", " ", 
        RowBox[{"M", "[", "\"\<R\>\"", "]"}]}]}], ";", "\[IndentingNewLine]", 
      "M"}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
- CellLabel->"In[27]:=",ExpressionUUID->"a7d63c70-2390-449c-9082-a5b18ea8f1ba"]
+ CellLabel->
+  "In[27]:=",ExpressionUUID->"a7d63c70-2390-449c-9082-a5b18ea8f1ba"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -469,7 +476,8 @@ Cell[BoxData[
           RowBox[{"C", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
            " ", "-", " ", "xfdes"}]}], ";", "\[IndentingNewLine]", "C"}]}], 
       "\[IndentingNewLine]", "]"}]}], ";"}]}]}]], "Input",
- CellLabel->"In[29]:=",ExpressionUUID->"07ae7598-e400-4011-84ee-43e688b903ba"]
+ CellLabel->
+  "In[29]:=",ExpressionUUID->"07ae7598-e400-4011-84ee-43e688b903ba"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -530,7 +538,8 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}], ",", " ",
     "2"}], "]"}]], "Input",
- CellLabel->"In[37]:=",ExpressionUUID->"c38a3e45-950b-4bb5-948a-a16f07002976"]
+ CellLabel->
+  "In[37]:=",ExpressionUUID->"c38a3e45-950b-4bb5-948a-a16f07002976"]
 }, Open  ]]
 }, Open  ]],
 
@@ -558,6 +567,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -566,7 +576,8 @@ Cell[BoxData[
      RowBox[{"{", 
       RowBox[{"man1", ",", " ", "man2", ",", " ", "rootman"}], "}"}]}], "]"}],
     ";"}]}]], "Input",
- CellLabel->"In[38]:=",ExpressionUUID->"6af53145-6946-44c8-8495-46a2282ff06c"]
+ CellLabel->
+  "In[38]:=",ExpressionUUID->"6af53145-6946-44c8-8495-46a2282ff06c"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -582,3 +593,4 @@ FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb",
 "Notebook's Default Context" -> "Unique to This Notebook"
 ]
+

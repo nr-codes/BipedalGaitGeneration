@@ -152,10 +152,13 @@ Cell[BoxData[
 }, Open  ]]
 }, Open  ]]
 },
+Evaluator->"Local",
 WindowSize->{1373, 1505},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
+CellContext->"Global`",
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

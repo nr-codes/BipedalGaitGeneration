@@ -45,7 +45,8 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"KneedWalker", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->"In[98]:=",ExpressionUUID->"68967f29-1198-49a4-8605-9f212a90c743"]
+ CellLabel->
+  "In[98]:=",ExpressionUUID->"68967f29-1198-49a4-8605-9f212a90c743"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -102,7 +103,8 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<kw-traj-30.pdf\>\"", ",", " ", "imgs"}], 
    "]"}], ";"}]}], "Input",
- CellLabel->"In[44]:=",ExpressionUUID->"f4929fad-a28e-423c-9f0f-7e5286927f31"]
+ CellLabel->
+  "In[44]:=",ExpressionUUID->"f4929fad-a28e-423c-9f0f-7e5286927f31"]
 }, Open  ]]
 }, Open  ]],
 
@@ -172,7 +174,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
- CellLabel->"In[52]:=",ExpressionUUID->"1b16908a-c863-47d1-bfec-ec951613e9cd"]
+ CellLabel->
+  "In[52]:=",ExpressionUUID->"1b16908a-c863-47d1-bfec-ec951613e9cd"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -187,3 +190,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

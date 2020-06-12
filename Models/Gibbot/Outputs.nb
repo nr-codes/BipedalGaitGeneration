@@ -97,6 +97,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{"wman0", "\[LeftDoubleBracket]", 
            RowBox[{"1", ",", " ", "1"}], "\[RightDoubleBracket]"}], ",", " ", 
+          
           RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "steps"}]}], "]"}]}], ",",
         "\[IndentingNewLine]", 
        RowBox[{"\"\<Extra - Gibbot Walking\>\"", " ", "\[Rule]", " ", 
@@ -135,7 +136,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
- CellLabel->"In[47]:=",ExpressionUUID->"e556073f-fc61-4ccb-8761-a1f08e8febf9"]
+ CellLabel->
+  "In[47]:=",ExpressionUUID->"e556073f-fc61-4ccb-8761-a1f08e8febf9"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -150,3 +152,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

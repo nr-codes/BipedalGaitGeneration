@@ -94,6 +94,7 @@ Cell[BoxData[{
      RowBox[{
      "\"\<\[DoubleStruckC]\>\"", ",", " ", "\"\<right\>\"", ",", " ", 
       "\"\<eq\>\""}], "]"}], "[", "1", "]"}]}], ";"}], "\[IndentingNewLine]", 
+
  RowBox[{
   RowBox[{
    RowBox[{
@@ -131,6 +132,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"BLbiped", "[", 
     RowBox[{"\"\<draw\>\"", ",", " ", "\"\<axes\>\""}], "]"}], " ", "=", " ", 
+   
    RowBox[{"{", 
     RowBox[{"2", ",", " ", "1", ",", " ", "3"}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
@@ -286,7 +288,8 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", " ", "\"\<marlo-var-axis-z.svg\>\"", ",", " ", 
     RowBox[{"BLTeX", "[", "\"\<\\\\color{green} z\>\"", "]"}]}], "]"}], 
   ";"}]}], "Input",
- CellLabel->"In[60]:=",ExpressionUUID->"0b909e71-b0e8-48e6-bfea-70a03084b575"]
+ CellLabel->
+  "In[60]:=",ExpressionUUID->"0b909e71-b0e8-48e6-bfea-70a03084b575"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -314,7 +317,8 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<marlo-traj--1.pdf\>\"", ",", " ", 
     "imgs"}], "]"}], ";"}]}], "Input",
- CellLabel->"In[68]:=",ExpressionUUID->"69ee571f-b330-486a-aad2-8e1e6347629f"]
+ CellLabel->
+  "In[68]:=",ExpressionUUID->"69ee571f-b330-486a-aad2-8e1e6347629f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -385,7 +389,8 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{"g", ",", " ", "gaits"}], "}"}]}], "\[IndentingNewLine]", 
   "]"}]}], "Input",
- CellLabel->"In[71]:=",ExpressionUUID->"fac7d84d-5687-49a7-b891-439c4c205bdf"]
+ CellLabel->
+  "In[71]:=",ExpressionUUID->"fac7d84d-5687-49a7-b891-439c4c205bdf"]
 }, Open  ]]
 }, Open  ]],
 
@@ -482,7 +487,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
- CellLabel->"In[76]:=",ExpressionUUID->"66546a39-5b73-4b30-960b-894704c08c20"]
+ CellLabel->
+  "In[76]:=",ExpressionUUID->"66546a39-5b73-4b30-960b-894704c08c20"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -497,3 +503,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

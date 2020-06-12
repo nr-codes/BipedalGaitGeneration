@@ -235,7 +235,8 @@ Cell[BoxData[{
 Cell[BoxData[
  RowBox[{"BLWalk", "[", 
   RowBox[{"wman0", ",", " ", "11", ",", " ", "2"}], "]"}]], "Input",
- CellLabel->"In[19]:=",ExpressionUUID->"c2b229db-0adc-4bae-a135-9f87fc6f61fb"]
+ CellLabel->
+  "In[19]:=",ExpressionUUID->"c2b229db-0adc-4bae-a135-9f87fc6f61fb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -395,7 +396,8 @@ Cell[BoxData[
       RowBox[{"s", ",", " ", "0", ",", " ", 
        RowBox[{"\[Pi]", "/", "2"}], ",", " ", "0.1"}], "}"}]}], "]"}], 
    "]"}]}]], "Input",
- CellLabel->"In[27]:=",ExpressionUUID->"569482ce-4e7b-46f5-88bd-b432eb871fd2"]
+ CellLabel->
+  "In[27]:=",ExpressionUUID->"569482ce-4e7b-46f5-88bd-b432eb871fd2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -485,7 +487,8 @@ Cell[BoxData[
  RowBox[{"BLWalk", "[", 
   RowBox[{"bman1", ",", " ", 
    RowBox[{"-", "1"}], ",", " ", "2"}], "]"}]], "Input",
- CellLabel->"In[38]:=",ExpressionUUID->"af6199f0-1d98-4c72-a957-b407071e7581"]
+ CellLabel->
+  "In[38]:=",ExpressionUUID->"af6199f0-1d98-4c72-a957-b407071e7581"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -527,7 +530,8 @@ Cell[BoxData[{
       RowBox[{"ImageSize", "\[Rule]", " ", "w"}], ",", " ", 
       RowBox[{"PlotRange", "\[Rule]", " ", "All"}]}], "}"}]}]}], 
   "]"}]}], "Input",
- CellLabel->"In[40]:=",ExpressionUUID->"441f8449-88b6-4acf-b139-0c993b344363"]
+ CellLabel->
+  "In[40]:=",ExpressionUUID->"441f8449-88b6-4acf-b139-0c993b344363"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -555,6 +559,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -564,7 +569,8 @@ Cell[BoxData[
       RowBox[{
       "wman0", ",", " ", "wman1", ",", " ", "bman0", ",", " ", "bman1"}], 
       "}"}]}], "]"}], ";"}]}]], "Input",
- CellLabel->"In[44]:=",ExpressionUUID->"027472a2-91ae-4b60-85e8-077f51ed5977"]
+ CellLabel->
+  "In[44]:=",ExpressionUUID->"027472a2-91ae-4b60-85e8-077f51ed5977"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -579,3 +585,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

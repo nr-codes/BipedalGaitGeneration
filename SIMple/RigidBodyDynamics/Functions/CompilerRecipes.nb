@@ -471,6 +471,7 @@ Cell[BoxData[
          "}"}], ",", " ", 
         RowBox[{"{", 
          RowBox[{"ufun", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{"agfun", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", " ", 
         RowBox[{"{", 
@@ -478,21 +479,25 @@ Cell[BoxData[
         " ", 
         RowBox[{"{", 
          RowBox[{"sfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{"sdotfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", 
         " ", 
         RowBox[{"{", 
          RowBox[{"rfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{"rdotfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", 
         " ", 
         RowBox[{"{", 
          RowBox[{"Jfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{"\[Eta]fun", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", 
         " ", 
         RowBox[{"{", 
          RowBox[{"Kfun", ",", " ", "_Real", ",", " ", "3"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{
          "\[DoubleStruckCapitalI]fun", ",", " ", "_Real", ",", " ", "3"}], 
@@ -512,6 +517,7 @@ Cell[BoxData[
          RowBox[{"zq", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", " ", 
         RowBox[{"{", 
          RowBox[{"zpos", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{"zspat", ",", " ", "_Real", ",", " ", "2"}], "}"}], ",", " ", 
         RowBox[{"{", 
@@ -603,6 +609,7 @@ Cell[BoxData[
         " ", 
         RowBox[{"{", 
          RowBox[{"posX", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", " ", 
+        
         RowBox[{"{", 
          RowBox[{"mxX", ",", " ", "_Real", ",", " ", "2"}], "}"}]}], "}"}]}], 
      ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
@@ -622,6 +629,7 @@ Cell[BoxData[
       RowBox[{"ag", " ", "=", " ", "agfun"}], ";", "\[IndentingNewLine]", 
       RowBox[{"s", " ", "=", " ", "sfun"}], ";", "\[IndentingNewLine]", 
       RowBox[{"sdot", " ", "=", " ", "sdotfun"}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"XL", " ", "=", " ", "XLfun"}], ";", "\[IndentingNewLine]", 
       RowBox[{
       "\[DoubleStruckCapitalI]", " ", "=", " ", 
@@ -630,6 +638,7 @@ Cell[BoxData[
       "\[IndentingNewLine]", 
       RowBox[{"r", " ", "=", " ", "rfun"}], ";", "\[IndentingNewLine]", 
       RowBox[{"rdot", " ", "=", " ", "rdotfun"}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"Tcb", " ", "=", " ", "Tcbfun"}], ";", "\[IndentingNewLine]", 
       RowBox[{"J", " ", "=", " ", "Jfun"}], ";", "\[IndentingNewLine]", 
       RowBox[{"\[Phi]", " ", "=", " ", "\[Phi]fun"}], ";", 
@@ -701,6 +710,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{"formulate", " ", 
            RowBox[{"M", ".", "qdd"}]}], " ", "+", " ", "uJ"}], " ", "=", " ", 
+         
          RowBox[{
           RowBox[{"B", ".", "u"}], " ", "+", " ", "\[Tau]", " ", "+", " ", 
           RowBox[{
@@ -796,11 +806,13 @@ Cell[BoxData[{
            RowBox[{"nu", " ", "+", " ", "1"}]}], ";", "\[IndentingNewLine]", 
           RowBox[{"nfv", " ", "=", " ", 
            RowBox[{"nf", " ", "+", " ", "nv"}]}], ";", "\[IndentingNewLine]", 
+          
           RowBox[{"nfub", " ", "=", " ", 
            RowBox[{"nf", " ", "+", " ", "nu", " ", "+", " ", "1"}]}], ";", 
           "\[IndentingNewLine]", 
           RowBox[{"nqf", " ", "=", " ", 
            RowBox[{"nq", " ", "+", " ", "nf"}]}], ";", "\[IndentingNewLine]", 
+          
           RowBox[{"nqfv", " ", "=", " ", 
            RowBox[{"nq", " ", "+", " ", "nfv"}]}], ";", "\[IndentingNewLine]", 
           RowBox[{"nqfu", " ", "=", " ", 
@@ -982,6 +994,7 @@ Cell[BoxData[{
       RowBox[{"xdot", " ", "=", " ", 
        RowBox[{"Join", "[", 
         RowBox[{"qd", ",", " ", "qdd"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"Flatten", "[", 
        RowBox[{"{", "xdot", "}"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}]}], "Input",
@@ -1042,6 +1055,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{"formulate", " ", 
            RowBox[{"M", ".", "qdd"}]}], " ", "+", " ", "uJ"}], " ", "=", " ", 
+         
          RowBox[{
           RowBox[{"B", ".", "uff"}], " ", "+", " ", "u", " ", "+", " ", 
           RowBox[{
@@ -1129,6 +1143,7 @@ Cell[BoxData[{
       RowBox[{
       "set", " ", "up", " ", "lengths", " ", "of", " ", "the", " ", 
        "different", " ", "constraints"}], " ", "*)"}], "\[IndentingNewLine]", 
+     
      RowBox[{
       RowBox[{"nqf", " ", "=", " ", 
        RowBox[{"nq", " ", "+", " ", "nf"}]}], ";", "\[IndentingNewLine]", 
@@ -1142,6 +1157,7 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"1", ";;", "nqf"}], ",", " ", 
            RowBox[{"1", ";;", "nqf"}]}], "\[RightDoubleBracket]"}], ",", " ", 
+         
          RowBox[{"Ab", "\[LeftDoubleBracket]", 
           RowBox[{
            RowBox[{"1", ";;", "nqf"}], ",", " ", "nqfb"}], 
@@ -1336,6 +1352,7 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"{", 
           RowBox[{"mxv", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", " ", 
+         
          RowBox[{"{", 
           RowBox[{"mxstarf", ",", " ", "_Real", ",", " ", "1"}], "}"}], ",", 
          " ", 
@@ -1374,10 +1391,13 @@ Cell[BoxData[{
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
+Evaluator->"Local",
 WindowSize->{800, 845},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
+CellContext->"Global`",
 TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

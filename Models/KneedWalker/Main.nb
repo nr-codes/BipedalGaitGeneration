@@ -453,6 +453,7 @@ Cell[BoxData[{
     RowBox[{"BLGenerateGaits", "[", 
      RowBox[{
      "KneedWalkerP", ",", " ", "ceq", ",", " ", "h", ",", " ", "m", ",", " ", 
+      
       RowBox[{"Man", "\[Rule]", " ", 
        RowBox[{"{", 
         RowBox[{
@@ -558,6 +559,7 @@ Cell[BoxData[{
     RowBox[{"BLGenerateGaits", "[", 
      RowBox[{
      "KneedWalkerP", ",", " ", "ceq", ",", " ", "h", ",", " ", "m", ",", " ", 
+      
       RowBox[{"Man", "\[Rule]", " ", 
        RowBox[{"{", 
         RowBox[{
@@ -619,7 +621,8 @@ Cell[BoxData[{
     RowBox[{"\"\<T\>\"", " ", "\[Rule]", " ", "T"}]}], ",", " ", 
    RowBox[{"Animate", "\[Rule]", " ", 
     RowBox[{"AnimationRepetitions", "\[Rule]", "1"}]}]}], "]"}]}], "Input",
- CellLabel->"In[38]:=",ExpressionUUID->"726533ad-513d-46fb-91b2-80a881ca4e32"]
+ CellLabel->
+  "In[38]:=",ExpressionUUID->"726533ad-513d-46fb-91b2-80a881ca4e32"]
 }, Open  ]]
 }, Open  ]],
 
@@ -646,6 +649,7 @@ Cell[BoxData[
   RowBox[{"(*", " ", 
    RowBox[{
     RowBox[{"uncomment", " ", "to", " ", "actually", " ", "save"}], ";", " ", 
+    
     RowBox[{"should", " ", "recomment", " ", "when", " ", 
      RowBox[{"done", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
@@ -653,7 +657,8 @@ Cell[BoxData[
     RowBox[{"\"\<Here\>\"", ",", " ", "\"\<kw.mx\>\"", ",", " ", 
      RowBox[{"{", 
       RowBox[{"man1", ",", " ", "man2"}], "}"}]}], "]"}], ";"}]}]], "Input",
- CellLabel->"In[43]:=",ExpressionUUID->"33af26cd-b6b0-4b59-b7c3-2a8b2fd48454"]
+ CellLabel->
+  "In[43]:=",ExpressionUUID->"33af26cd-b6b0-4b59-b7c3-2a8b2fd48454"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -668,3 +673,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<CompassGaitWithTorso`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"cd1c3b0f-6aae-4f90-9310-0ca1696c9653"]
+  RowBox[{"<<", " ", "\"\<CompassGaitWithTorso`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"cd1c3b0f-6aae-4f90-9310-0ca1696c9653"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -101,8 +101,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<cgwt-traj-50.pdf\>\"", ",", " ", 
     "imgs"}], "]"}], ";"}]}], "Input",
- CellLabel->
-  "In[24]:=",ExpressionUUID->"1149aba9-353f-4c20-be2b-d71024d472f9"]
+ CellLabel->"In[8]:=",ExpressionUUID->"1149aba9-353f-4c20-be2b-d71024d472f9"]
 }, Open  ]]
 }, Open  ]],
 
@@ -142,13 +141,13 @@ Cell[BoxData[{
        RowBox[{"Options", " ", "\[Rule]", " ", 
         RowBox[{"BLMeshOptions", "[", "]"}]}]}], "\[IndentingNewLine]", 
       "|>"}]}], "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",
- CellLabel->"In[27]:=",ExpressionUUID->"47babee7-d47d-43b2-8449-aa79a945627c"],
+ CellLabel->"In[11]:=",ExpressionUUID->"47babee7-d47d-43b2-8449-aa79a945627c"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[29]:=",ExpressionUUID->"6cba788f-8b67-41bc-930c-2a1a7598a3d5"]
+  "In[13]:=",ExpressionUUID->"6cba788f-8b67-41bc-930c-2a1a7598a3d5"]
 }, Open  ]]
 }, Open  ]]
 },

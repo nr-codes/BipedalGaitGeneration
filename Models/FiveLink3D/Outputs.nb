@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<FiveLink3D`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"d77f89c8-dec7-462a-a77d-389e9bb73c0d"]
+  RowBox[{"<<", " ", "\"\<FiveLink3D`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"d77f89c8-dec7-462a-a77d-389e9bb73c0d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,7 +58,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<fl3d.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"2df571e6-d0e5-4287-bcb7-c401fab7242b"]
+ CellLabel->"In[7]:=",ExpressionUUID->"2df571e6-d0e5-4287-bcb7-c401fab7242b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -105,8 +105,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<fl3d-traj--1.pdf\>\"", ",", " ", 
     "imgs"}], "]"}], ";"}]}], "Input",
- CellLabel->
-  "In[43]:=",ExpressionUUID->"ed901e4d-d230-4b48-977d-0e94644c46dc"]
+ CellLabel->"In[8]:=",ExpressionUUID->"ed901e4d-d230-4b48-977d-0e94644c46dc"]
 }, Open  ]]
 }, Open  ]],
 
@@ -144,13 +143,13 @@ Cell[BoxData[{
         RowBox[{"FiveLink3DMeshOptions", "[", "]"}]}]}], 
       "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", "|>"}]}], 
   ";"}]}], "Input",
- CellLabel->"In[46]:=",ExpressionUUID->"ccc587c2-a79f-423f-b3d6-69141463e3fe"],
+ CellLabel->"In[11]:=",ExpressionUUID->"ccc587c2-a79f-423f-b3d6-69141463e3fe"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[48]:=",ExpressionUUID->"3b03a69e-0d6a-43a6-a3d1-30ad1d376840"]
+  "In[13]:=",ExpressionUUID->"3b03a69e-0d6a-43a6-a3d1-30ad1d376840"]
 }, Open  ]]
 }, Open  ]]
 },

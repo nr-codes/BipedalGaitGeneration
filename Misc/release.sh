@@ -54,11 +54,20 @@ zip -9 $math \
 zip -r9 $math \
     Models \
     SIMple \
+    -x \
+    Models/\*/\*CompiledFunctions 
 
 zip -r9 $node \
     GaitBrowser \
     -x \
-    GaitBrowser/app/imgs/\*
+    GaitBrowser/exe \
+    GaitBrowser/node_modules \
+    GaitBrowser/app/imgs \
+    GaitBrowser/app/vids \
+    GaitBrowser/app/bin \
+    GaitBrowser/app/bipeds \
+    GaitBrowser/app/bundle.js \
+    GaitBrowser/package-lock.json
 
 cp $math ../TRO
 

@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<HumanWalker`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"a3ef1156-e3c2-4a5f-a69d-c3dc12e34114"]
+  RowBox[{"<<", " ", "\"\<HumanWalker`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"a3ef1156-e3c2-4a5f-a69d-c3dc12e34114"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -57,7 +57,7 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<hw.mx\>\""}], "]"}], ";"}]], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"affdabc8-f237-459d-ac44-c47eb8190827"]
+ CellLabel->"In[7]:=",ExpressionUUID->"affdabc8-f237-459d-ac44-c47eb8190827"]
 }, Open  ]]
 }, Open  ]],
 
@@ -104,8 +104,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", "\"\<hw-traj-150.pdf\>\"", ",", " ", "imgs"}], 
    "]"}], ";"}]}], "Input",
- CellLabel->
-  "In[21]:=",ExpressionUUID->"d62f4509-4fd1-42c1-bd3d-a735a339aff8"]
+ CellLabel->"In[8]:=",ExpressionUUID->"d62f4509-4fd1-42c1-bd3d-a735a339aff8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -146,13 +145,13 @@ Cell[BoxData[{
          RowBox[{"Length", " ", "\[Rule]", " ", "0.08"}], "]"}]}]}], 
       "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", "|>"}]}], 
   ";"}]}], "Input",
- CellLabel->"In[24]:=",ExpressionUUID->"3f0f0ca8-adc3-45d2-8f9a-237530d778d1"],
+ CellLabel->"In[11]:=",ExpressionUUID->"3f0f0ca8-adc3-45d2-8f9a-237530d778d1"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[26]:=",ExpressionUUID->"fb450c66-2a51-4f5d-a09a-d1ddce176d4a"]
+  "In[13]:=",ExpressionUUID->"fb450c66-2a51-4f5d-a09a-d1ddce176d4a"]
 }, Open  ]]
 }, Open  ]]
 },

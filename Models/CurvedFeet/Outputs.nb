@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<CurvedFeet`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"7fcee0a1-e4dd-4797-a9d2-5e20c7f6dfca"]
+  RowBox[{"<<", " ", "\"\<CurvedFeet`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"7fcee0a1-e4dd-4797-a9d2-5e20c7f6dfca"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -45,7 +45,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"CurvedFeet", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"071da52e-62b2-4902-a999-d06a814f128e"]
+ CellLabel->"In[5]:=",ExpressionUUID->"071da52e-62b2-4902-a999-d06a814f128e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,7 +58,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cfw.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"10e0d4ef-fc78-47a3-b61d-7fc811bfb647"]
+ CellLabel->"In[7]:=",ExpressionUUID->"10e0d4ef-fc78-47a3-b61d-7fc811bfb647"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -87,7 +87,7 @@ Cell[BoxData[{
   RowBox[{"SetOptions", "[", 
    RowBox[{"BLBoundingBox", ",", " ", 
     RowBox[{"Padding", "\[Rule]", " ", "10"}]}], "]"}], ";"}]}], "Input",
- CellLabel->"In[9]:=",ExpressionUUID->"cf6c01c6-439b-4b27-9524-5ad0e5049e28"]
+ CellLabel->"In[8]:=",ExpressionUUID->"cf6c01c6-439b-4b27-9524-5ad0e5049e28"]
 }, Open  ]]
 }, Open  ]],
 
@@ -134,7 +134,7 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", " ", "\"\<cfw-traj-35.pdf\>\"", ",", " ", "imgs"}],
     "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[39]:=",ExpressionUUID->"42a6fdcd-dd74-4f6c-a5f6-5fbd77c062d7"]
+  "In[11]:=",ExpressionUUID->"42a6fdcd-dd74-4f6c-a5f6-5fbd77c062d7"]
 }, Open  ]]
 }, Open  ]],
 
@@ -191,13 +191,13 @@ Cell[BoxData[{
         RowBox[{"CurvedFeetMeshOptions", "[", "]"}]}]}], 
       "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", "|>"}]}], 
   ";"}]}], "Input",
- CellLabel->"In[42]:=",ExpressionUUID->"e3f9d35b-b67e-48c8-a86e-6d30fbf04708"],
+ CellLabel->"In[14]:=",ExpressionUUID->"e3f9d35b-b67e-48c8-a86e-6d30fbf04708"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[46]:=",ExpressionUUID->"61b5d35d-9a37-43e7-8fba-633a15607283"]
+  "In[18]:=",ExpressionUUID->"61b5d35d-9a37-43e7-8fba-633a15607283"]
 }, Open  ]]
 }, Open  ]]
 },

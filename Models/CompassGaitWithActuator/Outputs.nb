@@ -30,8 +30,7 @@ Cell[BoxData[{
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"<<", " ", "\"\<CompassGaitWithActuator`\>\""}], ";"}]}], "Input",
- CellLabel->
-  "In[66]:=",ExpressionUUID->"3b702a19-cc86-4795-b32d-15aa7007e345"]
+ CellLabel->"In[1]:=",ExpressionUUID->"3b702a19-cc86-4795-b32d-15aa7007e345"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -46,8 +45,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"CompassGaitWithActuator", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->
-  "In[70]:=",ExpressionUUID->"74aa04ae-ff39-4a71-ae27-83a4c1401e33"]
+ CellLabel->"In[5]:=",ExpressionUUID->"74aa04ae-ff39-4a71-ae27-83a4c1401e33"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -60,8 +58,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cgwa.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->
-  "In[72]:=",ExpressionUUID->"faed5e04-c9ac-4e74-893b-20ea907e4dfb"]
+ CellLabel->"In[7]:=",ExpressionUUID->"faed5e04-c9ac-4e74-893b-20ea907e4dfb"]
 }, Open  ]]
 }, Open  ]],
 
@@ -163,7 +160,7 @@ Cell[BoxData[{
   RowBox[{"BLDrawBiped", ",", " ", "eqwalk"}], "]"}], "\[IndentingNewLine]", 
  RowBox[{"BLWrap", "[", 
   RowBox[{"BLDrawBiped", ",", " ", "eqbrach"}], "]"}]}], "Input",
- CellLabel->"In[73]:=",ExpressionUUID->"5bdde497-26ed-4101-87b5-c4ab9cac10fa"],
+ CellLabel->"In[8]:=",ExpressionUUID->"5bdde497-26ed-4101-87b5-c4ab9cac10fa"],
 
 Cell[BoxData[{
  RowBox[{"BLTeX", "[", 
@@ -239,7 +236,7 @@ Cell[BoxData[{
       RowBox[{"\"\<b\>\"", ",", " ", "\"\<g\>\""}], "]"}]}], "}"}]}], 
   "\[IndentingNewLine]", "]"}]}], "Input",
  CellLabel->
-  "In[85]:=",ExpressionUUID->"cb63b484-2463-4b7e-b68e-93f16f7112eb"]
+  "In[20]:=",ExpressionUUID->"cb63b484-2463-4b7e-b68e-93f16f7112eb"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -310,7 +307,8 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", "  ", "\"\<cgw-cc-path.svg\>\"", ",", " ", "%"}], 
    "]"}], ";"}], "\[IndentingNewLine]"}], "Input",
- CellLabel->"In[100]:=",ExpressionUUID->"0e7ef1db-0ebb-4808-9687-462a57f094b7"]
+ CellLabel->
+  "In[35]:=",ExpressionUUID->"0e7ef1db-0ebb-4808-9687-462a57f094b7"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -589,7 +587,8 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", "\"\<cgw-cc-powered.pdf\>\"", ",", " ", "img"}], 
    "]"}], ";"}]}], "Input",
- CellLabel->"In[104]:=",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
+ CellLabel->
+  "In[39]:=",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -667,8 +666,7 @@ Cell[BoxData[
         RowBox[{
          RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}]}], 
       "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
- CellLabel->
-  "In[128]:=",ExpressionUUID->"92356adb-46b0-44a3-b55c-f1cd512ad57c"],
+ CellLabel->"In[63]:=",ExpressionUUID->"92356adb-46b0-44a3-b55c-f1cd512ad57c"],
 
 Cell[BoxData[{
  RowBox[{
@@ -735,7 +733,8 @@ Cell[BoxData[{
    RowBox[{"{", 
     RowBox[{"g", ",", " ", "gaits"}], "}"}]}], "\[IndentingNewLine]", 
   "]"}]}], "Input",
- CellLabel->"In[129]:=",ExpressionUUID->"9f64f2ac-4d75-4304-96e9-4357cebad95a"]
+ CellLabel->
+  "In[64]:=",ExpressionUUID->"9f64f2ac-4d75-4304-96e9-4357cebad95a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -801,13 +800,13 @@ Cell[BoxData[{
         RowBox[{"CompassGaitWithActuatorMeshOptions", "[", "]"}]}]}], 
       "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", "|>"}]}], 
   ";"}]}], "Input",
- CellLabel->
-  "In[131]:=",ExpressionUUID->"f28b06de-c679-45aa-9664-6d207b539bba"],
+ CellLabel->"In[66]:=",ExpressionUUID->"f28b06de-c679-45aa-9664-6d207b539bba"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
- CellLabel->"In[133]:=",ExpressionUUID->"2ac14ed6-b10c-4a41-943a-ce39667a2ca1"]
+ CellLabel->
+  "In[68]:=",ExpressionUUID->"2ac14ed6-b10c-4a41-943a-ce39667a2ca1"]
 }, Open  ]]
 }, Open  ]]
 },

@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<Gibbot`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"482e55f3-a91b-408e-a443-e40b8d82d89d"]
+  RowBox[{"<<", " ", "\"\<Gibbot`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"482e55f3-a91b-408e-a443-e40b8d82d89d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,7 +58,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<gibbot-ncm.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"51aac0d7-7462-4aed-9b78-379f60958ca8"]
+ CellLabel->"In[7]:=",ExpressionUUID->"51aac0d7-7462-4aed-9b78-379f60958ca8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -131,13 +131,13 @@ Cell[BoxData[{
           RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "steps"}]}], "]"}]}]}], 
       "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", "|>"}]}], 
   ";"}]}], "Input",
- CellLabel->"In[45]:=",ExpressionUUID->"71929539-ba99-45d4-aa09-8c95bb9c817a"],
+ CellLabel->"In[8]:=",ExpressionUUID->"71929539-ba99-45d4-aa09-8c95bb9c817a"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[47]:=",ExpressionUUID->"e556073f-fc61-4ccb-8761-a1f08e8febf9"]
+  "In[10]:=",ExpressionUUID->"e556073f-fc61-4ccb-8761-a1f08e8febf9"]
 }, Open  ]]
 }, Open  ]]
 },

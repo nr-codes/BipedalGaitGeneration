@@ -56,8 +56,6 @@ Cell["\<\
 Refer to CompassGait/Main.nb for detailed description of this code.\
 \>", "Text",ExpressionUUID->"8ca8bb0b-e39d-4f44-be23-d1e68505628c"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[{
  RowBox[{
   RowBox[{"n", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
@@ -65,30 +63,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"CompassGaitWithActuator", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->"In[5]:=",ExpressionUUID->"f83a39c1-e01f-4a65-b4ea-77320657ea2d"],
-
-Cell[BoxData[
- TemplateBox[{
-  "RigidBodyDynamics`Private`PreprocessConstraints","name",
-   "\"No valid constraints found under \\!\\(\\*RowBox[{\\\"\\\\\\\"left-\
-\[Eta]v\\\\\\\"\\\"}]\\).\"",2,6,1,32585636749159422557,"Local",
-   "RigidBodyDynamics`Private`PreprocessConstraints"},
-  "MessageTemplate2"]], "Message", "MSG",
- CellLabel->
-  "During evaluation of \
-In[5]:=",ExpressionUUID->"96b1c73a-9191-4235-ab69-ec85a2f4ffd7"],
-
-Cell[BoxData[
- TemplateBox[{
-  "RigidBodyDynamics`Private`PreprocessConstraints","name",
-   "\"No valid constraints found under \\!\\(\\*RowBox[{\\\"\\\\\\\"right-\
-\[Eta]v\\\\\\\"\\\"}]\\).\"",2,6,2,32585636749159422557,"Local",
-   "RigidBodyDynamics`Private`PreprocessConstraints"},
-  "MessageTemplate2"]], "Message", "MSG",
- CellLabel->
-  "During evaluation of \
-In[5]:=",ExpressionUUID->"b14957fd-3cbf-47f9-ba80-cbcbeedacde3"]
-}, Open  ]]
+ CellLabel->"In[5]:=",ExpressionUUID->"f83a39c1-e01f-4a65-b4ea-77320657ea2d"]
 }, Open  ]],
 
 Cell[CellGroupData[{

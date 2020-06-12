@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<Atlas`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"36455974-fd92-4912-826a-64db23faf9e2"]
+  RowBox[{"<<", " ", "\"\<Atlas`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"36455974-fd92-4912-826a-64db23faf9e2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -44,8 +44,8 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{
    RowBox[{"Atlas", "[", "n", "]"}], ";"}], " ", "//", " ", 
-  "AbsoluteTiming"}]}], \
-"Input",ExpressionUUID->"1b4b64f7-2914-46f3-80b1-11e8f44bd665"]
+  "AbsoluteTiming"}]}], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"1b4b64f7-2914-46f3-80b1-11e8f44bd665"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,7 +58,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<atlas-ncm.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"6c6c9388-29af-4228-9d77-e56a15972d8a"]
+ CellLabel->"In[7]:=",ExpressionUUID->"6c6c9388-29af-4228-9d77-e56a15972d8a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -162,8 +162,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<atlas-model-eq.svg\>\"", ",", " ", 
     "img"}], "]"}], ";"}]}], "Input",
- CellLabel->
-  "In[41]:=",ExpressionUUID->"0c1da233-87da-4b2f-92db-88184146c16a"]
+ CellLabel->"In[8]:=",ExpressionUUID->"0c1da233-87da-4b2f-92db-88184146c16a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -192,7 +191,7 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", " ", "\"\<atlas-traj--1.pdf\>\"", ",", " ", 
     "imgs"}], "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[47]:=",ExpressionUUID->"efbef3c2-e2d2-4b04-8521-c19d0bbd0319"]
+  "In[14]:=",ExpressionUUID->"efbef3c2-e2d2-4b04-8521-c19d0bbd0319"]
 }, Open  ]]
 }, Open  ]],
 
@@ -260,14 +259,14 @@ Cell[BoxData[{
         ",", "\[IndentingNewLine]", 
         RowBox[{"Options", " ", "\[Rule]", " ", 
          RowBox[{"AtlasMeshOptions", "[", "]"}]}]}], "\[IndentingNewLine]", 
-       "|>"}]}]}], "\[IndentingNewLine]", "|>"}]}], 
-  ";"}]}], "Input",ExpressionUUID->"83ada1ff-8d6d-4e22-86b0-cb13eab297eb"],
+       "|>"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",
+ CellLabel->"In[17]:=",ExpressionUUID->"83ada1ff-8d6d-4e22-86b0-cb13eab297eb"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[53]:=",ExpressionUUID->"fdf64910-fa30-4a5d-8b32-97f33bd9090a"]
+  "In[20]:=",ExpressionUUID->"fdf64910-fa30-4a5d-8b32-97f33bd9090a"]
 }, Open  ]]
 }, Open  ]]
 },

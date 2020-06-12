@@ -29,8 +29,8 @@ Cell[BoxData[{
       RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"<<", " ", "\"\<Marlo`\>\""}], 
-  ";"}]}], "Input",ExpressionUUID->"bf6108dc-fbe2-44e3-aeae-0fb13e435ef2"]
+  RowBox[{"<<", " ", "\"\<Marlo`\>\""}], ";"}]}], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"bf6108dc-fbe2-44e3-aeae-0fb13e435ef2"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,7 +58,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<marlo-ghm.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"19743b21-579e-479e-bc0e-8c43f0725d0f"]
+ CellLabel->"In[7]:=",ExpressionUUID->"19743b21-579e-479e-bc0e-8c43f0725d0f"]
 }, Open  ]]
 }, Open  ]],
 
@@ -175,7 +175,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<marlo-model-4bar.svg\>\"", ",", " ", 
     "img"}], "]"}], ";"}]}], "Input",
- CellLabel->"In[49]:=",ExpressionUUID->"c2c024d8-88c7-442b-b3eb-05a06794115c"],
+ CellLabel->"In[8]:=",ExpressionUUID->"c2c024d8-88c7-442b-b3eb-05a06794115c"],
 
 Cell[BoxData[{
  RowBox[{
@@ -289,7 +289,7 @@ Cell[BoxData[{
     RowBox[{"BLTeX", "[", "\"\<\\\\color{green} z\>\"", "]"}]}], "]"}], 
   ";"}]}], "Input",
  CellLabel->
-  "In[60]:=",ExpressionUUID->"0b909e71-b0e8-48e6-bfea-70a03084b575"]
+  "In[19]:=",ExpressionUUID->"0b909e71-b0e8-48e6-bfea-70a03084b575"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -318,7 +318,7 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", " ", "\"\<marlo-traj--1.pdf\>\"", ",", " ", 
     "imgs"}], "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[68]:=",ExpressionUUID->"69ee571f-b330-486a-aad2-8e1e6347629f"]
+  "In[27]:=",ExpressionUUID->"69ee571f-b330-486a-aad2-8e1e6347629f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -390,7 +390,7 @@ Cell[BoxData[{
     RowBox[{"g", ",", " ", "gaits"}], "}"}]}], "\[IndentingNewLine]", 
   "]"}]}], "Input",
  CellLabel->
-  "In[71]:=",ExpressionUUID->"fac7d84d-5687-49a7-b891-439c4c205bdf"]
+  "In[30]:=",ExpressionUUID->"fac7d84d-5687-49a7-b891-439c4c205bdf"]
 }, Open  ]]
 }, Open  ]],
 
@@ -482,13 +482,13 @@ Cell[BoxData[{
         RowBox[{"Options", " ", "\[Rule]", " ", 
          RowBox[{"MarloMeshOptions", "[", "]"}]}]}], "\[IndentingNewLine]", 
        "|>"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",
- CellLabel->"In[73]:=",ExpressionUUID->"6b3c7ee4-14fc-4be6-97f7-c4ec93996214"],
+ CellLabel->"In[32]:=",ExpressionUUID->"6b3c7ee4-14fc-4be6-97f7-c4ec93996214"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[76]:=",ExpressionUUID->"66546a39-5b73-4b30-960b-894704c08c20"]
+  "In[35]:=",ExpressionUUID->"66546a39-5b73-4b30-960b-894704c08c20"]
 }, Open  ]]
 }, Open  ]]
 },

@@ -1239,7 +1239,7 @@ Cell[BoxData[{
           RowBox[{"D", "[", 
            RowBox[{"e", ",", " ", 
             RowBox[{"{", "a", "}"}]}], "]"}], ".", "b"}]}], "]"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\n", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", "\n", 
   RowBox[{"(*", " ", 
    RowBox[{"convert", " ", "from", " ", "string", " ", "to", " ", "number"}], 
    " ", "*)"}]}], "\[IndentingNewLine]", 

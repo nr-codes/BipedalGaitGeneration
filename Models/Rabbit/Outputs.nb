@@ -30,8 +30,7 @@ Cell[BoxData[{
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"<<", " ", "\"\<Rabbit`\>\""}], ";"}]}], "Input",
- CellLabel->
-  "In[79]:=",ExpressionUUID->"47c7d20d-daa7-400f-9645-40e9b9b0ccae"]
+ CellLabel->"In[1]:=",ExpressionUUID->"47c7d20d-daa7-400f-9645-40e9b9b0ccae"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -44,8 +43,7 @@ Cell[BoxData[{
   RowBox[{"n", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"Rabbit", "[", "n", "]"}], ";"}]}], "Input",
- CellLabel->
-  "In[83]:=",ExpressionUUID->"8f2565e8-6cfb-4ebc-ad04-bf14a0e57f0e"]
+ CellLabel->"In[5]:=",ExpressionUUID->"8f2565e8-6cfb-4ebc-ad04-bf14a0e57f0e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,8 +56,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<rab.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->
-  "In[85]:=",ExpressionUUID->"9813140d-a5b4-4c8c-a868-0f874f0bf98d"]
+ CellLabel->"In[7]:=",ExpressionUUID->"9813140d-a5b4-4c8c-a868-0f874f0bf98d"]
 }, Open  ]]
 }, Open  ]],
 
@@ -132,8 +129,7 @@ Cell[BoxData[{
    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"BLWrap", "[", 
   RowBox[{"BLDrawBiped", ",", " ", "model"}], "]"}]}], "Input",
- CellLabel->
-  "In[86]:=",ExpressionUUID->"1b71277e-03e1-47a9-ba6a-1052f2dc369c"]
+ CellLabel->"In[8]:=",ExpressionUUID->"1b71277e-03e1-47a9-ba6a-1052f2dc369c"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -175,7 +171,7 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", " ", "\"\<rabbit-traj--1.svg\>\"", ",", " ", 
     "imgs"}], "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[94]:=",ExpressionUUID->"93051e8c-1d99-40b0-90a9-4c387653971d"]
+  "In[16]:=",ExpressionUUID->"93051e8c-1d99-40b0-90a9-4c387653971d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -282,7 +278,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", " ", "\"\<rabbit-mu-0.svg\>\"", ",", " ", "%"}], 
    "]"}], ";"}]}], "Input",
- CellLabel->"In[98]:=",ExpressionUUID->"9206759a-c35a-486c-80de-3f1e41d5d7aa"],
+ CellLabel->"In[20]:=",ExpressionUUID->"9206759a-c35a-486c-80de-3f1e41d5d7aa"],
 
 Cell["\<\
 NOTE: Ignore red bar on output below.  MMA thinks \\\\mu is a string escape \
@@ -408,7 +404,8 @@ Cell[BoxData[{
        RowBox[{"\"\<tor\>\"", ",", " ", "\"\<t\>\"", ",", " ", "\"\<f\>\""}], 
        "}"}]}], "}"}]}], "\[IndentingNewLine]", "]"}], ";"}]}], "Input",
  EmphasizeSyntaxErrors->True,
- CellLabel->"In[103]:=",ExpressionUUID->"50a64db5-5829-4912-8597-1d1858f682da"]
+ CellLabel->
+  "In[25]:=",ExpressionUUID->"50a64db5-5829-4912-8597-1d1858f682da"]
 }, Open  ]]
 }, Open  ]],
 
@@ -452,13 +449,14 @@ Cell[BoxData[{
           RowBox[{"model", ",", " ", 
            RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "2"}]}], "]"}]}]}], 
        "*)"}], "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", 
-    "|>"}]}], 
-  ";"}]}], "Input",ExpressionUUID->"3f0c44c3-0193-4355-9a2e-51ba1caa270f"],
+    "|>"}]}], ";"}]}], "Input",
+ CellLabel->"In[43]:=",ExpressionUUID->"3f0c44c3-0193-4355-9a2e-51ba1caa270f"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
- CellLabel->"In[123]:=",ExpressionUUID->"fc405bc9-6b4a-44d0-936e-5f5b6e4909d4"]
+ CellLabel->
+  "In[45]:=",ExpressionUUID->"fc405bc9-6b4a-44d0-936e-5f5b6e4909d4"]
 }, Open  ]]
 }, Open  ]]
 },

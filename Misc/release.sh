@@ -1,14 +1,21 @@
 #!/usr/bin/env bash
 
 if [ -z "$1" ]; then
-    echo 'enter release version'
-    exit;
+    echo 'release version [message]'
+    exit
+fi
+
+ver="$1"
+ver="${ver:1}"
+
+if [ -z "$2" ]; then
+    msg="new release"
+else
+    msg="$2"
 fi
 
 # get latest version number
-ver="$1"
 #ver=$(git tag | tail -1)
-ver="${ver:1}"
 
 # get script directory, https://stackoverflow.com/questions/59895
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -27,7 +34,7 @@ sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 
 set -x
 git commit -a
-git tag -a v$ver -m "new release"
+git tag -a v$ver -m "$msg"
 git push origin v$ver
 
 # to delete

@@ -1,8 +1,30 @@
 #!/usr/bin/env bash
 
+help='release [-du] version [message]
+\t -d delete tag
+\t -u update tag to latest commit \
+
+The two options \e[1mcannot\e[0m be used together.'
+
+# parse options and args
+while getopts ":hdu" option; do
+    case $option in
+        h) echo -e "$help"; exit 0;;
+        d) delete=true;;
+        u) update=true;;
+    esac
+done
+
+shift $(( OPTIND - 1 ))
+
+if [ -n "$delete" -a -n "$update" ]; then
+    echo -e "release: \e[1mcannot\e[0m have both -d and -u."
+    exit -1
+fi
+
 if [ -z "$1" ]; then
-    echo 'release version [message] [change]'
-    exit
+    echo -e "$help"
+    exit 0
 fi
 
 ver="$1"
@@ -13,9 +35,6 @@ if [ -z "$2" ]; then
 else
     msg="$2"
 fi
-
-# get latest version number
-#ver=$(git tag | tail -1)
 
 # get script directory, https://stackoverflow.com/questions/59895
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -35,16 +54,17 @@ sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 # echo output
 set -x
 
-if [ -n "$3" ]; then
+# push code
+if [ -n "$delete" -o -n "$update" ]; then
     git tag -d v$ver
     git push origin --delete v$ver
-    git commit -a
-    git push
 fi
 
-git commit -a
-git tag -a v$ver -m "$msg"
-git push origin v$ver
+if [ -z "$delete" ]; then
+    git commit -a
+    git tag -a v$ver -m "$msg"
+    git push origin v$ver
+fi
 
 # to delete
 # git tag -d v0.0.0

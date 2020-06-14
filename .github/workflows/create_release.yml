@@ -66,7 +66,7 @@ jobs:
             npm i
             npm run build
             npm run pkg-all
-            mv exe/GaitBrowser-linux ../$linux
+            mv exe/GaitBrowser-linux ../$lin
             mv exe/GaitBrowser-macos ../$mac
             mv exe/GaitBrowser-win.exe ../$win
             echo ::set-env name=lin::$lin

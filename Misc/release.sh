@@ -25,6 +25,11 @@ sed -i "s/$reg/$rep/" Installer.nb
 # set version in package.json
 sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 
+set -x
 git commit -a
-git tag -a $ver -m "new release"
-git push origin $ver
+git tag -a v$ver -m "new release"
+git push origin v$ver
+
+# to delete
+# git tag -d v0.0.0
+# git push origin --delete v0.0.0

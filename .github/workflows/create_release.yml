@@ -15,7 +15,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Set Release Version
         run: |
-            pwd
             echo ::set-env name=ver::${GITHUB_REF#refs/tags/v}
             echo ::set-env name=name::${GITHUB_REPOSITORY#nr-codes/}
       - name: Build Mathematica Archive
@@ -23,7 +22,6 @@ jobs:
         env: 
             math: ${{ env.name }}-Mathematica-${{ env.ver }}
         run: |
-            pwd
             sudo apt-get install w3m
             npx asciidoctor -a html_compact -a revnumber=v$ver README.adoc
             w3m -dump -o display_charset=latin1 README.html > README.txt
@@ -47,15 +45,16 @@ jobs:
                 GaitBrowser/app/imgs/*/*.png \
                 -x \*.gitignore
             zip -r9 $math Models SIMple
-            echo ::set-env name=math::$math
+            echo ::set-env name=math::"$math.zip"
+            echo ::set-env name=math_path::$( readlink -f "$math" )
       - name: Build Node.js Archive
         id: node
         env: 
             node: ${{ env.name }}-Node.js-${{ env.ver }}
         run: |
-            pwd
             zip -r9 $node GaitBrowser -x GaitBrowser/app/imgs\*
-            echo ::set-env name=node::$node
+            echo ::set-env name=node::"$node.zip"
+            echo ::set-env name=node_path::$( readlink -f "$node" )
       - name: Build GaitBrowser Executables
         id: executables
         env: 
@@ -63,7 +62,6 @@ jobs:
             mac: GaitBrowser-macos-x64-${{ env.ver }}
             win: GaitBrowser-win-x64-${{ env.ver }}.exe
         run: |
-            pwd
             cd ./GaitBrowser
             npm i
             npm run build
@@ -74,6 +72,9 @@ jobs:
             echo ::set-env name=lin::$lin
             echo ::set-env name=mac::$mac
             echo ::set-env name=win::$win
+            echo ::set-env name=lin_path::$( readlink -f "$lin" )
+            echo ::set-env name=mac_path::$( readlink -f "$mac" )
+            echo ::set-env name=win_path::$( readlink -f "$win" )
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -91,8 +92,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./${{ env.math }}.zip
-          asset_name: ${{ env.math }}.zip
+          asset_path: ${{ env.math_path }}
+          asset_name: ${{ env.math }}
           asset_content_type: application/zip
       - name: Upload Node.js Archive
         id: upload-node-asset 
@@ -101,8 +102,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./${{ env.node }}.zip
-          asset_name: ${{ env.node }}.zip
+          asset_path: ${{ env.node_path }}
+          asset_name: ${{ env.node }}
           asset_content_type: application/zip
       - name: Upload GaitBrowser Linux Executable
         id: upload-linux-asset 
@@ -111,7 +112,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./${{ env.lin }}
+          asset_path: ${{ env.lin_path }}
           asset_name: ${{ env.lin }}
           asset_content_type: application/octet-stream
       - name: Upload GaitBrowser MacOS Executable
@@ -121,7 +122,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./${{ env.mac }}
+          asset_path: ${{ env.mac_path }}
           asset_name: ${{ env.mac }}
           asset_content_type: application/octet-stream
       - name: Upload GaitBrowser Windows Executable
@@ -131,6 +132,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} 
-          asset_path: ./${{ env.win }}
+          asset_path: ${{ env.win_path }}
           asset_name: ${{ env.win }}
           asset_content_type: application/octet-stream

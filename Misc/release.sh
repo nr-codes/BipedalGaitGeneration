@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 
+if [ -z "$1" ]; then
+    echo 'enter release version'
+    exit;
+fi
+
 # get latest version number
-ver=$(git tag | tail -1)
+ver="$1"
+#ver=$(git tag | tail -1)
 ver="${ver:1}"
+
+git tag -a $ver -m "new release"
+git push orign $ver
 
 # get script directory, https://stackoverflow.com/questions/59895
 dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
@@ -28,9 +37,11 @@ w3m -dump -o display_charset=latin1 README.html > README.txt
 # set version in notebooks
 row='RowBox[{"VERSION", " ", "=", " ", "\\"\\<'
 box='\\>\\""}]'
-reg="$row[0-9]\+\.[0-9]\+\.[0-9]\+$box"
+pat='[0-9]\+\.[0-9]\+\.[0-9]\+'
+reg="$row$pat$box"
 rep="$row$ver$box"
 sed -i "s/$reg/$rep/" Installer.nb
+sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 
 # create downloadable archives
 math="BipedalGaitGeneration-Mathematica-$ver.zip"

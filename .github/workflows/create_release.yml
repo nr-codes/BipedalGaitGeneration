@@ -1,0 +1,123 @@
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Upload Release Assets
+
+jobs:
+  build:
+    name: Upload Release Assets
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Set Release Version
+        run: |
+            echo ::set-env name=ver::${GITHUB_REF#refs/tags/v}
+            echo ::set-env name=name::${GITHUB_REPOSITORY#nr-codes/}
+      - name: Build Mathematica Archive
+        id: math
+        env: 
+            math: ${{ env.name }}-Mathematica-${{ env.ver }}
+        run: |
+            zip -9 $math \
+                README.txt \
+                SUMMARY.txt \
+                COPYING.txt \
+                Installer.nb \
+                RunModels.nb \
+                BipedalGaitGeneration.mp4 \
+                Figures \
+                Models \
+                SIMple \
+                GaitBrowser/src/bipeds \
+                GaitBrowser/app/imgs/*/*.png \
+                -x \*.gitignore
+            zip -r9 $math Models SIMple
+            echo ::set-env name=math::$math
+      - name: Build Node.js Archive
+        id: node
+        env: 
+            node: ${{ env.name }}-Node.js-${{ env.ver }}
+        run: |
+            zip -r9 $node GaitBrowser -x GaitBrowser/app/imgs\*
+            echo ::set-env name=node::$node
+      - name: Build GaitBrowser Executables
+        id: executables
+        env: 
+            lin: GaitBrowser-linux-x64-${{ env.ver }}
+            mac: GaitBrowser-macos-x64-${{ env.ver }}
+            win: GaitBrowser-win-x64-${{ env.ver }}.exe
+        working-directory: ./GaitBrowser
+        run: |
+            npm i
+            npm run build
+            npm run pkg-all
+            mv exe/GaitBrowser-linux ../$linux
+            mv exe/GaitBrowser-macos ../$mac
+            mv exe/GaitBrowser-win.exe ../$win
+            echo ::set-env name=lin::$lin
+            echo ::set-env name=mac::$mac
+            echo ::set-env name=win::$win
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Upload Mathematica Archive
+        id: upload-math-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./${{ env.math }}.zip
+          asset_name: ${{ env.math }}.zip
+          asset_content_type: application/zip
+      - name: Upload Node.js Archive
+        id: upload-node-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./${{ env.node }}.zip
+          asset_name: ${{ env.node }}.zip
+          asset_content_type: application/zip
+      - name: Upload GaitBrowser Linux Executable
+        id: upload-linux-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./${{ env.lin }}
+          asset_name: ${{ env.lin }}
+          asset_content_type: application/octet-stream
+      - name: Upload GaitBrowser MacOS Executable
+        id: upload-macos-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./${{ env.mac }}
+          asset_name: ${{ env.mac }}
+          asset_content_type: application/octet-stream
+      - name: Upload GaitBrowser Windows Executable
+        id: upload-win-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./${{ env.win }}
+          asset_name: ${{ env.win }}
+          asset_content_type: application/octet-stream

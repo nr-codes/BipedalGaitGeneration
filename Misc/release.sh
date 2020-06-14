@@ -33,6 +33,12 @@ sed -i "s/$reg/$rep/" Installer.nb
 sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 
 set -x
+git tag -d v$ver
+git push origin --delete v$ver
+git commit -a
+git push
+
+
 git commit -a
 git tag -a v$ver -m "$msg"
 git push origin v$ver

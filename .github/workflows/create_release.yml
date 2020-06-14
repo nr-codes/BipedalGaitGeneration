@@ -66,18 +66,16 @@ jobs:
             npm i
             npm run build
             npm run pkg-all
-            mv exe/GaitBrowser-linux ../$lin
-            mv exe/GaitBrowser-macos ../$mac
-            mv exe/GaitBrowser-win.exe ../$win
-            ls
+            #mv exe/GaitBrowser-linux ../$lin
+            #mv exe/GaitBrowser-macos ../$mac
+            #mv exe/GaitBrowser-win.exe ../$win
             ls exe
-            pwd
             echo ::set-env name=lin::$lin
             echo ::set-env name=mac::$mac
             echo ::set-env name=win::$win
-            echo ::set-env name=lin_path::$( readlink -f "$lin" )
-            echo ::set-env name=mac_path::$( readlink -f "$mac" )
-            echo ::set-env name=win_path::$( readlink -f "$win" )
+            echo ::set-env name=lin_path::$( readlink -f ./exe/GaitBrowser-linux )
+            echo ::set-env name=mac_path::$( readlink -f ./exe/GaitBrowser-macos )
+            echo ::set-env name=win_path::$( readlink -f ./exe/GaitBrowser-win.exe )
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

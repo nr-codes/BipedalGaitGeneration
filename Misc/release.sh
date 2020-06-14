@@ -27,4 +27,4 @@ sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 
 git commit -a
 git tag -a $ver -m "new release"
-git push orign $ver
+git push origin $ver

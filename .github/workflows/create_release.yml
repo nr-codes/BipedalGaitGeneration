@@ -86,7 +86,6 @@ jobs:
           prerelease: false
       - name: Upload Mathematica Archive
         id: upload-math-asset 
-        run: pwd
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

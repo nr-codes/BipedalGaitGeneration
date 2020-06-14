@@ -238,17 +238,17 @@ endif::html_compact[]
 
 .Run times in seconds of running all cells in Main.nb of each model
 |===
-| Models/Atlas/Main.nb | 14667.9
-| Models/CompassGait/Main.nb | 507.569
-| Models/CompassGaitWithActuator/Main.nb | 7541.12
-| Models/CompassGaitWithTorso/Main.nb | 669.531
-| Models/CurvedFeet/Main.nb | 430.171
-| Models/FiveLink3D/Main.nb | 1730.11
-| Models/Gibbot/Main.nb | 657.85
-| Models/HumanWalker/Main.nb | 1822.79
-| Models/KneedWalker/Main.nb | 923.491
-| Models/Marlo/Main.nb | 2334.83
-| Models/Rabbit/Main.nb | 380.527
+| {src}/Models/Atlas/Main.nb[Models/Atlas/Main.nb] | 14667.9
+| {src}/Models/CompassGait/Main.nb[Models/CompassGait/Main.nb] | 507.569
+| {src}/Models/CompassGaitWithActuator/Main.nb[Models/CompassGaitWithActuator/Main.nb] | 7541.12
+| {src}/Models/CompassGaitWithTorso/Main.nb[Models/CompassGaitWithTorso/Main.nb] | 669.531
+| {src}/Models/CurvedFeet/Main.nb[Models/CurvedFeet/Main.nb] | 430.171
+| {src}/Models/FiveLink3D/Main.nb[Models/FiveLink3D/Main.nb] | 1730.11
+| {src}/Models/Gibbot/Main.nb[Models/Gibbot/Main.nb] | 657.85
+| {src}/Models/HumanWalker/Main.nb[Models/HumanWalker/Main.nb] | 1822.79
+| {src}/Models/KneedWalker/Main.nb[Models/KneedWalker/Main.nb] | 923.491
+| {src}/Models/Marlo/Main.nb[Models/Marlo/Main.nb] | 2334.83
+| {src}/Models/Rabbit/Main.nb[Models/Rabbit/Main.nb] | 380.527
 |===
 All code executed in Mathematica v11.3.0 with a gcc 7.4.0 compiler backend on a
 2.7 GHz Intel Core i7-4800MQ CPU laptop running 64-bit Ubuntu 18.04 LTS.

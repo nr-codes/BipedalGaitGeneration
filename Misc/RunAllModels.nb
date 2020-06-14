@@ -30,7 +30,7 @@ notebook-files-in-command-mode"
 
 Cell[CellGroupData[{
 
-Cell["Setup", \
+Cell["Functions and Variables", \
 "Chapter",ExpressionUUID->"1083bc7c-b40f-4569-b3e2-299f801ebeef"],
 
 Cell[BoxData[{
@@ -63,7 +63,7 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"\"\<Evaluating\>\"", "/.", "#"}], "&"}], ",", 
           RowBox[{"Developer`CellInformation", "[", "nb", "]"}]}], 
-         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"evals", " ", "=", " ", 
@@ -80,60 +80,94 @@ Cell[BoxData[{
         RowBox[{"\"\<BipedalGaitGenerationKernel\>\"", "\[Rule]", 
          RowBox[{"{", 
           RowBox[{"\"\<AutoStartOnLaunch\>\"", "\[Rule]", "False"}], "}"}]}], 
-        "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], "\n", 
-  "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-   "compute", " ", "longest", " ", "run", " ", "time", " ", "by", " ", 
-    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}]}], "\n", 
-
+        "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{"DeleteDirectory", "[", 
+   RowBox[{"ToAsciidoc", "[", "data_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
     RowBox[{
-     RowBox[{"FileNames", "[", 
-      RowBox[{"\"\<../Models/*/*CompiledFunctions\>\"", ",", 
-       RowBox[{"{", 
-        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
-     RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], 
-  "\[IndentingNewLine]", "\n", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-   "make", " ", "sure", " ", "computed", " ", "gaits", " ", "are", " ", 
-    "being", " ", "created"}], " ", "*)"}]}], "\n", 
+     RowBox[{"{", "d", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"d", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"\"\<{src}/\>\"", " ", "<>", " ", 
+            RowBox[{
+            "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+            "<>", " ", "\"\<[\>\"", " ", "<>", " ", 
+            RowBox[{
+            "#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], " ", 
+            "<>", " ", "\"\<]\>\""}], ",", " ", 
+           RowBox[{
+           "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
+          "}"}], "&"}], " ", "/@", " ", "data"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\"\<|===\\n\>\"", " ", "<>", " ", 
+       RowBox[{"StringJoin", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"StringRiffle", "[", 
+           RowBox[{"#", ",", " ", 
+            RowBox[{"{", 
+             RowBox[{
+             "\"\<| \>\"", ",", " ", "\"\< | \>\"", ",", " ", "\"\<\\n\>\""}],
+              "}"}]}], "]"}], "&"}], " ", "/@", " ", "d"}], "]"}], " ", "<>", 
+       " ", "\"\<|===\\n\>\""}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]}], "Input",
+ CellLabel->
+  "In[21]:=",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setup", \
+"Chapter",ExpressionUUID->"4761e9da-f119-48f8-ac5b-80fff008e9e3"],
+
+Cell[BoxData[
  RowBox[{
-  RowBox[{
-   RowBox[{"DeleteFile", "[", 
-    RowBox[{"FileNames", "[", 
-     RowBox[{"\"\<../Models/*/*.mx\>\"", ",", 
-      RowBox[{"{", 
-       RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], "]"}], ";"}], 
-  "\n", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
-   RowBox[{"add", " ", "new", " ", "kernel"}], " ", "*)"}]}], "\n", 
- RowBox[{
+   RowBox[{"add", " ", "new", " ", "kernel"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{"SetOptions", "[", 
     RowBox[{"$FrontEndSession", ",", 
      RowBox[{"EvaluatorNames", "\[Rule]", 
       RowBox[{"Join", "@@", 
-       RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+       RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], 
+   ";"}]}]], "Input",ExpressionUUID->"c4959e88-69b9-44a3-be4b-0ee3d518d384"],
+
+Cell[BoxData[
  RowBox[{
-  RowBox[{
-   RowBox[{"ToAsciidoc", "[", "data_", "]"}], " ", ":=", 
-   RowBox[{"\"\<|===\\n\>\"", " ", "<>", " ", 
-    RowBox[{"StringJoin", "[", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "compute", " ", "longest", " ", "run", " ", "time", " ", "by", " ", 
+    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"DeleteDirectory", "[", 
      RowBox[{
-      RowBox[{
-       RowBox[{"StringRiffle", "[", 
-        RowBox[{"#", ",", " ", 
-         RowBox[{"{", 
-          RowBox[{
-          "\"\<| \>\"", ",", " ", "\"\< | \>\"", ",", " ", "\"\<\\n\>\""}], 
-          "}"}]}], "]"}], "&"}], " ", "/@", " ", "data"}], "]"}], " ", "<>", 
-    " ", "\"\<|===\\n\>\""}]}], 
-  ";"}]}], "Input",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
+      RowBox[{"FileNames", "[", 
+       RowBox[{"\"\<../Models/*/*CompiledFunctions\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
+      RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], "*)"}], 
+  "\n", "\n", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "make", " ", "sure", " ", "computed", " ", "gaits", " ", "are", " ", 
+    "being", " ", "created"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"DeleteFile", "[", 
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<../Models/*/*.mx\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], "]"}], ";"}],
+    "*)"}]}]], \
+"Input",ExpressionUUID->"6c7d6553-b31a-4b12-8e55-355a50bef336"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -151,7 +185,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Main.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"mdata", " ", "=", " ", 
@@ -480,7 +514,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Outputs.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"odata", " ", "=", " ", 
@@ -857,24 +891,30 @@ Cell[BoxData[{
    RowBox[{"for", " ", 
     RowBox[{"README", ".", "adoc"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"ToAsciidoc", "[", "mdata", "]"}]}], "Input",
- CellLabel->"In[23]:=",ExpressionUUID->"b9a45d8a-a262-4105-9022-9f3f989ead5d"],
+ CellLabel->"In[27]:=",ExpressionUUID->"b9a45d8a-a262-4105-9022-9f3f989ead5d"],
 
-Cell[BoxData["\<\"|===\\n| Models/Atlas/Main.nb | 14667.9\\n| \
-Models/CompassGait/Main.nb | 507.569\\n| \
-Models/CompassGaitWithActuator/Main.nb | 7541.12\\n| \
-Models/CompassGaitWithTorso/Main.nb | 669.531\\n| Models/CurvedFeet/Main.nb | \
-430.171\\n| Models/FiveLink3D/Main.nb | 1730.11\\n| Models/Gibbot/Main.nb | \
-657.85\\n| Models/HumanWalker/Main.nb | 1822.79\\n| \
-Models/KneedWalker/Main.nb | 923.491\\n| Models/Marlo/Main.nb | 2334.83\\n| \
-Models/Rabbit/Main.nb | 380.527\\n|===\\n\"\>"], "Output",
+Cell[BoxData["\<\"|===\\n| {src}/Models/Atlas/Main.nb[Models/Atlas/Main.nb] | \
+14667.9\\n| {src}/Models/CompassGait/Main.nb[Models/CompassGait/Main.nb] | \
+507.569\\n| \
+{src}/Models/CompassGaitWithActuator/Main.nb[Models/CompassGaitWithActuator/\
+Main.nb] | 7541.12\\n| \
+{src}/Models/CompassGaitWithTorso/Main.nb[Models/CompassGaitWithTorso/Main.nb]\
+ | 669.531\\n| {src}/Models/CurvedFeet/Main.nb[Models/CurvedFeet/Main.nb] | \
+430.171\\n| {src}/Models/FiveLink3D/Main.nb[Models/FiveLink3D/Main.nb] | \
+1730.11\\n| {src}/Models/Gibbot/Main.nb[Models/Gibbot/Main.nb] | 657.85\\n| \
+{src}/Models/HumanWalker/Main.nb[Models/HumanWalker/Main.nb] | 1822.79\\n| \
+{src}/Models/KneedWalker/Main.nb[Models/KneedWalker/Main.nb] | 923.491\\n| \
+{src}/Models/Marlo/Main.nb[Models/Marlo/Main.nb] | 2334.83\\n| \
+{src}/Models/Rabbit/Main.nb[Models/Rabbit/Main.nb] | 380.527\\n|===\\n\"\>"], \
+"Output",
  CellLabel->
-  "Out[24]=",ExpressionUUID->"e0915e79-93b2-44d6-89a9-29d14a3414d4"]
+  "Out[28]=",ExpressionUUID->"8409df17-1a61-49c2-8659-ee767ff28706"]
 }, Open  ]]
 }, Open  ]]
 },
 Evaluator->"Local",
-WindowSize->{1373, 1505},
-WindowMargins->{{0, Automatic}, {0, Automatic}},
+WindowSize->{1373, 1509},
+WindowMargins->{{Automatic, 0}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",
 TrackCellChangeTimes->False,

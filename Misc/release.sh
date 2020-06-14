@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -z "$1" ]; then
-    echo 'release version [message]'
+    echo 'release version [message] [change]'
     exit
 fi
 
@@ -32,12 +32,15 @@ sed -i "s/$reg/$rep/" Installer.nb
 # set version in package.json
 sed -i "s/\"version\": \"$pat\"/\"version\": \"$ver\"/" GaitBrowser/package.json
 
+# echo output
 set -x
-git tag -d v$ver
-git push origin --delete v$ver
-git commit -a
-git push
 
+if [ -n "$3" ]; then
+    git tag -d v$ver
+    git push origin --delete v$ver
+    git commit -a
+    git push
+fi
 
 git commit -a
 git tag -a v$ver -m "$msg"

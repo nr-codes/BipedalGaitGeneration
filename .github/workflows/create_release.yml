@@ -17,44 +17,44 @@ jobs:
         run: |
             echo ::set-env name=ver::${GITHUB_REF#refs/tags/v}
             echo ::set-env name=name::${GITHUB_REPOSITORY#nr-codes/}
-#      - name: Build Mathematica Archive
-#        id: math
-#        env: 
-#            math: ${{ env.name }}-Mathematica-${{ env.ver }}
-#        run: |
-#            sudo apt-get install w3m
-#            npx asciidoctor -a html_compact -a revnumber=v$ver README.adoc
-#            w3m -dump -o display_charset=latin1 README.html > README.txt
-#            echo "The content in this directory contains a video showing " \
-#                 "animations of all gaits presented in the figures of the " \
-#                 "paper as well as the source code for computing walking " \
-#                 "gaits from equilibria using numerical continuation " \
-#                 "methods.  Further information can be found in the " \
-#                 "README.txt file." > SUMMARY.txt 
-#            zip -9 $math \
-#                README.txt \
-#                SUMMARY.txt \
-#                COPYING.txt \
-#                Installer.nb \
-#                RunModels.nb \
-#                BipedalGaitGeneration.mp4 \
-#                Figures \
-#                Models \
-#                SIMple \
-#                GaitBrowser/src/bipeds \
-#                GaitBrowser/app/imgs/*/*.png \
-#                -x \*.gitignore
-#            zip -r9 $math Models SIMple
-#            echo ::set-env name=math::"$math.zip"
-#            echo ::set-env name=math_path::$( readlink -f "$math" )
-#      - name: Build Node.js Archive
-#        id: node
-#        env: 
-#            node: ${{ env.name }}-Node.js-${{ env.ver }}
-#        run: |
-#            zip -r9 $node GaitBrowser -x GaitBrowser/app/imgs\*
-#            echo ::set-env name=node::"$node.zip"
-#            echo ::set-env name=node_path::$( readlink -f "$node" )
+      - name: Build Mathematica Archive
+        id: math
+        env: 
+            math: ${{ env.name }}-Mathematica-${{ env.ver }}
+        run: |
+            sudo apt-get install w3m
+            npx asciidoctor -a html_compact -a revnumber=v$ver README.adoc
+            w3m -dump -o display_charset=latin1 README.html > README.txt
+            echo "The content in this directory contains a video showing " \
+                 "animations of all gaits presented in the figures of the " \
+                 "paper as well as the source code for computing walking " \
+                 "gaits from equilibria using numerical continuation " \
+                 "methods.  Further information can be found in the " \
+                 "README.txt file." > SUMMARY.txt 
+            zip -9 $math \
+                README.txt \
+                SUMMARY.txt \
+                COPYING.txt \
+                Installer.nb \
+                RunModels.nb \
+                BipedalGaitGeneration.mp4 \
+                Figures \
+                Models \
+                SIMple \
+                GaitBrowser/src/bipeds \
+                GaitBrowser/app/imgs/*/*.png \
+                -x \*.gitignore
+            zip -r9 $math Models SIMple
+            echo ::set-env name=math::"$math.zip"
+            echo ::set-env name=math_path::$( readlink -f "$math" )
+      - name: Build Node.js Archive
+        id: node
+        env: 
+            node: ${{ env.name }}-Node.js-${{ env.ver }}
+        run: |
+            zip -r9 $node GaitBrowser -x GaitBrowser/app/imgs\*
+            echo ::set-env name=node::"$node.zip"
+            echo ::set-env name=node_path::$( readlink -f "$node" )
       - name: Build GaitBrowser Executables
         id: executables
         env: 
@@ -66,10 +66,6 @@ jobs:
             npm i
             npm run build
             npm run pkg-all
-            #mv exe/GaitBrowser-linux ../$lin
-            #mv exe/GaitBrowser-macos ../$mac
-            #mv exe/GaitBrowser-win.exe ../$win
-            ls exe
             echo ::set-env name=lin::$lin
             echo ::set-env name=mac::$mac
             echo ::set-env name=win::$win
@@ -86,26 +82,26 @@ jobs:
           release_name: ${{ github.ref }}
           draft: false
           prerelease: false
-#      - name: Upload Mathematica Archive
-#        id: upload-math-asset 
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-#          asset_path: ${{ env.math_path }}
-#          asset_name: ${{ env.math }}
-#          asset_content_type: application/zip
-#      - name: Upload Node.js Archive
-#        id: upload-node-asset 
-#        uses: actions/upload-release-asset@v1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }} 
-#          asset_path: ${{ env.node_path }}
-#          asset_name: ${{ env.node }}
-#          asset_content_type: application/zip
+      - name: Upload Mathematica Archive
+        id: upload-math-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ${{ env.math_path }}
+          asset_name: ${{ env.math }}
+          asset_content_type: application/zip
+      - name: Upload Node.js Archive
+        id: upload-node-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ${{ env.node_path }}
+          asset_name: ${{ env.node }}
+          asset_content_type: application/zip
       - name: Upload GaitBrowser Linux Executable
         id: upload-linux-asset 
         uses: actions/upload-release-asset@v1

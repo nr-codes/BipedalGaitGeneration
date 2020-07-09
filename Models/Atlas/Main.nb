@@ -43,7 +43,7 @@ Cell[BoxData[
        "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"<<", " ", "\"\<Atlas`\>\""}], ";"}]}]}]], "Input",
- CellLabel->"In[5]:=",ExpressionUUID->"c95f29b6-b842-4952-a7a2-9290111fc49b"]
+ CellLabel->"In[1]:=",ExpressionUUID->"c95f29b6-b842-4952-a7a2-9290111fc49b"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -55,6 +55,8 @@ Cell["\<\
 Refer to CompassGait/Main.nb for detailed description of this code.\
 \>", "Text",ExpressionUUID->"1947ddf7-3628-4c0f-b879-87c19a4af20c"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"n", " ", "=", " ", "1"}], ";"}], "\[IndentingNewLine]", 
@@ -63,6 +65,10 @@ Cell[BoxData[{
    RowBox[{"Atlas", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
  CellLabel->"In[5]:=",ExpressionUUID->"fc2c4400-fef5-4dde-9b2c-9dc21e14fcfa"],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellLabel->"Out[6]=",ExpressionUUID->"43ec7dce-7809-48a0-891c-007b3fc49d5f"]
+}, Open  ]],
 
 Cell[CellGroupData[{
 

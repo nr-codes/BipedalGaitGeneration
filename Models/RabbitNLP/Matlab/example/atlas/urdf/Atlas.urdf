@@ -1,0 +1,742 @@
+<?xml version='1.0'?>
+<!--Generated using URDF.nb-->
+<!--Based on the models in https://github.com/nr-codes/BipedalGaitGeneration-->
+<!--Nelson Rosa Jr. @nr-codes on GitHub 01/18/2021, Mathematica 12, v1-->
+<robot name='Atlas'>
+ <link name='Root' />
+ <link name='theta_py'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='1.' />
+   <inertia ixx='0.'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.'
+       iyz='0.'
+       izz='0.' />
+  </inertial>
+ </link>
+ <joint name='theta_py_joint'
+     type='prismatic'>
+  <origin xyz='0. 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='Root' />
+  <child link='theta_py' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='float_base_px'>
+  <inertial>
+   <origin xyz='0 0 0'
+       rpy='0 0 0' />
+   <mass value='0' />
+   <inertia ixx='0'
+       ixy='0'
+       ixz='0'
+       iyy='0'
+       iyz='0'
+       izz='0' />
+  </inertial>
+ </link>
+ <joint name='float_base_px_joint'
+     type='prismatic'>
+  <origin xyz='0. 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='Root' />
+  <child link='float_base_px' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='float_base_py'>
+  <inertial>
+   <origin xyz='0 0 0'
+       rpy='0 0 0' />
+   <mass value='0' />
+   <inertia ixx='0'
+       ixy='0'
+       ixz='0'
+       iyy='0'
+       iyz='0'
+       izz='0' />
+  </inertial>
+ </link>
+ <joint name='float_base_py_joint'
+     type='prismatic'>
+  <origin xyz='0 0 0'
+      rpy='0 0 0' />
+  <parent link='float_base_px' />
+  <child link='float_base_py' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='float_base_pz'>
+  <inertial>
+   <origin xyz='0 0 0'
+       rpy='0 0 0' />
+   <mass value='0' />
+   <inertia ixx='0'
+       ixy='0'
+       ixz='0'
+       iyy='0'
+       iyz='0'
+       izz='0' />
+  </inertial>
+ </link>
+ <joint name='float_base_pz_joint'
+     type='prismatic'>
+  <origin xyz='0 0 0'
+      rpy='0 0 0' />
+  <parent link='float_base_py' />
+  <child link='float_base_pz' />
+  <axis xyz='0 0 1' />
+ </joint>
+ <link name='float_base_rx'>
+  <inertial>
+   <origin xyz='0 0 0'
+       rpy='0 0 0' />
+   <mass value='0' />
+   <inertia ixx='0'
+       ixy='0'
+       ixz='0'
+       iyy='0'
+       iyz='0'
+       izz='0' />
+  </inertial>
+ </link>
+ <joint name='float_base_rx_joint'
+     type='continuous'>
+  <origin xyz='0 0 0'
+      rpy='0 0 0' />
+  <parent link='float_base_pz' />
+  <child link='float_base_rx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='float_base_ry'>
+  <inertial>
+   <origin xyz='0 0 0'
+       rpy='0 0 0' />
+   <mass value='0' />
+   <inertia ixx='0'
+       ixy='0'
+       ixz='0'
+       iyy='0'
+       iyz='0'
+       izz='0' />
+  </inertial>
+ </link>
+ <joint name='float_base_ry_joint'
+     type='continuous'>
+  <origin xyz='0 0 0'
+      rpy='0 0 0' />
+  <parent link='float_base_rx' />
+  <child link='float_base_ry' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='float_base_rz'>
+  <inertial>
+   <origin xyz='0.0111 0. 0.0271'
+       rpy='0. 0. 0.' />
+   <mass value='17.882' />
+   <inertia ixx='0.1244'
+       ixy='0.0008'
+       ixz='-0.0007000000000000001'
+       iyy='0.0958'
+       iyz='-0.0005'
+       izz='0.1167' />
+  </inertial>
+ </link>
+ <joint name='float_base_rz_joint'
+     type='continuous'>
+  <origin xyz='0 0 0'
+      rpy='0 0 0' />
+  <parent link='float_base_ry' />
+  <child link='float_base_rz' />
+  <axis xyz='0 0 1' />
+ </joint>
+ <link name='back_bkz_back_bkz'>
+  <inertial>
+   <origin xyz='-0.01129844 0. 0.07468346500000001'
+       rpy='0. 0. 0.' />
+   <mass value='2.409' />
+   <inertia ixx='0.003909202937262618'
+       ixy='-0.00000005044905013399696'
+       ixz='-0.0003421571317332477'
+       iyy='0.003416935641778831'
+       iyz='0.000000487119391242005'
+       izz='0.001744923542810682' />
+  </inertial>
+ </link>
+ <joint name='back_bkz_back_bkz_joint'
+     type='continuous'>
+  <origin xyz='-0.0125 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='float_base_rz' />
+  <child link='back_bkz_back_bkz' />
+  <axis xyz='0 0 1' />
+ </joint>
+ <link name='l_leg_hpz_l_leg_hpz'>
+  <inertial>
+   <origin xyz='0.005292615700000001 -0.0034473248 0.0031304579'
+       rpy='0. 0. 0.' />
+   <mass value='0.648' />
+   <inertia ixx='0.0007427595277619047'
+       ixy='-0.0000000379606841952381'
+       ixz='-0.00002795486200666666'
+       iyy='0.0006881794357619047'
+       iyz='-0.00000003273498878952381'
+       izz='0.0004124202198428572' />
+  </inertial>
+ </link>
+ <joint name='l_leg_hpz_l_leg_hpz_joint'
+     type='prismatic'>
+  <origin xyz='0. 0.089 0.'
+      rpy='0. 0. 0.' />
+  <parent link='float_base_rz' />
+  <child link='l_leg_hpz_l_leg_hpz' />
+  <axis xyz='0 0 1' />
+ </joint>
+ <link name='r_leg_hpz_r_leg_hpz'>
+  <inertial>
+   <origin xyz='0.005292615700000001 0.0034473248 0.0031304579'
+       rpy='0. 0. 0.' />
+   <mass value='0.648' />
+   <inertia ixx='0.0007427595277619047'
+       ixy='0.0000000379606841952381'
+       ixz='-0.00002795486200666666'
+       iyy='0.0006881794357619047'
+       iyz='0.00000003273498878952381'
+       izz='0.0004124202198428572' />
+  </inertial>
+ </link>
+ <joint name='r_leg_hpz_r_leg_hpz_joint'
+     type='prismatic'>
+  <origin xyz='0. -0.089 0.'
+      rpy='0. 0. 0.' />
+  <parent link='float_base_rz' />
+  <child link='r_leg_hpz_r_leg_hpz' />
+  <axis xyz='0 0 1' />
+ </joint>
+ <link name='back_bky_back_bky'>
+  <inertial>
+   <origin xyz='-0.0081626617 0. 0.03059743'
+       rpy='0. 0. 0.' />
+   <mass value='0.69' />
+   <inertia ixx='0.000454180828173295'
+       ixy='-0.00006107643179122531'
+       ixz='0.00003940093622912775'
+       iyy='0.0004832816499090961'
+       iyz='0.00005274629653036719'
+       izz='0.0004442148675243132' />
+  </inertial>
+ </link>
+ <joint name='back_bky_back_bky_joint'
+     type='continuous'>
+  <origin xyz='0. 0. 0.16197'
+      rpy='0. 0. 0.' />
+  <parent link='back_bkz_back_bkz' />
+  <child link='back_bky_back_bky' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_leg_hpx_l_leg_hpx'>
+  <inertial>
+   <origin xyz='0.013334093 0.017048351 -0.031205161'
+       rpy='0. 0. 0.' />
+   <mass value='0.866' />
+   <inertia ixx='0.0006913258844724912'
+       ixy='-0.00002243443368010575'
+       ixz='0.00000250508046016644'
+       iyy='0.001268563076277292'
+       iyz='0.0001378620685267213'
+       izz='0.001064867365855336' />
+  </inertial>
+ </link>
+ <joint name='l_leg_hpx_l_leg_hpx_joint'
+     type='prismatic'>
+  <origin xyz='0. 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='l_leg_hpz_l_leg_hpz' />
+  <child link='l_leg_hpx_l_leg_hpx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='r_leg_hpx_r_leg_hpx'>
+  <inertial>
+   <origin xyz='0.013334093 -0.017048351 -0.031205161'
+       rpy='0. 0. 0.' />
+   <mass value='0.866' />
+   <inertia ixx='0.0006913258844724912'
+       ixy='0.00002243443368010575'
+       ixz='0.00000250508046016644'
+       iyy='0.001268563076277292'
+       iyz='-0.0001378620685267213'
+       izz='0.001064867365855336' />
+  </inertial>
+ </link>
+ <joint name='r_leg_hpx_r_leg_hpx_joint'
+     type='prismatic'>
+  <origin xyz='0. 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='r_leg_hpz_r_leg_hpz' />
+  <child link='r_leg_hpx_r_leg_hpx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='back_bkx_back_bkx'>
+  <inertial>
+   <origin xyz='-0.0923 0. 0.3'
+       rpy='0. 0. 0.' />
+   <mass value='52.00699999999999' />
+   <inertia ixx='1.466'
+       ixy='0.00362'
+       ixz='0.336'
+       iyy='1.51'
+       iyz='0.001'
+       izz='1.3' />
+  </inertial>
+ </link>
+ <joint name='back_bkx_back_bkx_joint'
+     type='continuous'>
+  <origin xyz='0. 0. 0.05'
+      rpy='0. 0. 0.' />
+  <parent link='back_bky_back_bky' />
+  <child link='back_bkx_back_bkx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='l_leg_hpy_l_leg_hpy'>
+  <inertial>
+   <origin xyz='0. 0. -0.21'
+       rpy='0. 0. 0.' />
+   <mass value='9.209' />
+   <inertia ixx='0.09'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.09'
+       iyz='0.'
+       izz='0.02' />
+  </inertial>
+ </link>
+ <joint name='l_leg_hpy_l_leg_hpy_joint'
+     type='prismatic'>
+  <origin xyz='0.05 0. -0.05'
+      rpy='0. 0. 0.' />
+  <parent link='l_leg_hpx_l_leg_hpx' />
+  <child link='l_leg_hpy_l_leg_hpy' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='r_leg_hpy_r_leg_hpy'>
+  <inertial>
+   <origin xyz='0. 0. -0.21'
+       rpy='0. 0. 0.' />
+   <mass value='9.209' />
+   <inertia ixx='0.09'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.09'
+       iyz='0.'
+       izz='0.02' />
+  </inertial>
+ </link>
+ <joint name='r_leg_hpy_r_leg_hpy_joint'
+     type='prismatic'>
+  <origin xyz='0.05 0. -0.05'
+      rpy='0. 0. 0.' />
+  <parent link='r_leg_hpx_r_leg_hpx' />
+  <child link='r_leg_hpy_r_leg_hpy' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='neck_ry_neck_ry'>
+  <inertial>
+   <origin xyz='-0.0481 0. 0.04569999999999999'
+       rpy='0. 0. 0.' />
+   <mass value='3.751' />
+   <inertia ixx='0.0108'
+       ixy='-0.0001'
+       ixz='-0.0007000000000000001'
+       iyy='0.0182'
+       iyz='-0.0002999999999999999'
+       izz='0.0108' />
+  </inertial>
+ </link>
+ <joint name='neck_ry_neck_ry_joint'
+     type='continuous'>
+  <origin xyz='0.21672 0. 0.53796'
+      rpy='0. 0. 0.' />
+  <parent link='back_bkx_back_bkx' />
+  <child link='neck_ry_neck_ry' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_arm_shy_l_arm_shy'>
+  <inertial>
+   <origin xyz='0. 0.048 0.084'
+       rpy='0. 0. 0.' />
+   <mass value='3.45' />
+   <inertia ixx='0.011'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.009'
+       iyz='-0.004'
+       izz='0.004' />
+  </inertial>
+ </link>
+ <joint name='l_arm_shy_l_arm_shy_joint'
+     type='continuous'>
+  <origin xyz='0.06440999999999999 0.13866 0.10718'
+      rpy='0. 0. 0.' />
+  <parent link='back_bkx_back_bkx' />
+  <child link='l_arm_shy_l_arm_shy' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='r_arm_shy_r_arm_shy'>
+  <inertial>
+   <origin xyz='0. -0.048 0.084'
+       rpy='0. 0. 0.' />
+   <mass value='3.45' />
+   <inertia ixx='0.011'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.009'
+       iyz='0.004'
+       izz='0.004' />
+  </inertial>
+ </link>
+ <joint name='r_arm_shy_r_arm_shy_joint'
+     type='continuous'>
+  <origin xyz='0.06440999999999999 -0.13866 0.10718'
+      rpy='0. 0. 0.' />
+  <parent link='back_bkx_back_bkx' />
+  <child link='r_arm_shy_r_arm_shy' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_leg_kny_l_leg_kny'>
+  <inertial>
+   <origin xyz='0.001 0. -0.187'
+       rpy='0. 0. 0.' />
+   <mass value='5.479' />
+   <inertia ixx='0.077'
+       ixy='0.'
+       ixz='-0.003'
+       iyy='0.076'
+       iyz='0.'
+       izz='0.01' />
+  </inertial>
+ </link>
+ <joint name='l_leg_kny_l_leg_kny_joint'
+     type='continuous'>
+  <origin xyz='-0.05 0. -0.374'
+      rpy='0. 0. 0.' />
+  <parent link='l_leg_hpy_l_leg_hpy' />
+  <child link='l_leg_kny_l_leg_kny' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='r_leg_kny_r_leg_kny'>
+  <inertial>
+   <origin xyz='0.001 0. -0.187'
+       rpy='0. 0. 0.' />
+   <mass value='5.479' />
+   <inertia ixx='0.077'
+       ixy='0.'
+       ixz='-0.003'
+       iyy='0.076'
+       iyz='0.'
+       izz='0.01' />
+  </inertial>
+ </link>
+ <joint name='r_leg_kny_r_leg_kny_joint'
+     type='continuous'>
+  <origin xyz='-0.05 0. -0.374'
+      rpy='0. 0. 0.' />
+  <parent link='r_leg_hpy_r_leg_hpy' />
+  <child link='r_leg_kny_r_leg_kny' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_arm_shx_l_arm_shx'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='3.012' />
+   <inertia ixx='0.00319'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.005830000000000001'
+       iyz='0.'
+       izz='0.005830000000000001' />
+  </inertial>
+ </link>
+ <joint name='l_arm_shx_l_arm_shx_joint'
+     type='continuous'>
+  <origin xyz='0. 0.14035 0.19609'
+      rpy='-1.656149944454243 0. 0.' />
+  <parent link='l_arm_shy_l_arm_shy' />
+  <child link='l_arm_shx_l_arm_shx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='r_arm_shx_r_arm_shx'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='3.012' />
+   <inertia ixx='0.00319'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.005830000000000001'
+       iyz='0.'
+       izz='0.005830000000000001' />
+  </inertial>
+ </link>
+ <joint name='r_arm_shx_r_arm_shx_joint'
+     type='continuous'>
+  <origin xyz='0. -0.14035 0.19609'
+      rpy='1.656149944454243 0. 0.' />
+  <parent link='r_arm_shy_r_arm_shy' />
+  <child link='r_arm_shx_r_arm_shx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='l_leg_aky_l_leg_aky'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='0.125' />
+   <inertia ixx='0.000010167445'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.0000084277543'
+       iyz='0.'
+       izz='0.000013010075' />
+  </inertial>
+ </link>
+ <joint name='l_leg_aky_l_leg_aky_joint'
+     type='continuous'>
+  <origin xyz='0. 0. -0.422'
+      rpy='0. 0. 0.' />
+  <parent link='l_leg_kny_l_leg_kny' />
+  <child link='l_leg_aky_l_leg_aky' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='r_leg_aky_r_leg_aky'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='0.125' />
+   <inertia ixx='0.000010167445'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.0000084277543'
+       iyz='0.'
+       izz='0.000013010075' />
+  </inertial>
+ </link>
+ <joint name='r_leg_aky_r_leg_aky_joint'
+     type='continuous'>
+  <origin xyz='0. 0. -0.422'
+      rpy='0. 0. 0.' />
+  <parent link='r_leg_kny_r_leg_kny' />
+  <child link='r_leg_aky_r_leg_aky' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_arm_ely_l_arm_ely'>
+  <inertial>
+   <origin xyz='0. -0.065 0.'
+       rpy='0. 0. 0.' />
+   <mass value='3.388' />
+   <inertia ixx='0.006559999999999999'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00358'
+       iyz='0.'
+       izz='0.006559999999999999' />
+  </inertial>
+ </link>
+ <joint name='l_arm_ely_l_arm_ely_joint'
+     type='continuous'>
+  <origin xyz='0. 0.187 0.016'
+      rpy='0.00811263806186654 0. 0.' />
+  <parent link='l_arm_shx_l_arm_shx' />
+  <child link='l_arm_ely_l_arm_ely' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='r_arm_ely_r_arm_ely'>
+  <inertial>
+   <origin xyz='0. 0.065 0.'
+       rpy='0. 0. 0.' />
+   <mass value='3.388' />
+   <inertia ixx='0.006559999999999999'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00358'
+       iyz='0.'
+       izz='0.006559999999999999' />
+  </inertial>
+ </link>
+ <joint name='r_arm_ely_r_arm_ely_joint'
+     type='continuous'>
+  <origin xyz='0. -0.187 0.016'
+      rpy='-0.00811263806186654 0. 0.' />
+  <parent link='r_arm_shx_r_arm_shx' />
+  <child link='r_arm_ely_r_arm_ely' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_leg_akx_l_leg_akx'>
+  <inertial>
+   <origin xyz='0.027 0. -0.067'
+       rpy='0. 0. 0.' />
+   <mass value='2.05' />
+   <inertia ixx='0.002'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.007000000000000001'
+       iyz='0.'
+       izz='0.008' />
+  </inertial>
+ </link>
+ <joint name='l_leg_akx_l_leg_akx_joint'
+     type='continuous'>
+  <origin xyz='0. 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='l_leg_aky_l_leg_aky' />
+  <child link='l_leg_akx_l_leg_akx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='r_leg_akx_r_leg_akx'>
+  <inertial>
+   <origin xyz='0.027 0. -0.067'
+       rpy='0. 0. 0.' />
+   <mass value='2.05' />
+   <inertia ixx='0.002'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.007000000000000001'
+       iyz='0.'
+       izz='0.008' />
+  </inertial>
+ </link>
+ <joint name='r_leg_akx_r_leg_akx_joint'
+     type='continuous'>
+  <origin xyz='0. 0. 0.'
+      rpy='0. 0. 0.' />
+  <parent link='r_leg_aky_r_leg_aky' />
+  <child link='r_leg_akx_r_leg_akx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='l_arm_elx_l_arm_elx'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='2.509' />
+   <inertia ixx='0.00265'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00446'
+       iyz='0.'
+       izz='0.00446' />
+  </inertial>
+ </link>
+ <joint name='l_arm_elx_l_arm_elx_joint'
+     type='continuous'>
+  <origin xyz='0. 0.119 0.00921'
+      rpy='0.1264525514606806 0. 0.' />
+  <parent link='l_arm_ely_l_arm_ely' />
+  <child link='l_arm_elx_l_arm_elx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='r_arm_elx_r_arm_elx'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='2.509' />
+   <inertia ixx='0.00265'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00446'
+       iyz='0.'
+       izz='0.00446' />
+  </inertial>
+ </link>
+ <joint name='r_arm_elx_r_arm_elx_joint'
+     type='continuous'>
+  <origin xyz='0. -0.119 0.00921'
+      rpy='-0.1264525514606806 0. 0.' />
+  <parent link='r_arm_ely_r_arm_ely' />
+  <child link='r_arm_elx_r_arm_elx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='l_arm_wry_l_arm_wry'>
+  <inertial>
+   <origin xyz='0. -0.065 0.'
+       rpy='0. 0. 0.' />
+   <mass value='3.388' />
+   <inertia ixx='0.006559999999999999'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00358'
+       iyz='0.'
+       izz='0.006559999999999999' />
+  </inertial>
+ </link>
+ <joint name='l_arm_wry_l_arm_wry_joint'
+     type='continuous'>
+  <origin xyz='0. 0.187 -0.00921'
+      rpy='-0.1264525514606815 0. 0.' />
+  <parent link='l_arm_elx_l_arm_elx' />
+  <child link='l_arm_wry_l_arm_wry' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='r_arm_wry_r_arm_wry'>
+  <inertial>
+   <origin xyz='0. 0.065 0.'
+       rpy='0. 0. 0.' />
+   <mass value='3.388' />
+   <inertia ixx='0.006559999999999999'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00358'
+       iyz='0.'
+       izz='0.006559999999999999' />
+  </inertial>
+ </link>
+ <joint name='r_arm_wry_r_arm_wry_joint'
+     type='continuous'>
+  <origin xyz='0. -0.187 -0.00921'
+      rpy='0.1264525514606815 0. 0.' />
+  <parent link='r_arm_elx_r_arm_elx' />
+  <child link='r_arm_wry_r_arm_wry' />
+  <axis xyz='0 1 0' />
+ </joint>
+ <link name='l_arm_wrx_l_arm_wrx'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='2.509' />
+   <inertia ixx='0.00265'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00446'
+       iyz='0.'
+       izz='0.00446' />
+  </inertial>
+ </link>
+ <joint name='l_arm_wrx_l_arm_wrx_joint'
+     type='continuous'>
+  <origin xyz='0. 0.119 0.00921'
+      rpy='0. 0. 0.' />
+  <parent link='l_arm_wry_l_arm_wry' />
+  <child link='l_arm_wrx_l_arm_wrx' />
+  <axis xyz='1 0 0' />
+ </joint>
+ <link name='r_arm_wrx_r_arm_wrx'>
+  <inertial>
+   <origin xyz='0. 0. 0.'
+       rpy='0. 0. 0.' />
+   <mass value='2.509' />
+   <inertia ixx='0.00265'
+       ixy='0.'
+       ixz='0.'
+       iyy='0.00446'
+       iyz='0.'
+       izz='0.00446' />
+  </inertial>
+ </link>
+ <joint name='r_arm_wrx_r_arm_wrx_joint'
+     type='continuous'>
+  <origin xyz='0. -0.119 0.00921'
+      rpy='0. 0. 0.' />
+  <parent link='r_arm_wry_r_arm_wry' />
+  <child link='r_arm_wrx_r_arm_wrx' />
+  <axis xyz='1 0 0' />
+ </joint>
+</robot>

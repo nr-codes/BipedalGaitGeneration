@@ -50,7 +50,8 @@ Cell[BoxData[
        RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
       "."}]}]}], "\n", "*)"}]], "Code",
  InitializationCell->True,
- CellLabel->"In[38]:=",ExpressionUUID->"1b97ef9f-93b2-4149-b9f8-c51c239f1d69"],
+ CellLabel->
+  "In[511]:=",ExpressionUUID->"1b97ef9f-93b2-4149-b9f8-c51c239f1d69"],
 
 Cell["\<\
 TODO:
@@ -63,10 +64,12 @@ Cell["Begin Package", "Section",
  InitializationCell->
   True,ExpressionUUID->"925bef33-3e8e-488e-bc5c-dae46414c13f"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"BeginPackage", "[", "\"\<ContinuationMethods`\>\"", "]"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{
@@ -78,8 +81,17 @@ Cell[BoxData[{
     RowBox[{"cmarmijo", "::", "usage"}], " ", "=", " ", "\"\<\>\""}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]}], "Input",
- InitializationCell->
-  True,ExpressionUUID->"0fb3b078-45f3-4000-96a8-e698a17afaca"]
+ InitializationCell->True,
+ CellLabel->
+  "In[512]:=",ExpressionUUID->"0fb3b078-45f3-4000-96a8-e698a17afaca"],
+
+Cell[BoxData["\<\"ContinuationMethods`\"\>"], "Output",
+ CellLabel->
+  "Out[512]=",ExpressionUUID->"7f925110-8374-4c27-b4d3-67b17a9be835"],
+
+Cell[BoxData["\<\"ContinuationMethods`Private`\"\>"], "Output",
+ CellLabel->"Out[515]=",ExpressionUUID->"b431a558-9172-4834-8e1a-d5d92d369f2d"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -124,8 +136,7 @@ Cell[BoxData[
       RowBox[{"3.0", ",", " ", "0.5", ",", " ", "0.05"}], "}"}]}], 
     ";"}]}]}]], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[46]:=",ExpressionUUID->"538982fd-8a80-4955-b7b1-53b3af9a36a4"]
+ CellLabel->"In[516]:=",ExpressionUUID->"538982fd-8a80-4955-b7b1-53b3af9a36a4"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -168,7 +179,7 @@ Cell[BoxData[{
       RowBox[{"NS", " ", "=", " ", 
        RowBox[{
        "C0", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}]}], ";", 
-      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"c", " ", "=", " ", 
        RowBox[{
         RowBox[{"C0", "\[LeftDoubleBracket]", "ic", "\[RightDoubleBracket]"}],
@@ -190,8 +201,8 @@ Cell[BoxData[{
       RowBox[{"{", 
        RowBox[{"c", ",", " ", "NS", ",", " ", "h"}], "}"}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
- InitializationCell->
-  True,ExpressionUUID->"8bf87ba2-0626-4e29-98cf-8549247ff0ef"]
+ InitializationCell->True,
+ CellLabel->"In[522]:=",ExpressionUUID->"8bf87ba2-0626-4e29-98cf-8549247ff0ef"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -220,6 +231,13 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
     RowBox[{"cmarmijo", "::", "g"}], " ", "=", " ", 
     "\"\<The norm of the gradient (``) at z0 = `` is very small.  Extremum \
 (minmum or maximum) found.  Final cost is ``.\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"cmarmijo", "::", "step"}], " ", "=", " ", 
+    "\"\<The norm of the step size for `` is ``; the search is likely to \
+diverge.  Final cost is ``.\>\""}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -255,6 +273,8 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
       RowBox[{"\"\<gtol\>\"", " ", "\[Rule]", " ", 
        RowBox[{"10", "^", 
         RowBox[{"-", "8"}]}]}], ",", " ", "\[IndentingNewLine]", 
+      RowBox[{"\"\<dtol\>\"", " ", "\[Rule]", " ", "10"}], ",", " ", 
+      "\[IndentingNewLine]", 
       RowBox[{"\"\<ftol\>\"", " ", "\[Rule]", " ", 
        RowBox[{"10", "^", 
         RowBox[{"-", "8"}]}]}], ",", "\[IndentingNewLine]", 
@@ -290,7 +310,8 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
        ",", " ", "N0", ",", " ", "Carm", ",", " ", "MIN", ",", " ", "MAX", 
        ",", " ", "a", ",", " ", "\[Lambda]", ",", " ", "C", ",", " ", "f", 
        ",", " ", "m", ",", " ", "msg", ",", " ", "h", ",", " ", "hmin", ",", 
-       " ", "hmax"}], "}"}], ",", "\[IndentingNewLine]", 
+       " ", "hmax", ",", " ", "\[CapitalDelta]s", ",", " ", "dcds"}], "}"}], 
+     ",", "\[IndentingNewLine]", 
      RowBox[{"(*", " ", 
       RowBox[{"continuation", " ", "parameters"}], " ", "*)"}], 
      "\[IndentingNewLine]", 
@@ -339,9 +360,12 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
          RowBox[{"f", ",", " ", 
           RowBox[{"df", "/", "dc"}], ",", " ", 
           RowBox[{"(", 
-           RowBox[{"and", " ", "eventually", " ", "D2f", 
-            RowBox[{"(", "c", ")"}]}], ")"}]}], " "}]}], "*)"}], 
-      "\[IndentingNewLine]", 
+           RowBox[{
+            RowBox[{"and", " ", "eventually", " ", "D2f", 
+             RowBox[{"(", "c", ")"}]}], " ", "<", 
+            RowBox[{
+             RowBox[{"-", " ", "pass"}], " ", "info", " ", "for", " ", 
+             "BFGS"}]}], ")"}]}], " "}]}], "*)"}], "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"{", 
         RowBox[{"f0", ",", " ", "g0", ",", " ", "H0"}], "}"}], " ", "=", " ", 
@@ -375,6 +399,11 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
        RowBox[{"get", " ", "derivatives", " ", "of", " ", "f", " ", 
         RowBox[{"w", ".", "r", ".", "t"}], " ", "arclength", " ", "using", 
         " ", "chain", " ", "rule"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"dcds", " ", "=", " ", 
+       RowBox[{
+        RowBox[{
+        "C0", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}], 
+        "\[Transpose]"}]}], ";", "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
        RowBox[{
         RowBox[{"OptionValue", "[", "Root", "]"}], ",", "\[IndentingNewLine]", 
@@ -390,11 +419,7 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
          RowBox[{"msg", " ", "=", " ", "\"\<root\>\""}], ";", 
          "\[IndentingNewLine]", 
          RowBox[{"H0", " ", "=", " ", 
-          RowBox[{"H0", ".", 
-           RowBox[{
-            RowBox[{
-            "C0", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}], 
-            "\[Transpose]"}]}]}], ";"}], ",", "\[IndentingNewLine]", 
+          RowBox[{"H0", ".", "dcds"}]}], ";"}], ",", "\[IndentingNewLine]", 
         RowBox[{"(*", " ", 
          RowBox[{"minimization", ",", " ", 
           RowBox[{"g", " ", "=", " ", 
@@ -406,43 +431,55 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
          RowBox[{"msg", " ", "=", " ", "\"\<min\>\""}], ";", 
          "\[IndentingNewLine]", 
          RowBox[{"g0", " ", "=", " ", 
-          RowBox[{"g0", ".", 
-           RowBox[{
-            RowBox[{
-            "C0", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}], 
-            "\[Transpose]"}]}]}], ";", "\[IndentingNewLine]", 
+          RowBox[{"g0", ".", "dcds"}]}], ";", "\[IndentingNewLine]", 
          RowBox[{"H0", " ", "=", " ", 
-          RowBox[{"IdentityMatrix", "[", 
-           RowBox[{"Length", "@", "g0"}], "]"}]}], ";"}]}], 
-       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-      "\[IndentingNewLine]", 
-      RowBox[{"(*", 
-       RowBox[{
-        RowBox[{"Print", "[", 
-         RowBox[{
-         "\"\<g0: \>\"", ",", " ", "g0", ",", " ", "\"\< H0: \>\"", ",", " ", 
-          "H0"}], "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
-      "\[IndentingNewLine]", 
+          RowBox[{"IdentityMatrix", "@", 
+           RowBox[{"Length", "@", "g0"}]}]}], ";"}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
-       RowBox[{"compute", " ", "descent", " ", "direction", " ", "in", " ", 
-        RowBox[{"s", "'"}], "s", " ", "space"}], " ", "*)"}], 
-      "\[IndentingNewLine]", 
-      RowBox[{"h0", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"Newton", " ", "step"}], ",", " ", 
+        RowBox[{"solve", " ", "for", " ", "\[CapitalDelta]s"}]}], " ", "*)"}],
+       "\[IndentingNewLine]", 
+      RowBox[{"\[CapitalDelta]s", " ", "=", " ", 
        RowBox[{"-", 
         RowBox[{"LinearSolve", "[", 
          RowBox[{"H0", ",", " ", "g0"}], "]"}]}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"we", "'"}], "ll", " ", "scale", " ", "\[CapitalDelta]s", 
+         " ", "later"}], ",", " ", 
+        RowBox[{"calculate", " ", "magnitude", " ", "for", " ", "now"}]}], 
+       " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"h0", " ", "=", " ", 
+       RowBox[{"Norm", "@", "\[CapitalDelta]s"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
        RowBox[{
-        RowBox[{
-         RowBox[{"Norm", "[", "h0", "]"}], " ", "<", " ", 
+        RowBox[{"h0", " ", "<", " ", 
          RowBox[{"OptionValue", "[", "\"\<gtol\>\"", "]"}]}], ",", " ", 
         "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"Message", "[", 
           RowBox[{
-           RowBox[{"cmarmijo", "::", "g"}], ",", " ", 
-           RowBox[{"Norm", "[", "h0", "]"}], ",", " ", "z0", ",", " ", 
+           RowBox[{"cmarmijo", "::", "g"}], ",", " ", "h0", ",", " ", "z0", 
+           ",", " ", 
+           RowBox[{"ScientificForm", "[", "f0", "]"}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"Throw", "[", "$Failed", "]"}]}]}], "\[IndentingNewLine]", 
+       "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"h0", " ", ">", " ", 
+         RowBox[{"OptionValue", "[", "\"\<dtol\>\"", "]"}]}], ",", " ", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"Message", "[", 
+          RowBox[{
+           RowBox[{"cmarmijo", "::", "step"}], ",", " ", "z0", ",", " ", "h0",
+            ",", " ", 
            RowBox[{"ScientificForm", "[", "f0", "]"}]}], "]"}], ";", 
          "\[IndentingNewLine]", 
          RowBox[{"Throw", "[", "$Failed", "]"}]}]}], "\[IndentingNewLine]", 
@@ -452,17 +489,12 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
         RowBox[{"Print", "[", 
          RowBox[{"\"\<h0: \>\"", ",", " ", "h0"}], "]"}], ";"}], "*)"}], 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{"cmarmijo", " ", "line", " ", "search", " ", "parameters"}], 
-       " ", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"\[Alpha]", " ", "=", " ", 
-       RowBox[{"OptionValue", "[", "\"\<\[Alpha]\>\"", "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"\[Beta]", " ", "=", " ", 
-       RowBox[{"OptionValue", "[", "\"\<\[Beta]\>\"", "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"N0", " ", "=", " ", 
-       RowBox[{"g0", ".", "h0"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<g0: \>\"", ",", " ", "g0", ",", " ", "\"\< H0: \>\"", ",", " ", 
+          "H0"}], "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{
@@ -511,10 +543,67 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
        RowBox[{
        "Carm", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}], " ", 
        "=", " ", 
-       RowBox[{"Normalize", " ", "/@", " ", 
+       RowBox[{"{", 
         RowBox[{
-        "Carm", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}]}]}], 
-      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"dcds", ".", "\[CapitalDelta]s"}], " ", "/", " ", "h0"}], 
+        "}"}]}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+        RowBox[{
+        "tangent", " ", "vector", " ", "has", " ", "to", " ", "be", " ", 
+         "unit", " ", "length"}], ",", " ", 
+        RowBox[{
+        "but", " ", "we", " ", "want", " ", "to", " ", "keep", " ", 
+         "magnitude"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+        RowBox[{"h0", " ", "=", " ", 
+         RowBox[{"Norm", " ", "@@", " ", 
+          RowBox[{
+          "Carm", "\[LeftDoubleBracket]", "ins", 
+           "\[RightDoubleBracket]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"If", "[", 
+         RowBox[{
+          RowBox[{"h0", " ", "<", " ", 
+           RowBox[{"OptionValue", "[", "\"\<gtol\>\"", "]"}]}], ",", " ", 
+          "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"Message", "[", 
+            RowBox[{
+             RowBox[{"cmarmijo", "::", "g"}], ",", " ", "h0", ",", " ", "z0", 
+             ",", " ", 
+             RowBox[{"ScientificForm", "[", "f0", "]"}]}], "]"}], ";", 
+           "\[IndentingNewLine]", 
+           RowBox[{"Throw", "[", "$Failed", "]"}]}]}], "\[IndentingNewLine]", 
+         "]"}], ";", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+         "Carm", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}], 
+         " ", "=", " ", 
+         RowBox[{
+          RowBox[{
+          "Carm", "\[LeftDoubleBracket]", "ins", "\[RightDoubleBracket]"}], 
+          " ", "/", " ", "h0"}]}], ";"}], "*)"}], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"cmarmijo", " ", "line", " ", "search", " ", "parameters"}], 
+       " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"\[Alpha]", " ", "=", " ", 
+       RowBox[{"OptionValue", "[", "\"\<\[Alpha]\>\"", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"\[Beta]", " ", "=", " ", 
+       RowBox[{"OptionValue", "[", "\"\<\[Beta]\>\"", "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"N0", " ", "=", " ", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"OptionValue", "[", "Root", "]"}], ",", " ", 
+         RowBox[{
+          RowBox[{
+          "H0", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], ".", 
+          "\[CapitalDelta]s"}], ",", " ", 
+         RowBox[{"g0", ".", "\[CapitalDelta]s"}]}], "]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"(*", 
        RowBox[{
         RowBox[{"Print", "[", 
@@ -551,8 +640,8 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
               RowBox[{"Max", "[", 
                RowBox[{"#", ",", " ", "hmin"}], "]"}], ",", " ", "hmax"}], 
              "]"}], "&"}], " ", "/@", " ", 
-           RowBox[{"(", 
-            RowBox[{"\[Lambda]", " ", "h0"}], ")"}]}]}], ";", 
+           RowBox[{"{", 
+            RowBox[{"\[Lambda]", " ", "h0"}], "}"}]}]}], ";", 
          "\[IndentingNewLine]", 
          RowBox[{"C", " ", "=", " ", 
           RowBox[{"Catch", "[", 
@@ -620,14 +709,15 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
        "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
-       RowBox[{"adds", " ", "cost"}], " ", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"add", " ", "cost"}], " ", "*)"}], "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
        RowBox[{
         RowBox[{"C", " ", "=!=", " ", "$Failed"}], ",", " ", 
         RowBox[{
          RowBox[{"C", " ", "=", " ", 
-          RowBox[{"Append", "[", 
-           RowBox[{"C", ",", " ", "f"}], "]"}]}], ";"}]}], "]"}], ";", 
+          RowBox[{"Join", "[", 
+           RowBox[{"C", ",", " ", 
+            RowBox[{"{", "f", "}"}]}], "]"}]}], ";"}]}], "]"}], ";", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
        RowBox[{"a", ",", " ", "C", ",", " ", 
@@ -639,8 +729,7 @@ Minimum (or root) found.  Final cost is ``.\>\""}], ";"}],
          RowBox[{"Throw", "@", "$Failed"}]}]}], "]"}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[65]:=",ExpressionUUID->"5e40671d-4c59-46b8-8f9e-3a6e7fd94bdf"]
+ CellLabel->"In[524]:=",ExpressionUUID->"5e40671d-4c59-46b8-8f9e-3a6e7fd94bdf"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -649,18 +738,24 @@ Cell["End Package", "Section",
  InitializationCell->
   True,ExpressionUUID->"a5dfcf77-5df5-4a72-b59a-301923e17c55"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{"End", "[", "]"}], "\n", 
  RowBox[{"EndPackage", "[", "]"}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[71]:=",ExpressionUUID->"bb6f1e76-1c95-4672-8b96-92e000ea6962"]
+  "In[531]:=",ExpressionUUID->"bb6f1e76-1c95-4672-8b96-92e000ea6962"],
+
+Cell[BoxData["\<\"ContinuationMethods`Private`\"\>"], "Output",
+ CellLabel->"Out[531]=",ExpressionUUID->"c8508823-7fa6-4efc-af8c-9b1c493f8201"]
+}, Open  ]]
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
 Evaluator->"Local",
-WindowSize->{1373, 1505},
-WindowMargins->{{0, Automatic}, {0, Automatic}},
+WindowSize->{1247, 1383},
+WindowMargins->{{67, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",
 TrackCellChangeTimes->False,

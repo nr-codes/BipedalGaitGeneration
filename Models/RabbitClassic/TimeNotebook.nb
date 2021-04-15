@@ -1,0 +1,294 @@
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["README", \
+"Chapter",ExpressionUUID->"ca696b88-5e3b-4a9f-9634-d305fa3d5efa"],
+
+Cell[TextData[{
+ "This notebook will run the model in this directory.   It will automatically \
+create a temporary kernel named BipedalGaitGenerationKernel.  This is a \
+secondary kernel so that other notebooks can run while this one is running.  \
+This notebook can mess up your pre-existing set of kernels if execution is \
+stopped before the notebook finishes.  ",
+ StyleBox["RUN THIS CODE AT YOUR OWN RISK",
+  FontWeight->"Bold"],
+ ".\n\nIf you would rather create the kernel manually, you must\n\n* comment \
+out the lines immediately following the comments:\n\t(* add new kernel *)\n\t\
+\t-and-\n\t(* remove new kernel *)\n\t\notherwise, the kernel will still be \
+created, and then\n\n* create a local kernel named \
+'BipedalGaitGenerationKernel' in order to run this script.  It can be created \
+using Evaluation -> Kernel Configuration Options->Add.  Use default \
+configuration (e.g., same as Local).\n\nThe notebooks will run in their own \
+private notebook context, but for some reason functions that return an \
+Animate object still share data.  As a result, broken animations will slow \
+down a notebook while scrolling.  For slower machines, it might be useful to \
+set Evaluation-Dynamic Updating Enabled to false.\n\nCode taken from: \n\n\
+https://mathematica.stackexchange.com/questions/115197/running-mathematica-\
+notebook-files-in-command-mode"
+}], "Text",ExpressionUUID->"f70fdd8d-0d7e-41b1-aee3-5cd729941333"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Functions and Variables", \
+"Chapter",ExpressionUUID->"1083bc7c-b40f-4569-b3e2-299f801ebeef"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookPauseForEvaluation", "[", "nb_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"NotebookEvaluatingQ", "[", "nb", "]"}], ",", 
+        RowBox[{"Pause", "[", ".25", "]"}]}], "]"}]}], "\n", "]"}]}], ";"}], 
+  "\n"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookEvaluatingQ", "[", "nb_", "]"}], ":=", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"SelectionMove", "[", 
+        RowBox[{"nb", ",", "All", ",", "Notebook", ",", " ", 
+         RowBox[{"AutoScroll", "->", "False"}]}], "]"}], ";", 
+       RowBox[{"Or", "@@", 
+        RowBox[{"Map", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\"\<Evaluating\>\"", "/.", "#"}], "&"}], ",", 
+          RowBox[{"Developer`CellInformation", "[", "nb", "]"}]}], 
+         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"evals", " ", "=", " ", 
+   RowBox[{"<|", " ", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"\"\<old\>\"", "  ", "\[Rule]", " ", "EvaluatorNames"}], " ", "/.",
+       " ", 
+      RowBox[{"Options", "[", 
+       RowBox[{"$FrontEndSession", ",", " ", "EvaluatorNames"}], "]"}]}], ",",
+      "\[IndentingNewLine]", 
+     RowBox[{"\"\<new\>\"", " ", "\[Rule]", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<BipedalGaitGenerationKernel\>\"", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"\"\<AutoStartOnLaunch\>\"", "\[Rule]", "False"}], "}"}]}], 
+       "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}]}], "Input",
+ CellLabel->
+  "In[10]:=",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setup", \
+"Chapter",ExpressionUUID->"4761e9da-f119-48f8-ac5b-80fff008e9e3"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"add", " ", "new", " ", "kernel"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"$FrontEndSession", ",", 
+     RowBox[{"EvaluatorNames", "\[Rule]", 
+      RowBox[{"Join", "@@", 
+       RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], ";"}]}]], "Input",
+ CellLabel->"In[13]:=",ExpressionUUID->"c4959e88-69b9-44a3-be4b-0ee3d518d384"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "compute", " ", "longest", " ", "run", " ", "time", " ", "by", " ", 
+    "removing", " ", "CompiledFunctions", " ", "file"}], " ", "*)"}], "\n", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"DeleteDirectory", "[", 
+     RowBox[{
+      RowBox[{"FileNames", "[", 
+       RowBox[{"\"\<../Models/*/*CompiledFunctions\>\"", ",", 
+        RowBox[{"{", 
+         RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
+      RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], "*)"}], 
+  "\n", "\n", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "make", " ", "sure", " ", "computed", " ", "gaits", " ", "are", " ", 
+    "being", " ", "created"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"DeleteFile", "[", 
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<../Models/*/*.mx\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], "]"}], ";"}],
+    "*)"}]}]], "Input",
+ CellLabel->
+  "In[14]:=",ExpressionUUID->"6c7d6553-b31a-4b12-8e55-355a50bef336"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Run Main.nb", \
+"Chapter",ExpressionUUID->"9330afc2-2949-4530-adf4-80fe8f1912a0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"mains", " ", "=", " ", 
+    RowBox[{"FileNames", "[", 
+     RowBox[{"\"\<./Main.nb\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"DeleteDirectory", "[", 
+    RowBox[{
+     RowBox[{"FileNames", "[", 
+      RowBox[{"\"\<./RabbitClassicCompiledFunctions\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], ",", " ", 
+     RowBox[{"DeleteContents", "->", " ", "True"}]}], "]"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"mdata", " ", "=", " ", 
+   RowBox[{"Table", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"name", " ", "=", " ", 
+       RowBox[{"FileNameTake", "[", 
+        RowBox[{"nb", ",", " ", 
+         RowBox[{"-", "3"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{"\"\<BEGIN\>\"", ",", " ", "\"\<\\t\>\"", ",", " ", "name"}], 
+       "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"nb", "=", 
+       RowBox[{"NotebookOpen", "[", "nb", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "save", " ", "options", " ", "that", " ", "will", " ", "be", " ", 
+        "changed"}], " ", "*)"}], 
+      RowBox[{"nbopts", " ", "=", " ", 
+       RowBox[{"Options", "[", 
+        RowBox[{"nb", ",", " ", 
+         RowBox[{"{", 
+          RowBox[{"Evaluator", ",", " ", "CellContext"}], "}"}]}], "]"}]}], 
+      ";", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "have", " ", "notebook", " ", "evaluate", " ", "in", " ", "a", " ", 
+        "private", " ", "context", " ", "and", " ", "the", " ", "batch", " ", 
+        "kernel"}], " ", "*)"}], 
+      RowBox[{"SetOptions", "[", 
+       RowBox[{"nb", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"CellContext", " ", "\[Rule]", " ", "Notebook"}], ",", " ", 
+          
+          RowBox[{"Evaluator", " ", "\[Rule]", " ", 
+           RowBox[{
+            RowBox[{"evals", "[", "\"\<new\>\"", "]"}], 
+            "\[LeftDoubleBracket]", 
+            RowBox[{"1", ",", " ", "1"}], "\[RightDoubleBracket]"}]}]}], 
+         "}"}]}], "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "evaluate", " ", "all", " ", "notebook", " ", "cells", " ", "in", " ", 
+        "order"}], " ", "*)"}], 
+      RowBox[{"SelectionMove", "[", 
+       RowBox[{"nb", ",", " ", "All", ",", " ", "Notebook", ",", " ", 
+        RowBox[{"AutoScroll", " ", "\[Rule]", " ", "False"}]}], "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"SelectionEvaluate", "[", "nb", "]"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"d", " ", "=", " ", 
+       RowBox[{
+        RowBox[{"AbsoluteTiming", "[", 
+         RowBox[{
+          RowBox[{"NotebookPauseForEvaluation", "[", "nb", "]"}], ";"}], 
+         "]"}], "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}], ";",
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "save", " ", "notebook", " ", "and", " ", "restore", " ", "options"}], 
+       " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"SetOptions", "[", 
+       RowBox[{"nb", ",", "nbopts"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"NotebookSave", "[", "nb", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Print", "[", 
+       RowBox[{
+       "\"\<END\>\"", ",", " ", "\"\<\\t\>\"", ",", " ", "name", ",", " ", 
+        "\"\<\\t\>\"", ",", " ", "d"}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"name", ",", " ", "d"}], "}"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"nb", ",", " ", "mains"}], "}"}]}], "\n", "]"}]}], 
+  ";"}]}], "Input",
+ CellLabel->"In[15]:=",ExpressionUUID->"382ca1f7-ad51-4928-be99-0263c487b53d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"BEGIN\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"RabbitClassic/./Main.nb\"\>"}],
+  SequenceForm["BEGIN", "\t", "RabbitClassic/./Main.nb"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"06ba4f21-0391-41a7-aa95-2c92f04d5f1d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"RabbitClassic/./Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "212.829738`"}],
+  SequenceForm["END", "\t", "RabbitClassic/./Main.nb", "\t", 212.829738],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[15]:=",ExpressionUUID->"dccb4470-808d-4b2c-9488-71fa4f6cb113"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Cleanup", \
+"Chapter",ExpressionUUID->"31e69208-85cb-4e1e-b2ef-6cb7a8e1bbfb"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"remove", " ", "new", " ", "kernels"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"SetOptions", "[", 
+    RowBox[{"$FrontEndSession", ",", 
+     RowBox[{"EvaluatorNames", "\[Rule]", 
+      RowBox[{"evals", "[", "\"\<old\>\"", "]"}]}]}], "]"}], ";"}]}]], "Input",
+ CellLabel->
+  "In[18]:=",ExpressionUUID->"ab344b4f-60b1-4e49-845d-4ed04980d667"]
+}, Open  ]]
+},
+Evaluator->"Local",
+WindowSize->{1247, 1383},
+WindowMargins->{{67, Automatic}, {0, Automatic}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+CellContext->"Global`",
+TrackCellChangeTimes->False,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+

@@ -31,7 +31,7 @@
     "ffbinaries": "^1.1.4",
     "glob": "^7.1.4",
     "opener": "^1.5.1",
-    "three": "^0.114.0",
+    "three": "^0.127.0",
     "ws": "^7.1.1"
   },
   "devDependencies": {

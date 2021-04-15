@@ -58,6 +58,7 @@ Q = <||>;
 (* ::Input::Initialization:: *)
 initNbrhood[h_, meth_] := If[meth === cmarmijo,
 (* don't modify h as it contains gradient direction *)
+(* update: cmarmijo now has 1D h, should change this *)
 With[{nb = ConstantArray[1, Length@h]}, {#+nb}&],
 (* else, create a local grid of points *)
 With[{nb = setNbrhood[Length@h]}, Table[#+n, {n, nb}]&]
@@ -169,7 +170,7 @@ Throw[$Failed];
 ];
 
 man[z0] = C;
-If[Length@C[[2]] != Length@C[[3]],
+If[C[[3, 1]] =!= Automatic && Length@C[[2]] != Length@C[[3]],
 Message[Man0::bif, Length@C[[2]], Length@C[[3]], MatrixForm@C[[2]]];
 Throw[$Failed];
 ];

@@ -60,6 +60,21 @@ Export[FileNameJoin[{dir, "rbd-" <> ToString[n] <> ".mx"}], rbd]
 
 
 (* ::Input::Initialization:: *)
+Options[RBDDeleteDynamics] = {"D" -> Automatic, "F" -> Automatic};
+
+RBDDeleteDynamics[n_, OptionsPattern[]] := Module[{dir, fil},
+fil = OptionValue["F"];
+If[fil === Automatic, fil = "CompiledFunctions";];
+
+dir = OptionValue["D"];
+dir = If[dir === Automatic, {NotebookDirectory[], fil}, {dir, fil}];
+dir = FileNameJoin@Flatten@dir;
+
+If[DirectoryQ[dir], DeleteDirectory[dir, DeleteContents->True]]
+];
+
+
+(* ::Input::Initialization:: *)
 Options[RBDLoadDynamics] = {"D" -> Automatic, "F" -> Automatic};
 
 RBDLoadDynamics::dir = "`` does not exist.";

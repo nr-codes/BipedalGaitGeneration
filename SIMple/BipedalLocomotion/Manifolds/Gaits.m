@@ -130,7 +130,7 @@ If[OptionValue[cmarmijo, a, Root],
 Module[{H}, 
 H = g[m, ##];
 (* +'ve gradient *)
-{0.5(n0.H[[1]])^2, {n0.H[[1]]}, {n0.H[[2]]}}
+{(*0.5(n0.H\[LeftDoubleBracket]1\[RightDoubleBracket])^2*)Norm[H[[1]]], {n0.H[[1]]}, {n0.H[[2]]}}
 ]&,
 (* else minimize homotopy parameter *)
 Module[{H}, 
@@ -142,22 +142,22 @@ H = g[m, ##];
 ];
 
 (* gradient in tangent space *)
-ns = With[{f = obj}, 
+ns = NullSpace[#3]&(*With[{f = obj}, 
 If[OptionValue[cmarmijo, a, Root],
 Module[{n, N, d}, 
 (* dc/ds *)
 n = NullSpace[#3]\[Transpose];
 (* df/ds = df/dc dc/ds *)
-N = f[#1][[3]].n;
+N = f[#1]\[LeftDoubleBracket]3\[RightDoubleBracket].n;
 (* Newton step, solve for \[CapitalDelta]s *)
-d = -LinearSolve[N, f[#1][[2]]];
+d = -LinearSolve[N, f[#1]\[LeftDoubleBracket]2\[RightDoubleBracket]];
 
 {n.d}
 ]&,
 (* else *)
-Module[{n = NullSpace[#3]\[Transpose]}, {-n.(f[#1][[2]].n)}]&
+Module[{n = NullSpace[#3]\[Transpose]}, {-n.(f[#1]\[LeftDoubleBracket]2\[RightDoubleBracket].n)}]&
 ]
-];
+]*);
 
 {P, obj, ns}
 ];
@@ -177,7 +177,7 @@ cm = {"C0" -> (obj[#[[1]]][[1;;1]]&), Monitor -> ghmon,  Method -> cmarmijo, "ns
 
 o = Join[cm, o];
 
-Man[r, c, h, N, o]
+Man[r, c, (*h*){Automatic}, N, o]
 ];
 
 

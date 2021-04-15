@@ -66,6 +66,7 @@ cmc[z_, z0_, C0_, opts:OptionsPattern[]] := Module[{c, r, dr, NS, h, d},
 h = C0[[ih]];
 d = h (z-z0);
 NS = C0[[ins]];
+
 c = C0[[ic]] + d.NS;
 
 (* correction *)
@@ -83,6 +84,8 @@ cmarmijo::f = "The value of the objective function at z0 = `` is very small.  Mi
 
 cmarmijo::g = "The norm of the gradient (``) at z0 = `` is very small.  Extremum (minmum or maximum) found.  Final cost is ``.";
 
+cmarmijo::step = "The norm of the step size for `` is ``; the search is likely to diverge.  Final cost is ``.";
+
 Options[cmarmijo] = {
 "newton" -> {},
 
@@ -96,6 +99,7 @@ Options[cmarmijo] = {
 
 "f" -> ({0, {0}, {{0}}}&), 
 "gtol" -> 10^-8, 
+"dtol" -> 10, 
 "ftol" -> 10^-8,
 Root -> True,
 
@@ -107,7 +111,7 @@ Abort -> True
 
 armmsg = StringTemplate["    `` (``/``) --- f: `` (``) \[Lambda]: `` armijo: ``"];
 
-cmarmijo[z_, z0_, C0_, opts:OptionsPattern[]] := Module[{cm, o, M, f0, g0, H0, h0, \[Alpha], \[Beta], N0, Carm, MIN, MAX, a, \[Lambda], C, f, m, msg, h, hmin, hmax},
+cmarmijo[z_, z0_, C0_, opts:OptionsPattern[]] := Module[{cm, o, M, f0, g0, H0, h0, \[Alpha], \[Beta], N0, Carm, MIN, MAX, a, \[Lambda], C, f, m, msg, h, hmin, hmax, \[CapitalDelta]s, dcds},
 (* continuation parameters *)
 cm = OptionValue[Method];
 o = OptionValue["cm"];
@@ -117,7 +121,7 @@ o = OptionValue["cm"];
 (* M: M(c(s), d/ds c(s), d^2/ds^2 c(s)) *)
 M = OptionValue["f"]; (* f, Df, (and eventually D2f) *)
 
-(* M = {f, df/dc, (and eventually D2f(c)) *)
+(* M = {f, df/dc, (and eventually D2f(c) <- pass info for BFGS) *)
 {f0, g0, H0} = M[C0[[ic]]];
 
 (*Print["f0: ", f0, " g0: ", g0, " H0: ", H0];*)
@@ -129,31 +133,35 @@ Throw[$Failed]
 ];
 
 (* get derivatives of f w.r.t arclength using chain rule *)
+dcds = C0[[ins]]\[Transpose];
 If[OptionValue[Root],
 (* root finding, H = df/dc dc/ds *)
 msg = "root";
-H0 = H0.C0[[ins]]\[Transpose];,
+H0 = H0.dcds;,
 (* minimization, g = df/dc dc/ds *)
 msg = "min";
-g0 = g0.C0[[ins]]\[Transpose];
-H0 = IdentityMatrix[Length@g0];
+g0 = g0.dcds;
+H0 = IdentityMatrix@Length@g0;
 ];
 
-(*Print["g0: ", g0, " H0: ", H0];*)
+(* Newton step, solve for \[CapitalDelta]s *)
+\[CapitalDelta]s = -LinearSolve[H0, g0];
 
-(* compute descent direction in s's space *)
-h0 = -LinearSolve[H0, g0];
-If[Norm[h0] < OptionValue["gtol"], 
-Message[cmarmijo::g, Norm[h0], z0, ScientificForm[f0]];
+(* we'll scale \[CapitalDelta]s later, calculate magnitude for now *)
+h0 = Norm@\[CapitalDelta]s;
+If[h0 < OptionValue["gtol"], 
+Message[cmarmijo::g, h0, z0, ScientificForm[f0]];
+Throw[$Failed]
+];
+
+If[h0 > OptionValue["dtol"], 
+Message[cmarmijo::step, z0, h0, ScientificForm[f0]];
 Throw[$Failed]
 ];
 
 (*Print["h0: ", h0];*)
 
-(* cmarmijo line search parameters *)
-\[Alpha] = OptionValue["\[Alpha]"];
-\[Beta] = OptionValue["\[Beta]"];
-N0 = g0.h0;
+(*Print["g0: ", g0, " H0: ", H0];*)
 
 (* take a Newton step? MIN = 0 can lead to jumps in c(s) *)
 (* unsure if these jumps land c(s) on a different manifold *)
@@ -168,7 +176,20 @@ hmax = OptionValue["hmax"];
 (* for f(c(s)), we preform a line search in s *)
 a = False;
 Carm = C0;
-Carm[[ins]] = Normalize /@ Carm[[ins]];
+Carm[[ins]] = {dcds.\[CapitalDelta]s / h0};
+
+(* tangent vector has to be unit length, but we want to keep magnitude *)
+(*h0 = Norm @@ Carm\[LeftDoubleBracket]ins\[RightDoubleBracket];
+If[h0 < OptionValue["gtol"], 
+Message[cmarmijo::g, h0, z0, ScientificForm[f0]];
+Throw[$Failed]
+];
+Carm\[LeftDoubleBracket]ins\[RightDoubleBracket] = Carm\[LeftDoubleBracket]ins\[RightDoubleBracket] / h0;*)
+
+(* cmarmijo line search parameters *)
+\[Alpha] = OptionValue["\[Alpha]"];
+\[Beta] = OptionValue["\[Beta]"];
+N0 = If[OptionValue[Root], H0[[1]].\[CapitalDelta]s, g0.\[CapitalDelta]s];
 
 (*Print["C0: ", Carm\[LeftDoubleBracket]ic, -4;;-1\[RightDoubleBracket]];*)
 (*Print["NS: ", Carm\[LeftDoubleBracket]ins\[RightDoubleBracket], " : ", h0];*)
@@ -176,7 +197,7 @@ Carm[[ins]] = Normalize /@ Carm[[ins]];
 Do[
 (* line search *)
 \[Lambda] = \[Beta]^m;
-Carm[[ih]] = Min[Max[#, hmin], hmax]& /@ (\[Lambda] h0);
+Carm[[ih]] = Min[Max[#, hmin], hmax]& /@ {\[Lambda] h0};
 C = Catch[cm[z, z0, Carm, o]];
 If[C === $Failed, 
 If[Mod[m, OptionValue[Print]] === 0, 
@@ -197,8 +218,8 @@ If[a, Break[]];,
 {m, MIN, MAX}
 ];
 
-(* adds cost *)
-If[C =!= $Failed, C = Append[C, f];];
+(* add cost *)
+If[C =!= $Failed, C = Join[C, {f}];];
 
 If[a, C, Message[cmarmijo::ls, z, MAX];Throw@$Failed]
 ];

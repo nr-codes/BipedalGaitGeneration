@@ -1,0 +1,381 @@
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", "\n", 
+  RowBox[{
+   RowBox[{"CoreDynamicAlgorithms", ".", 
+    RowBox[{"nb", ":", " ", 
+     RowBox[{
+     "An", " ", "implementation", " ", "of", " ", "the", " ", "RNEA", " ", 
+      "algorithm", "\n", "and", " ", "its", " ", 
+      RowBox[{"derivative", ".", "\n", "Copyright"}], " ", 
+      RowBox[{"(", "C", ")"}], " ", "2017", " ", "Nelson", " ", "Rosa", " ", 
+      RowBox[{"Jr", ".", "\n", "\n", "This"}], " ", "program", " ", "is", " ",
+       "free", " ", "software"}], ":", " ", 
+     RowBox[{"you", " ", "can", " ", "redistribute", " ", "it", " ", 
+      RowBox[{"and", "/", "or"}], " ", "modify", "\n", "it", " ", "under", 
+      " ", "the", " ", "terms", " ", "of", " ", "the", " ", "GNU", " ", 
+      "General", " ", "Public", " ", "License", " ", "as", " ", "published", 
+      " ", "by", "\n", 
+      RowBox[{"the", " ", "Free", " ", "Software", " ", "Foundation"}]}]}]}], 
+   ",", " ", 
+   RowBox[{
+   "either", " ", "version", " ", "3", " ", "of", " ", "the", " ", 
+    "License"}], ",", " ", 
+   RowBox[{"or", "\n", 
+    RowBox[{"(", 
+     RowBox[{"at", " ", "your", " ", "option"}], ")"}], " ", "any", " ", 
+    "later", " ", 
+    RowBox[{"version", ".", " ", "This"}], " ", "program", " ", "is", " ", 
+    "distributed", " ", "in", " ", "the", " ", "\n", "hope", " ", "that", " ",
+     "it", " ", "will", " ", "be", " ", "useful"}], ",", " ", 
+   RowBox[{
+    RowBox[{"but", " ", "WITHOUT", " ", "ANY", " ", "WARRANTY"}], ";", " ", 
+    RowBox[{
+    "without", " ", "even", " ", "the", " ", "\n", "implied", " ", "warranty",
+      " ", "of", " ", "MERCHANTABILITY", " ", "or", " ", "FITNESS", " ", 
+     "FOR", " ", "A", " ", "PARTICULAR", " ", 
+     RowBox[{"PURPOSE", ".", "\n", "See"}], " ", "the", " ", "GNU", " ", 
+     "General", " ", "Public", " ", "License", " ", "for", " ", "more", " ", 
+     RowBox[{"details", ".", " ", "You"}], " ", "should", " ", "have", " ", 
+     "\n", "received", " ", "a", " ", "copy", " ", "of", " ", "the", " ", 
+     "GNU", " ", "General", " ", "Public", " ", "License", " ", "along", " ", 
+     "with", " ", "this", " ", 
+     RowBox[{"program", ".", "\n", "If"}], " ", "not"}]}], ",", " ", 
+   RowBox[{
+    RowBox[{"see", " ", "<", 
+     RowBox[{"http", ":"}]}], "//", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"www", ".", "gnu", ".", "org"}], "/", "licenses"}], "/"}], ">",
+      "."}]}]}], "\n", "*)"}]], "Code",
+ InitializationCell->
+  True,ExpressionUUID->"59f5aa58-c7ae-458c-ae67-8abe32970981"],
+
+Cell[CellGroupData[{
+
+Cell["Begin Package", \
+"Section",ExpressionUUID->"04ab2fc5-9b64-4da9-9a70-e61022bce381"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"BeginPackage", "[", 
+   RowBox[{"\"\<BipedalLocomotion`Model`\>\"", ",", " ", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<GlobalVariables`\>\"", ",", " ", "\"\<RigidBodyDynamics`\>\"", ",", 
+      " ", "\"\<BipedalLocomotion`\>\"", ",", " ", "\"\<Derivatives`\>\""}], 
+     "}"}]}], "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]}], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"50144e8c-ac6c-42cd-a7b3-19a20c36fc82"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Continuation methods & HZD feedback controller", \
+"Section",ExpressionUUID->"6a9e4002-07c0-457b-8a8f-34e1b23fd01c"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Fosim", "[", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "nqfv", ",", " ", "nqfu", ",", " ", "nqfub", ",", " ", "fosim", ",", 
+        " ", "xdot"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"nqfv", " ", "=", " ", 
+        RowBox[{"nq", " ", "+", " ", "nf", " ", "+", " ", "nv"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"nqfu", " ", "=", " ", 
+        RowBox[{"nq", " ", "+", " ", "nf", " ", "+", " ", "nu"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"nqfub", " ", "=", " ", 
+        RowBox[{"nqfu", " ", "+", " ", "1"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fosim", " ", "=", " ", 
+        RowBox[{"LinearSolve", "[", 
+         RowBox[{
+          RowBox[{"RigidBodyDynamics`Private`Ab", "\[LeftDoubleBracket]", 
+           RowBox[{
+            RowBox[{"1", ";;", "nqfv"}], ",", " ", 
+            RowBox[{"1", ";;", "nqfu"}]}], "\[RightDoubleBracket]"}], ",", 
+          " ", 
+          RowBox[{"RigidBodyDynamics`Private`Ab", "\[LeftDoubleBracket]", 
+           RowBox[{
+            RowBox[{"1", ";;", "nqfv"}], ",", " ", "nqfub"}], 
+           "\[RightDoubleBracket]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"{", "fosim", "}"}], "]"}]}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Hosim", "[", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "nqf", ",", " ", "nqfb", ",", " ", "fosim", ",", " ", "xpost"}], "}"}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{
+       "set", " ", "up", " ", "lengths", " ", "of", " ", "the", " ", 
+        "different", " ", "constraints"}], " ", "*)"}], "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"nqf", " ", "=", " ", 
+        RowBox[{"nq", " ", "+", " ", "nf"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"nqfb", " ", "=", " ", 
+        RowBox[{"nqf", " ", "+", " ", "1"}]}], ";", "\[IndentingNewLine]", 
+       "\[IndentingNewLine]", 
+       RowBox[{"fosim", " ", "=", " ", 
+        RowBox[{"LinearSolve", "[", 
+         RowBox[{
+          RowBox[{"RigidBodyDynamics`Private`Ab", "\[LeftDoubleBracket]", 
+           RowBox[{
+            RowBox[{"1", ";;", "nqf"}], ",", " ", 
+            RowBox[{"1", ";;", "nqf"}]}], "\[RightDoubleBracket]"}], ",", " ", 
+          RowBox[{"RigidBodyDynamics`Private`Ab", "\[LeftDoubleBracket]", 
+           RowBox[{
+            RowBox[{"1", ";;", "nqf"}], ",", " ", "nqfb"}], 
+           "\[RightDoubleBracket]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"Flatten", "[", 
+        RowBox[{"{", "fosim", "}"}], "]"}]}]}], "\[IndentingNewLine]", 
+     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"cost", "[", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "i", ",", " ", "nqf", ",", " ", "nqfv", ",", " ", "nqfu", ",", " ", 
+       "nqfub", ",", " ", "fosim", ",", " ", "u", ",", " ", "uTBT", ",", " ", 
+       "cost", ",", " ", "Mqd"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"i", " ", "=", " ", "RigidBodyDynamics`Private`ucons"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"nqf", " ", "=", " ", 
+       RowBox[{"nq", " ", "+", " ", "nf"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"nqfv", " ", "=", " ", 
+       RowBox[{"nq", " ", "+", " ", "nf", " ", "+", " ", "nv"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"nqfu", " ", "=", " ", 
+       RowBox[{"nq", " ", "+", " ", "nf", " ", "+", " ", "nu"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"nqfub", " ", "=", " ", 
+       RowBox[{"nqfu", " ", "+", " ", "1"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"fosim", " ", "=", " ", 
+       RowBox[{"LinearSolve", "[", 
+        RowBox[{
+         RowBox[{"RigidBodyDynamics`Private`Ab", "\[LeftDoubleBracket]", 
+          RowBox[{
+           RowBox[{"1", ";;", "nqfv"}], ",", " ", 
+           RowBox[{"1", ";;", "nqfu"}]}], "\[RightDoubleBracket]"}], ",", " ", 
+         RowBox[{"RigidBodyDynamics`Private`Ab", "\[LeftDoubleBracket]", 
+          RowBox[{
+           RowBox[{"1", ";;", "nqfv"}], ",", " ", "nqfub"}], 
+          "\[RightDoubleBracket]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"u", " ", "=", " ", 
+       RowBox[{"fosim", "\[LeftDoubleBracket]", 
+        RowBox[{
+         RowBox[{"nqf", "+", "1"}], ";;", "nqfu"}], 
+        "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"uTBT", " ", "=", " ", 
+       RowBox[{"u", ".", 
+        RowBox[{
+        "RigidBodyDynamics`Private`J", "\[LeftDoubleBracket]", "i", 
+         "\[RightDoubleBracket]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Mqd", " ", "=", " ", 
+       RowBox[{
+       "RigidBodyDynamics`Private`M", ".", "RigidBodyDynamics`Private`qd"}]}],
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"(*", " ", 
+       RowBox[{"drop", " ", "phase", " ", "variable"}], " ", "*)"}], 
+      "\[IndentingNewLine]", 
+      RowBox[{"uTBT", " ", "=", " ", 
+       RowBox[{"uTBT", "\[LeftDoubleBracket]", 
+        RowBox[{"2", ";;", "nq"}], "\[RightDoubleBracket]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Mqd", " ", "=", " ", 
+       RowBox[{"Mqd", "\[LeftDoubleBracket]", 
+        RowBox[{"2", ";;", "nq"}], "\[RightDoubleBracket]"}]}], ";", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
+      RowBox[{"cost", " ", "=", " ", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"u", ".", "u"}], ",", " ", 
+         RowBox[{"uTBT", ".", "Mqd"}]}], "}"}]}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"{", "cost", "}"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+  ";"}]}], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"fe30bc12-ce51-41a9-b5d7-3ef0314d19ac"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recipes", \
+"Section",ExpressionUUID->"afcbee4a-2302-4677-867c-a5dcd9820ed7"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"blmfootCon", "[", "cons_", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "E", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"E", " ", "=", " ", 
+        RowBox[{"RBDGetRecipe", "[", "\"\<\[Eta]MbJ\>\"", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"E", "[", "\"\<name\>\"", "]"}], " ", "=", " ", 
+        "\"\<foot\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"E", "[", "\"\<C\>\"", "]"}], " ", "=", " ", "cons"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"con", "[", "\"\<foot\>\"", "]"}], " ", "=", " ", "E"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"blmfosimCon", "[", "cons_", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"F", ",", " ", "confun"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"F", " ", "=", " ", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<f\>\"", " ", "\[RuleDelayed]", " ", 
+           RowBox[{"{", 
+            RowBox[{
+            "RigidBodyDynamics`Private`UpperTriangularizeAb", ",", " ", 
+             "Ucon", ",", " ", "Fosim"}], "}"}]}], ",", " ", 
+          RowBox[{"\"\<v\>\"", " ", "\[RuleDelayed]", " ", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{"Pfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], 
+            "}"}]}]}], "|>"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"F", " ", "=", " ", 
+        RowBox[{"RBDMergeRecipes", "[", 
+         RowBox[{"\"\<FMbJ\>\"", ",", " ", "F"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"F", "[", "\"\<C\>\"", "]"}], " ", "=", " ", "cons"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"F", "[", "\"\<name\>\"", "]"}], " ", "=", " ", 
+        "\"\<fosim\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"con", "[", "\"\<fosim\>\"", "]"}], " ", "=", " ", "F"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"blmhosimCon", "[", "cons_", "]"}], " ", ":=", " ", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", "H", "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"H", " ", "=", " ", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<f\>\"", " ", "\[RuleDelayed]", " ", 
+           RowBox[{"{", 
+            RowBox[{"\[Theta]0", ",", " ", "Hosim"}], "}"}]}], ",", " ", 
+          RowBox[{"\"\<d\>\"", " ", "\[RuleDelayed]", " ", 
+           RowBox[{"{", 
+            RowBox[{"{", 
+             RowBox[{
+             "\[Alpha]\[Theta]", ",", " ", "_Integer", ",", " ", "1"}], "}"}],
+             "}"}]}]}], "|>"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"H", " ", "=", " ", 
+        RowBox[{"RBDMergeRecipes", "[", 
+         RowBox[{"\"\<HMbJ\>\"", ",", " ", "H"}], "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"H", "[", "\"\<C\>\"", "]"}], " ", "=", " ", "cons"}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"H", "[", "\"\<name\>\"", "]"}], " ", "=", " ", 
+        "\"\<hosim\>\""}], ";", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"con", "[", "\"\<hosim\>\"", "]"}], " ", "=", " ", "H"}]}]}], 
+     "\[IndentingNewLine]", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"blmcostCon", "[", "cons_", "]"}], " ", ":=", " ", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"F", ",", " ", "confun"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"F", " ", "=", " ", 
+       RowBox[{"<|", 
+        RowBox[{
+         RowBox[{"\"\<f\>\"", " ", "\[RuleDelayed]", " ", 
+          RowBox[{"{", 
+           RowBox[{
+           "RigidBodyDynamics`Private`UpperTriangularizeAb", ",", " ", "Ucon",
+             ",", " ", "cost"}], "}"}]}], ",", " ", 
+         RowBox[{"\"\<v\>\"", " ", "\[RuleDelayed]", " ", 
+          RowBox[{"{", 
+           RowBox[{"{", 
+            RowBox[{"Pfun", ",", " ", "_Real", ",", " ", "2"}], "}"}], 
+           "}"}]}]}], "|>"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"F", " ", "=", " ", 
+       RowBox[{"RBDMergeRecipes", "[", 
+        RowBox[{"\"\<FMbJ\>\"", ",", " ", "F"}], "]"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"F", "[", "\"\<C\>\"", "]"}], " ", "=", " ", "cons"}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"F", "[", "\"\<name\>\"", "]"}], " ", "=", " ", 
+       "\"\<cost\>\""}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"con", "[", "\"\<cost\>\"", "]"}], " ", "=", " ", "F"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"55c2ad52-9cc9-468d-8e10-e679a2ab6601"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["End Package", \
+"Section",ExpressionUUID->"1d964aff-3d18-4ba8-81cc-221ea29e2078"],
+
+Cell[BoxData[{
+ RowBox[{"End", "[", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"EndPackage", "[", "]"}]}], "Input",
+ InitializationCell->
+  True,ExpressionUUID->"a100829e-e148-4b7b-ad64-278794228295"]
+}, Open  ]]
+},
+AutoGeneratedPackage->Automatic,
+Evaluator->"Local",
+WindowSize->{1247, 1383},
+WindowMargins->{{67, Automatic}, {0, Automatic}},
+PrivateNotebookOptions->{"FileOutlineCache"->False},
+CellContext->"Global`",
+TrackCellChangeTimes->False,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+

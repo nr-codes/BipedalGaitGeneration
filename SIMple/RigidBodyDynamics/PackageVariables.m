@@ -140,7 +140,7 @@ RBDMQ::usage = "mechanical quantities";
 RBDCompileExpression::usage = "";
 RBDCompileFunction::usage = "";
 RBDSaveDynamics::usage = "";
-(*RBDDeleteDynamics::usage = "";*)
+RBDDeleteDynamics::usage = "";
 RBDLoadDynamics::usage = "";
 
 

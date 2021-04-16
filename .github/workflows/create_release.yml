@@ -15,8 +15,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Set Release Version
         run: |
-            echo ::set-env name=ver::${GITHUB_REF#refs/tags/v}
-            echo ::set-env name=name::${GITHUB_REPOSITORY#nr-codes/}
+            echo "ver=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+            echo "name=${GITHUB_REPOSITORY#nr-codes/}" >> $GITHUB_ENV
       - name: Build Mathematica Archive
         id: math
         env: 
@@ -45,16 +45,16 @@ jobs:
                 GaitBrowser/app/imgs/*/*.png \
                 -x \*.gitignore
             zip -r9 $math Models SIMple
-            echo ::set-env name=math::"$math.zip"
-            echo ::set-env name=math_path::$( readlink -f "$math" )
+            echo "math=\"$math.zip\"" >> $GITHUB_ENV
+            echo "math_path=$( readlink -f \"$math\" )" >> $GITHUB_ENV
       - name: Build Node.js Archive
         id: node
         env: 
             node: ${{ env.name }}-Node.js-${{ env.ver }}
         run: |
             zip -r9 $node GaitBrowser -x GaitBrowser/app/imgs\*
-            echo ::set-env name=node::"$node.zip"
-            echo ::set-env name=node_path::$( readlink -f "$node" )
+            echo "node=\"$node.zip\"" >> $GITHUB_ENV
+            echo "node_path=$( readlink -f \"$node\" )" >> $GITHUB_ENV
       - name: Build GaitBrowser Executables
         id: executables
         env: 
@@ -66,12 +66,12 @@ jobs:
             npm i
             npm run build
             npm run pkg-all
-            echo ::set-env name=lin::$lin
-            echo ::set-env name=mac::$mac
-            echo ::set-env name=win::$win
-            echo ::set-env name=lin_path::$( readlink -f ./exe/GaitBrowser-linux )
-            echo ::set-env name=mac_path::$( readlink -f ./exe/GaitBrowser-macos )
-            echo ::set-env name=win_path::$( readlink -f ./exe/GaitBrowser-win.exe )
+            echo "lin=$lin" >> $GITHUB_ENV
+            echo "mac=$mac" >> $GITHUB_ENV
+            echo "win=$win" >> $GITHUB_ENV
+            echo "lin_path=$( readlink -f ./exe/GaitBrowser-linux )" >> $GITHUB_ENV
+            echo "mac_path=$( readlink -f ./exe/GaitBrowser-macos )" >> $GITHUB_ENV
+            echo "win_path=$( readlink -f ./exe/GaitBrowser-win.exe )" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1

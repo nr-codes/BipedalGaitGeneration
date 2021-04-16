@@ -45,16 +45,16 @@ jobs:
                 GaitBrowser/app/imgs/*/*.png \
                 -x \*.gitignore
             zip -r9 $math Models SIMple
-            echo "math=\"$math.zip\"" >> $GITHUB_ENV
-            echo "math_path=$( readlink -f \"$math\" )" >> $GITHUB_ENV
+            echo "math=$math.zip" >> $GITHUB_ENV
+            echo "math_path=$( readlink -f $math )" >> $GITHUB_ENV
       - name: Build Node.js Archive
         id: node
         env: 
             node: ${{ env.name }}-Node.js-${{ env.ver }}
         run: |
             zip -r9 $node GaitBrowser -x GaitBrowser/app/imgs\*
-            echo "node=\"$node.zip\"" >> $GITHUB_ENV
-            echo "node_path=$( readlink -f \"$node\" )" >> $GITHUB_ENV
+            echo "node=$node.zip" >> $GITHUB_ENV
+            echo "node_path=$( readlink -f $node )" >> $GITHUB_ENV
       - name: Build GaitBrowser Executables
         id: executables
         env: 

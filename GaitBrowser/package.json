@@ -1,6 +1,6 @@
 {
   "name": "GaitBrowser",
-  "version": ".2.0",
+  "version": "0.2.0",
   "description": "A Companion Web App for A Topological Approach to Gait Generation for Biped Walkers",
   "private": true,
   "scripts": {

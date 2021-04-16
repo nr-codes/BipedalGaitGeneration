@@ -1,0 +1,1 @@
+In order to run the code in this folder, install FROST into the Misc/ folder in the top-level directory of the repository.

@@ -192,7 +192,7 @@ Cell[TextData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-   RowBox[{"VERSION", " ", "=", " ", "\"\<0.1.2\>\""}], ";"}], 
+   RowBox[{"VERSION", " ", "=", " ", "\"\<.2.0\>\""}], ";"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", " ", 
    RowBox[{

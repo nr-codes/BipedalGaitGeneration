@@ -1,0 +1,53 @@
+li#images {
+    position: relative;
+}
+
+li#images .tooltip {
+    --tooltip-width: 145px;
+    --tooltip-background-color: #555;
+    --tooltip-padding: 5px;
+
+    width: var(--tooltip-width);
+    margin-left: calc(-1 * var(--tooltip-width) / 2);
+    padding: var(--tooltip-padding) 0;
+    border-radius: 6px;
+
+    font-size: 14px;
+    color: white;
+    text-align: center;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+
+    background-color: var(--tooltip-background-color);
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+li#images .tooltip::after {
+    /* shows an arrow */
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    margin-left: calc(-1 * var(--tooltip-padding));
+
+    border-width: var(--tooltip-padding);
+    border-style: solid;
+    border-color: var(--tooltip-background-color) transparent 
+        transparent transparent;
+}
+
+li#images:hover {
+    background-color: var(--hover-color);
+}
+
+li#images:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,3 +1,86 @@
-Hello World!
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/ui.css">
+        <title>
+          A Topological Approach to Gait Generation for Biped Robots
+        </title>
+    </head>
+    <body>
+      <ul id="header">
+  <li>
+    <ul>
+      <li class="dropdown">
+        <button type="button" class="menu" id="Gaits">Gaits</button>
+        <div class="dropdown-container">
+          <input type="text" placeholder="Search..." id="myInput">
+          <div class="dropdown-content" id="myDropdown">
+            <button>Loading Gaits...</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <button type="button" class="menu" id="View">View</button>
+        <div class="dropdown-container" style="min-width: 10vw;">
+          <div class="dropdown-content" id="view-content">
+          </div>
+        </div>
+      </li>
+      <li>
+        <button type="button" class="menu" id="play"></button>
+      </li>
+    </ul>
+  </li>
 
-This page is under construction on gh-pages.
+  <li>
+    <ul>
+      <li class="playback">
+        <div id="slider-container">
+          <input type="range" id="myRange" min="0" max="1" step="any" value="0">
+        </div>
+      </li>
+      <li class="playback">
+        <label class="switch">
+          <input type="checkbox" checked id="slow-fast-checkbox">
+          <span class="toggle" id="slow-fast-text"
+            slow="0x" fast="1x"></span>
+        </label>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+      <div id="container">
+  <canvas id="canvas" width="100%" height="100%"></canvas>
+</div>
+
+
+      <ul id="footer">
+  <li id="info">Loading Gaits...</li>
+
+  <li>
+    <ul>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="video-image-checkbox" checked>
+          <span class="toggle" slow="images" fast="video"></span>
+        </label>
+      </li>
+      <li id="images">
+        <input type="text" maxlength="0"
+          id="images-input" placeholder="# of frames">
+        <span class="tooltip" id="tooltip-text">use @n for n fps</span>
+      </li>
+      <li>
+        <button type="button" class="menu" id="save-button">Save</button>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+      <script src="bundle.js" id="bundle"
+        data-url="" data-bipeds="Atlas.json,Compass Gait with Actuator.json,Compass Gait with Torso.json,Compass Gait.json,Curved Feet.json,FiveLink3D.json,Gibbot.json,Human Walker.json,Kneed Walker.json,Marlo.json,Rabbit.json"></script>
+    </body>
+</html>

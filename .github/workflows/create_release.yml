@@ -41,6 +41,7 @@ jobs:
                 Figures \
                 Models \
                 SIMple \
+                Misc/DebuggingTips.pdf \
                 GaitBrowser/src/bipeds \
                 GaitBrowser/app/imgs/*/*.png \
                 -x \*.gitignore

@@ -236,7 +236,7 @@ endif::html_compact[]
 [#tables]
 == Tables
 
-.Run times in seconds of running all cells in Main.nb of each model
+.Run times in seconds of running all cells in Main.nb of each model (v0.1.2)
 |===
 | {src}/Models/Atlas/Main.nb[Models/Atlas/Main.nb] | 14667.9
 | {src}/Models/CompassGait/Main.nb[Models/CompassGait/Main.nb] | 507.569

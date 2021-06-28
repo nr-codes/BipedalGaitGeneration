@@ -4,6 +4,8 @@ Cell[CellGroupData[{
 Cell["Begin Package", \
 "Section",ExpressionUUID->"39e9dbc5-5d7b-4441-82c6-0811eadac5b2"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"BeginPackage", "[", 
@@ -16,8 +18,15 @@ Cell[BoxData[{
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Begin", "[", "\"\<`Private`\>\"", "]"}]}], "Input",
  InitializationCell->True,
+ CellLabel->"In[71]:=",ExpressionUUID->"373c729a-c8f4-4195-8bd0-cf654512040d"],
+
+Cell[BoxData["\<\"BipedalLocomotion`\"\>"], "Output",
+ CellLabel->"Out[71]=",ExpressionUUID->"ef03c7b1-90fa-4cc3-823b-2fefedee092a"],
+
+Cell[BoxData["\<\"BipedalLocomotion`Private`\"\>"], "Output",
  CellLabel->
-  "In[1104]:=",ExpressionUUID->"373c729a-c8f4-4195-8bd0-cf654512040d"]
+  "Out[72]=",ExpressionUUID->"7cff0521-cbd6-4b9e-8b9f-aa4d94ff95a0"]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -403,14 +412,21 @@ gone until `2`.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
                RowBox[{"Through", "[", 
                 RowBox[{"f0", "[", "tf", "]"}], "]"}]}]}], "]"}]}], ";", 
            "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"f0", "\[LeftDoubleBracket]", 
-             RowBox[{"2", ",", " ", "All", ",", " ", 
-              RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], " ", "+=", " ", 
-            RowBox[{"A", "\[LeftDoubleBracket]", 
-             RowBox[{"All", ",", " ", "4"}], "\[RightDoubleBracket]"}]}], ";",
-            "\[IndentingNewLine]", "f0"}]}], "\[IndentingNewLine]", "]"}], 
-        ",", "\[IndentingNewLine]", 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "@", "f0"}], " ", "\[GreaterEqual]", " ", 
+              "2"}], ",", " ", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"f0", "\[LeftDoubleBracket]", 
+                RowBox[{"2", ",", " ", "All", ",", " ", 
+                 RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}], " ", "+=", 
+               " ", 
+               RowBox[{"A", "\[LeftDoubleBracket]", 
+                RowBox[{"All", ",", " ", "4"}], "\[RightDoubleBracket]"}]}], 
+              ";"}]}], "]"}], ";", "\[IndentingNewLine]", "f0"}]}], 
+         "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"Message", "[", 
           RowBox[{
@@ -424,7 +440,7 @@ gone until `2`.\>\""}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]",
   ";"}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1106]:=",ExpressionUUID->"a76dd7df-08cb-443a-9e10-9cedf62ea0a8"]
+  "In[73]:=",ExpressionUUID->"a76dd7df-08cb-443a-9e10-9cedf62ea0a8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -477,8 +493,7 @@ Cell[BoxData[{
        "\[RightDoubleBracket]"}]}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[1110]:=",ExpressionUUID->"e2d2e8bf-b0eb-4dc8-b71d-8628eab25a68"],
+ CellLabel->"In[77]:=",ExpressionUUID->"e2d2e8bf-b0eb-4dc8-b71d-8628eab25a68"],
 
 Cell[BoxData[{
  RowBox[{
@@ -564,8 +579,7 @@ Cell[BoxData[{
             RowBox[{"C", "&"}], ")"}]}]}], "|>"}], ",", " ", "opts"}], 
        "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[1112]:=",ExpressionUUID->"5089bb2e-ee42-4633-9b75-3fa0366fb57d"],
+ CellLabel->"In[79]:=",ExpressionUUID->"5089bb2e-ee42-4633-9b75-3fa0366fb57d"],
 
 Cell[BoxData[{
  RowBox[{
@@ -937,7 +951,7 @@ Cell[BoxData[{
             RowBox[{"{", 
              RowBox[{"C0", ",", " ", "CT"}], "}"}]}]}], "|>"}], ",", " ", 
          "opts"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"TestBLSwingFootHeightIntegral", "[", 
@@ -1013,7 +1027,7 @@ Cell[BoxData[{
   ";"}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1115]:=",ExpressionUUID->"ef83e88b-ab79-46e4-8543-4417ed90f519"]
+  "In[82]:=",ExpressionUUID->"ef83e88b-ab79-46e4-8543-4417ed90f519"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1069,7 +1083,7 @@ Cell[BoxData[{
        "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1120]:=",ExpressionUUID->"b06cfe60-7abc-4db1-b775-c78ec086b7e7"]
+  "In[87]:=",ExpressionUUID->"b06cfe60-7abc-4db1-b775-c78ec086b7e7"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1317,8 +1331,7 @@ Cell[BoxData[{
        RowBox[{"f", ",", " ", "b", ",", " ", "T", ",", " ", "opts"}], 
        "]"}]}]}], "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[1122]:=",ExpressionUUID->"51030c00-b240-413b-8d0b-b675c24fd5cc"],
+ CellLabel->"In[89]:=",ExpressionUUID->"51030c00-b240-413b-8d0b-b675c24fd5cc"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1431,7 +1444,7 @@ Cell[BoxData[{
     "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1129]:=",ExpressionUUID->"c939e155-c882-43ae-b80d-9d8720f0c10e"]
+  "In[96]:=",ExpressionUUID->"c939e155-c882-43ae-b80d-9d8720f0c10e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1601,8 +1614,7 @@ Cell[BoxData[{
          RowBox[{"2", ";;", "2"}]}]}], "]"}]}]}], "\[IndentingNewLine]", 
     "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[1134]:=",ExpressionUUID->"3288fdf4-8f13-4dbc-9901-6f99f3c54c3a"]
+ CellLabel->"In[101]:=",ExpressionUUID->"3288fdf4-8f13-4dbc-9901-6f99f3c54c3a"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1723,7 +1735,7 @@ Cell[BoxData[{
        "opts"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1140]:=",ExpressionUUID->"bb34540b-6e34-464d-9742-731230e8d844"],
+  "In[107]:=",ExpressionUUID->"bb34540b-6e34-464d-9742-731230e8d844"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1867,7 +1879,7 @@ Cell[BoxData[{
        "opts"}], "]"}]}]}], "\[IndentingNewLine]", "]"}]}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1143]:=",ExpressionUUID->"6013ffc8-d10a-426b-adaa-26a26a523c4f"],
+  "In[110]:=",ExpressionUUID->"6013ffc8-d10a-426b-adaa-26a26a523c4f"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1897,13 +1909,14 @@ Cell[BoxData[{
          "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"X", " ", "=", " ", 
         RowBox[{
-         RowBox[{"A", "[", "\"\<x-\>\"", "]"}], "\[LeftDoubleBracket]", "1", 
-         "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
+         RowBox[{"A", "[", "\"\<x-\>\"", "]"}], "\[LeftDoubleBracket]", 
+         RowBox[{"1", ";;", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+       "\[IndentingNewLine]", 
        RowBox[{"C", " ", "=", " ", 
         RowBox[{
-         RowBox[{"A", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", "1", 
-         "\[RightDoubleBracket]"}]}], ";", "\[IndentingNewLine]", 
-       "\[IndentingNewLine]", 
+         RowBox[{"A", "[", "\"\<c\>\"", "]"}], "\[LeftDoubleBracket]", 
+         RowBox[{"1", ";;", "1"}], "\[RightDoubleBracket]"}]}], ";", 
+       "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"S", " ", "=", " ", 
         RowBox[{"devec", "[", 
          RowBox[{
@@ -2015,8 +2028,7 @@ Cell[BoxData[{
            RowBox[{"{", "C", "}"}]}]}], "|>"}], ",", " ", "opts"}], "]"}]}]}],
      "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
  InitializationCell->True,
- CellLabel->
-  "In[1146]:=",ExpressionUUID->"7fe613b9-8d28-467c-83cc-c4c05966c837"]
+ CellLabel->"In[113]:=",ExpressionUUID->"7fe613b9-8d28-467c-83cc-c4c05966c837"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2026,18 +2038,24 @@ Cell["End Package", "Section",
  InitializationCell->
   True,ExpressionUUID->"89ca9acb-4053-4b62-ae07-011985e5c6d0"],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[{
  RowBox[{"End", "[", "]"}], "\n", 
  RowBox[{"EndPackage", "[", "]"}]}], "Input",
  InitializationCell->True,
  CellLabel->
-  "In[1149]:=",ExpressionUUID->"4658df9e-a842-4ee0-aa85-339f6974490e"]
+  "In[116]:=",ExpressionUUID->"4658df9e-a842-4ee0-aa85-339f6974490e"],
+
+Cell[BoxData["\<\"BipedalLocomotion`Private`\"\>"], "Output",
+ CellLabel->"Out[116]=",ExpressionUUID->"53d5ec73-34c9-46db-a402-97ea5017e9fd"]
+}, Open  ]]
 }, Open  ]]
 },
 AutoGeneratedPackage->Automatic,
 Evaluator->"Local",
 WindowSize->{1247, 1383},
-WindowMargins->{{67, Automatic}, {0, Automatic}},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",
 TrackCellChangeTimes->False,

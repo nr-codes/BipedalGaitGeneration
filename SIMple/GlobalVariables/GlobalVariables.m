@@ -39,7 +39,7 @@ If not, see <http://www.gnu.org/licenses/>.
 (* ::Input::Initialization:: *)
 BeginPackage["GlobalVariables`"]
 
-nq::usage = "# of configuration variables";
+nq::usage = "Stores the number of configuration variables.";
 nx::usage = "# of state variables; nx = 2nq";
 nc::usage = "# of control/design parameters";
 

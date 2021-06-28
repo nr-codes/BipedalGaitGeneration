@@ -42,8 +42,8 @@ Cell[BoxData[
         RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
        "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"<<", " ", "\"\<FiveLink3D`\>\""}], 
-    ";"}]}]}]], "Input",ExpressionUUID->"da4b051a-e0c7-4275-81fb-b9cc71119dcf"]
+    RowBox[{"<<", " ", "\"\<FiveLink3D`\>\""}], ";"}]}]}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"da4b051a-e0c7-4275-81fb-b9cc71119dcf"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -649,14 +649,17 @@ Cell[BoxData[{
         RowBox[{"Print", " ", "\[Rule]", " ", "1"}], ",", " ", 
         RowBox[{"\"\<\[Beta]\>\"", " ", "\[Rule]", " ", "0.5"}], ",", " ", 
         RowBox[{"\"\<min\>\"", " ", "\[Rule]", " ", "0"}], ",", " ", 
-        RowBox[{"\"\<newton\>\"", " ", "\[Rule]", " ", 
-         RowBox[{"{", 
-          RowBox[{
-           RowBox[{"\"\<max\>\"", " ", "\[Rule]", " ", "10"}], ",", " ", 
-           RowBox[{"Print", " ", "\[Rule]", " ", "1"}], ",", " ", 
+        RowBox[{"\"\<cm\>\"", " ", "\[Rule]", " ", 
+         RowBox[{"\"\<newton\>\"", " ", "\[Rule]", " ", 
+          RowBox[{"{", 
+           RowBox[{"(*", 
+            RowBox[{
+             RowBox[{"\"\<max\>\"", " ", "\[Rule]", " ", "10"}], ",", " ", 
+             RowBox[{"Print", " ", "\[Rule]", " ", "1"}], ","}], " ", "*)"}], 
+           
            RowBox[{"\"\<LU\>\"", " ", "\[Rule]", " ", 
             RowBox[{"{", 
-             RowBox[{"L", ",", " ", "U"}], "}"}]}]}], "}"}]}], ",", " ", 
+             RowBox[{"L", ",", " ", "U"}], "}"}]}], "}"}]}]}], ",", " ", 
         RowBox[{"Root", " ", "\[Rule]", " ", "True"}]}], "}"}]}], "}"}]}], 
    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -726,7 +729,7 @@ Cell[BoxData[
 },
 EvaluatorNames->{"Local" -> {"AutoStartOnLaunch" -> True}},
 Evaluator->"Local",
-WindowSize->{1373, 1505},
+WindowSize->{1247, 1383},
 WindowMargins->{{Automatic, 0}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",

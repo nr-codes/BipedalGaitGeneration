@@ -294,6 +294,8 @@ Graphics3D[X, OptionValue[Graphics], Lighting->"Neutral", Boxed->False]
 ]
 ];
 
+
+(* ::Input::Initialization:: *)
 Options[BLDrawAxes] = Join[{"axlen" ->  1/8}, Options[BLDrawBiped]];
 BLDrawAxes[x_, c_, opts:OptionsPattern[]] := Module[{n, l, A, T, C},
 n = Complement[RBDGetLinkNames[], ignorelink];
@@ -441,19 +443,22 @@ BLSim[m_String, p_, opts:OptionsPattern[]] := BLMap[Sequence@@BLmxcp[m, p], opts
 
 
 (* ::Input::Initialization:: *)
-Options[BLAnimateBiped] = {BLDrawBiped -> {}, Animate -> {}, BLSim -> {}, "\[CurlyPhi]" -> Automatic};
+Options[BLAnimateBiped] = {BLDrawBiped -> {}, Animate -> {}, BLSim -> {}, "\[CurlyPhi]" -> Automatic, "f" -> Automatic};
 
 BLAnimateBiped[c_?(VectorQ[#, NumericQ]&), opts:OptionsPattern[]] := BLAnimateBiped[BLbiped["m[0]"], c, opts]
 
 BLAnimateBiped[m_String, c_, opts:OptionsPattern[]] := BLAnimateBiped[BLSim[m, c, OptionValue[BLSim]], opts]
 
-BLAnimateBiped[\[CurlyPhi]_, OptionsPattern[]] := Module[{x, c, T, \[Sigma], o},
+BLAnimateBiped[\[CurlyPhi]_, OptionsPattern[]] := Module[{x, c, T, \[Sigma], o, f},
 x = \[CurlyPhi][[1]];
 c = \[CurlyPhi][[2]];
 T = Flatten@x["Domain"];
 
 \[Sigma] = OptionValue["\[CurlyPhi]"];
 If[\[Sigma] === Automatic, \[Sigma] = \[CurlyPhi];];
+
+f = OptionValue["f"];
+If[f === Automatic, f = BLDrawBiped;];
 
 (* compute a bounding box? *)
 o = Association@OptionValue[BLDrawBiped];
@@ -463,7 +468,7 @@ o[Graphics] = Flatten[{Lookup[o, Graphics, {}], PlotRange -> BLBoundingBox[\[Cur
 o = Normal@o;
 
 Animate[
-BLDrawBiped[x[t], c[t], o, "\[CurlyPhi]" -> \[Sigma]],
+f[x[t], c[t], o, "\[CurlyPhi]" -> \[Sigma]],
 {t, T[[1]], T[[2]]}, 
 Evaluate@OptionValue[Animate]
 ]

@@ -75,7 +75,7 @@ Cell[BoxData[{
   RowBox[{"Get", "[", "\"\<SIMple`Additions`H`\>\"", "]"}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"Get", "[", "\"\<SIMple`Additions`RootFinding`\>\"", "]"}], 
+  RowBox[{"Get", "[", "\"\<SIMple`Additions`EulerLagrange`\>\"", "]"}], 
   ";"}]}], "Input",
  InitializationCell->
   True,ExpressionUUID->"c51f2de6-79b8-44c6-bc68-3ca919713bea"]

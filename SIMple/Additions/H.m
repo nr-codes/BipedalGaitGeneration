@@ -94,7 +94,7 @@ If[OptionValue["xa"],
 {f0, c0}, 
 (* else *)
 f0 = MapThread[Join, devec[#, 1]& /@ Through[f0[tf]]];
-f0[[2, All, -1]] += A[[All, 4]];
+If[Length@f0 >= 2, f0[[2, All, -1]] += A[[All, 4]];];
 f0
 ],
 Message[BLApplyBounds::T, Through[f0["Grid"]], tf];
@@ -355,8 +355,8 @@ Options[BLSlope] = {"i" -> Automatic, "\[Sigma]" -> None};
 
 BLSlope[A_Association, OptionsPattern[]] := Module[{m, X, C, S},
 m = A["m"][[1]];
-X = A["x-"][[1]];
-C = A["c"][[1]];
+X = A["x-"][[1;;1]];
+C = A["c"][[1;;1]];
 
 S = devec[BLbiped["\[Sigma]", m][X, C], mm];
 

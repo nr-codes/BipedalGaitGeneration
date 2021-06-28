@@ -43,4 +43,4 @@ Get["SIMple`Additions`Manifold`"];
 Get["SIMple`Additions`Recipes`"];
 Get["SIMple`Additions`Regimes`"];
 Get["SIMple`Additions`H`"];
-Get["SIMple`Additions`RootFinding`"];
+Get["SIMple`Additions`EulerLagrange`"];

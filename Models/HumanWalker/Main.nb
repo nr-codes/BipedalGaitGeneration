@@ -42,8 +42,8 @@ Cell[BoxData[
         RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", "\"\<../\>\""}], 
        "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"<<", " ", "\"\<HumanWalker`\>\""}], 
-    ";"}]}]}]], "Input",ExpressionUUID->"a3ef1156-e3c2-4a5f-a69d-c3dc12e34114"]
+    RowBox[{"<<", " ", "\"\<HumanWalker`\>\""}], ";"}]}]}]], "Input",
+ CellLabel->"In[1]:=",ExpressionUUID->"a3ef1156-e3c2-4a5f-a69d-c3dc12e34114"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -288,7 +288,7 @@ Cell[BoxData[
 },
 EvaluatorNames->{"Local" -> {"AutoStartOnLaunch" -> True}},
 Evaluator->"Local",
-WindowSize->{1373, 1505},
+WindowSize->{1373, 1383},
 WindowMargins->{{Automatic, 0}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",

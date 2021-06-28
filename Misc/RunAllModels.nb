@@ -63,7 +63,7 @@ Cell[BoxData[{
           RowBox[{
            RowBox[{"\"\<Evaluating\>\"", "/.", "#"}], "&"}], ",", 
           RowBox[{"Developer`CellInformation", "[", "nb", "]"}]}], 
-         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+         "]"}]}]}]}], "\n", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"evals", " ", "=", " ", 
@@ -81,7 +81,7 @@ Cell[BoxData[{
          RowBox[{"{", 
           RowBox[{"\"\<AutoStartOnLaunch\>\"", "\[Rule]", "False"}], "}"}]}], 
         "}"}]}]}], "\[IndentingNewLine]", "|>"}]}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"ToAsciidoc", "[", "data_", "]"}], " ", ":=", " ", 
@@ -117,8 +117,7 @@ Cell[BoxData[{
               "}"}]}], "]"}], "&"}], " ", "/@", " ", "d"}], "]"}], " ", "<>", 
        " ", "\"\<|===\\n\>\""}]}]}], "\[IndentingNewLine]", "]"}]}], 
   ";"}]}], "Input",
- CellLabel->
-  "In[21]:=",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
+ CellLabel->"In[1]:=",ExpressionUUID->"8daaf4ac-389f-40b4-a9c0-ff6ad69f68c1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -136,8 +135,8 @@ Cell[BoxData[
     RowBox[{"$FrontEndSession", ",", 
      RowBox[{"EvaluatorNames", "\[Rule]", 
       RowBox[{"Join", "@@", 
-       RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], 
-   ";"}]}]], "Input",ExpressionUUID->"c4959e88-69b9-44a3-be4b-0ee3d518d384"],
+       RowBox[{"Values", "@", "evals"}]}]}]}], "]"}], ";"}]}]], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"c4959e88-69b9-44a3-be4b-0ee3d518d384"],
 
 Cell[BoxData[
  RowBox[{
@@ -166,8 +165,8 @@ Cell[BoxData[
       RowBox[{"\"\<../Models/*/*.mx\>\"", ",", 
        RowBox[{"{", 
         RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}], "]"}], ";"}],
-    "*)"}]}]], \
-"Input",ExpressionUUID->"6c7d6553-b31a-4b12-8e55-355a50bef336"]
+    "*)"}]}]], "Input",
+ CellLabel->"In[6]:=",ExpressionUUID->"6c7d6553-b31a-4b12-8e55-355a50bef336"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -185,7 +184,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Main.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\n"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"mdata", " ", "=", " ", 
@@ -271,8 +270,8 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
        "\"\<main_run_times.mx\>\""}], "}"}], "]"}], ",", " ", "mdata"}], 
-   "]"}], ";"}]}], \
-"Input",ExpressionUUID->"382ca1f7-ad51-4928-be99-0263c487b53d"],
+   "]"}], ";"}]}], "Input",
+ CellLabel->"In[7]:=",ExpressionUUID->"382ca1f7-ad51-4928-be99-0263c487b53d"],
 
 Cell[CellGroupData[{
 
@@ -284,17 +283,19 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"0d5b621c-6d58-4f66-b548-9e1a2928d88f"],
+In[7]:=",ExpressionUUID->"f159b3dc-ec25-46c6-a631-9319865cf9aa"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "14667.939323`"}],
-  SequenceForm["END", "\t", 14667.939323],
+   "\[InvisibleSpace]", "\<\"Models/Atlas/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "15189.000529`"}],
+  
+  SequenceForm["END", "\t", "Models/Atlas/Main.nb", "\t", 15189.000529],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"af8ff80d-5775-46b9-82b7-49f35ab00f8e"],
+In[7]:=",ExpressionUUID->"4b6b6cd4-62f2-4b33-b34f-7dff5f5051d3"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -304,17 +305,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"fe944efd-6931-4485-9520-deecadafbb07"],
+In[7]:=",ExpressionUUID->"e47ec3f0-f2d6-4b25-a3c6-10953644096b"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "507.569337`"}],
-  SequenceForm["END", "\t", 507.569337],
+   "\[InvisibleSpace]", "\<\"Models/CompassGait/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "495.569026`"}],
+  SequenceForm["END", "\t", "Models/CompassGait/Main.nb", "\t", 495.569026],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"8139ba20-baaa-429f-bdf4-0a1f8672ba94"],
+In[7]:=",ExpressionUUID->"756b26e1-8c8a-4356-baf8-b94c0e3a91a3"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -324,17 +326,19 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"3aa304b9-a001-456e-b984-080751e72609"],
+In[7]:=",ExpressionUUID->"86dd3b7f-280d-47ee-91c2-7134f3a8dc19"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "7541.118627`"}],
-  SequenceForm["END", "\t", 7541.118627],
+   "\[InvisibleSpace]", "\<\"Models/CompassGaitWithActuator/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "8470.460767`"}],
+  SequenceForm[
+  "END", "\t", "Models/CompassGaitWithActuator/Main.nb", "\t", 8470.460767],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"cf92bbde-e3bf-4898-91d4-852d38cafc6f"],
+In[7]:=",ExpressionUUID->"fb2785ec-7f48-442f-979b-20d141b50e1a"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -344,17 +348,19 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"51c2e4de-b338-4868-a7c9-cb144ece2109"],
+In[7]:=",ExpressionUUID->"565f99d8-b6b8-4c57-ab7e-af8ba77d792e"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "669.530564`"}],
-  SequenceForm["END", "\t", 669.530564],
+   "\[InvisibleSpace]", "\<\"Models/CompassGaitWithTorso/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "725.228848`"}],
+  SequenceForm[
+  "END", "\t", "Models/CompassGaitWithTorso/Main.nb", "\t", 725.228848],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"a49e1114-650c-4d3a-bd2b-a9f66bc4984b"],
+In[7]:=",ExpressionUUID->"8f24143b-087c-4f9b-a59e-a969d07e8b77"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -364,17 +370,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"28e82406-bb7f-4187-9846-12bc7b15d9cd"],
+In[7]:=",ExpressionUUID->"7c7eacc7-94ae-469c-aa26-c20b705b402a"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "430.17111`"}],
-  SequenceForm["END", "\t", 430.17111],
+   "\[InvisibleSpace]", "\<\"Models/CurvedFeet/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "445.714681`"}],
+  SequenceForm["END", "\t", "Models/CurvedFeet/Main.nb", "\t", 445.714681],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"ae0044f5-5a83-4b19-b5ae-817f5d95fcf0"],
+In[7]:=",ExpressionUUID->"70a14f0a-2e6b-4c19-9eb4-c16ca8cff77e"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -384,17 +391,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"6b33fb8c-eb27-46ad-8348-6244bf98752e"],
+In[7]:=",ExpressionUUID->"b20d092c-6e88-4c98-a204-9dcb6c58b0dd"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "1730.113548`"}],
-  SequenceForm["END", "\t", 1730.113548],
+   "\[InvisibleSpace]", "\<\"Models/FiveLink3D/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "2190.522771`"}],
+  SequenceForm["END", "\t", "Models/FiveLink3D/Main.nb", "\t", 2190.522771],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"ed5cc491-e219-4111-9e9d-68d21432bcf5"],
+In[7]:=",ExpressionUUID->"13035b11-2403-46da-939f-ad527dc33863"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -404,17 +412,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"4f0d0f18-b25f-4ddc-a080-f971f57b8d99"],
+In[7]:=",ExpressionUUID->"85be059a-7776-4909-bf53-15527ba4fa36"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "657.850174`"}],
-  SequenceForm["END", "\t", 657.850174],
+   "\[InvisibleSpace]", "\<\"Models/Gibbot/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "670.219131`"}],
+  SequenceForm["END", "\t", "Models/Gibbot/Main.nb", "\t", 670.219131],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"eec22f69-c96d-4a55-9155-b002751997ec"],
+In[7]:=",ExpressionUUID->"f073c04f-371d-4171-882a-85b985ca3ed1"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -424,17 +433,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"dd17e0ae-f9ef-4bf7-909e-0e72f229eaed"],
+In[7]:=",ExpressionUUID->"238106c7-a4a2-41aa-aa91-7c94ac46ab6d"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "1822.787696`"}],
-  SequenceForm["END", "\t", 1822.787696],
+   "\[InvisibleSpace]", "\<\"Models/HumanWalker/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "2234.279989`"}],
+  SequenceForm["END", "\t", "Models/HumanWalker/Main.nb", "\t", 2234.279989],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"29753a07-c6e6-42da-8b2c-d01854926fa5"],
+In[7]:=",ExpressionUUID->"b768f3dd-3153-4f03-9386-a541eec0ff74"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -444,17 +454,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"ee81fee9-ea49-48a4-98e9-bb5219ee886f"],
+In[7]:=",ExpressionUUID->"5f0dd682-d39d-4587-945b-9eb62cbee3e3"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "923.490599`"}],
-  SequenceForm["END", "\t", 923.490599],
+   "\[InvisibleSpace]", "\<\"Models/KneedWalker/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "1032.218969`"}],
+  SequenceForm["END", "\t", "Models/KneedWalker/Main.nb", "\t", 1032.218969],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"f37078d5-3010-4200-9de0-1b05f97c0976"],
+In[7]:=",ExpressionUUID->"6484873e-c2d8-4661-81d7-0fcb62d41954"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -464,17 +475,39 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"9dabb01c-4dca-43c3-b8a0-94cee8a1a20c"],
+In[7]:=",ExpressionUUID->"f3ebeefa-ca2f-4c7b-ad56-f7b6c1a8d7f4"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "2334.826408`"}],
-  SequenceForm["END", "\t", 2334.826408],
+   "\[InvisibleSpace]", "\<\"Models/Marlo/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "683.734903`"}],
+  SequenceForm["END", "\t", "Models/Marlo/Main.nb", "\t", 683.734903],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"20b33bc3-c62b-413a-a9cc-36ded4aa2da4"],
+In[7]:=",ExpressionUUID->"aa08c490-c26d-45e5-82e2-d91357dba256"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"BEGIN\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"Models/RabbitClassic/Main.nb\"\>"}],
+  SequenceForm["BEGIN", "\t", "Models/RabbitClassic/Main.nb"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"1c389bb9-17e9-42e7-9454-65adcb4fb43d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"Models/RabbitClassic/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "69.927631`"}],
+  SequenceForm["END", "\t", "Models/RabbitClassic/Main.nb", "\t", 69.927631],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"74e98e1d-c68b-417d-b23c-7d7e0a439e96"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -484,17 +517,39 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"93cd2399-5a6f-4123-ae03-dd1e78e2f0ba"],
+In[7]:=",ExpressionUUID->"2f3f0a90-9ca7-4ae2-b31e-26b079cec29f"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
-   "\[InvisibleSpace]", "380.527011`"}],
-  SequenceForm["END", "\t", 380.527011],
+   "\[InvisibleSpace]", "\<\"Models/Rabbit/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "354.143179`"}],
+  SequenceForm["END", "\t", "Models/Rabbit/Main.nb", "\t", 354.143179],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[7]:=",ExpressionUUID->"6bdf6514-1bff-49c1-b2b9-5b8189e29a2b"]
+In[7]:=",ExpressionUUID->"ea3deae4-d61c-46f2-8ecd-a6dce2694c52"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"BEGIN\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"Models/RabbitNL2/Main.nb\"\>"}],
+  SequenceForm["BEGIN", "\t", "Models/RabbitNL2/Main.nb"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"35f95e8b-92b8-4ac3-a1ac-9d049e810564"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"Models/RabbitNL2/Main.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "3.8282`"}],
+  SequenceForm["END", "\t", "Models/RabbitNL2/Main.nb", "\t", 3.8282],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[7]:=",ExpressionUUID->"9bd7c069-2c8f-4994-8530-2fcd89f504c4"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -514,7 +569,7 @@ Cell[BoxData[{
      RowBox[{"\"\<../Models/*/Outputs.nb\>\"", ",", 
       RowBox[{"{", 
        RowBox[{"NotebookDirectory", "[", "]"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"odata", " ", "=", " ", 
@@ -600,8 +655,8 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
        "\"\<outputs_run_times.mx\>\""}], "}"}], "]"}], ",", " ", "odata"}], 
-   "]"}], ";"}]}], \
-"Input",ExpressionUUID->"96e9b024-0f7c-4392-8891-f36d84e83835"],
+   "]"}], ";"}]}], "Input",
+ CellLabel->"In[10]:=",ExpressionUUID->"96e9b024-0f7c-4392-8891-f36d84e83835"],
 
 Cell[CellGroupData[{
 
@@ -613,18 +668,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"962d9bd4-6d89-47a5-bedf-fd6f31062fa9"],
+In[10]:=",ExpressionUUID->"efa3e728-29dd-4ad3-9f43-043cf809b180"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/Atlas/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "130.583205`"}],
-  SequenceForm["END", "\t", "Models/Atlas/Outputs.nb", "\t", 130.583205],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "151.078538`"}],
+  SequenceForm["END", "\t", "Models/Atlas/Outputs.nb", "\t", 151.078538],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"1cbc70ae-8f2d-4463-95ef-f306ff727147"],
+In[10]:=",ExpressionUUID->"a37fbf7b-b553-4f89-8c23-4a8ab9b023e7"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -634,18 +689,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"deb15421-11bf-477b-91f0-37e3b5b1dce2"],
+In[10]:=",ExpressionUUID->"4f6410bd-bf05-4516-a4f8-745c6f8db35d"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/CompassGait/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "6.917556`"}],
-  SequenceForm["END", "\t", "Models/CompassGait/Outputs.nb", "\t", 6.917556],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "8.013154`"}],
+  SequenceForm["END", "\t", "Models/CompassGait/Outputs.nb", "\t", 8.013154],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"769f78b4-279e-4a52-85bb-b261703f47e1"],
+In[10]:=",ExpressionUUID->"98d13941-f7b2-4b3e-b547-59de5b0178dc"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -656,19 +711,19 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"65a50af7-4b0a-4597-b3f8-7b82657f3fc9"],
+In[10]:=",ExpressionUUID->"260840c0-7ed5-443d-9d69-21432b46586c"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/CompassGaitWithActuator/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "40.456708`"}],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "43.867999`"}],
   SequenceForm[
-  "END", "\t", "Models/CompassGaitWithActuator/Outputs.nb", "\t", 40.456708],
+  "END", "\t", "Models/CompassGaitWithActuator/Outputs.nb", "\t", 43.867999],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"eced1841-de49-474f-83e9-1f4430a10ffd"],
+In[10]:=",ExpressionUUID->"8073ef82-e403-44f2-8580-3db5748ba69b"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -678,19 +733,19 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"bb4d3852-a434-46b6-a95b-930c88e83044"],
+In[10]:=",ExpressionUUID->"63b89257-18fd-473c-a356-f6b8346ec369"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/CompassGaitWithTorso/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "3.39528`"}],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "3.639479`"}],
   SequenceForm[
-  "END", "\t", "Models/CompassGaitWithTorso/Outputs.nb", "\t", 3.39528],
+  "END", "\t", "Models/CompassGaitWithTorso/Outputs.nb", "\t", 3.639479],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"91488a63-fe55-41ec-ac81-c6126a8381f5"],
+In[10]:=",ExpressionUUID->"2120e8df-349e-412a-b4e3-306aeadac792"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -700,18 +755,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"55b31567-d4b7-4dd0-8330-809e0e18a460"],
+In[10]:=",ExpressionUUID->"2ccff513-a064-46c7-899e-c605c30246b6"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/CurvedFeet/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "3.540579`"}],
-  SequenceForm["END", "\t", "Models/CurvedFeet/Outputs.nb", "\t", 3.540579],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "3.706631`"}],
+  SequenceForm["END", "\t", "Models/CurvedFeet/Outputs.nb", "\t", 3.706631],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"b8930162-40a9-46cc-9ae2-0ee14c9f2810"],
+In[10]:=",ExpressionUUID->"9b97d1a2-9c6e-4d02-bfca-61643190f4de"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -721,18 +776,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"032e8202-c19d-4545-a5a1-685daa1cd63b"],
+In[10]:=",ExpressionUUID->"2ffd93d4-8b2b-457b-9e8c-2ad84de77c1a"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/FiveLink3D/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "5.731535`"}],
-  SequenceForm["END", "\t", "Models/FiveLink3D/Outputs.nb", "\t", 5.731535],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "6.194001`"}],
+  SequenceForm["END", "\t", "Models/FiveLink3D/Outputs.nb", "\t", 6.194001],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"96e081fb-fae3-43a6-9565-bed9b7a02365"],
+In[10]:=",ExpressionUUID->"4aae6956-8da7-487c-8775-a15b9d5396e0"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -742,18 +797,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"f6f406a6-c20d-498e-9d5f-99f13dbabc9e"],
+In[10]:=",ExpressionUUID->"2c1ba741-bbdf-43ef-82c5-bfa04dff9d15"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/Gibbot/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "4.331226`"}],
-  SequenceForm["END", "\t", "Models/Gibbot/Outputs.nb", "\t", 4.331226],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "4.583552`"}],
+  SequenceForm["END", "\t", "Models/Gibbot/Outputs.nb", "\t", 4.583552],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"87285f63-22ae-4dc9-a51f-612bcf4ff058"],
+In[10]:=",ExpressionUUID->"721c87b7-682e-498c-87b7-5fb5f3653789"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -763,18 +818,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"5075e06f-91fe-44a2-bb40-58bc03ad064f"],
+In[10]:=",ExpressionUUID->"21d8f600-e2b1-4a5a-800a-e0ae97e22d23"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/HumanWalker/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "5.794931`"}],
-  SequenceForm["END", "\t", "Models/HumanWalker/Outputs.nb", "\t", 5.794931],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "6.433027`"}],
+  SequenceForm["END", "\t", "Models/HumanWalker/Outputs.nb", "\t", 6.433027],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"a8f858c1-c948-41e3-9163-f4fbbc23772c"],
+In[10]:=",ExpressionUUID->"8d1c42ef-0c87-4a50-9bd0-9b98ecbf3db1"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -784,18 +839,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"2708edbc-19b8-47c6-bcf4-3e06e9de3f5f"],
+In[10]:=",ExpressionUUID->"a677f0f5-abf3-46f1-a0cd-38977b442817"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/KneedWalker/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "5.591079`"}],
-  SequenceForm["END", "\t", "Models/KneedWalker/Outputs.nb", "\t", 5.591079],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "6.414263`"}],
+  SequenceForm["END", "\t", "Models/KneedWalker/Outputs.nb", "\t", 6.414263],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"aa9958c3-e096-4942-ae61-c4025c161178"],
+In[10]:=",ExpressionUUID->"795a1480-b811-4032-a117-c323d6d74b16"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -805,18 +860,39 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"5867b226-83c4-418e-b3e5-6620e41b2a6c"],
+In[10]:=",ExpressionUUID->"f4613c47-999d-4fb7-8e3f-ae75ab688ead"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/Marlo/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "29.880148`"}],
-  SequenceForm["END", "\t", "Models/Marlo/Outputs.nb", "\t", 29.880148],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "31.85297`"}],
+  SequenceForm["END", "\t", "Models/Marlo/Outputs.nb", "\t", 31.85297],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"1cf77c0e-a971-4908-b91a-63ce4fba0806"],
+In[10]:=",ExpressionUUID->"41e9bdc4-c78f-4504-9b2c-dcd01d93eb42"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"BEGIN\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"Models/RabbitNL2/Outputs.nb\"\>"}],
+  SequenceForm["BEGIN", "\t", "Models/RabbitNL2/Outputs.nb"],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[10]:=",ExpressionUUID->"b97797d8-22e5-4ec4-8a56-5bc0938b8e0a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
+   "\[InvisibleSpace]", "\<\"Models/RabbitNL2/Outputs.nb\"\>", 
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "124.017513`"}],
+  SequenceForm["END", "\t", "Models/RabbitNL2/Outputs.nb", "\t", 124.017513],
+  Editable->False]], "Print",
+ CellLabel->
+  "During evaluation of \
+In[10]:=",ExpressionUUID->"6f8a9d85-e640-4975-9e57-846b9fc4f1b5"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -826,18 +902,18 @@ Cell[BoxData[
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"fe371573-fb89-4fd9-870d-3ced1cf2b970"],
+In[10]:=",ExpressionUUID->"1c335e5d-412d-409f-bd73-0f460aeb1378"],
 
 Cell[BoxData[
  InterpretationBox[
   RowBox[{"\<\"END\"\>", "\[InvisibleSpace]", "\<\"\\t\"\>", 
    "\[InvisibleSpace]", "\<\"Models/Rabbit/Outputs.nb\"\>", 
-   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "19.489995`"}],
-  SequenceForm["END", "\t", "Models/Rabbit/Outputs.nb", "\t", 19.489995],
+   "\[InvisibleSpace]", "\<\"\\t\"\>", "\[InvisibleSpace]", "20.210761`"}],
+  SequenceForm["END", "\t", "Models/Rabbit/Outputs.nb", "\t", 20.210761],
   Editable->False]], "Print",
  CellLabel->
   "During evaluation of \
-In[10]:=",ExpressionUUID->"5cfbec53-e5e8-4d84-92c5-809eaa71bc6b"]
+In[10]:=",ExpressionUUID->"482e1964-613b-494e-9b04-b79ce7a810bf"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -891,29 +967,31 @@ Cell[BoxData[{
    RowBox[{"for", " ", 
     RowBox[{"README", ".", "adoc"}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"ToAsciidoc", "[", "mdata", "]"}]}], "Input",
- CellLabel->"In[27]:=",ExpressionUUID->"b9a45d8a-a262-4105-9022-9f3f989ead5d"],
+ CellLabel->"In[14]:=",ExpressionUUID->"b9a45d8a-a262-4105-9022-9f3f989ead5d"],
 
 Cell[BoxData["\<\"|===\\n| {src}/Models/Atlas/Main.nb[Models/Atlas/Main.nb] | \
-14667.9\\n| {src}/Models/CompassGait/Main.nb[Models/CompassGait/Main.nb] | \
-507.569\\n| \
+15189.\\n| {src}/Models/CompassGait/Main.nb[Models/CompassGait/Main.nb] | \
+495.569\\n| \
 {src}/Models/CompassGaitWithActuator/Main.nb[Models/CompassGaitWithActuator/\
-Main.nb] | 7541.12\\n| \
+Main.nb] | 8470.46\\n| \
 {src}/Models/CompassGaitWithTorso/Main.nb[Models/CompassGaitWithTorso/Main.nb]\
- | 669.531\\n| {src}/Models/CurvedFeet/Main.nb[Models/CurvedFeet/Main.nb] | \
-430.171\\n| {src}/Models/FiveLink3D/Main.nb[Models/FiveLink3D/Main.nb] | \
-1730.11\\n| {src}/Models/Gibbot/Main.nb[Models/Gibbot/Main.nb] | 657.85\\n| \
-{src}/Models/HumanWalker/Main.nb[Models/HumanWalker/Main.nb] | 1822.79\\n| \
-{src}/Models/KneedWalker/Main.nb[Models/KneedWalker/Main.nb] | 923.491\\n| \
-{src}/Models/Marlo/Main.nb[Models/Marlo/Main.nb] | 2334.83\\n| \
-{src}/Models/Rabbit/Main.nb[Models/Rabbit/Main.nb] | 380.527\\n|===\\n\"\>"], \
-"Output",
+ | 725.229\\n| {src}/Models/CurvedFeet/Main.nb[Models/CurvedFeet/Main.nb] | \
+445.715\\n| {src}/Models/FiveLink3D/Main.nb[Models/FiveLink3D/Main.nb] | \
+2190.52\\n| {src}/Models/Gibbot/Main.nb[Models/Gibbot/Main.nb] | 670.219\\n| \
+{src}/Models/HumanWalker/Main.nb[Models/HumanWalker/Main.nb] | 2234.28\\n| \
+{src}/Models/KneedWalker/Main.nb[Models/KneedWalker/Main.nb] | 1032.22\\n| \
+{src}/Models/Marlo/Main.nb[Models/Marlo/Main.nb] | 683.735\\n| \
+{src}/Models/RabbitClassic/Main.nb[Models/RabbitClassic/Main.nb] | \
+69.9276\\n| {src}/Models/Rabbit/Main.nb[Models/Rabbit/Main.nb] | 354.143\\n| \
+{src}/Models/RabbitNL2/Main.nb[Models/RabbitNL2/Main.nb] | 3.8282\\n|===\\n\"\
+\>"], "Output",
  CellLabel->
-  "Out[28]=",ExpressionUUID->"8409df17-1a61-49c2-8659-ee767ff28706"]
+  "Out[15]=",ExpressionUUID->"b87f5041-180b-4882-a6be-40b6a1650e2e"]
 }, Open  ]]
 }, Open  ]]
 },
 Evaluator->"Local",
-WindowSize->{1373, 1509},
+WindowSize->{1373, 1383},
 WindowMargins->{{Automatic, 0}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",

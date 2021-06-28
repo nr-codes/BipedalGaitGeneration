@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 help='release [-du] version [message]
+usage: ./release v0.1.3
 \t -d delete tag
-\t -u update tag to latest commit \
+\t -u update tag to latest commit
 
 The two options \e[1mcannot\e[0m be used together.'
 

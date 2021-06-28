@@ -49,8 +49,7 @@ Cell[BoxData[{
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"<<", " ", "\"\<CompassGait`\>\""}], ";"}]}], "Input",
- CellLabel->
-  "In[14]:=",ExpressionUUID->"57e425b5-4f68-42a0-b0e7-5bd54f1b80d9"]
+ CellLabel->"In[185]:=",ExpressionUUID->"57e425b5-4f68-42a0-b0e7-5bd54f1b80d9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -70,8 +69,7 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"CompassGait", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->
-  "In[20]:=",ExpressionUUID->"43aeb5a4-29ab-405c-aa37-a9bac7de4085"]
+ CellLabel->"In[191]:=",ExpressionUUID->"43aeb5a4-29ab-405c-aa37-a9bac7de4085"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -84,8 +82,7 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cgw.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->
-  "In[22]:=",ExpressionUUID->"8d392666-2677-46de-a98e-7e68cbcf901e"]
+ CellLabel->"In[193]:=",ExpressionUUID->"8d392666-2677-46de-a98e-7e68cbcf901e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -165,7 +162,7 @@ Cell[BoxData[{
            RowBox[{
             RowBox[{"R\[Sigma]", "\[Transpose]"}], ".", "f"}]}], ";"}]}], 
         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "f"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"CGWRunningQ", "[", 
@@ -232,7 +229,8 @@ Cell[BoxData[{
        "\[LeftDoubleBracket]", 
        RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
- CellLabel->"In[23]:=",ExpressionUUID->"96c25cbd-8bd3-456f-a287-3d96ae02a45d"],
+ CellLabel->
+  "In[194]:=",ExpressionUUID->"96c25cbd-8bd3-456f-a287-3d96ae02a45d"],
 
 Cell[BoxData[{
  RowBox[{
@@ -403,7 +401,8 @@ Cell[BoxData[{
          RowBox[{"{", 
           RowBox[{"0", ",", "0"}], "}"}]}]}], "]"}]}]}], 
     "\[IndentingNewLine]", "]"}]}], ";"}]}], "Input",
- CellLabel->"In[28]:=",ExpressionUUID->"c8a6c447-d60a-481b-b128-0fb0fb6dd407"],
+ CellLabel->
+  "In[199]:=",ExpressionUUID->"c8a6c447-d60a-481b-b128-0fb0fb6dd407"],
 
 Cell[CellGroupData[{
 
@@ -439,7 +438,7 @@ Cell[BoxData[{
    RowBox[{"M", ",", " ", "True"}], "]"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"CGWRunningQ", "[", "c", "]"}]}], "Input",
- CellLabel->"In[130]:=",ExpressionUUID->"6b232394-b657-4d62-9a03-2de94846e72d"]
+ CellLabel->"In[201]:=",ExpressionUUID->"6b232394-b657-4d62-9a03-2de94846e72d"]
 }, Open  ]]
 }, Open  ]],
 
@@ -467,7 +466,8 @@ Cell[BoxData[{
     RowBox[{"man2", "\[LeftDoubleBracket]", 
      RowBox[{"All", ",", " ", "1"}], "\[RightDoubleBracket]"}]}]}], 
   ";"}]}], "Input",
- CellLabel->"In[36]:=",ExpressionUUID->"406053c4-9673-432d-b8fd-367f3d1645e5"],
+ CellLabel->
+  "In[207]:=",ExpressionUUID->"406053c4-9673-432d-b8fd-367f3d1645e5"],
 
 Cell["\<\
 from visual inspection pulling forces start inclusive of the range below\
@@ -484,7 +484,8 @@ Cell[BoxData[{
   RowBox[{"2", " ", "\[Rule]", " ", 
    RowBox[{"{", 
     RowBox[{"{", "41", "}"}], "}"}]}], ";"}]}], "Input",
- CellLabel->"In[38]:=",ExpressionUUID->"2cce3591-8c3f-4f6c-8ad4-dd92433456eb"],
+ CellLabel->
+  "In[209]:=",ExpressionUUID->"2cce3591-8c3f-4f6c-8ad4-dd92433456eb"],
 
 Cell["partition pulling force gaits into their separate branches", \
 "Text",ExpressionUUID->"d68a87f2-50a1-4131-9074-04f9c6eceba3"],
@@ -611,8 +612,7 @@ Cell[BoxData[{
         RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
         " ", "\[LessEqual]", " ", 
         RowBox[{"-", "41"}]}], "&"}]}], "]"}]}]}], ";"}]}], "Input",
- CellLabel->
-  "In[40]:=",ExpressionUUID->"b5963beb-e9cc-491c-a490-c0b63e6950ca"]
+ CellLabel->"In[211]:=",ExpressionUUID->"b5963beb-e9cc-491c-a490-c0b63e6950ca"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -705,7 +705,7 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", "  ", "\"\<cgw-cc-path-grf.svg\>\"", ",", " ", 
     "%"}], "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[148]:=",ExpressionUUID->"557937de-7d5b-4659-b0a4-38a5a3ce424a"],
+  "In[215]:=",ExpressionUUID->"557937de-7d5b-4659-b0a4-38a5a3ce424a"],
 
 Cell[BoxData[{
  RowBox[{"BLTeX", "[", 
@@ -726,7 +726,7 @@ Cell[BoxData[{
    RowBox[{
    "\"\<Figures\>\"", ",", "\"\<cgw-var-region-2.svg\>\"", ",", " ", "%"}], 
    "]"}], ";"}]}], "Input",
- CellLabel->"In[144]:=",ExpressionUUID->"70a5124c-f534-40e1-89a4-e78cb4904750"]
+ CellLabel->"In[219]:=",ExpressionUUID->"70a5124c-f534-40e1-89a4-e78cb4904750"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -740,3 +740,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

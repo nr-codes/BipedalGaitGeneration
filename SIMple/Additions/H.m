@@ -355,8 +355,8 @@ Options[BLSlope] = {"i" -> Automatic, "\[Sigma]" -> None};
 
 BLSlope[A_Association, OptionsPattern[]] := Module[{m, X, C, S},
 m = A["m"][[1]];
-X = A["x-"][[1;;1]];
-C = A["c"][[1;;1]];
+X = A["x-"][[1(*;;1*)]];
+C = A["c"][[1(*;;1*)]];
 
 S = devec[BLbiped["\[Sigma]", m][X, C], mm];
 

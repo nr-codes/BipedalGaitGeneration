@@ -299,6 +299,7 @@ Cell[BoxData[
                   RowBox[{"#", ",", " ", 
                    RowBox[{"-", "1"}]}], "\[RightDoubleBracket]"}]}], "}"}], 
                "&"}], ",", " ", "n"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+          
           RowBox[{"(*", " ", 
            RowBox[{
             RowBox[{"generate", " ", "deltas"}], ",", " ", 
@@ -419,6 +420,7 @@ Cell[BoxData[
            RowBox[{"If", "[", 
             RowBox[{
              RowBox[{"IntegerQ", "[", "k", "]"}], ",", "\[IndentingNewLine]", 
+             
              RowBox[{"(*", " ", 
               RowBox[{
                RowBox[{
@@ -646,6 +648,7 @@ Cell[BoxData[
    RowBox[{"d", " ", "=", " ", "1"}], ";", " ", 
    RowBox[{"(*", " ", 
     RowBox[{"derivative", " ", "order"}], " ", "*)"}], "\[IndentingNewLine]", 
+   
    RowBox[{"p", " ", "=", " ", "2"}], ";", " ", 
    RowBox[{"(*", " ", 
     RowBox[{
@@ -782,3 +785,4 @@ TrackCellChangeTimes->False,
 FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
 StyleDefinitions->"Default.nb"
 ]
+

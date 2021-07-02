@@ -120,8 +120,8 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"NotebookDirectory", "[", "]"}], ",", " ", 
          RowBox[{
-          RowBox[{"___", "~~", "\"\<Models/\>\""}], " ", "\[Rule]", " ", 
-          "\"\<../../../Models/\>\""}]}], "]"}]}]}], "\[IndentingNewLine]", 
+          RowBox[{"___", "~~", "\"\<Models\>\""}], " ", "\[Rule]", " ", 
+          "\"\<../../../Models\>\""}]}], "]"}]}]}], "\[IndentingNewLine]", 
      "|>"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -2411,7 +2411,7 @@ Cell[BoxData[{
      RowBox[{"BLSim", "[", 
       RowBox[{"m", ",", " ", "c", ",", " ", 
        RowBox[{"OptionValue", "[", "BLSim", "]"}]}], "]"}], ",", " ", 
-     "opts"}], "]"}]}], "\[IndentingNewLine]"}], "\n", 
+     "opts"}], "]"}]}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"BLGaitKinematics", "[", 
@@ -2654,7 +2654,7 @@ Cell[BoxData[{
        RowBox[{"BLAnimateBiped", "[", 
         RowBox[{"M", ",", " ", 
          RowBox[{"OptionValue", "[", "BLAnimateBiped", "]"}]}], "]"}]}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"BLSimGaitKinematics", "[", 

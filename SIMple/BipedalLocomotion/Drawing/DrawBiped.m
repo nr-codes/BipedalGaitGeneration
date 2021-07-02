@@ -51,7 +51,7 @@ paths = <|
 "Figures" -> "../../../Figures",
 "JSON" -> "../../../GaitBrowser/src/bipeds",
 "Images" -> "../../../GaitBrowser/app/imgs",
-"Here" :>  StringReplace[NotebookDirectory[], ___~~"Models/" -> "../../../Models/"]
+"Here" :>  StringReplace[NotebookDirectory[], ___~~"Models" -> "../../../Models"]
 |>;
 
 BLPath[where_, n_] := Module[{path},

@@ -1,6 +1,6 @@
-import { ColladaLoader } from '../../three/loaders/ColladaLoader.js';
+import { ColladaLoader } from '../../three/examples/jsm/loaders/ColladaLoader.js';
 
-const path = './Atlas/meshes/';
+const path = './bipeds/Atlas/meshes/';
 
 export default class AtlasColladaLoader extends ColladaLoader {
   constructor(manager) {

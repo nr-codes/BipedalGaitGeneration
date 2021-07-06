@@ -1,7 +1,7 @@
-import { MeshPhongMaterial, Mesh } from '../../build/three.module.js';
-import { STLLoader } from '../../three/loaders/STLLoader.js';
+import { MeshPhongMaterial, Mesh } from '../../three/build/three.module.js';
+import { STLLoader } from '../../three/examples/jsm/loaders/STLLoader.js';
 
-const path = './Marlo/geometries/';
+const path = './bipeds/Marlo/geometries/';
 
 const parts = {};
 

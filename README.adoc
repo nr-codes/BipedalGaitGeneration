@@ -1,14 +1,7 @@
-these files require manual upkeep.
+These files require manual upkeep.
 
-debug with: `npx http-server` and keep fixing path errors.
+Do not overwrite any of the JS files or index.html, including Atlas/index.js
+and Marlo/index.js.  All of these files contain modified code from the original
+source files in GaitBrowser.
 
-. node static.js (in main repo)
-. move Atlas and Marlo assets to various folders
-.. place files in biped, bipeds, Atlas, and Marlo
-. copy three.module.js and relevant loaders
-. ...
-. delete saveImages() in index.html
-. eventually copy into gh-pages
-
-
-
+debug with: `npx http-server`

@@ -95,7 +95,8 @@ MapThread[
 
 CreateClips[M_Association, tn_, d_:-1, fps_:1] := KeyValueMap[CreateClip[#1, tn, #2["x[t]"], #2["c[t]"], d, fps]&, M];
 
-CreateClip[n_, tn_, x_, c_, d_:-1, fps_:1] := <|"name" -> n, "fps" -> 1, "duration" -> d, "tracks" -> CreateTracks[tn, x, c]|>;
+(* 07/12/2021 - added UUID, which is causing issues in v127 of three.js *)
+CreateClip[n_, tn_, x_, c_, d_:-1, fps_:1] := <|"name" -> n, "fps" -> 1, "duration" -> d, "uuid" -> CreateUUID[], "tracks" -> CreateTracks[tn, x, c]|>;
 
 
 (* ::Input::Initialization:: *)

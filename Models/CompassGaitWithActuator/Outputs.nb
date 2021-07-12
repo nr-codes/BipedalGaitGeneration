@@ -79,240 +79,6 @@ Cell["Drawings for Paper", "Section",
 
 Cell[CellGroupData[{
 
-Cell["Model in Figure 4", \
-"Subsection",ExpressionUUID->"c7d6cddc-cdff-4477-baf7-bde7e01d809f"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"model", " ", "=", " ", 
-    RowBox[{"ConstantArray", "[", 
-     RowBox[{"0", ",", " ", 
-      RowBox[{"Length", "@", 
-       RowBox[{"man1", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}]}]}], 
-     "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"model", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
-   " ", "=", " ", 
-   RowBox[{"\[Pi]", "/", "4"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"model", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-   " ", "=", " ", 
-   RowBox[{
-    RowBox[{"-", "2"}], 
-    RowBox[{
-    "model", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}]}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"model", "\[LeftDoubleBracket]", 
-     RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], " ", "=", " ", "0.1"}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"eqwalk", " ", "=", " ", 
-   RowBox[{"ConstantArray", "[", 
-    RowBox[{"0", ",", " ", 
-     RowBox[{"Length", "@", 
-      RowBox[{"man1", "\[LeftDoubleBracket]", 
-       RowBox[{
-        RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}]}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"eqwalk", "\[LeftDoubleBracket]", 
-     RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], " ", "=", " ", "0.1"}], 
-   ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"eqbrach", " ", "=", " ", 
-   RowBox[{"ConstantArray", "[", 
-    RowBox[{"0", ",", " ", 
-     RowBox[{"Length", "@", 
-      RowBox[{"man1", "\[LeftDoubleBracket]", 
-       RowBox[{
-        RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}]}]}], 
-    "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"eqbrach", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
-   " ", "=", " ", "\[Pi]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{
-    RowBox[{"eqbrach", "\[LeftDoubleBracket]", 
-     RowBox[{"-", "1"}], "\[RightDoubleBracket]"}], " ", "=", " ", "0.1"}], 
-   ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{"preview", " ", "configuration", " ", "of", " ", "gaits"}], " ", 
-   "*)"}], "\[IndentingNewLine]", 
-  RowBox[{"(*", " ", 
-   RowBox[{"will", " ", "use", " ", "above", " ", "variables", " ", "in", " ", 
-    RowBox[{"Node", ".", "js"}], " ", "section"}], " ", 
-   "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{"BLWrap", "[", 
-  RowBox[{"BLDrawBiped", ",", " ", "model"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"BLWrap", "[", 
-  RowBox[{"BLDrawBiped", ",", " ", "eqwalk"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{"BLWrap", "[", 
-  RowBox[{"BLDrawBiped", ",", " ", "eqbrach"}], "]"}]}], "Input",
- CellLabel->"In[8]:=",ExpressionUUID->"5bdde497-26ed-4101-87b5-c4ab9cac10fa"],
-
-Cell[BoxData[{
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<q_1 > 0\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{
-    "\"\<Figures\>\"", ",", "  ", "\"\<cgw-var-q1.svg\>\"", ",", " ", "%"}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<q_2 < 0\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{
-    "\"\<Figures\>\"", ",", " ", "\"\<cgw-var-q2.svg\>\"", ",", " ", "%"}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<m_H\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{"\"\<Figures\>\"", ",", "\"\<cgw-var-mH.svg\>\"", ",", " ", "%"}],
-     "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<m_\\\\ell\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
-
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{"\"\<Figures\>\"", ",", "\"\<cgw-var-ml.svg\>\"", ",", " ", "%"}],
-     "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<a\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{"\"\<Figures\>\"", ",", "\"\<cgw-var-a.svg\>\"", ",", " ", "%"}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<b\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{"\"\<Figures\>\"", ",", "\"\<cgw-var-b.svg\>\"", ",", " ", "%"}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"BLTeX", "[", 
-  RowBox[{"\"\<g\>\"", ",", " ", "6"}], "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"BLExportTo", "[", 
-    RowBox[{"\"\<Figures\>\"", ",", "\"\<cgw-var-g.svg\>\"", ",", " ", "%"}], 
-    "]"}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Do", "[", "\[IndentingNewLine]", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"BLExportTo", "[", "\[IndentingNewLine]", 
-     RowBox[{"\"\<Figures\>\"", ",", "\[IndentingNewLine]", 
-      RowBox[{"ToString", "@", 
-       RowBox[{"StringForm", "[", 
-        RowBox[{"\"\<cgw-var-(``).svg\>\"", ",", " ", "i"}], "]"}]}], ",", 
-      " ", "\[IndentingNewLine]", 
-      RowBox[{"BLTeX", "[", 
-       RowBox[{
-        RowBox[{"ToString", "@", 
-         RowBox[{"StringForm", "[", 
-          RowBox[{"\"\<\\\\text{(``)}\>\"", ",", " ", "i"}], "]"}]}], ",", 
-        " ", "6"}], "]"}]}], "]"}], ";"}], ",", "\[IndentingNewLine]", 
-   RowBox[{"{", 
-    RowBox[{"i", ",", " ", 
-     RowBox[{"CharacterRange", "[", 
-      RowBox[{"\"\<b\>\"", ",", " ", "\"\<g\>\""}], "]"}]}], "}"}]}], 
-  "\[IndentingNewLine]", "]"}]}], "Input",
- CellLabel->
-  "In[20]:=",ExpressionUUID->"cb63b484-2463-4b7e-b68e-93f16f7112eb"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Plot in Figure 5", \
-"Subsection",ExpressionUUID->"ba94d44f-9d85-4455-8b99-470230889000"],
-
-Cell[BoxData[{
- RowBox[{
-  RowBox[{
-   RowBox[{"co", " ", "=", " ", 
-    RowBox[{"<|", 
-     RowBox[{
-      RowBox[{"1", " ", "\[Rule]", " ", 
-       RowBox[{"<|", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"-", "200"}], "}"}], "\[Rule]", " ", "None"}], ",", " ", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"-", "140"}], "}"}], "\[Rule]", " ", "None"}], ",", " ", 
-         RowBox[{
-          RowBox[{"{", 
-           RowBox[{"-", "80"}], "}"}], "\[Rule]", " ", "None"}]}], "|>"}]}], 
-      ",", " ", 
-      RowBox[{"2", " ", "\[Rule]", " ", 
-       RowBox[{"<|", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"{", "105", "}"}], "\[Rule]", " ", "None"}], ",", " ", 
-         RowBox[{
-          RowBox[{"{", "40", "}"}], "\[Rule]", " ", "None"}]}], "|>"}]}]}], 
-     "|>"}]}], ";"}], " ", 
-  RowBox[{"(*", " ", 
-   RowBox[{
-   "better", " ", "code", " ", "would", " ", "keep", " ", "keys", " ", "here",
-     " ", "and", " ", "in", " ", "gaits", " ", "below", " ", "in", " ", 
-    "sync"}], " ", "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"ps", " ", "=", " ", 
-    RowBox[{"0.5", " ", "BipedalLocomotion`Private`EPSize"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"BLPlotProjection", "[", 
-   RowBox[{"man1", ",", " ", 
-    RowBox[{"man2", "\[LeftDoubleBracket]", 
-     RowBox[{";;", "227"}], "\[RightDoubleBracket]"}], ",", " ", 
-    RowBox[{"Projection", " ", "\[Rule]", " ", "\"\<z\>\""}], ",", " ", 
-    RowBox[{"ListPlot", " ", "\[Rule]", " ", 
-     RowBox[{"{", 
-      RowBox[{"ImageSize", " ", "\[Rule]", " ", 
-       RowBox[{"72", 
-        RowBox[{"{", 
-         RowBox[{"14.24", ",", " ", "9"}], "}"}]}]}], "}"}]}], ",", " ", 
-    RowBox[{"Callout", " ", "\[Rule]", " ", "co"}], ",", " ", 
-    RowBox[{"PointSize", " ", "\[Rule]", " ", 
-     RowBox[{"{", 
-      RowBox[{"ps", ",", " ", 
-       RowBox[{"0.5", "ps"}]}], "}"}]}], ",", " ", 
-    RowBox[{"Magnification", " ", "\[Rule]", " ", 
-     RowBox[{"{", 
-      RowBox[{"2", ",", " ", "1.5"}], "}"}]}]}], "]"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"BLExportTo", "[", 
-   RowBox[{
-   "\"\<Figures\>\"", ",", "  ", "\"\<cgw-cc-path.svg\>\"", ",", " ", "%"}], 
-   "]"}], ";"}], "\[IndentingNewLine]"}], "Input",
- CellLabel->
-  "In[35]:=",ExpressionUUID->"0e7ef1db-0ebb-4808-9687-462a57f094b7"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
 Cell["Plot in Figure 7", \
 "Subsection",ExpressionUUID->"6896eb9f-db37-45f1-bae7-57a830dc1570"],
 
@@ -588,85 +354,13 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", "\"\<cgw-cc-powered.pdf\>\"", ",", " ", "img"}], 
    "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[39]:=",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
+  "In[22]:=",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["Gaits in Figures 5 and 7", \
+Cell["Gait in Figure 7", \
 "Subsection",ExpressionUUID->"d65d61bd-0212-4593-9aa1-fa5aac0f0324"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"gaits", " ", "=", " ", 
-   RowBox[{"{", "\[IndentingNewLine]", " ", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-2-105\>\"", ",", " ", 
-       "\"\<Figure 5(b) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"man2", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"Key", "@", 
-          RowBox[{"{", "105", "}"}]}], ",", " ", "1"}], 
-        "\[RightDoubleBracket]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-2-40\>\"", ",", " ", 
-       "\"\<Figure 5(c) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"man2", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"Key", "@", 
-          RowBox[{"{", "40", "}"}]}], ",", " ", "1"}], 
-        "\[RightDoubleBracket]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-1-0\>\"", " ", ",", " ", 
-       "\"\<Figure 5(d) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"man1", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"Key", "@", 
-          RowBox[{"{", "0", "}"}]}], ",", " ", "1"}], 
-        "\[RightDoubleBracket]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-1--80\>\"", ",", " ", 
-       "\"\<Figure 5(e) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"man1", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"Key", "@", 
-          RowBox[{"{", 
-           RowBox[{"-", "80"}], "}"}]}], ",", " ", "1"}], 
-        "\[RightDoubleBracket]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-1--140\>\"", ",", " ", 
-       "\"\<Figure 5(f) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"man1", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"Key", "@", 
-          RowBox[{"{", 
-           RowBox[{"-", "140"}], "}"}]}], ",", " ", "1"}], 
-        "\[RightDoubleBracket]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-1--200\>\"", ",", " ", 
-       "\"\<Figure 5(g) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"man1", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"Key", "@", 
-          RowBox[{"{", 
-           RowBox[{"-", "200"}], "}"}]}], ",", " ", "1"}], 
-        "\[RightDoubleBracket]"}]}], "}"}], ",", "\[IndentingNewLine]", 
-     RowBox[{"{", 
-      RowBox[{
-      "\"\<cgw-traj-u--1\>\"", ",", " ", 
-       "\"\<Figure 7(a) - Compass-Gait Walker\>\"", ",", " ", 
-       RowBox[{"root1", "\[LeftDoubleBracket]", 
-        RowBox[{
-         RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}]}], 
-      "}"}]}], "\[IndentingNewLine]", "}"}]}], ";"}]], "Input",
- CellLabel->"In[63]:=",ExpressionUUID->"92356adb-46b0-44a3-b55c-f1cd512ad57c"],
 
 Cell[BoxData[{
  RowBox[{
@@ -677,64 +371,33 @@ Cell[BoxData[{
       RowBox[{"3", "/", "4"}], ",", " ", 
       RowBox[{"1", "/", "4"}]}], "}"}]}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"Do", "[", "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
    RowBox[{
-    RowBox[{"imgs", " ", "=", " ", 
-     RowBox[{"BLImportFrom", "[", 
-      RowBox[{"\"\<Images\>\"", ",", " ", 
-       RowBox[{
-        RowBox[{"g", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-        " ", "<>", " ", "\"\</*.png\>\""}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"If", "[", 
+   "imgs", " ", "=", " ", "\"\<Figure 7(a) - Compass-Gait Walker/*.png\>\""}],
+    ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"imgs", " ", "=", " ", 
+    RowBox[{"BLBipedTimeGrid", "[", 
      RowBox[{
-      RowBox[{"StringContainsQ", "[", 
+      RowBox[{"root1", "\[LeftDoubleBracket]", 
        RowBox[{
-        RowBox[{"g", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-        ",", " ", "\"\<Figure 5\>\""}], "]"}], ",", "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"BLExportTo", "[", 
-        RowBox[{"\"\<Figures\>\"", ",", " ", 
-         RowBox[{"\"\<cgw-x0-\>\"", " ", "<>", " ", 
-          RowBox[{"StringDrop", "[", 
-           RowBox[{
-            RowBox[{
-             RowBox[{"StringSplit", "[", 
-              RowBox[{
-              "g", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-              "]"}], "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}], 
-            ",", " ", "1"}], "]"}], " ", "<>", " ", "\"\<.png\>\""}], ",", 
-         " ", 
-         RowBox[{"RemoveBackground", "@", 
-          RowBox[{"ImageCrop", "@", 
-           RowBox[{
-           "imgs", "\[LeftDoubleBracket]", "1", 
-            "\[RightDoubleBracket]"}]}]}]}], "]"}], ";"}]}], 
-     "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
-    "\[IndentingNewLine]", 
-    RowBox[{"imgs", " ", "=", " ", 
-     RowBox[{"BLBipedTimeGrid", "[", 
-      RowBox[{
-       RowBox[{"g", "\[LeftDoubleBracket]", "3", "\[RightDoubleBracket]"}], 
-       ",", " ", 
-       RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", 
-        RowBox[{"Automatic", "\[Rule]", " ", "4"}]}], ",", " ", 
-       RowBox[{"ImageSize", " ", "\[Rule]", " ", "txtbx"}], ",", " ", 
-       RowBox[{"ImageData", " ", "\[Rule]", " ", "imgs"}], ",", " ", 
-       RowBox[{"ImageCrop", " ", "\[Rule]", " ", "False"}]}], "]"}]}], ";", 
-    "\[IndentingNewLine]", "\[IndentingNewLine]", 
-    RowBox[{"BLExportTo", "[", 
-     RowBox[{"\"\<Figures\>\"", ",", " ", 
-      RowBox[{
-       RowBox[{"g", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
-       " ", "<>", " ", "\"\<.pdf\>\""}], ",", " ", "imgs"}], "]"}], ";"}], 
-   ",", "\[IndentingNewLine]", 
-   RowBox[{"{", 
-    RowBox[{"g", ",", " ", "gaits"}], "}"}]}], "\[IndentingNewLine]", 
-  "]"}]}], "Input",
+        RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}], ",", 
+      " ", 
+      RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", 
+       RowBox[{"Automatic", "\[Rule]", " ", "4"}]}], ",", " ", 
+      RowBox[{"ImageSize", " ", "\[Rule]", " ", "txtbx"}], ",", " ", 
+      RowBox[{"ImageData", " ", "\[Rule]", " ", "imgs"}], ",", " ", 
+      RowBox[{"ImageCrop", " ", "\[Rule]", " ", "False"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"BLExportTo", "[", 
+   RowBox[{
+   "\"\<Figures\>\"", ",", " ", "\"\<cgw-traj-u--1.pdf\>\"", ",", " ", 
+    "imgs"}], "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[64]:=",ExpressionUUID->"9f64f2ac-4d75-4304-96e9-4357cebad95a"]
+  "In[12]:=",ExpressionUUID->"9f64f2ac-4d75-4304-96e9-4357cebad95a"]
 }, Open  ]]
 }, Open  ]],
 
@@ -764,54 +427,32 @@ Cell[BoxData[{
     RowBox[{"\"\<Model\>\"", " ", "\[Rule]", " ", 
      RowBox[{"<|", "\[IndentingNewLine]", 
       RowBox[{
-       RowBox[{"AssociationThread", "[", 
-        RowBox[{
-         RowBox[{"gaits", "\[LeftDoubleBracket]", 
-          RowBox[{"All", ",", " ", "2"}], "\[RightDoubleBracket]"}], " ", 
-         "\[Rule]", " ", 
-         RowBox[{"(", 
-          RowBox[{
+       RowBox[{
+       "\"\<Figure 7(a) - Compass-Gait Walker\>\"", " ", "\[Rule]", " ", 
+        RowBox[{"BLGaitKinematics", "[", 
+         RowBox[{
+          RowBox[{"root1", "\[LeftDoubleBracket]", 
            RowBox[{
-            RowBox[{"BLGaitKinematics", "[", 
-             RowBox[{"#", ",", " ", 
-              RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "steps"}]}], "]"}], 
-            "&"}], " ", "/@", " ", 
-           RowBox[{"gaits", "\[LeftDoubleBracket]", 
-            RowBox[{"All", ",", " ", "3"}], "\[RightDoubleBracket]"}]}], 
-          ")"}]}], "]"}], ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-       RowBox[{"(*", 
-        RowBox[{
-         RowBox[{"\"\<Extra - Compass Gait Model\>\"", " ", "\[Rule]", " ", 
-          RowBox[{"BLGaitKinematics", "[", 
-           RowBox[{"model", ",", " ", 
-            RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "2"}]}], "]"}]}], ",", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{"\"\<Extra - Compass Gait E0\>\"", " ", "\[Rule]", " ", 
-          RowBox[{"BLGaitKinematics", "[", 
-           RowBox[{"eqwalk", ",", " ", 
-            RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "2"}]}], "]"}]}], ",", 
-         "\[IndentingNewLine]", "\[IndentingNewLine]", 
-         RowBox[{"\"\<Extra - Compass Gait EPi\>\"", " ", "\[Rule]", " ", 
-          RowBox[{"BLGaitKinematics", "[", 
-           RowBox[{"eqbrach", ",", " ", 
-            RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "2"}]}], "]"}]}], ","}],
-         "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+            RowBox[{"-", "1"}], ",", " ", "1"}], "\[RightDoubleBracket]"}], 
+          ",", " ", 
+          RowBox[{"\"\<n\>\"", " ", "\[Rule]", " ", "steps"}]}], "]"}]}], ",",
+        "\[IndentingNewLine]", "\[IndentingNewLine]", 
        RowBox[{"Options", " ", "\[Rule]", " ", 
         RowBox[{"CompassGaitWithActuatorMeshOptions", "[", "]"}]}]}], 
       "\[IndentingNewLine]", "|>"}]}], "\[IndentingNewLine]", "|>"}]}], 
   ";"}]}], "Input",
- CellLabel->"In[66]:=",ExpressionUUID->"f28b06de-c679-45aa-9664-6d207b539bba"],
+ CellLabel->"In[46]:=",ExpressionUUID->"f28b06de-c679-45aa-9664-6d207b539bba"],
 
 Cell[BoxData[
  RowBox[{
   RowBox[{"BLExportBipedToThreeJS", "[", "A", "]"}], ";"}]], "Input",
  CellLabel->
-  "In[68]:=",ExpressionUUID->"2ac14ed6-b10c-4a41-943a-ce39667a2ca1"]
+  "In[48]:=",ExpressionUUID->"2ac14ed6-b10c-4a41-943a-ce39667a2ca1"]
 }, Open  ]]
 }, Open  ]]
 },
 Evaluator->"Local",
-WindowSize->{1373, 1383},
+WindowSize->{1247, 1385},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",

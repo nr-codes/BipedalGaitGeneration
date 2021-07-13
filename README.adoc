@@ -270,7 +270,7 @@ future sessions.
 
 == Version History
 
-* v0.2.* Fixed bug in GHM
+* v0.2.* Fixed bug in GHM (scaling of step direction)
 * v0.1.* Stable version used for data in paper
 * v0.0.* Preliminary version
 

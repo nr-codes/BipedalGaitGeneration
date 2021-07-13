@@ -268,11 +268,17 @@ future sessions.
 | {models_name} | generated gaits        | both              | .mx
 |===
 
+== Version History
+
+* v0.2.* Fixed bug in GHM
+* v0.1.* Stable version used for data in paper
+* v0.0.* Preliminary version
+
 == References
 [bibliography]
-- [[[inprep, 1]]] N. Rosa and K. M. Lynch. "A Topological Approach to Gait Generation for Biped Robots", arXiv: link:https://arxiv.org/abs/2006.03785v1[2006.03785v1 [cs.RO\]], June 6, 2020.
+- [[[inprep, 1]]] N. Rosa and K. M. Lynch. "A Topological Approach to Gait Generation for Biped Robots", arXiv: link:https://arxiv.org/abs/2006.03785v2[2006.03785v2 [cs.RO\]], July 12, 2021.
 
-- [[[repo, 2]]] N. Rosa, "Bipedal Gait Generation Library," {git}, 2020, last accessed June 8, 2020.
+- [[[repo, 2]]] N. Rosa, "Bipedal Gait Generation Library," {git}, 2020, last accessed July 13, 2021.
 
 == Contact Information
 

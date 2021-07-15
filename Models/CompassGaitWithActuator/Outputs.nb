@@ -30,7 +30,7 @@ Cell[BoxData[{
      "}"}], "]"}], "]"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"<<", " ", "\"\<CompassGaitWithActuator`\>\""}], ";"}]}], "Input",
- CellLabel->"In[1]:=",ExpressionUUID->"3b702a19-cc86-4795-b32d-15aa7007e345"]
+ CellLabel->"In[8]:=",ExpressionUUID->"3b702a19-cc86-4795-b32d-15aa7007e345"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -45,7 +45,8 @@ Cell[BoxData[{
   RowBox[{
    RowBox[{"CompassGaitWithActuator", "[", "n", "]"}], ";"}], " ", "//", " ", 
   "AbsoluteTiming"}]}], "Input",
- CellLabel->"In[5]:=",ExpressionUUID->"74aa04ae-ff39-4a71-ae27-83a4c1401e33"]
+ CellLabel->
+  "In[12]:=",ExpressionUUID->"74aa04ae-ff39-4a71-ae27-83a4c1401e33"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -58,7 +59,8 @@ Cell[BoxData[
   RowBox[{"BLGetFrom", "[", 
    RowBox[{"\"\<Here\>\"", ",", " ", "\"\<cgwa.mx\>\""}], "]"}], 
   ";"}]], "Input",
- CellLabel->"In[7]:=",ExpressionUUID->"faed5e04-c9ac-4e74-893b-20ea907e4dfb"]
+ CellLabel->
+  "In[14]:=",ExpressionUUID->"faed5e04-c9ac-4e74-893b-20ea907e4dfb"]
 }, Open  ]]
 }, Open  ]],
 
@@ -93,14 +95,13 @@ Cell[BoxData[{
       RowBox[{"#", "\[LeftDoubleBracket]", 
        RowBox[{"-", "2"}], "\[RightDoubleBracket]"}], ",", " ", 
       RowBox[{
-       RowBox[{
-        RowBox[{"(", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}], 
+         "+", 
          RowBox[{
-          RowBox[{"#", "\[LeftDoubleBracket]", "1", "\[RightDoubleBracket]"}],
-           "+", 
-          RowBox[{
-          "#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}]}], 
-         ")"}], "/", "2"}], "/", "Degree"}]}], "}"}], "&"}]}], 
+          RowBox[{"#", "\[LeftDoubleBracket]", "2", "\[RightDoubleBracket]"}],
+           "/", "2"}]}], ")"}], "/", "Degree"}]}], "}"}], "&"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
@@ -203,17 +204,15 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
-   RowBox[{
-    RowBox[{"eq", "\[LeftDoubleBracket]", 
-     RowBox[{"All", ",", " ", "2"}], "\[RightDoubleBracket]"}], " ", "-=", 
-    " ", "0.08"}], ";"}], " ", 
+   RowBox[{"eq", "\[LeftDoubleBracket]", 
+    RowBox[{"All", ",", " ", "2"}], "\[RightDoubleBracket]"}], " ", "-=", " ",
+    "0.08"}], ";", " ", 
   RowBox[{"(*", " ", 
    RowBox[{
    "try", " ", "to", " ", "draw", " ", "points", " ", "in", " ", "front", " ",
      "of", " ", "lines", " ", 
     RowBox[{"w", "/", "o"}], " ", "looking", " ", "too", " ", "off"}], " ", 
-   "*)"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
+   "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"mag", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"labels", " ", "=", " ", 
@@ -354,7 +353,7 @@ Cell[BoxData[{
    "\"\<Figures\>\"", ",", "\"\<cgw-cc-powered.pdf\>\"", ",", " ", "img"}], 
    "]"}], ";"}]}], "Input",
  CellLabel->
-  "In[22]:=",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
+  "In[15]:=",ExpressionUUID->"83f935fd-3a6f-4859-8881-286626b8c7f1"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -452,7 +451,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 Evaluator->"Local",
-WindowSize->{1247, 1385},
+WindowSize->{2493, 1385},
 WindowMargins->{{0, Automatic}, {0, Automatic}},
 PrivateNotebookOptions->{"FileOutlineCache"->False},
 CellContext->"Global`",

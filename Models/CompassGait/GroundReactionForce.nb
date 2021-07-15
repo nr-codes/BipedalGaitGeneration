@@ -162,7 +162,7 @@ Cell[BoxData[{
            RowBox[{
             RowBox[{"R\[Sigma]", "\[Transpose]"}], ".", "f"}]}], ";"}]}], 
         "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", "f"}]}], 
-     "\[IndentingNewLine]", "]"}]}], ";"}], "\n"}], "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
  RowBox[{
   RowBox[{
    RowBox[{"CGWRunningQ", "[", 

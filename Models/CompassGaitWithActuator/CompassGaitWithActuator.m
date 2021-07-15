@@ -33,8 +33,8 @@ Begin["`Private`"]
 
 (* ::Input::Initialization:: *)
 (* parameters *)
-\[Mu] = 2;
-\[Beta] = 1;
+\[Mu] = 2; (* mH / m *)
+\[Beta] = 1; (* b / a *)
 L = 1+\[Beta];
 a = 1/2;
 g = {0, 9.81, 0}/a;
@@ -155,7 +155,8 @@ M
 CompassGaitWithActuator[n_:0] := Module[{A, C, X, J, l, r, draw, F, L, R},
 CreateModel[];
 
-(* actuation *)
+(* actuation: units are N m/(kg m^2), where 1/(kg m^2) => 1/(a^2 m) *)
+(* lengths are scaled by a and masses by m as defined in figure above *)
 ufun = PadLeft[{#2[[-2]]Sin[2\[Pi] #1[[1]]]}, nq]&;
 
 (* coordinate flip *)
